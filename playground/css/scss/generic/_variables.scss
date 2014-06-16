@@ -1,3 +1,56 @@
+// Greys
+// ====================
+
+$black:                  #000 !default;
+
+$grey-darker:            lighten(#000, 20%) !default;   // #333
+$grey-dark:              lighten(#000, 40%) !default;   // #666
+$grey:                   lighten(#000, 60%) !default;   // #999
+$grey-light:             lighten(#000, 80%) !default;   // #ccc
+$grey-lighter:           lighten(#000, 90%) !default;   // #e6e6e6
+$grey-lightest:          lighten(#000, 95.5%) !default; // #f4f4f4
+
+
+// Brand Colours
+// ====================
+
+// Primary Palette
+// --------------------
+
+$brand-primary:          #467c9c !default;
+$brand-primary-text:     #005373 !default;
+
+
+// Secondary Palette
+// --------------------
+// Colours in comments are the actual values, not the codes specified in guidelines PDF
+
+$brand-red-dark:        #a00a2d !default; // #a11e31
+$brand-red:             #b84762 !default; // #b7465f
+$brand-red-light:       #ca7589 !default; // #c57385
+
+$brand-purple-dark:     #592b71 !default;
+$brand-purple:          #733e8d !default;
+$brand-purple-light:    #b699c0 !default;
+
+$brand-green-dark:      #069369 !default; // #1d9166
+$brand-green:           #44aa8c !default; // #48a78a
+$brand-green-light:     #a1ccbc !default; // #a1cbb9
+
+$brand-gold-dark:       #bf9227 !default;
+$brand-gold:            #e4c52d !default;
+$brand-gold-light:      #ebd66d !default;
+
+$brand-blue-dark:       #006186 !default; // #006487
+$brand-blue:            #0c9aac !default; // #009dad
+$brand-blue-light:      #64b7cf !default; // #19b3cb
+
+$brand-success:         $brand-green-dark !default;
+$brand-warning:         $brand-gold-dark !default;
+$brand-danger:          $brand-red !default;
+$brand-info:            $brand-purple-light !default;
+
+
 /*------------------------------------*\
     $VARIABLES
 \*------------------------------------*/
