@@ -1,52 +1,401 @@
-/*------------------------------------*\
-    $NAVIGATION
-\*------------------------------------*/
+// ====================
+// NAVBAR
+// ====================
 
-.nav {
-	clear: both;
-	overflow: hidden;
-	max-height: 0;
-	
-	a {
-		display: block;
-		padding: $pad;
-		border-top: 1px solid $gray-light-2;
-	}
 
-	&.active {
-		max-height: 40em;
-	}
+// Wrapper and base class
+//
+// Provide a static navbar from which we expand to create full-width, fixed, and
+// other navbar variations.
+.navbar {
+  .navbar__nav {
+    > li {
+      > a {
+        border-bottom: 1px solid darken($brand-primary, 7%);
+        color: #fff;
+        letter-spacing: 1px;
 
-	@media all and (min-width: $bp-med) {
-		max-height: none;
-		float: right;
-		clear: none;
-
-		li {
-			float: left;
-		}
-
-		a {
-			border: 0;
-		}
-		
-	}
+        &:hover,
+        &:focus,
+        &.is-active {
+          background-color: darken($brand-primary, 5%);
+        }
+      }
+    }
+  }
 }
 
-//Pagination
-.pagination {
-	overflow: hidden;
 
-	li {
-		float: left;
-		border-right: 1px solid $gray-light-2;
+// Navbar heading
+//
+// Groups `.navbar-brand` and `.navbar-toggle` into a single component for easy
+// styling of responsive aspects.
+// .navbar__header {
+//   @include cf();
+//   margin: sz(20px 0);
 
-		&:last-child {
-			border: 0;
-		}
-	}
+//   @include mq($from: navbar) {
+//     float: left;
+//   }
+// }
 
-	a {
-		padding: $pad;
-	}
+// Brand/project name
+.navbar__brand {
+  display: block;
+  float: left;
+  padding: sz(20) 0;
+}
+
+// Navbar toggle
+//
+// Custom button for toggling the `.navbar-collapse`, powered by the collapse
+// JavaScript plugin.
+.navbar__toggle {
+  position: relative;
+  float: right;
+  padding: sz(9px 10px);
+  margin: sz(39px 0);
+  height: 34px;
+  width: 44px;
+  font-size: 17px;
+line-height: .9;
+text-align: center;
+  background-color: transparent;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid $navbar-toggle-border-color;
+  border-radius: $border-radius-base;
+
+  &:hover,
+  &:focus {
+    background-color: $navbar-toggle-hover-bg;
+  }
+  // We remove the `outline` here, but later compensate by attaching `:hover`
+  // styles to `:focus`.
+  &:focus {
+    outline: none;
+  }
+  
+  &:before {
+        content: $fa-var-bars;
+    }
+
+  // Bars
+  // .icon-bar {
+  //   background-color: $navbar-toggle-icon-bar-bg;
+  //   display: block;
+  //   width: sz(22px);
+  //   height: sz(2px);
+  //   border-radius: 1px;
+  // }
+  // .icon-bar + .icon-bar {
+  //   margin-top: sz(4px);
+  // }
+
+  @include mq($from: navbar) {
+    display: none;
+  }
+}
+label.navbar__toggle {
+    cursor: pointer;
+}
+
+
+.no-js #js-toggle {
+    + .navbar__toggle {
+        @include transition(all .3s ease);
+        right: 0;
+    }
+    &:checked {
+        + .navbar__toggle {
+            right: sz($navbar-width);
+
+            + .navbar {
+                right: 0;
+
+                a .fa {
+                    display: none;
+                }
+            }
+
+            &:before {
+                content: $fa-var-times;
+            }
+        }
+    }
+}
+
+.navbar__overlay {
+    display: none;
+}
+
+.navbar__overlay.is-active {
+    @include backface-visibility(hidden);
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.dropdown--mega {
+  .nav {
+    > li {
+      > a {
+        color: #fff;
+        letter-spacing: 1px;
+        padding: sz(8px 30px 8px 15px);
+
+        &:hover,
+        &:focus {
+          background-color: darken($brand-primary, 7%);
+        }
+      }
+    }
+  }
+
+  > .l-container {
+    padding-bottom: $line-height-computed;
+  }
+}
+
+
+
+.navbar__search {
+    width: sz($navbar-width);
+}
+
+.navbar__search + li {
+    clear: left;
+}
+
+.navbar__search-input {
+    float: left;
+    outline: none;
+    height: 39px;
+    width: sz($navbar-width - 39px);
+}
+ 
+input[type="search"].navbar__search-input {
+    -webkit-border-radius: 0;
+}
+
+.navbar__search-icon,
+.navbar__search-submit  {
+    cursor: pointer;
+    float: left;
+    width: 39px;
+    height: 39px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 39px;
+    text-align: center;
+}
+
+.navbar__search-submit {
+    background: #fff; /* IE needs this */
+    @include opacity(0);
+    color: transparent;
+    border: none;
+    outline: none;
+    z-index: 90;
+}
+
+.navbar__search-icon {
+    color: #fff;
+    background: $brand-success;
+    z-index: 11;
+    speak: none;
+    font-variant: normal;
+    text-transform: none;
+
+    &:before {
+        content: $fa-var-search;
+    }
+}
+
+
+@include mq($to: navbar) {
+  .navbar {
+    background-color: $brand-primary;
+    right: sz(-$navbar-width);
+    position: fixed;
+    width: sz($navbar-width);
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+  }
+
+  .navbar__nav {
+    position: relative;
+    z-index: 1001;
+
+    &.navbar__scroller {
+      width: sz($navbar-width + 30);
+      height: 100%;
+      margin-bottom: $line-height-computed * 2;
+      overflow-y: auto;
+    }
+  }
+  
+  .dropdown--mega {
+    background-color: darken($brand-primary, 3%);
+    > .l-container {
+      width: 100%;
+    }
+  }
+
+  // Vertical menu that slides from the right 
+  .navbar.is-active {
+    right: 0;
+  }
+  
+  .navbar__overlay.is-active {
+    @include transition(background .3s ease);
+    box-shadow: 4px 0 4px rgba(0, 0, 0, .1);
+  }
+
+  // Push class applied to the body
+  .navbar__push {
+      overflow-x: hidden;
+      position: relative;
+      left: 0;
+  }
+
+  .navbar__push--right {
+      left: sz(-$navbar-width);
+  }
+   
+  .navbar,
+  .navbar__push {
+      @include transition(all .3s ease);
+      @include backface-visibility(hidden);
+  }
+}
+
+
+@include mq($from: navbar) {
+  .navbar {
+    clear: both;
+    .navbar__nav {
+      position: relative;
+      > li {
+        float: left;
+        position: static;
+
+        &.navbar__secondary-item {
+          float: right;
+        } 
+
+        > a {
+          border-bottom: 0;
+          color: $text-color;
+          letter-spacing: normal;
+          margin-right: sz(2px);
+
+          &:hover,
+          &:focus,
+          &:active,
+          &.is-active,
+          &.is-active:hover {
+            @include box-shadow(0 4px $brand-primary);
+            background-color: $brand-primary;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+          }
+          &:hover {
+            @include box-shadow(0 4px darken($brand-primary, 7%));
+          }
+        }
+      }
+
+      .dropdown--mega {
+        @include box-shadow(0 2px 3px rgba(0,0,0,.2));
+        background-color: $brand-primary;
+        border-top: 4px solid darken($brand-primary, 7%);
+        position: absolute;
+        left: 0;
+        width: 100%;
+        
+        .nav {
+          @include g-col($columns:4,$collapse:null);
+        }
+      }
+    }
+  }
+
+  .no-js .navbar .navbar__nav > li a {
+        &:hover,
+        &:focus,
+        &:active,
+        &.is-active {
+            @include box-shadow(0 4px $brand-primary);
+            position: relative;
+            z-index: 1;
+
+            + .collapse {
+                display: block;
+            }
+        }
+    }
+
+    .navbar .navbar__nav > .navbar__search {
+      position: absolute;
+      right: -39px;
+      width: 0;
+      min-width: 39px;
+      height: 39px;
+      float: right;
+      overflow: hidden;
+      @include transition(width .3s);
+      @include backface-visibility(hidden);
+    }
+
+    .navbar__search-input {
+        float: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding-right: sz(39px);
+        width: 100%;
+        z-index: 10;
+    }
+
+    .navbar__search-submit {
+        z-index: -1;
+    }
+
+    .navbar__search-icon {
+        background: $brand-primary;
+    }
+
+    .navbar__search.is-open {
+        .navbar__search-icon {
+            background: $brand-success;
+        }
+    }
+
+    .navbar .navbar__nav > .navbar__search.is-open,
+    .no-js .navbar .navbar__nav > .navbar__search {
+        width: 300px;
+    }
+
+    .navbar__search.is-open,
+    .no-js .navbar__search {
+        .navbar__search-submit {
+            z-index: 90;
+        }
+    }
+
+    .no-js .navbar__nav > .navbar__search {
+        &,
+        .navbar__search-input {
+            position: static;
+        }
+    }
 }
