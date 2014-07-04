@@ -1,0 +1,118 @@
+// Greys
+// ====================
+
+$black:                  #000 !default;
+
+$grey-darker:            lighten(#000, 20%) !default;   // #333
+$grey-dark:              lighten(#000, 40%) !default;   // #666
+$grey:                   lighten(#000, 60%) !default;   // #999
+$grey-light:             lighten(#000, 80%) !default;   // #ccc
+$grey-lighter:           lighten(#000, 90%) !default;   // #e6e6e6
+$grey-lightest:          lighten(#000, 95.5%) !default; // #f4f4f4
+
+
+// Brand Colours
+// ====================
+
+// Primary Palette
+// --------------------
+
+$brand-primary:          #467c9c !default;
+$brand-primary-text:     #005373 !default;
+
+
+// Secondary Palette
+// --------------------
+// Colours in comments are the actual values, not the codes specified in guidelines PDF
+
+$brand-red-dark:        #a00a2d !default; // #a11e31
+$brand-red:             #b84762 !default; // #b7465f
+$brand-red-light:       #ca7589 !default; // #c57385
+
+$brand-purple-dark:     #592b71 !default;
+$brand-purple:          #733e8d !default;
+$brand-purple-light:    #b699c0 !default;
+
+$brand-green-dark:      #069369 !default; // #1d9166
+$brand-green:           #44aa8c !default; // #48a78a
+$brand-green-light:     #a1ccbc !default; // #a1cbb9
+
+$brand-gold-dark:       #bf9227 !default;
+$brand-gold:            #e4c52d !default;
+$brand-gold-light:      #ebd66d !default;
+
+$brand-blue-dark:       #006186 !default; // #006487
+$brand-blue:            #0c9aac !default; // #009dad
+$brand-blue-light:      #64b7cf !default; // #19b3cb
+
+$brand-success:         $brand-green-dark !default;
+$brand-warning:         $brand-gold-dark !default;
+$brand-danger:          $brand-red !default;
+$brand-info:            $brand-purple-light !default;
+
+
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+
+//Colors
+$gray : #808080;
+$gray-light : #f9f9f9;
+$gray-light-2 : #eee;
+$gray-light-3 : #ddd;
+$gray-med : #666;
+$gray-dark : #333;
+$gray-dark-2 : #131313;
+$white : #fff;
+$black : #000;
+$dim : rgba(0,0,0,0.5);
+$error : #f00;
+$valid : #089e00;
+$warning : #fff664;
+$information : #000db5;
+
+
+//Typography
+$font : "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+$font-secondary : Georgia, Times, "Times New Roman", serif;
+
+$font-size-small : 0.75em;
+$font-size-small-2 : 0.875em;
+$font-size-med : 1em;
+$font-size-med-2: 1.0625em;
+$font-size-large : 1.4375em;
+
+
+//Layout
+$max-width: 72em;
+
+//Defaults
+$space : 1em;
+$space-and-half : $space*1.5;
+$space-double : $space*2;
+$space-quad : $space*4;
+$space-half : $space/2;
+$pad : 1em;
+$pad-and-half : $pad*1.5;
+$pad-double : $pad*2;
+$pad-half : $pad/2;
+$pad-quarter :$pad/4;
+
+//Borders
+$border-med: 3px;
+$border-thick: 7px;
+
+
+//Breakpoints
+$bp-small : 24em;
+$bp-small-2 : 29.75em;
+$bp-small-3 : 39.8em;
+$bp-med : 46.8em;
+$bp-med-2 : 48em;
+$bp-large : 50em;
+$bp-large-2 : 66em;
+$bp-xl : 73em;
+$bp-xxl : 89em;
+$bp-xxxl : 93em;
+
+//
