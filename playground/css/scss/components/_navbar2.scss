@@ -1,0 +1,393 @@
+// ====================
+// NAVBAR
+// ====================
+
+
+// Brand/project name
+.navbar__brand {
+    display: block;
+    float: left;
+    padding: sz(20px) 0;
+}
+
+
+// Navbar checkbox
+.navbar__check {
+    display: none;
+    overflow: hidden;
+    width: 0;
+
+    &:focus {
+        outline: 0;
+
+        + label {
+            outline: 2px auto -webkit-focus-ring-color;
+        }
+    }
+}
+
+
+.navbar {
+    background-color: lighten($navbar-dropdown-bg, 7%);
+    right: sz(-$navbar-width);
+}
+
+
+// Wrapper and base class
+//
+// Provide a static navbar from which we expand to create full-width, fixed, and
+// other navbar variations.
+.navbar__nav {
+    position: relative;
+
+    > li {
+        > a {
+            &:after {
+                font-family: FontAwesome;
+                margin-left: 5px;
+                //content: $fa-var-caret-down;
+            }
+        }
+    }
+
+    .navbar__membership {
+        > a {
+            background-color: color(green);
+            color: #fff;
+
+            &:hover,
+            &:focus {
+                background-color: color(green, dark);
+                color: #fff;
+            }
+        }
+
+        .dropdown--mega {
+            background-color: color(green, dark);
+        }
+
+        .join {
+            background-color: color(green, dark);
+
+            &:hover,
+            &:focus {
+                background-color: darken(color(green, dark), 7%);
+            }
+
+            &:after {
+                //content: $fa-var-arrow-circle-right;
+            }
+        }
+    }
+}
+
+
+.dropdown--mega {
+    @include transition(max-height .35s ease);
+    max-height: 0;
+    overflow: hidden;
+
+    > .l-container {
+        @include transition(opacity .35s .1s ease);
+        @include opacity(0);
+    }
+
+    .nav {
+        > li {
+            > a {
+                padding-right: sz(30px);
+            }
+        }
+    }
+}
+
+
+.nav {
+    > li {
+        > a {
+            color: $navbar-dropdown-color;
+            padding: sz(8px 15px);
+
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: darken($navbar-dropdown-bg, 7%);
+            }
+        }
+    }
+}
+
+.navbar__nav > .navbar__secondary {
+    font-size: sz(13px);
+
+    li {
+        a {
+            padding: sz(7px 45px 7px 10px);
+        }
+    }
+}
+
+.basket {
+    background-color: color(primary, light);
+    color: $navbar-dropdown-color;
+    float: right;
+    font-size: sz(13px);
+    padding: sz(7px 10px);
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: color(primary);
+        color: $navbar-dropdown-color;
+    }
+
+    &.is-empty {
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: color(grey, lighter);
+            color: color(grey);
+            text-decoration: none;
+        }
+    }
+}
+
+
+
+@include mq($to: navbar) {
+    .navbar,
+    .navbar__push {
+        @include transition(all .3s ease);
+        @include backface-visibility(hidden);
+    }
+
+
+    // Navbar toggle
+    //
+    // Custom button for toggling the `.navbar-collapse`, powered by the collapse
+    // JavaScript plugin.
+    .navbar__toggle {
+        position: relative;
+        cursor: pointer;
+        float: right;
+        padding: sz(9px 10px);
+        margin: sz(39px 0);
+        height: 34px;
+        width: 44px;
+        font-size: 17px;
+        line-height: 1;
+        text-align: center;
+        background-color: transparent;
+        background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+        border: 0;
+        // border-radius: $border-radius-base;
+        z-index: 1001;
+
+        // We remove the `outline` here, but later compensate by attaching `:hover`
+        // styles to `:focus`.
+        &:focus {
+            outline: none;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: $navbar-toggle-hover-bg;
+        }
+      
+        &:before {
+            //content: $fa-var-bars;
+        }
+    }
+
+    .navbar__nav {
+        border-left: 1px solid darken($navbar-dropdown-bg, 7%);
+        padding-bottom: sz(41px);
+        width: sz($navbar-width + 30);
+        z-index: 1001;
+
+        > li {
+            > a {
+                border-bottom: 1px solid darken($navbar-dropdown-bg, 7%);
+                letter-spacing: 1px;
+
+                &.is-active:after {
+                    //content: $fa-var-caret-up;
+                }
+            }
+        }
+
+        .navbar__membership {
+            > a {
+                 border-bottom: 0;
+            }
+        }
+    }
+
+    .dropdown--mega {   
+        > .l-container {
+            width: 100%;
+        }
+    }
+
+    .is-active + .dropdown--mega {
+        background-color: $navbar-dropdown-bg;
+        max-height: 2500px;
+    
+        > .l-container {
+            @include opacity(1);
+        }
+    }
+
+    // Vertical menu that slides from the right
+    .no-js #js-toggle:checked + .navbar__toggle + .navbar, 
+    .navbar__tabs.is-active {
+        right: 0;
+    }
+
+    // Push class applied to the body
+    .navbar__push {
+        overflow-x: hidden;
+        position: relative;
+        left: 0;
+    }
+
+    .navbar__push--right {
+        left: sz(-$navbar-width);
+    }
+
+    .no-js {
+        .navbar__toggle {
+            @include transition(all .3s ease);
+            right: 0;
+        }
+
+        .navbar__nav > li > a:after {
+            display: none;
+        }
+
+        #js-toggle:checked {
+            + .navbar__toggle {
+                right: sz($navbar-width);
+
+                &:before {
+                    //content: $fa-var-times;
+                }
+            }
+        }
+    }
+}
+
+
+
+@include mq($from: navbar) {
+    .navbar {
+        background-color: transparent;
+        border: 0;
+        position: relative;
+        margin-top: 77px;
+        margin-left: 120px;
+        right: auto;
+        overflow: initial;
+        width: auto;
+    }
+
+    .navbar__toggle {
+        display: none;
+    }
+
+    .dropdown--mega {
+        background-color: $navbar-dropdown-bg;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+
+        > .l-container {
+            padding: $line-height-computed 0;
+            @include opacity(0);
+        }
+
+        .nav {
+            //@include g-col($columns:4,$collapse:null);
+        }
+    }
+
+    .navbar__nav > .navbar__secondary {
+        background-color: $navbar-dropdown-bg;
+        position: absolute;
+        top: -105px;
+        right: 0;
+        float: none;
+        margin: 0;
+
+        li {
+            float: left;
+
+            a {
+                padding: sz(5px 10px);
+
+                &:hover,
+                &:focus {
+                    background-color: lighten($navbar-dropdown-bg, 7%);
+                }
+            }
+        }
+    }
+
+    .navbar__nav {
+        width: auto;
+        overflow-y: initial;
+
+        .navbar__membership {
+            float: right;
+            margin-left: 0;
+        }
+
+        > li {
+            @include transition(background-color .35s .1s ease-in);
+            float: left;
+            margin-left: sz(2px);
+            position: static;
+
+            &:first-child {
+                margin-left: 0;
+            } 
+
+            > a {
+                @include transition(color .35s ease-in);
+                color: $text-color;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    @include transition(color 0s);
+                    background-color: $navbar-dropdown-bg;
+                    color: $navbar-dropdown-color;
+                }
+            }
+
+            &:hover,
+            &:focus {
+                @include transition(background-color 0s);
+                background-color: $navbar-dropdown-bg;
+
+                > a {
+                    color: $navbar-dropdown-color;
+
+                    &:after {
+                        //content: $fa-var-caret-up;
+                    }
+
+                    + .dropdown--mega {
+                        max-height: 1000px;
+                     
+                        > .l-container {
+                           @include opacity(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

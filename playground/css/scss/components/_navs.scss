@@ -1,0 +1,76 @@
+// ====
+// Navs
+// ====
+
+
+// Base class
+// ----------
+
+.nav {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0; // Override default ul/ol
+  list-style: none;
+  @include cf();
+
+  > li {
+    position: relative;
+    display: block;
+
+    > a {
+      position: relative;
+      display: block;
+      padding: $nav-link-padding;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        background-color: $nav-link-hover-bg;
+      }
+    }
+
+    // &.is-active > a {
+    //   color: $nav-disabled-link-color;
+
+    //   &:hover,
+    //   &:focus {
+    //     color: $nav-disabled-link-hover-color;
+    //     //text-decoration: none;
+    //     //background-color: transparent;
+    //   }
+    // }
+
+    // Disabled state sets text to gray and nukes hover/tab effects
+    &.is-disabled > a {
+      color: $nav-disabled-link-color;
+
+      &:hover,
+      &:focus {
+        color: $nav-disabled-link-hover-color;
+        text-decoration: none;
+        background-color: transparent;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  // Open dropdowns
+  .open > a {
+    &,
+    &:hover,
+    &:focus {
+      background-color: $nav-link-hover-bg;
+      border-color: $link-color;
+
+      .caret {
+        border-top-color: $link-hover-color;
+        border-bottom-color: $link-hover-color;
+      }
+    }
+  }
+
+  // Prevent IE8 from misplacing imgs
+  // See https://github.com/h5bp/html5-boilerplate/issues/984#issuecomment-3985989
+  > li > a > img {
+    max-width: none;
+  }
+}

@@ -1,9 +1,235 @@
-<!-- Begin .header -->
-<header class="header cf" role="banner">
-	{{> atoms-logo }}
-	<a href="#search-form" class="nav-toggle nav-toggle-search icon-search"><span class="is-vishidden">Search</span></a>
-	<a href="#nav" class="nav-toggle nav-toggle-menu icon-menu"><span class="is-vishidden">Menu</span></a>
-	{{> molecules-primary-nav }}
-	{{> molecules-search }}
-</header>
-<!-- End .header -->
+<body class="navbar__push body">
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->    
+        <div class="page" id="page">
+            <!-- Begin .header -->
+            <header class="l-header" role="banner">
+                <!--<a href="#search-form" class="nav-toggle nav-toggle-search icon-search"><span class="is-vishidden">Search</span></a>
+                    <a href="#nav" class="nav-toggle nav-toggle-menu icon-menu"><span class="is-vishidden">Menu</span></a>-->
+                <div class="l-container">
+                    <div class="ad ad__header">
+                        <img src="" alt="Header Advert" width="728" height="93" />
+                    </div>
+                    <!-- <div class="navbar__header"> -->
+                        <!-- <button type="button" id="leftPush" class="navbar__toggle">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button> --><!-- end .navbar__toggle -->
+                        
+                        <a href="#" class="navbar__brand">
+                            <img src="images/logo.gif" alt="Institute of Directors">
+                        </a><!-- end .navbar__brand -->
+                    <!-- </div> --><!-- end .navbar__header -->
+                    
+                    <input type="checkbox" id="js-toggle" class="u-hide">
+                    <label for="js-toggle" id="leftPush" class="navbar__toggle fa">
+                        <span class="sr-only">Toggle navigation</span>
+                    </label>
+                    <nav id="navbar-nav" class="navbar" role="navigation">
+                        <ul id="toggle-nav" class="nav navbar__nav navbar__scroller">
+                            <li id="js-navbarSearch" class="navbar__search">
+                                <form>
+                                    <!-- <label for="search" class="sr-only">Search website</label> -->
+                                    <input type="search" id="search" class="form-control navbar__search-input" placeholder="Search website">
+                                    <input type="submit" id="btnSearch" class="navbar__search-submit" aria-hidden="true" aria-label="Search">
+                                    <span class="fa navbar__search-icon" title="Click to Search"></span>
+                                </form>
+                            </li>
+                            <li>
+                                <a href="#">Guiding <i class="fa fa-caret-down"></i></a>
+                                <div class="dropdown--mega collapse">
+                                    <div class="l-container">
+                                        <h3><a href="#">Guiding</a></h3>
+                                        <ul class="nav">
+                                            <li><a href="#">Advice and information</a></li>
+                                            <li><a href="#">Ask Anna</a></li>
+                                            <li><a href="#">Business topics</a></li>
+                                            <li><a href="#">Business Information Service</a></li>
+                                            <li><a href="#">Business Library</a></li>
+                                            <li><a href="#">Information resources</a></li>
+                                        </ul>
+                                        <ul class="nav">
+                                            <li><a href="#">Legal alert</a></li>
+                                            <li><a href="#">Directors' Advisory Service</a></li>
+                                            <li><a href="#">Directors' Law Express</a></li>
+                                            <li><a href="#">Directors' Tax Line</a></li>
+                                            <li><a href="#">Publications</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">Developing <i class="fa fa-caret-down"></i></a>
+                                <div class="dropdown--mega collapse">
+                                    <div class="l-container">
+                                        <h3><a href="#">Professional Development</a></h3>
+                                        <ul class="nav">
+                                            <li><a href="#">Board development</a></li>
+                                            <li><a href="#">Chartered Director</a></li>
+                                            <li><a href="#">Courses</a></li>
+                                            <li><a href="#">Events</a></li>
+                                            <li><a href="#">IoD Learning Zone</a></li>
+                                        </ul>
+                                        <ul class="nav">
+                                            <li><a href="#">Information and advisory services</a></li>
+                                            <li><a href="#">Regional centres</a></li>
+                                            <li><a href="#">Publications</a></li>
+                                            <li><a href="#">Your business topics</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">Connecting <i class="fa fa-caret-down"></i></a>
+                                <div class="dropdown--mega collapse">
+                                    <div class="l-container">
+                                        <h3><a href="#">Connecting With Us</a></h3>
+                                        <ul class="nav">
+                                            <li><a href="#">Events</a></li>
+                                            <li><a href="#">Annual Convention 2013</a></li>
+                                            <li><a href="#">Food and drink at Pall Mall</a></li>
+                                            <li><a href="#">IoD Business Directory</a></li>
+                                            <li><a href="#">IoD NXD Directory</a></li>
+                                        </ul>
+                                        <ul class="nav">
+                                            <li><a href="#">Jobs and recruitment</a></li>
+                                            <li><a href="#">Join Policy Voice</a></li>
+                                            <li><a href="#">Local networks</a></li>
+                                            <li><a href="#">Meeting space</a></li>
+                                            <li><a href="#">Start Up Smart Up</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">Influencing <i class="fa fa-caret-down"></i></a>
+                                <div class="dropdown--mega collapse">
+                                    <div class="l-container">
+                                        <h3><a href="#">Influencing</a></h3>
+                                        <ul class="nav">
+                                            <li><a href="#">Area of influence</a></li>
+                                            <li><a href="#">The economy</a></li>
+                                            <li><a href="#">Big Picture</a></li>
+                                            <li><a href="#">Policy events</a></li>
+                                            <li><a href="#">Policy events</a></li>
+                                            <li><a href="#">Policy papers</a></li>
+                                        </ul>
+                                        <ul class="nav">
+                                            <li><a href="#">Policy Voice</a></li>
+                                            <li><a href="#">Policy videos</a></li>
+                                            <li><a href="#">Press Office</a></li>
+                                            <li><a href="#">Policy and Parliamentary Affairs Team</a></li>
+                                            <li><a href="#">Publications</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">You <i class="fa fa-caret-down"></i></a>
+                                <div class="dropdown--mega collapse">
+                                    <div class="l-container">
+                                        <ul class="nav">
+                                            <li><h4><a href="#">Your business topics</a></h4></li>
+                                            <li><a href="#">Business Development and Strategy</a></li>
+                                            <li><a href="#">Directors and Boards</a></li>
+                                            <li><a href="#">Economy</a></li>
+                                            <li><a href="#">Finance</a></li>
+                                            <li><a href="#">Government Policy and Legislation</a></li>
+                                            <li><a href="#">HR and Personal Development</a></li>
+                                            <li><a href="#">Operations and Infrastructure</a></li>
+                                            <li><a href="#">Technology</a></li>
+                                            <li><a href="#">Third Sector</a></li>
+                                            <li><a href="#">Trading Overseas</a></li>
+                                            <li><a href="#">Sustainability</a></li>
+                                        </ul>
+                                        <ul class="nav">
+                                            <li><h4><a href="#">Your venues and benefits</a></h4></li>
+                                            <li><a href="#">International</a></li>
+                                            <li><a href="#">East Midlands</a></li>
+                                            <li><a href="#">East of England</a></li>
+                                            <li><a href="#">Guernsey</a></li>
+                                            <li><a href="#">Isle of Man</a></li>
+                                            <li><a href="#">Jersey</a></li>
+                                            <li><a href="#">London</a></li>
+                                            <li><a href="#">North East</a></li>
+                                            <li><a href="#">North West</a></li>
+                                            <li><a href="#">Northern Ireland</a></li>
+                                            <li><a href="#">Scotland</a></li>
+                                            <li><a href="#">South</a></li>
+                                            <li><a href="#">South West</a></li>
+                                            <li><a href="#">Wales</a></li>
+                                            <li><a href="#">West Midlands</a></li>
+                                            <li><a href="#">Yorkshire</a></li>
+                                        </ul>
+                                        <ul class="nav">
+                                            <li><h4><a href="#">Your local network</a></h4></li>
+                                            <li><a href="#">Director training and development</a></li>
+                                            <li><a href="#">Events</a></li>
+                                            <li><a href="#">Food and drink at Pall Mall</a></li>
+                                            <li><a href="#">Influencing government</a></li>
+                                            <li><a href="#">Information and advice</a></li>
+                                            <li><a href="#">IoD Business Directory</a></li>
+                                            <li><a href="#">IoD NXD Directory</a></li>
+                                            <li><a href="#">IoD Venues</a></li>
+                                            <li><a href="#">IoD Jobs and Recruitment</a></li>
+                                            <li><a href="#">Specially Negotiated Products and Services</a></li>
+                                            <li><a href="#">Flexible working and Pall Mall Office space</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="navbar__secondary-item">
+                                <a href="#">Quick Links <i class="fa fa-caret-down"></i></a>
+                                <div class="dropdown--mega collapse">
+                                    <div class="l-container">
+                                        <h3><a href="#">Quick Links</a></h3>
+                                        <ul class="nav">
+                                            <li><a href="#">Advice and information</a></li>
+                                            <li><a href="#">Ask Anna</a></li>
+                                            <li><a href="#">Business topics</a></li>
+                                            <li><a href="#">Business Information Service</a></li>
+                                            <li><a href="#">Business Library</a></li>
+                                            <li><a href="#">Information resources</a></li>
+                                        </ul>
+                                        <ul class="nav">
+                                            <li><a href="#">Legal alert</a></li>
+                                            <li><a href="#">Directors' Advisory Service</a></li>
+                                            <li><a href="#">Directors' Law Express</a></li>
+                                            <li><a href="#">Directors' Tax Line</a></li>
+                                            <li><a href="#">Publications</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="navbar__secondary-item">
+                                <a href="#">About the IoD <i class="fa fa-caret-down"></i></a>
+                                <div class="dropdown--mega collapse">
+                                    <div class="l-container">
+                                        <h3><a href="#">About the IoD</a></h3>
+                                        <ul class="nav">
+                                            <li><a href="#">Advice and information</a></li>
+                                            <li><a href="#">Ask Anna</a></li>
+                                            <li><a href="#">Business topics</a></li>
+                                            <li><a href="#">Business Information Service</a></li>
+                                            <li><a href="#">Business Library</a></li>
+                                            <li><a href="#">Information resources</a></li>
+                                        </ul>
+                                        <ul class="nav">
+                                            <li><a href="#">Legal alert</a></li>
+                                            <li><a href="#">Directors' Advisory Service</a></li>
+                                            <li><a href="#">Directors' Law Express</a></li>
+                                            <li><a href="#">Directors' Tax Line</a></li>
+                                            <li><a href="#">Publications</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav><!-- end .navbar -->
+                    <div class="navbar__overlay"></div>
+                </div>
+            </header>
+            <!-- end .header -->

@@ -1,0 +1,54 @@
+.flyout {
+    @include transition(all .3s ease);
+    @include backface-visibility(hidden);
+}
+
+.flyout {
+    background-color: lighten($navbar-dropdown-bg, 7%);
+    border-left: 1px solid darken($navbar-dropdown-bg, 7%);
+    right: sz(-$navbar-width);
+    position: fixed;
+    width: sz($navbar-width);
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+
+    &.is-active {
+    	right: 0;
+    }
+}
+
+
+.flyout__outer {
+    //background-color: $brand-primary;
+    width: sz($navbar-width);
+    height: 100%;
+    overflow: hidden;
+}
+
+
+.flyout__inner {
+    width: sz($navbar-width + 30);
+    height: 100%;
+    // margin-bottom: $line-height-computed * 2;
+    overflow-y: auto;
+}
+
+
+.flyout__overlay {
+    display: none;
+
+    &.is-active {
+        @include backface-visibility(hidden);
+        @include transition(background .3s ease);
+        // @include box-shadow(4px 0 4px rgba(0, 0, 0, .1));
+        // cursor: pointer;
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+}

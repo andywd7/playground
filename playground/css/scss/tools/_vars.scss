@@ -1,0 +1,169 @@
+// ====================
+// VARIABLES
+// ====================
+
+
+// Global Variables
+// ====================
+
+$colors: (
+	// Greys
+	// ====================
+    grey: (
+        darker:   lighten(#000, 20%),  // #333
+		dark:     lighten(#000, 40%),  // #666
+		base:     lighten(#000, 60%),  // #999
+		light:    lighten(#000, 80%),  // #ccc
+		lighter:  lighten(#000, 90%),  // #e6e6e6
+		lightest: lighten(#000, 95.5%) // #f4f4f4
+    ),
+    // Brand Colours
+	// ====================
+    primary: (
+    	dark:  darken(#467c9c, 7%),
+        base:  #467c9c,
+        light: lighten(#467c9c, 7%),
+        text:  #005373
+    ),
+    green: (
+    	dark:  #069369, // #1d9166
+        base:  #44aa8c, // #48a78a
+        light: #a1ccbc  // #a1cbb9
+    ),
+    gold: (
+    	dark:  #bf9227,
+        base:  #e4c52d,
+        light: #ebd66d
+    ),
+    red: (
+    	dark:  #a00a2d, // #a11e31
+        base:  #b84762, // #b7465f
+        light: #ca7589  // #c57385
+    ),
+    blue: (
+    	dark:  #006186, // #006487
+        base:  #0c9aac, // #009dad
+        light: #64b7cf  // #19b3cb
+    ),
+    purple: (
+    	dark:  #592b71,
+        base:  #733e8d,
+        light: #b699c0
+    )
+);
+
+$brand-success:         color(green, dark) !default;
+$brand-warning:         color(gold, dark) !default;
+$brand-danger:          color(red) !default;
+$brand-info:            color(purple, light) !default;
+
+
+// Scaffolding
+// --------------------
+
+$body-bg:               #f8f8f8 !default;
+$text-color:            color(grey, dark) !default;
+
+
+// Links
+// --------------------
+
+$link-color:            $brand-info !default;
+$link-hover-color:      darken($link-color, 15%) !default;
+
+
+// Typography
+// --------------------
+
+$font-family-sans-serif:  Tahoma, Verdana, Geneva, sans-serif !default; // "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-base:        $font-family-sans-serif !default;
+
+$font-value-base:         14 !default;
+$font-size-html:          87.5% !default;
+$font-size-base:          sz($font-value-base) !default; // 1rem or 14px
+
+$line-height-base:        1.4 !default; // 20/14
+$line-height-computed:    sz($font-value-base * $line-height-base) !default; // 20px
+
+
+// Components
+// --------------------
+//
+// Based on 1.4em(14px) font-size and 1.4 line-height (~20px to start)
+
+$padding-base-vertical:          sz(6px) !default;
+$padding-base-horizontal:        sz(12px) !default;
+
+$border-radius-base:             sz(3px) !default;
+
+
+
+// Component Variables
+// ==============================
+
+// Breakpoint mixin media query breakpoints
+// --------------------------------------------------
+//
+// create $breakpoint variables like so
+// assume min-width (by default) if only a number
+
+// Small screen / phone in landscape
+$bp-sm:     (560 / 16) * 1em;
+
+// Medium screen / tablet portrait
+$bp-md:     (740 / 16) * 1em;
+
+// Width at which Navbar expands from collapsed view
+$bp-navbar: (769 / 16) * 1em;
+
+// Large screen / desktop ('no-query' = width that ie-old stylesheet is compiled for)
+$bp-lg:     (980 / 16) * 1em, 'no-query' true;
+
+// Extra large screen / wide desktop
+$bp-xlg:    (1140 / 16) * 1em;
+
+// Extra extra large screen / very wide desktop
+$bp-xxlg:   (1300 / 16) * 1em;
+
+// Retina & High Pixel screen
+$bp-retina: min-resolution 1.5dppx;
+
+
+// Grid system
+// --------------------
+
+// Number of columns in the grid system
+$total-columns: 12 !default;
+//$row-width: sz(1300) !default;
+// Padding, is divided by 2 in g-col mixin and applied to the left and right of all columns
+$column-gutter: sz(20) !default;
+
+
+// Navbar/Header
+// --------------------
+
+// Header
+$header-bg:                        #fff !default;
+
+// Navbar
+$navbar-dropdown-bg:			   color(primary);
+$navbar-dropdown-color:			   #fff;
+$navbar-width:                     240px !default;
+
+// Navbar toggle
+$navbar-toggle-hover-bg:           #ddd !default;
+$navbar-toggle-icon-bar-bg:        #ccc !default;
+$navbar-toggle-border-color:       #ddd !default;
+
+
+// Navs
+// --------------------
+
+$nav-link-padding:                          sz(10px 15px) !default;
+$nav-link-hover-bg:                         darken(color(grey, lighter), 5%) !default;
+
+$nav-disabled-link-color:                   color(grey, light) !default;
+$nav-disabled-link-hover-color:             color(grey, light) !default;
+
+$nav-open-link-hover-color:                 #fff !default;
+$nav-open-caret-border-color:               #fff !default;

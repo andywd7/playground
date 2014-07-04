@@ -138,38 +138,16 @@
     <Content Include="fonts\icons.ttf" />
     <Content Include="fonts\icons.eot" />
     <Content Include="css\style.scss" />
-    <Content Include="css\scss\objects\_tooltip.scss" />
-    <Content Include="css\scss\objects\_text.scss" />
-    <Content Include="css\scss\objects\_tabs.scss" />
-    <Content Include="css\scss\objects\_sections.scss" />
-    <Content Include="css\scss\objects\_nav.scss" />
-    <Content Include="css\scss\objects\_messaging.scss" />
-    <Content Include="css\scss\objects\_main.scss" />
-    <Content Include="css\scss\objects\_lists.scss" />
-    <Content Include="css\scss\objects\_layout.scss" />
-    <Content Include="css\scss\objects\_icons.scss" />
-    <Content Include="css\scss\objects\_header.scss" />
-    <Content Include="css\scss\objects\_footer.scss" />
-    <Content Include="css\scss\objects\_comments.scss" />
-    <Content Include="css\scss\objects\_carousels.scss" />
-    <Content Include="css\scss\objects\_buttons.scss" />
-    <Content Include="css\scss\objects\_blocks.scss" />
-    <Content Include="css\scss\objects\_article.scss" />
-    <Content Include="css\scss\objects\_accordion.scss" />
-    <Content Include="css\scss\generic\_variables.scss" />
-    <Content Include="css\scss\generic\_reset.scss" />
-    <Content Include="css\scss\generic\_mixins.scss" />
-    <Content Include="css\scss\base\_text.scss" />
-    <Content Include="css\scss\base\_tables.scss" />
-    <Content Include="css\scss\base\_media.scss" />
-    <Content Include="css\scss\base\_main.scss" />
-    <Content Include="css\scss\base\_lists.scss" />
-    <Content Include="css\scss\base\_links.scss" />
-    <Content Include="css\scss\base\_headings.scss" />
-    <Content Include="css\scss\base\_global-classes.scss" />
-    <Content Include="css\scss\base\_forms.scss" />
-    <Content Include="css\scss\base\_animation.scss" />
     <Content Include="config\README" />
+    <Content Include="css\scss\tools\_vars.scss" />
+    <Content Include="css\scss\tools\_mixins.scss" />
+    <Content Include="css\scss\base\_normalize.custom.scss" />
+    <Content Include="css\scss\tools\_mx-mq.scss" />
+    <Content Include="css\scss\components\_navbar.scss" />
+    <Content Include="css\scss\components\_navbar2.scss" />
+    <Content Include="css\scss\components\_navs.scss" />
+    <Content Include="css\scss\components\_flyout.scss" />
+    <Content Include="css\scss\base\_scaffolding.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -258,6 +236,7 @@
     <Content Include="_data\_listitems.json" />
     <Content Include="_data\_data.json" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

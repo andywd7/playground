@@ -1,11 +1,20 @@
-<form action="{{ url }}" method="post" class="inline-form search-form">           
+<form action="{{ url }}" method="post" class="inline-form search-form" role="search">           
     <fieldset>
-	    <legend class="is-vishidden">Search</legend>
-	    <label for="search-field" class="is-vishidden">Search</label>
-	    <input type="search" placeholder="Search" id="search-field" class="search-field" />
-	    <button class="search-submit">
-	    	<span class="icon-search" aria-hidden="true"></span>
-	    	<span class="is-vishidden">Search</span>
+	    <legend class="u-sr">Search</legend>
+	    <label for="search-field" class="u-sr">Search</label>
+        <input type="search" id="search-field" class="search-field" placeholder="Search" />
+	    <button type="submit" class="btn search-submit">
+	    	<span class="icon-facebook fa-search" aria-hidden="true"></span>
+	    	<span class="u-sr">Search</span>
 	    </button>
     </fieldset>
+</form>
+
+<form action="{{ url }}" method="post" class="inline-form search-form" role="search">
+    <input type="search" id="search-field" class="search-field" placeholder="Search" />
+    <button type="submit" class="btn search-submit">
+        <span class="icon-facebook fa-search" aria-hidden="true"></span>
+        <span class="u-sr">Search</span>
+    </button>
+    <span class="icon-facebook fa-search" aria-hidden="true"></span>
 </form>

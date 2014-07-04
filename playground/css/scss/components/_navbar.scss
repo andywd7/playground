@@ -1,0 +1,323 @@
+// ====================
+// NAVBAR
+// ====================
+
+
+// Wrapper and base class
+//
+// Provide a static navbar from which we expand to create full-width, fixed, and
+// other navbar variations.
+.nav.navbar__nav {
+    > li {
+        a {
+            color: #fff;
+        }
+
+        > a {
+            &:after {
+                font-family: FontAwesome;
+                margin-left: 5px;
+                content: $fa-var-caret-down;
+            }
+        }
+    }
+}
+
+// Brand/project name
+.navbar__brand {
+    display: block;
+    float: left;
+    padding: sz(20) 0;
+}
+
+.check {
+    overflow: hidden;
+    width: 0;
+
+    &:focus {
+        outline: 0;
+
+        + label {
+            outline: 2px auto -webkit-focus-ring-color;
+        }
+    }
+}
+
+.dropdown--mega {
+    @include transition(max-height .35s .1s ease);
+    max-height: 0;
+    overflow: hidden;
+
+    > .l-container {
+        @include transition(opacity .5s ease);
+        @include opacity(0);
+    }
+
+    .nav {
+        > li {
+            > a {
+                padding: sz(8px 30px 8px 15px);
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: darken($brand-primary, 7%);
+                }
+            }
+        }
+    }
+}
+
+
+
+@include mq($to: navbar) {
+    .navbar {
+        background-color: $brand-primary;
+        right: sz(-$navbar-width);
+        position: fixed;
+        width: sz($navbar-width);
+        height: 100%;
+        overflow: hidden;
+        top: 0;
+    }
+
+    // Navbar toggle
+    //
+    // Custom button for toggling the `.navbar-collapse`, powered by the collapse
+    // JavaScript plugin.
+    .navbar__toggle {
+        position: relative;
+        float: right;
+        padding: sz(9px 10px);
+        margin: sz(39px 0);
+        height: 34px;
+        width: 44px;
+        font-size: 17px;
+        line-height: .9;
+        text-align: center;
+        background-color: transparent;
+        background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+        border: 1px solid $navbar-toggle-border-color;
+        border-radius: $border-radius-base;
+        z-index: 1001;
+
+        // We remove the `outline` here, but later compensate by attaching `:hover`
+        // styles to `:focus`.
+        &:focus {
+            outline: none;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: $navbar-toggle-hover-bg;
+        }
+      
+        &:before {
+            content: $fa-var-bars;
+        }
+    }
+    label.navbar__toggle {
+        cursor: pointer;
+    }
+
+    .nav.navbar__nav {
+        position: relative;
+        z-index: 1001;
+
+        > li {
+            a {
+                border-bottom: 1px solid darken($brand-primary, 7%);
+                letter-spacing: 1px;
+            }
+
+            > a {
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: darken($brand-primary, 7%);
+                }
+
+                &.is-active:after {
+                    content: $fa-var-caret-up;
+                }
+            }
+        }
+
+        &.navbar__scroller {
+            width: sz($navbar-width + 30);
+            height: 100%;
+            margin-bottom: $line-height-computed * 2;
+            overflow-y: auto;
+        }
+    }
+  
+    .is-active + .dropdown--mega {
+        background-color: darken($brand-primary, 3%);
+        max-height: 700px;
+    
+        > .l-container {
+            @include opacity(1);
+        }
+    }
+
+    .dropdown--mega {    
+        > .l-container {
+            width: 100%;
+        }
+    }
+
+    // Vertical menu that slides from the right
+    .no-js #js-toggle:checked + .navbar__toggle + .navbar, 
+    .navbar.is-active {
+        right: 0;
+    }
+  
+  
+    .navbar__overlay {
+        display: none;
+
+        &.is-active {
+            @include backface-visibility(hidden);
+            @include transition(background .3s ease);
+            @include box-shadow(4px 0 4px rgba(0, 0, 0, .1));
+            //cursor: pointer;
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+    }
+
+    // Push class applied to the body
+    .navbar__push {
+        overflow-x: hidden;
+        position: relative;
+        left: 0;
+    }
+
+    .navbar__push--right {
+        left: sz(-$navbar-width);
+    }
+   
+    .navbar,
+    .navbar__push {
+        @include transition(all .3s ease);
+        @include backface-visibility(hidden);
+    }
+
+
+    .no-js {
+        .navbar__toggle {
+            @include transition(all .3s ease);
+            right: 0;
+        }
+
+        .navbar__nav > li > a:after {
+            display: none;
+        }
+
+        #js-toggle:checked {
+            + .navbar__toggle {
+                right: sz($navbar-width);
+
+                &:before {
+                    content: $fa-var-times;
+                }
+            }
+        }
+    }
+}
+
+
+
+@include mq($from: navbar) {
+    .navbar {
+        clear: both;
+        position: relative;
+        z-index: 1001;
+    }
+
+    .navbar__toggle {
+        display: none;
+    }
+
+    .nav.navbar__nav {
+        position: relative;
+
+        > li {
+            @include transition(background-color .35s .1s ease-in);
+            float: left;
+            margin-left: sz(2px);
+            position: static;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &.navbar__secondary-item {
+                float: right;
+            } 
+
+            > a {
+                @include transition(color .35s ease-in);
+                color: $text-color;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    @include transition(color 0s);
+                    background-color: $brand-primary;
+                    color: #fff;
+                }
+            }
+
+            &:hover,
+            &:focus {
+                @include transition(background-color 0s);
+                background-color: $brand-primary;
+
+                > a {
+                    color: #fff;
+
+                    &:after {
+                        content: $fa-var-caret-up;
+                    }
+
+                    + .dropdown--mega {
+                        //@include box-shadow(0 2px 3px rgba(0,0,0,.2));
+                        max-height: 700px;
+                        z-index: 100;
+                        
+                        > .l-container {
+                           @include opacity(1);
+                        }
+                    }
+                }
+            }
+        }
+
+        .dropdown--mega {
+            background-color: $brand-primary;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+
+            > .l-container {
+                padding: $line-height-computed 0;
+                //@include opacity(0);
+            }
+
+            .nav {
+                @include g-col($columns:4,$collapse:null);
+            }
+
+            h3 {
+                display: none;
+            }
+        }
+    }
+}
