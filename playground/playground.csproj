@@ -109,6 +109,7 @@
     <Content Include="images\fpo_4x3.png" />
     <Content Include="images\fpo_avatar.png" />
     <Content Include="images\fpo_square.png" />
+    <Content Include="images\logo.gif" />
     <Content Include="images\logo.png" />
     <Content Include="images\sample\landscape-16x9-mountains.jpg" />
     <Content Include="images\sample\thumb-square-fire.jpg" />
@@ -180,7 +181,7 @@
     <Content Include="_patterns\01-molecules\05-navigation\03-pagination.mustache" />
     <Content Include="_patterns\01-molecules\05-navigation\02-breadcrumbs.mustache" />
     <Content Include="_patterns\01-molecules\05-navigation\01-footer-nav.mustache" />
-    <Content Include="_patterns\01-molecules\05-navigation\00-primary-nav.mustache" />
+    <Content Include="_patterns\01-molecules\05-navigation\00-navbar-primary.mustache" />
     <Content Include="_patterns\01-molecules\04-forms\02-newsletter.mustache" />
     <Content Include="_patterns\01-molecules\04-forms\01-comment-form.mustache" />
     <Content Include="_patterns\01-molecules\04-forms\00-search.mustache" />
@@ -235,6 +236,7 @@
     <Content Include="_patterns\00-atoms\00-meta\_00-head.mustache" />
     <Content Include="_data\_listitems.json" />
     <Content Include="_data\_data.json" />
+    <Content Include="_patterns\00-atoms\04-images\08-navbar-brand.mustache" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
