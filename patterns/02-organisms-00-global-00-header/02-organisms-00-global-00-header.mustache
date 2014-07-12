@@ -1,9 +1,23 @@
-&lt;!-- Begin .header --&gt;
-&lt;header class=&quot;header cf&quot; role=&quot;banner&quot;&gt;
-	{{&gt; atoms-logo }}
-	&lt;a href=&quot;#search-form&quot; class=&quot;nav-toggle nav-toggle-search icon-search&quot;&gt;&lt;span class=&quot;is-vishidden&quot;&gt;Search&lt;/span&gt;&lt;/a&gt;
-	&lt;a href=&quot;#nav&quot; class=&quot;nav-toggle nav-toggle-menu icon-menu&quot;&gt;&lt;span class=&quot;is-vishidden&quot;&gt;Menu&lt;/span&gt;&lt;/a&gt;
-	{{&gt; molecules-primary-nav }}
-	{{&gt; molecules-search }}
-&lt;/header&gt;
-&lt;!-- End .header --&gt;
+&lt;a href=&quot;#main&quot; class=&quot;sr-only&quot;&gt;Skip to main content&lt;/a&gt;
+&lt;div id=&quot;page&quot; class=&quot;navbar__push&quot;&gt;
+    &lt;!-- Begin .header --&gt;
+    &lt;header class=&quot;l-header&quot; role=&quot;banner&quot; style=&quot;border-top: 5px solid #444&quot;&gt;
+        &lt;div class=&quot;l-container&quot;&gt;
+            {{&gt; atoms-navbar-brand }}
+
+            &lt;a href=&quot;#&quot; id=&quot;js-basket&quot; class=&quot;basket&quot; role=&quot;button&quot;&gt;&lt;i class=&quot;fa fa-shopping-cart&quot;&gt;&lt;/i&gt; Basket &lt;span&gt;(0)&lt;/span&gt;&lt;/a&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;js-toggle&quot; class=&quot;navbar__check&quot; role=&quot;button&quot;&gt;
+            &lt;label for=&quot;js-toggle&quot; id=&quot;leftPush&quot; class=&quot;navbar__toggle fa&quot;&gt;
+                &lt;span class=&quot;sr-only&quot;&gt;Toggle navigation&lt;/span&gt;
+            &lt;/label&gt;
+
+            &lt;div id=&quot;navbar-nav&quot; class=&quot;navbar flyout--mobile&quot;&gt;
+                &lt;div class=&quot;navbar__nav flyout__inner&quot;&gt;
+                    {{&gt; molecules-navbar-secondary }}
+                    {{&gt; molecules-navbar-primary }}
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            {{&gt; molecules-navbar-crumbs }}
+        &lt;/div&gt;
+    &lt;/header&gt;&lt;!-- end .header --&gt;
