@@ -1,0 +1,79 @@
+// ====================
+// LAYOUTS
+// ====================
+
+.l-container {
+  @include cf();
+
+	margin: 0 auto;
+	width: 96%;
+
+  //@include breakpoint($bp-mobile-w) {
+  //  max-width: (560 / 14) * 1em;
+  //}
+	//@include breakpoint($bp-tablet-w) {
+  //  max-width: (740 / 14) * 1em;
+  //}
+  @include mq($from: desktop) {
+    //max-width: (980 / 14) * 1em;
+    max-width: sz(980);
+  }
+  @include mq($from: wide) {
+    //max-width: (1140 / 14) * 1em;
+    max-width: sz(1140);
+  }
+  //@include breakpoint($bp-desktop-xl-w) {
+  //  max-width: (1300 / 14) * 1em;
+  //}
+}
+
+.g-container {
+  @include mq($from: tablet) {
+    @include g-row();
+  }
+}
+
+.article {
+  margin-bottom: $line-height-computed;
+
+  @include mq($from: mobile) {
+    @include g-col(
+      // Control the number of columns
+      $columns:6
+      // Specify whethere or not this is the last column in the row
+      //$last-column:true,
+      // Choose whether or not to center this column
+      //$center:true,
+      // Choose the number of columns to offset this element by
+      //$offset:3,
+      // Specify how many columns to push this element past
+      //$push:3,
+      // Specify how many columns to pull this element past
+      //$pull:9,
+      // Set to true to remove column padding
+      //$collapse:null,
+      // Specify the float direction
+      //$float:left
+    );
+  }
+
+  @include mq($from: desktop) {
+    @include g-col(3);
+  }
+}
+
+.panel {
+  background-color: #fff;
+  min-height: 300px;
+}
+
+.l-header {
+  background-color: $header-bg;
+  border-bottom: 1px solid color(grey, lighter);
+  margin-bottom: $line-height-computed;
+
+  // @include mq($from: navbar) {
+  //   position: relative;
+  //   z-index: 1001;
+  // }
+}

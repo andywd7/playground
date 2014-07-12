@@ -97,8 +97,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\scss\vendor\font-awesome\font-awesome.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\style.ie-old.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\icons.dev.svg" />
     <Content Include="fonts\icons.svg" />
     <Content Include="Global.asax" />
@@ -120,9 +123,24 @@
     <Content Include="images\sample\tout-4x3-climber.jpg" />
     <Content Include="images\sample\tout-4x3-climbers.jpg" />
     <Content Include="images\sample\tout-4x3-stream.jpg" />
+    <Content Include="js\bootstrap\affix.js" />
+    <Content Include="js\bootstrap\alert.js" />
+    <Content Include="js\bootstrap\button.js" />
+    <Content Include="js\bootstrap\carousel.js" />
+    <Content Include="js\bootstrap\collapse.js" />
+    <Content Include="js\bootstrap\dropdown.js" />
+    <Content Include="js\bootstrap\modal.js" />
+    <Content Include="js\bootstrap\popover.js" />
+    <Content Include="js\bootstrap\scrollspy.js" />
+    <Content Include="js\bootstrap\tab.js" />
+    <Content Include="js\bootstrap\tooltip.js" />
+    <Content Include="js\bootstrap\transition.js" />
     <Content Include="js\fitvids.js" />
     <Content Include="js\init.js" />
     <Content Include="js\jquery-2.0.0b2.js" />
+    <Content Include="js\jquery-accessibleMegaMenu.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\main.js" />
     <Content Include="js\modernizr.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -149,6 +167,35 @@
     <Content Include="css\scss\components\_navs.scss" />
     <Content Include="css\scss\components\_flyout.scss" />
     <Content Include="css\scss\base\_scaffolding.scss" />
+    <Content Include="css\scss\layout\_ads.scss" />
+    <Content Include="css\scss\layout\_grid.scss" />
+    <Content Include="css\scss\layout\_layouts.scss" />
+    <Content Include="css\scss\base\_buttons.scss" />
+    <Content Include="css\scss\base\_forms.scss" />
+    <Content Include="css\scss\components\_navbar__search.scss" />
+    <Content Include="css\scss\components\_crumbs.scss" />
+    <Content Include="css\scss\utils\_component-animations.scss" />
+    <Content Include="css\scss\utils\_utilities.scss" />
+    <Content Include="css\scss\vendor\font-awesome\font-awesome.scss" />
+    <Content Include="css\scss\vendor\font-awesome\_bordered-pulled.scss" />
+    <Content Include="css\scss\vendor\font-awesome\_core.scss" />
+    <Content Include="css\scss\vendor\font-awesome\_extras.scss" />
+    <Content Include="css\scss\vendor\font-awesome\_fixed-width.scss" />
+    <Content Include="css\scss\vendor\font-awesome\_icons.scss" />
+    <Content Include="css\scss\vendor\font-awesome\_larger.scss" />
+    <Content Include="css\scss\vendor\font-awesome\_list.scss" />
+    <Content Include="css\scss\vendor\font-awesome\_mixins.scss" />
+    <Content Include="css\scss\vendor\font-awesome\_path.scss" />
+    <Content Include="css\scss\vendor\font-awesome\_rotated-flipped.scss" />
+    <Content Include="css\scss\vendor\font-awesome\_spinning.scss" />
+    <Content Include="css\scss\vendor\font-awesome\_stacked.scss" />
+    <Content Include="css\scss\vendor\font-awesome\_variables.scss" />
+    <Content Include="css\scss\_shame.scss" />
+    <Content Include="css\style.ie-old.scss" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -179,7 +226,7 @@
     <Content Include="_patterns\01-molecules\06-components\00-social-share.mustache" />
     <Content Include="_patterns\01-molecules\05-navigation\04-tabs.mustache" />
     <Content Include="_patterns\01-molecules\05-navigation\03-pagination.mustache" />
-    <Content Include="_patterns\01-molecules\05-navigation\02-breadcrumbs.mustache" />
+    <Content Include="_patterns\01-molecules\05-navigation\02-navbar-crumbs.mustache" />
     <Content Include="_patterns\01-molecules\05-navigation\01-footer-nav.mustache" />
     <Content Include="_patterns\01-molecules\05-navigation\00-navbar-primary.mustache" />
     <Content Include="_patterns\01-molecules\04-forms\02-newsletter.mustache" />
@@ -237,6 +284,7 @@
     <Content Include="_data\_listitems.json" />
     <Content Include="_data\_data.json" />
     <Content Include="_patterns\00-atoms\04-images\08-navbar-brand.mustache" />
+    <Content Include="_patterns\01-molecules\05-navigation\05-navbar-secondary.mustache" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

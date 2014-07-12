@@ -1,0 +1,136 @@
+// ====================
+// GRIDS
+// ====================
+//
+// Foundation by ZURB
+// foundation.zurb.com
+// Licensed under MIT Open Source
+
+
+// Grid Functions
+// ====================
+
+// @FUNCTION
+// $colNumber - Found in _vars.scss
+// $totalColumns - Found in _vars.scss
+@function g-calc($colNumber, $totalColumns) {
+  @return percentage(($colNumber / $totalColumns));
+}
+
+
+// @mixins
+// ====================
+
+// For creating container, nested, and collapsed rows.
+//
+// $behavior - Any special behavior for this row? Default: false. Options: nest, collapse, nest-collapse, false.
+@mixin g-row($behavior: false) {
+
+  // use @include g-row(collapse); to collapsed a container row margins
+  @if $behavior == collapse {
+    //width: 100%;
+    margin: 0;
+    //max-width: $row-width;
+  }
+
+  // use @include g-row(nest-collapse); to collapse outer margins on a nested row
+  @else if $behavior == nest-collapse {
+    //width: auto;
+    margin: 0;
+    //max-width: none;
+  }
+
+  // use @include g-row; to include a nested row
+  @else {
+    //width: auto;
+    margin-left: -($column-gutter/2);
+    margin-right: -($column-gutter/2);
+    //margin-top: 0;
+    //margin-bottom: 0;
+    //max-width: none;
+  }
+
+  // use @include g-row; to use a container row
+  // @else {
+  //   //width: 100%;
+  //   margin-left: auto;
+  //   margin-right: auto;
+  //   //margin-top: 0;
+  //   //margin-bottom: 0;
+  //   //max-width: $row-width;
+  // }
+
+  // Clearfix for all rows
+  @include cf();
+}
+
+// Creates a column, should be used inside of a media query to control layouts
+//
+// $columns - The number of columns this should be
+// $last-column - Is this the last column? Default: false.
+// $center - Center these columns? Default: false.
+// $offset - # of columns to offset. Default: false.
+// $push - # of columns to push. Default: false.
+// $pull - # of columns to pull. Default: false.
+// $collapse - Get rid of gutter padding on column? Default: false.
+// $float - Should this float? Default: true. Options: true, false, left, right, none.
+@mixin g-col(
+  $columns:false, 
+  $last-column:false, 
+  $center:false, 
+  $offset:false, 
+  $push:false, 
+  $pull:false, 
+  $collapse:false, 
+  $float:true,
+  $position:false) {
+
+  // If positioned for default .column, include relative position
+  @if $position {
+    position: relative;
+  }
+
+  // If collapsed, get rid of gutter padding
+  @if $collapse == true {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  // Gutter padding whenever a column isn't set to collapse
+  // (use $collapse:true to add 0 padding)
+  // (use $collapse:null to add no padding)
+  @else if $collapse == false {
+    padding-left: $column-gutter / 2;
+    padding-right: $column-gutter / 2;
+  }
+
+  // If a column number is given, calculate width
+  @if $columns {
+    width: g-calc($columns, $total-columns);
+
+    // If last column, float to the right
+    @if $last-column { float: right; }
+  }
+
+  // Source Ordering, adds left/right depending on which you use.
+  @if $push { left: g-calc($push, $total-columns); right: auto; }
+  @if $pull { right: g-calc($pull, $total-columns); left: auto; }
+
+  // If
+  @if $float {
+    @if $float == left or $float == true { float: left; }
+    @else if $float == right { float: right; }
+    @else if $float == none { float: none; }
+    @else if $float == null { }
+  }
+
+  // If centered, get rid of float and add appropriate margins
+  @if $center {
+    margin-left: auto;
+    margin-right: auto;
+    //float: none !important;
+  }
+
+  // If offset, calculate appropriate margins
+  @if $offset { margin-left: g-calc($offset, $total-columns) !important; }
+
+}

@@ -1,26 +1,26 @@
 .flyout {
-    @include transition(all .3s ease);
+	@include transition(all .3s ease);
     @include backface-visibility(hidden);
-}
-
-.flyout {
     background-color: lighten($navbar-dropdown-bg, 7%);
     border-left: 1px solid darken($navbar-dropdown-bg, 7%);
     right: sz(-$navbar-width);
     position: fixed;
     width: sz($navbar-width);
     height: 100%;
-    overflow: hidden;
     top: 0;
 
     &.is-active {
     	right: 0;
+    	z-index: 1001;
     }
+
+    @include mq($to: navbar) {
+	    overflow: hidden;
+	}
 }
 
 
 .flyout__outer {
-    //background-color: $brand-primary;
     width: sz($navbar-width);
     height: 100%;
     overflow: hidden;
@@ -30,8 +30,10 @@
 .flyout__inner {
     width: sz($navbar-width + 30);
     height: 100%;
-    // margin-bottom: $line-height-computed * 2;
-    overflow-y: auto;
+
+    @include mq($to: navbar) {
+	    overflow: auto;
+	}
 }
 
 

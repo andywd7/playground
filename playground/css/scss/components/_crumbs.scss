@@ -1,0 +1,113 @@
+// ====================
+// BREADCRUMBS
+// ====================
+
+
+.crumbs {
+    //margin-bottom: 16px;
+    padding: sz(3px 0 5px 12px);
+} 
+
+.crumbs__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.crumbs__item {
+    color: #000;
+    display: inline-block;
+    font-size: sz(11px);
+    white-space: nowrap;
+
+    &:after {
+        //bottom: 1px;
+        content: $fa-var-angle-right; // ">";
+        font-family: FontAwesome;
+        font-size: 10px;
+        margin: 0 3px;
+        position: relative;
+    }
+
+    a {
+        color: #333;
+
+        &:hover,
+        &:focus {
+            color: color(blue);
+        }
+    }
+}
+
+.crumbs__item--last:after {
+    display: none;
+}
+
+
+@include mq($to: mobile) {
+    .crumbs__header {
+        font-size: sz(12px);
+        font-weight: normal;
+        margin: 2px 0 0;
+        position: relative;
+
+        a {
+            display: block;
+
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
+
+            &:after {
+                // @include transition(transform .2s);
+                //-webkit-transition: -webkit-transform .2s;
+                content: $fa-var-caret-down;
+                display: inline-block;
+                font-family: FontAwesome;
+                position: relative;
+                margin-left: 5px;
+            }
+        }
+    }
+
+    .crumbs__list {
+        left: -999em;
+        margin-top: 5px;
+        position: absolute;
+    }
+
+    .crumbs {
+        &:hover,
+        &:focus {
+            .crumbs__header {
+                a {
+                    color: $link-hover-color;
+
+                    // &:after {
+                    //     @include rotate(90deg);
+                    // }
+                }
+            }
+
+            .crumbs__list {
+                @include box-shadow(0 1px 2px rgba(0,0,0,.15));
+                background-color: #fff;
+                border-top: 1px solid $navbar-border;
+                left: 0;
+                line-height: 19px;
+                padding: 0 5px 0 15px;
+                width: 100%;
+                z-index: 10;
+            }
+        }
+    }
+}
+
+
+@include mq($from: mobile) {
+    .crumbs__header {
+        left: -999em;
+        position: absolute;
+    }
+}

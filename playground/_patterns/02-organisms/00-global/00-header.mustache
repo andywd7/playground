@@ -1,18 +1,23 @@
-<body class="body">
-        <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->    
-    <div class="navbar__push page" id="page">
-        <!-- Begin .header -->
-        <header class="l-header" role="banner">
-            <div class="l-container">
-                {{> atoms-navbar-brand }}
+<a href="#main" class="sr-only">Skip to main content</a>
+<div id="page" class="navbar__push">
+    <!-- Begin .header -->
+    <header class="l-header" role="banner" style="border-top: 5px solid #444">
+        <div class="l-container">
+            {{> atoms-navbar-brand }}
 
-                <input type="checkbox" id="js-toggle" class="navbar__check" role="button">
-                <label for="js-toggle" id="leftPush" class="navbar__toggle fa">
-                    <span class="sr-only">Toggle navigation</span>
-                </label>
+            <a href="#" id="js-basket" class="basket" role="button"><i class="fa fa-shopping-cart"></i> Basket <span>(0)</span></a>
+            <input type="checkbox" id="js-toggle" class="navbar__check" role="button">
+            <label for="js-toggle" id="leftPush" class="navbar__toggle fa">
+                <span class="sr-only">Toggle navigation</span>
+            </label>
 
-                {{> molecules-navbar-primary }}
+            <div id="navbar-nav" class="navbar flyout--mobile">
+                <div class="navbar__nav flyout__inner">
+                    {{> molecules-navbar-secondary }}
+                    {{> molecules-navbar-primary }}
+                </div>
             </div>
-        </header><!-- end .header -->
+
+            {{> molecules-navbar-crumbs }}
+        </div>
+    </header><!-- end .header -->

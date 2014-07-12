@@ -1,0 +1,30 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.test1 {
+  font-size: sz(28px);
+  margin: sz(0 20px);
+  > span {
+    font-size: sz(14px);
+    margin: sz(0 20px);
+  }
+}
+
+.test2 {
+  font-size: 2rem;
+  margin: 0 1.428rem;
+  > span {
+    font-size: 1rem;
+    margin: 0 1.428rem;
+  }
+}
+
+// Main marketing message and sign up button
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}

@@ -1,0 +1,55 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+// Floats
+// -------------------------
+
+.u-cf {
+  @include cf();
+}
+.u-center-block {
+  @include center-block();
+}
+.u-fr {
+  float: right !important;
+}
+.u-fl {
+  float: left !important;
+}
+
+
+// Toggling content
+// -------------------------
+
+// Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1
+.u-hide {
+  display: none !important;
+}
+.u-show {
+  display: block !important;
+}
+.u-invisible {
+  visibility: hidden;
+}
+.u-text-hide {
+  @include text-hide();
+}
+
+
+// Hide from screenreaders and browsers
+//
+// Credit: HTML5 Boilerplate
+
+.u-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+
+// For Affix plugin
+// -------------------------
+
+.u-affix {
+  position: fixed;
+}

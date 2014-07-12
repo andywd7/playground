@@ -49,6 +49,12 @@ $colors: (
     	dark:  #592b71,
         base:  #733e8d,
         light: #b699c0
+    ),
+    social: (
+    	facebook: #3b5998,
+    	linkedin: #0976b4,
+    	twitter:  #55acee,
+    	youtube:  #cc181e
     )
 );
 
@@ -116,8 +122,8 @@ $bp-md:     (740 / 16) * 1em;
 // Width at which Navbar expands from collapsed view
 $bp-navbar: (769 / 16) * 1em;
 
-// Large screen / desktop ('no-query' = width that ie-old stylesheet is compiled for)
-$bp-lg:     (980 / 16) * 1em, 'no-query' true;
+// Large screen / desktop
+$bp-lg:     (980 / 16) * 1em;
 
 // Extra large screen / wide desktop
 $bp-xlg:    (1140 / 16) * 1em;
@@ -139,6 +145,59 @@ $total-columns: 12 !default;
 $column-gutter: sz(20) !default;
 
 
+// Buttons
+// --------------------
+// For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-font-weight:                normal !default;
+
+$btn-default-color:              color(grey, dark) !default;
+$btn-default-bg:                 #fff !default;
+$btn-default-border:             #ccc !default;
+
+$btn-primary-color:              #fff !default;
+$btn-primary-bg:                 color(primary) !default;
+$btn-primary-border:             darken($btn-primary-bg, 5%) !default;
+
+
+
+// Forms
+// --------------------
+
+// `<input>` background color
+$input-bg:                       #fff !default;
+// `<input disabled>` background color
+$input-bg-disabled:              color(grey, lighter) !default;
+
+// Text color for `<input>`s
+$input-color:                    color(grey) !default;
+// `<input>` border color
+$input-border:                   #ccc !default;
+// `<input>` border radius
+$input-border-radius:            $border-radius-base !default;
+// Border color for inputs on focus
+$input-border-focus:             #66afe9 !default;
+
+// Placeholder text color
+$input-color-placeholder:        color(grey, light) !default;
+
+// Default `.form-control` height
+$input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + sz(1.5px)) !default;
+// Large `.form-control` height
+//$input-height-large:             (ceil($font-size-large * $line-height-large) + ($padding-large-vertical * 2) + 2) !default;
+// Small `.form-control` height
+//$input-height-small:             (floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2) + 2) !default;
+
+$legend-color:                   color(grey, dark) !default;
+$legend-border-color:            #e5e5e5 !default;
+
+// Background color for textual input addons
+$input-group-addon-bg:           color(grey, lighter) !default;
+// Border color for textual input addons
+$input-group-addon-border-color: $input-border !default;
+
+
+
 // Navbar/Header
 // --------------------
 
@@ -146,8 +205,14 @@ $column-gutter: sz(20) !default;
 $header-bg:                        #fff !default;
 
 // Navbar
-$navbar-dropdown-bg:			   color(primary);
-$navbar-dropdown-color:			   #fff;
+$navbar-border:					   color(grey, lighter);
+$navbar-color:					   #fff;
+$navbar-bg:						   #111;
+$navbar-color-inv:				   #333;
+$navbar-bg-inv:					   color(primary);
+
+$navbar-dropdown-bg:			   $navbar-bg-inv;
+$navbar-dropdown-color:			   $navbar-color-inv;
 $navbar-width:                     240px !default;
 
 // Navbar toggle

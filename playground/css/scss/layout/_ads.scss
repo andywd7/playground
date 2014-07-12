@@ -1,0 +1,29 @@
+// ====================
+// ADVERTS
+// ====================
+
+.ad {
+	display: none;
+
+	@include mq($from: navbar) {
+		display: block;
+		margin: 0 auto $line-height-computed;
+		overflow: hidden;
+	}
+}
+
+.ad__header {
+	@include mq($from: navbar) {
+  	//float: right;
+  	//margin: sz(10 0 0);
+  	text-align: center;
+
+  	img {
+  		background-color: $brand-info;
+  	}
+  }
+}
+
+.ad__sidebar {}
+
+.ad__block {}

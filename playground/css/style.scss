@@ -54,18 +54,67 @@ So feel free to use any of these approaches. Or don't. It's totally up to you.
  */
 
 
-
-@import "scss/tools/_mixins";
-@import "scss/tools/_vars";
-@import 'scss/tools/_mx-mq';
+$old-ie: false;
+$breakpoint-to-ems: true;
 
 
-@import "scss/base/_normalize.custom";
-@import 'scss/base/_scaffolding';
+@import "scss/vendor/font-awesome/font-awesome.scss";
+$fa-font-path: "../fonts/font-awesome";
 
-@import 'scss/components/_navs';
-@import 'scss/components/_flyout';
-@import 'scss/components/_navbar2';
+//@import "compass";
+//@import "breakpoint";
+
+
+// ====================
+// MATERIALS
+// ====================
+
+@import 'scss/tools/_mixins.scss';
+@import 'scss/tools/_vars.scss';
+@import 'scss/tools/_mx-mq.scss';
+
+
+// ====================
+// BASE
+// ====================
+
+@import 'scss/base/_normalize.custom.scss';
+@import 'scss/base/_scaffolding.scss';
+@import 'scss/base/_forms.scss';
+@import 'scss/base/_buttons.scss';
+
+
+// ====================
+// LAYOUTS
+// ====================
+
+@import 'scss/layout/_grid.scss';
+@import 'scss/layout/_layouts.scss';
+@import 'scss/layout/_ads.scss';
+
+
+// ====================
+// UTILITIES
+// ====================
+
+@import 'scss/utils/_component-animations.scss';
+
+
+// ====================
+// MODULES
+// ====================
+
+@import 'scss/components/_navs.scss';
+@import 'scss/components/_flyout.scss';
+@import 'scss/components/_navbar2.scss';
+@import 'scss/components/_navbar__search.scss';
+@import 'scss/components/_crumbs.scss';
+
+
+@import 'scss/utils/_utilities.scss';
+
+
+//@import 'scss/_shame.scss';
 
 
 

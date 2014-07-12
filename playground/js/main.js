@@ -8,58 +8,64 @@
 // }
 
 $(document).ready(function() {
-  var nav = $('#navbar-nav');
+    $(function() {    
+        if (document.documentElement.clientWidth < 769) {
+            var $nav = $('#navbar-nav');
+            $('#js-toggle').attr('aria-pressed', 'false');
 
-  if (document.documentElement.clientWidth < 769) {
-    $('#leftPush').on('click', function() {
-      var $body = $('body');
-      $body.toggleClass('navbar__push--right');
-      nav.toggleClass('is-active');
+            $('#js-toggle').on('change', function() {
+                var $body = $('#page');
+                $body.toggleClass('navbar__push--right');
+                $nav.toggleClass('is-active');
+                $('#js-toggle').attr('aria-pressed',
+                    $('#js-toggle').attr('aria-pressed') == 'true' ? 'false' : 'true'
+                );
 
-      if (!nav.hasClass('.is-active')) {
-        $('.navbar__overlay').addClass('is-active');
+                $('#toggle-nav > li > a').on('click', function() {
+                    var $scrollTop = $('#toggle-nav').scrollTop(),
+                        $listItemActive = $(this).parent().index();
 
-        $('.navbar__overlay').on('click', function() {
-          $(this).removeClass('is-active');
-          $body.removeClass('navbar__push--right');
-          nav.removeClass('is-active');
+                    $(this).toggleClass('is-active');
+                    $('#toggle-nav > li > a').not(this).removeClass('is-active');
+                    $('.navbar__nav').animate({ scrollTop: $listItemActive * 43 }, 700);
+                });
+
+                if (!$nav.hasClass('.is-active')) {
+                    $('.flyout__overlay').addClass('is-active');
+                }
+
+                $('.flyout__overlay.is-active').on('click', function() {
+                    //$(this).removeClass('is-active');
+                    //$($nav).removeClass('is-active');
+                    $('.is-active').removeClass('is-active');
+                    $body.removeClass('navbar__push--right');
+                    $('#js-toggle').removeAttr('checked');
+                });
+            });
+        }
+
+        $('#js-basket').on('click', function() {
+            var $body = $('#page');
+            $('#js-flyout').toggleClass('is-active');
+            $body.toggleClass('navbar__push--right');
+            $('.flyout__overlay').addClass('is-active');
+
+            $('.flyout__overlay.is-active,#js-btnClose').on('click', function() {
+                $('.is-active').removeClass('is-active');
+                $body.removeClass('navbar__push--right');
+            });
         });
-      }
-
-      $('#toggle-nav > li > a').on('click', function() {
-        var $scrollTop = $('#toggle-nav').scrollTop(),
-            $listItem  = $(this).parent().index();
-        $('#toggle-nav').animate({ scrollTop: $scrollTop + (($listItem * 40)) }, 200);
-      });
     });
-  } else {
-    $('#toggle-nav > li > a').on('click', function() {
-      $('.navbar__overlay').addClass('is-active');
-    });
-  }
 
-  //if (!nav.hasClass('.is-active')) {
-    //$('.navbar__overlay').addClass('is-active');
-
-    $('.navbar__overlay').on('click', function() {
-      $(this).removeClass('is-active');
-      //$body.removeClass('navbar__push--right');
-      //nav.removeClass('is-active');
-      $('#toggle-nav > li > a').next('.in').collapse('hide');
-      $('#toggle-nav > li > a').removeClass('is-active')
-        .find('.fa-caret-up').removeClass('fa-caret-up').addClass('fa-caret-down');
-    });
-  //}
-
-  $('#toggle-nav > li > a').on('click', function(e) {
-    var $this     = $(this),
-        $notThis = $('#toggle-nav > li > a').not(this);
-    $this.toggleClass('is-active').find('.fa').toggleClass('fa-caret-down fa-caret-up');
-    $this.next('.collapse').collapse('toggle');
-    $notThis.removeClass('is-active').find('.fa-caret-up').removeClass('fa-caret-up').addClass('fa-caret-down');
-    $notThis.next('.in').collapse('hide');
-    e.preventDefault();
-  });
+    // $('#toggle-nav > li > a').on('click mouseenter mouseout focus', function() {
+    //     var $mega = $('.dropdown--mega');
+    //     $mega.attr('aria-expanded',
+    //         $mega.attr('aria-expanded') == 'true' ? 'false' : 'true'
+    //     );
+    //     $mega.attr('aria-hidden',
+    //         $mega.attr('aria-hidden') == 'false' ? 'true' : 'false'
+    //     );
+    // });
 });
 
 
@@ -134,4 +140,3 @@ $(document).ready(function() {
     window.UISearch = UISearch;
  
 } )( window );
-//

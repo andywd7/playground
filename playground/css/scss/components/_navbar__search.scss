@@ -1,16 +1,36 @@
 .navbar__search {
-    width: sz($navbar-width);
-}
+    @include transition(width .3s);
+    @include backface-visibility(hidden);
+    position: absolute;
+    right: 0;
+    width: 0;
+    min-width: 34px;
+    height: 28px;
+    overflow: hidden;
 
-.navbar__search + li {
-    clear: left;
+    &:hover,
+    &:focus {
+        background-color: transparent;
+    }
+
+    @include mq($from: navbar) {
+        position: relative;
+    }
 }
 
 .navbar__search-input {
-    float: left;
-    outline: none;
-    height: 40px;
-    width: sz($navbar-width - 40px);
+    border: 0;
+    height: 28px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 sz(39px) 0 0;
+    width: 100%;
+    z-index: 10;
+
+    &:focus {
+        outline: none;
+    }
 }
  
 input[type="search"].navbar__search-input {
@@ -21,13 +41,12 @@ input[type="search"].navbar__search-input {
 .navbar__search-submit  {
     cursor: pointer;
     float: left;
-    width: 40px;
-    height: 40px;
+    width: 34px;
+    height: 29px;
     display: block;
     position: absolute;
     right: 0;
-    top: 0;
-    line-height: 40px;
+    line-height: 29px;
     text-align: center;
 }
 
@@ -37,12 +56,12 @@ input[type="search"].navbar__search-input {
     color: transparent;
     border: none;
     outline: none;
-    z-index: 90;
+    z-index: -1;
 }
 
 .navbar__search-icon {
     color: #fff;
-    background: $brand-success;
+    background: color(primary);
     z-index: 11;
     speak: none;
     font-variant: normal;
@@ -53,85 +72,35 @@ input[type="search"].navbar__search-input {
     }
 }
 
-
-
-@include mq($from: navbar) {
-    .nav.navbar__nav > .navbar__search {
-      position: absolute;
-      right: -43px;
-      width: 300px;
-      min-width: 40px;
-      height: 90px;
-      float: right;
-      overflow: hidden;
-      //@include transition(max-height .3s);
-      //@include backface-visibility(hidden);
-
-      &:hover,
-      &:focus {
-        background-color: transparent;
-      }
-    }
-
-    .navbar__search-input {
-        @include transition(max-height .3s);
-        @include backface-visibility(hidden);
-        float: none;
-        position: absolute;
-        max-height: 0;
-        top: 36px;
-        right: 0;
-        margin: 3px;
-        padding: 0 sz(39px) 0 0;
-        border: 0;
-        width: 98%;
-        z-index: 10;
-    }
-
-    .navbar__search-submit,
+.navbar__search.is-open {
     .navbar__search-icon {
-        right: 3px;
+        background: $brand-success;
+    }
+}
+
+.navbar__search.is-open,
+.no-js .navbar__search {
+    width: 100%;
+
+    @include mq($from: mobile) {
+        width: 250px;
     }
 
     .navbar__search-submit {
-        z-index: -1;
+        z-index: 90;
     }
+}
 
-    .navbar__search-icon {
-        background: $brand-primary;
+.no-js .navbar__search {
+    &,
+    .navbar__search-input {
+        position: static;
     }
+}
 
-    .navbar__search.is-open {
-        .navbar__search-icon {
-            background: $brand-success;
-        }
-    }
-
-    // .navbar__nav > .navbar__search.is-open,
-    // .no-js .navbar__nav > .navbar__search {
-    //     max-height: 39px;
-    //     //width: 300px;
-    // }
-
-    .navbar__search.is-open,
-    .no-js .navbar__search {
-        .navbar__search-submit {
-            z-index: 90;
-        }
-    }
-
-    .no-js .navbar__nav > .navbar__search {
-        &,
-        .navbar__search-input {
-            position: static;
-        }
-    }
-
-    .navbar__nav > .navbar__search.is-open {
-        .navbar__search-input {
-            border: 1px solid $input-border;
-            max-height: 40px;
-            padding: 0.42857rem sz(39px) 0.42857rem 0.85714rem;
-        }
+.navbar__search.is-open {
+    .navbar__search-input {
+        border-left: 1px solid color(grey, lighter);
+        padding: sz(6px) sz(40px) sz(6px) sz(8px);
     }
 }
