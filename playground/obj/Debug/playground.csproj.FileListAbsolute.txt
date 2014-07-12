@@ -21,6 +21,5 @@ D:\Andy\Documents\GitHub\playground\playground\bin\System.Web.Razor.xml
 D:\Andy\Documents\GitHub\playground\playground\bin\System.Web.WebPages.xml
 D:\Andy\Documents\GitHub\playground\playground\bin\System.Web.WebPages.Deployment.xml
 D:\Andy\Documents\GitHub\playground\playground\bin\System.Web.WebPages.Razor.xml
-D:\Andy\Documents\GitHub\playground\playground\obj\Debug\playground.csprojResolveAssemblyReference.cache
 D:\Andy\Documents\GitHub\playground\playground\obj\Debug\playground.dll
 D:\Andy\Documents\GitHub\playground\playground\obj\Debug\playground.pdb
