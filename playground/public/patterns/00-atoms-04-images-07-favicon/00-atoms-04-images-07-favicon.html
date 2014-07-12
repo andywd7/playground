@@ -1,28 +1,42 @@
 <!DOCTYPE html>
-<html class="pl">
-	<head>
-		<title>Pattern Lab</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width" />
-		
-		<link rel="stylesheet" href="../../css/style.css?635383440369866214" media="all" />
+<!--[if lte IE 8]>       <html class="no-js ie8 ie-old pl"> <![endif]-->
+<!--[if IE 9]>           <html class="no-js ie9 ie-old pl"> <![endif]-->
+<!--[if gte IE 10]><!--> <html class="no-js pl"> <!--<![endif]-->
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pattern Lab</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width" />
 
-		<!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-				<!-- never cache patterns -->
+    <!--[if (lte IE 8) | (IEMobile)]>
+        <link rel="stylesheet" href="../../styles/style.ie-old.css?635407781983185404" media="all">
+    <![endif]-->
+    <!--[if (gte IE 9) | (!IEMobile)]><!-->
+        <link rel="stylesheet" href="../../css/style.css?635407781983185404" media="all" />
+    <!--<![endif]-->
+
+    <script src="../../js/modernizr.js"></script>
+
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    		<!-- never cache patterns -->
 		<meta http-equiv="cache-control" content="max-age=0" />
 		<meta http-equiv="cache-control" content="no-cache" />
 		<meta http-equiv="expires" content="0" />
 		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 		<meta http-equiv="pragma" content="no-cache" />
 		
-		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?635383440369866214" media="all">
-		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?635383440369866214" media="all" />
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?635407781983185404" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?635407781983185404" media="all" />
 		
-		<!-- End Pattern Lab -->
-	
-	</head>
-	<body class="body">	
-		<img src="../../images/favicon_16x16.jpg" />
+    <!-- End Pattern Lab -->
+</head>
+    <body class="body">
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+<img src="../../images/favicon_16x16.jpg" />
 <img src="../../images/favicon_32x32.jpg" />	
 	<script>
 		// handle injection of items
@@ -33,7 +47,23 @@
 		var cssEnabled     = false;
 	</script>
 	
+        <div class="flyout__overlay"></div>
+    </div>
 
+    <script src="../../js/jquery.min.js"></script>
+
+    <script src="../../js/bootstrap/transition.js"></script>
+    <script src="../../js/bootstrap/collapse.js"></script>
+    <!-- <script src="../../js/jquery-accessibleMegaMenu.js"></script> -->
+    <script src="../../js/main.js"></script>
+
+    <!-- initialize a selector as an accessibleMegaMenu -->
+    <!-- <script>
+        $('#navbar-nav').accessibleMegaMenu();
+    </script> -->
+    <script>
+        new UISearch(document.getElementById('js-navbarSearch'));
+    </script>
 	<!--DO NOT REMOVE-->
 		<script>
 			/*!
@@ -67,10 +97,10 @@
 				
 			}
 		</script>
-		<script id="pl-js-polyfill-insert-635383440369866214">
+		<script id="pl-js-polyfill-insert-635407781983185404">
 			(function() {
 				if (self != top) {
-					var cb = '635383440369866214';
+					var cb = '635407781983185404';
 					var js = [];
 					if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
 						js.push("styleguide/js/vendor/classlist-polyfill.js");
@@ -79,10 +109,10 @@
 				}
 			})();
 		</script>
-		<script id="pl-js-insert-635383440369866214">
+		<script id="pl-js-insert-635407781983185404">
 			(function() {
 				if (self != top) {
-					var cb = '635383440369866214';
+					var cb = '635407781983185404';
 					var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
 					scriptLoader.run(js,cb,'pl-js-insert');
 				}

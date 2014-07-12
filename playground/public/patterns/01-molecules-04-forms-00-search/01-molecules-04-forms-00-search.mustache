@@ -1,11 +1,20 @@
-&lt;form action=&quot;{{ url }}&quot; method=&quot;post&quot; class=&quot;inline-form search-form&quot;&gt;           
+&lt;form action=&quot;{{ url }}&quot; method=&quot;post&quot; class=&quot;inline-form search-form&quot; role=&quot;search&quot;&gt;           
     &lt;fieldset&gt;
-	    &lt;legend class=&quot;is-vishidden&quot;&gt;Search&lt;/legend&gt;
-	    &lt;label for=&quot;search-field&quot; class=&quot;is-vishidden&quot;&gt;Search&lt;/label&gt;
-	    &lt;input type=&quot;search&quot; placeholder=&quot;Search&quot; id=&quot;search-field&quot; class=&quot;search-field&quot; /&gt;
-	    &lt;button class=&quot;search-submit&quot;&gt;
-	    	&lt;span class=&quot;icon-search&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-	    	&lt;span class=&quot;is-vishidden&quot;&gt;Search&lt;/span&gt;
+	    &lt;legend class=&quot;u-sr&quot;&gt;Search&lt;/legend&gt;
+	    &lt;label for=&quot;search-field&quot; class=&quot;u-sr&quot;&gt;Search&lt;/label&gt;
+        &lt;input type=&quot;search&quot; id=&quot;search-field&quot; class=&quot;search-field&quot; placeholder=&quot;Search&quot; /&gt;
+	    &lt;button type=&quot;submit&quot; class=&quot;btn search-submit&quot;&gt;
+	    	&lt;span class=&quot;icon-facebook fa-search&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+	    	&lt;span class=&quot;u-sr&quot;&gt;Search&lt;/span&gt;
 	    &lt;/button&gt;
     &lt;/fieldset&gt;
+&lt;/form&gt;
+
+&lt;form action=&quot;{{ url }}&quot; method=&quot;post&quot; class=&quot;inline-form search-form&quot; role=&quot;search&quot;&gt;
+    &lt;input type=&quot;search&quot; id=&quot;search-field&quot; class=&quot;search-field&quot; placeholder=&quot;Search&quot; /&gt;
+    &lt;button type=&quot;submit&quot; class=&quot;btn search-submit&quot;&gt;
+        &lt;span class=&quot;icon-facebook fa-search&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;u-sr&quot;&gt;Search&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;span class=&quot;icon-facebook fa-search&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
 &lt;/form&gt;
