@@ -7,33 +7,37 @@
 //
 // Restyle and baseline non-control form elements.
 
-// fieldset {
-//   padding: 0;
-//   margin: 0;
-//   border: 0;
-//   // Chrome and Firefox set a `min-width: -webkit-min-content;` on fieldsets,
-//   // so we reset that to ensure it behaves more like a standard block element.
-//   // See https://github.com/twbs/bootstrap/issues/12359.
-//   min-width: 0;
-// }
+fieldset,
+.fieldset {
+  border: 0;
+  margin: 0;
+  // Chrome and Firefox set a `min-width: -webkit-min-content;` on fieldsets,
+  // so we reset that to ensure it behaves more like a standard block element.
+  // See https://github.com/twbs/bootstrap/issues/12359.
+  min-width: 0;
+  padding: 0;
+}
 
-// legend {
-//   display: block;
-//   width: 100%;
-//   padding: 0;
-//   margin-bottom: $line-height-computed;
-//   font-size: ($font-size-base * 1.5);
-//   line-height: inherit;
-//   color: $legend-color;
-//   border: 0;
-//   border-bottom: 1px solid $legend-border-color;
-// }
+legend,
+.legend {
+  //border: 0;
+  border-bottom: 1px solid $legend-border-color;
+  color: $legend-color;
+  display: block;
+  margin-bottom: $line-height-computed;
+  padding: 0 0 ($line-height-computed / 3);
+  width: 100%;
+  //font-size: ($font-size-base * 1.5);
+  //font-weight: 700;
+  //line-height: inherit;
+  //text-transform: uppercase;
+}
 
 label {
   display: inline-block;
-  max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
-  margin-bottom: 5px;
   font-weight: bold;
+  margin-bottom: 5px;
+  max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
 }
 
 
@@ -44,17 +48,17 @@ label {
 // address browser inconsistencies.
 
 // Override content-box in Normalize (* isn't specific enough)
-input[type="search"] {
-  @include box-sizing(border-box);
-}
+//input[type="search"] {
+//  @include box-sizing(border-box);
+//}
 
 // Position radios and checkboxes better
-// input[type="radio"],
-// input[type="checkbox"] {
-//   margin: 4px 0 0;
-//   margin-top: 1px \9; // IE8-9
-//   line-height: normal;
-// }
+input[type="radio"],
+input[type="checkbox"] {
+  line-height: normal;
+  margin: 4px 0 0;
+  margin-top: 1px \9; // IE8-9
+}
 
 // // Set the height of file controls to match text inputs
 // input[type="file"] {
@@ -113,19 +117,19 @@ input[type="search"] {
 // input[type="color"]
 
 .form-control {
-  display: block;
-  width: 100%;
-  height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
-  padding: $padding-base-vertical $padding-base-horizontal;
-  font-size: $font-size-base;
-  line-height: $line-height-base;
-  color: $input-color;
+  @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, .075));
+  @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
   background-color: $input-bg;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid $input-border;
   border-radius: $input-border-radius;
-  @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
-  @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+  color: $input-color;
+  display: block;
+  font-size: $font-size-base;
+  height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  line-height: $line-height-base;
+  padding: $padding-base-vertical $padding-base-horizontal;
+  width: 100%;
 
   // Customize the `:focus` state to imitate native WebKit styles.
   @include form-control-focus();
@@ -141,8 +145,8 @@ input[type="search"] {
   &[disabled],
   &[readonly],
   fieldset[disabled] & {
-    cursor: not-allowed;
     background-color: $input-bg-disabled;
+    cursor: not-allowed;
     opacity: 1; // iOS fix for unreadable disabled content
   }
 
@@ -162,9 +166,9 @@ input[type="search"] {
 // be added to `.form-control` as it's not specific enough. For details, see
 // https://github.com/twbs/bootstrap/issues/11586.
 
-input[type="search"] {
-  -webkit-appearance: none;
-}
+//input[type="search"] {
+//  -webkit-appearance: none;
+//}
 
 
 // Special styles for iOS date input
@@ -204,62 +208,63 @@ input[type="search"] {
 //
 // Indent the labels to position radios/checkboxes as hanging controls.
 
-// .radio,
-// .checkbox {
-//   display: block;
-//   min-height: $line-height-computed; // clear the floating input if there is no label text
-//   margin-top: 10px;
-//   margin-bottom: 10px;
+.radio,
+.checkbox {
+  cursor: pointer;
+  display: block;
+  font-weight: 400;
+  margin-bottom: 0;
+  min-height: ($line-height-computed * 1.25); // clear the floating input if there is no label text
+  //margin-top: 10px;
+  //margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+  //label {
+  //}
+}
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+  margin-left: -20px;
+  margin-top: 4px \9;
+  position: absolute;
+}
+.radio + .radio,
+.checkbox + .checkbox {
+  margin-top: -5px; // Move up sibling radios or checkboxes for tighter spacing
+}
 
-//   label {
-//     padding-left: 20px;
-//     margin-bottom: 0;
-//     font-weight: normal;
-//     cursor: pointer;
-//   }
-// }
-// .radio input[type="radio"],
-// .radio-inline input[type="radio"],
-// .checkbox input[type="checkbox"],
-// .checkbox-inline input[type="checkbox"] {
-//   float: left;
-//   margin-left: -20px;
-// }
-// .radio + .radio,
-// .checkbox + .checkbox {
-//   margin-top: -5px; // Move up sibling radios or checkboxes for tighter spacing
-// }
+// Radios and checkboxes on same line
+.radio-inline,
+.checkbox-inline {
+  cursor: pointer;
+  display: inline-block;
+  font-weight: normal;
+  margin-bottom: 0;
+  padding-left: 20px;
+  vertical-align: middle;
+}
+.radio-inline + .radio-inline,
+.checkbox-inline + .checkbox-inline {
+  margin-left: 10px; // space out consecutive inline controls
+  margin-top: 0;
+}
 
-// // Radios and checkboxes on same line
-// .radio-inline,
-// .checkbox-inline {
-//   display: inline-block;
-//   padding-left: 20px;
-//   margin-bottom: 0;
-//   vertical-align: middle;
-//   font-weight: normal;
-//   cursor: pointer;
-// }
-// .radio-inline + .radio-inline,
-// .checkbox-inline + .checkbox-inline {
-//   margin-top: 0;
-//   margin-left: 10px; // space out consecutive inline controls
-// }
-
-// // Apply same disabled cursor tweak as for inputs
-// //
-// // Note: Neither radios nor checkboxes can be readonly.
-// input[type="radio"],
-// input[type="checkbox"],
-// .radio,
-// .radio-inline,
-// .checkbox,
-// .checkbox-inline {
-//   &[disabled],
-//   fieldset[disabled] & {
-//     cursor: not-allowed;
-//   }
-// }
+// Apply same disabled cursor tweak as for inputs
+//
+// Note: Neither radios nor checkboxes can be readonly.
+input[type="radio"],
+input[type="checkbox"],
+.radio,
+.radio-inline,
+.checkbox,
+.checkbox-inline {
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+  }
+}
 
 
 // Form control sizing

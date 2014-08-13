@@ -23,3 +23,4 @@ D:\Andy\Documents\GitHub\playground\playground\bin\System.Web.WebPages.Deploymen
 D:\Andy\Documents\GitHub\playground\playground\bin\System.Web.WebPages.Razor.xml
 D:\Andy\Documents\GitHub\playground\playground\obj\Debug\playground.dll
 D:\Andy\Documents\GitHub\playground\playground\obj\Debug\playground.pdb
+D:\Andy\Documents\GitHub\playground\playground\obj\Debug\playground.csprojResolveAssemblyReference.cache

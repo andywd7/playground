@@ -4,9 +4,9 @@
 
 .l-container {
   @include cf();
-
-	margin: 0 auto;
-	width: 96%;
+  margin: 0 auto;
+  width: 96%;
+  
 
   //@include breakpoint($bp-mobile-w) {
   //  max-width: (560 / 14) * 1em;
@@ -18,7 +18,7 @@
     //max-width: (980 / 14) * 1em;
     max-width: sz(980);
   }
-  @include mq($from: wide) {
+  @include mq($from: xlg) {
     //max-width: (1140 / 14) * 1em;
     max-width: sz(1140);
   }
@@ -69,6 +69,7 @@
 
 .l-header {
   background-color: $header-bg;
+  //border-top: 5px solid #444;
   border-bottom: 1px solid color(grey, lighter);
   margin-bottom: $line-height-computed;
 

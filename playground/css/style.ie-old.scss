@@ -1,25 +1,63 @@
-$font-size-html: 100%;
-$old-ie:         true;
-$mq-responsive:  false;
+/*Pattern Lab doesn't have any CSS requirements, which means you can write your styles however you want. Hooray!
+You can use Sass, Less, vanilla CSS, or some other crazy thing I haven't heard of yet.
 
-//$breakpoint-to-ems: true;
-// Will not print media queries
-//$breakpoint-no-queries: true;
-// Will print No Query Fallbacks
-//$breakpoint-no-query-fallbacks: true;
+Atomic design is philosophically complimentary with these CSS approaches:
+
+* SMACSS by Jonathan Snook http://smacss.com/
+* OOCSS by Nicole Sullivan http://oocss.org/
+* BEM CSS Methology : http://bem.info/method/
+* CSS Guidelines by Harry Roberts : https://github.com/csswizardry/CSS-Guidelines
+
+So feel free to use any of these approaches. Or don't. It's totally up to you.
+
+*/
+
+/*------------------------------------*\
+    $TABLE OF CONTENTS 
+    based generally on Harry Roberts excellent CSS Guidelines https://github.com/csswizardry/CSS-Guidelines
+\*------------------------------------*/
+/**
+ * VARIABLES..............................Declarations of Sass variables 
+ * .....Colors
+ * .....Typography
+ * .....Layout
+ * .....Defaults
+ * .....Breakpoints
+ * MIXINS.................................Sass mixins 
+ * RESET..................................Set reset defaults
+ * GLOBAL CLASSES.........................Set reset defaults
+ * GLOBAL ELEMENTS........................Establish global styles
+ * .....Main
+ * .....Headings
+ * .....Text-related elements (p, blockquote, lists)
+ * .....Defaults
+ * .....Breakpoints
+ * TYPOGRAPHY------------------------------
+ * MEDIA------------------------------
+ * LAYOUT------------------------------
+ * NAVIGATION------------------------------
+ * TOC To Be Continued
+ */
+
+
+$old-ie: true;
 
 
 @import "scss/vendor/font-awesome/font-awesome.scss";
-$fa-font-path: "../fonts/font-awesome";
-
-//@import "compass";
-//@import "breakpoint";
 
 
-@import 'scss/materials/_mixins.scss';
-@import 'scss/materials/_vars.scss';
-@import 'scss/materials/_mx-mq.scss';
+// ====================
+// MATERIALS
+// ====================
 
+@import 'scss/tools/mixins/_mixins.scss';
+@import 'scss/tools/mixins/_mx-mq.scss'; // Includes breakpoint vars & other mq options.
+@import 'scss/tools/variables/_vars.scss';
+
+
+// ====================
+// BASE
+// ====================
 
 @import 'scss/base/_normalize.custom.scss';
 @import 'scss/base/_scaffolding.scss';
@@ -27,19 +65,60 @@ $fa-font-path: "../fonts/font-awesome";
 @import 'scss/base/_buttons.scss';
 
 
-@import 'scss/layouts/_grid.scss';
-@import 'scss/layouts/_layouts.scss';
-@import 'scss/layouts/_ads.scss';
+// ====================
+// LAYOUTS
+// ====================
 
+@import 'scss/layout/_grid.scss';
+@import 'scss/layout/_layouts.scss';
+@import 'scss/layout/_ads.scss';
+
+
+// ====================
+// UTILITIES
+// ====================
 
 @import 'scss/utils/_component-animations.scss';
 
 
-@import 'scss/modules/_navbar.scss';
-@import 'scss/modules/_navs.scss';
+// ====================
+// MODULES
+// ====================
+
+@import 'scss/components/_navs.scss';
+@import 'scss/components/_flyout.scss';
+@import 'scss/components/_navbar.scss';
+@import 'scss/components/_navbar__search.scss';
+@import 'scss/components/_crumbs.scss';
 
 
 @import 'scss/utils/_utilities.scss';
 
 
-@import 'scss/_shame.scss';
+//@import 'scss/_shame.scss';
+
+
+
+/*------------------------------------*\
+    $GLOBAL ELEMENTS
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+    $LAYOUT
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+    $PAGE STRUCTURE
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+    $TEXT Styles
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+    $COMPONENTS
+\*------------------------------------*/

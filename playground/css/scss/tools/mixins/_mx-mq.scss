@@ -4,15 +4,25 @@
 // meaning @media queries will be rasterized, relying on the cascade itself
 $mq-responsive: true !default;
 
+
 // Name your breakpoints in a way that creates a ubiquitous language
 // across team members. It will improve communication between
 // stakeholders, designers, developers, and testers.
 $mq-breakpoints: (
-    mobile:  $bp-sm,
-    tablet:  $bp-md,
-    navbar:  $bp-navbar,
-    desktop: $bp-lg,
-    wide:    $bp-xlg
+    // Small screen / phone in landscape
+    mobile:  500px,
+    // Medium screen / tablet portrait
+    tablet:  740px,
+    // Width at which Navbar expands from collapsed view
+    navbar:  815px,
+    // Large screen / desktop
+    desktop: 980px,
+    // Extra large screen / wide desktop
+    xlg:     1140px,
+    // Extra extra large screen / very wide desktop
+    xxlg:    1300px,
+    // Retina & High Pixel screen
+    retina: min-resolution 1.5dppx
 ) !default;
 
 // Define the breakpoint from the $mq-breakpoints list that should
@@ -23,7 +33,8 @@ $mq-static-breakpoint: desktop !default;
 // If you want to display the currently active breakpoint in the top
 // right corner of your site during development, add the breakpoints
 // to this list, ordered by width, e.g. (mobile, tablet, desktop).
-$mq-show-breakpoints: () !default;
+$mq-show-breakpoints: (); // (mobile, tablet, navbar, desktop, xlg, xxlg) !default;
+
 
 @function mq-px2em($px, $base-font-size: 16px) {
     @if (unitless($px)) {

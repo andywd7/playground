@@ -56,7 +56,7 @@ $colors: (
     	twitter:  #55acee,
     	youtube:  #cc181e
     )
-);
+) !default;
 
 $brand-success:         color(green, dark) !default;
 $brand-warning:         color(gold, dark) !default;
@@ -68,7 +68,7 @@ $brand-info:            color(purple, light) !default;
 // --------------------
 
 $body-bg:               #f8f8f8 !default;
-$text-color:            color(grey, dark) !default;
+$text-color:            color(grey, darker) !default;
 
 
 // Links
@@ -91,6 +91,8 @@ $font-size-base:          sz($font-value-base) !default; // 1rem or 14px
 $line-height-base:        1.4 !default; // 20/14
 $line-height-computed:    sz($font-value-base * $line-height-base) !default; // 20px
 
+$fa-font-path:            "../fonts/font-awesome";
+
 
 // Components
 // --------------------
@@ -106,34 +108,6 @@ $border-radius-base:             sz(3px) !default;
 
 // Component Variables
 // ==============================
-
-// Breakpoint mixin media query breakpoints
-// --------------------------------------------------
-//
-// create $breakpoint variables like so
-// assume min-width (by default) if only a number
-
-// Small screen / phone in landscape
-$bp-sm:     (560 / 16) * 1em;
-
-// Medium screen / tablet portrait
-$bp-md:     (740 / 16) * 1em;
-
-// Width at which Navbar expands from collapsed view
-$bp-navbar: (769 / 16) * 1em;
-
-// Large screen / desktop
-$bp-lg:     (980 / 16) * 1em;
-
-// Extra large screen / wide desktop
-$bp-xlg:    (1140 / 16) * 1em;
-
-// Extra extra large screen / very wide desktop
-$bp-xxlg:   (1300 / 16) * 1em;
-
-// Retina & High Pixel screen
-$bp-retina: min-resolution 1.5dppx;
-
 
 // Grid system
 // --------------------
@@ -206,19 +180,19 @@ $header-bg:                        #fff !default;
 
 // Navbar
 $navbar-border:					   color(grey, lighter);
-$navbar-color:					   #fff;
-$navbar-bg:						   #111;
-$navbar-color-inv:				   #333;
+$navbar-color:					   $text-color;
+$navbar-bg:						   color(grey, lightest);
+$navbar-color-inv:				   #fff;
 $navbar-bg-inv:					   color(primary);
 
-$navbar-dropdown-bg:			   $navbar-bg-inv;
-$navbar-dropdown-color:			   $navbar-color-inv;
+$navbar-dd-bg:	        		   $navbar-bg-inv;
+$navbar-dd-color:	    		   $navbar-color-inv;
+$navbar-brand-width:               120px !default;
 $navbar-width:                     240px !default;
 
 // Navbar toggle
-$navbar-toggle-hover-bg:           #ddd !default;
-$navbar-toggle-icon-bar-bg:        #ccc !default;
-$navbar-toggle-border-color:       #ddd !default;
+$navbar-toggle-hover-bg:           color(grey, lightest) !default;
+//$navbar-toggle-border:             #444 !default;
 
 
 // Navs

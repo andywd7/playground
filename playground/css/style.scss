@@ -1,19 +1,6 @@
-/*                                                                                                                                         
-                                                ,,            ,,                          ,,                                             
- .M"""bgd mm                                    db          `7MM        mm         mm   `7MM                                    OO OO OO 
-,MI    "Y MM                                                  MM        MM         MM     MM                                    88 88 88 
-`MMb.   mmMMmm ,pW"Wq.`7MMpdMAo.     `7Mb,od8 `7MM  .P"Ybmmm  MMpMMMb.mmMMmm     mmMMmm   MMpMMMb.  .gP"Ya `7Mb,od8 .gP"Ya      || || || 
-  `YMMNq. MM  6W'   `Wb MM   `Wb       MM' "'   MM :MI  I8    MM    MM  MM         MM     MM    MM ,M'   Yb  MM' "',M'   Yb     || || || 
-.     `MM MM  8M     M8 MM    M8       MM       MM  WmmmP"    MM    MM  MM         MM     MM    MM 8M""""""  MM    8M""""""     `' `' `' 
-Mb     dM MM  YA.   ,A9 MM   ,AP       MM       MM 8M         MM    MM  MM         MM     MM    MM YM.    ,  MM    YM.    ,     ,, ,, ,, 
-P"Ybmmd"  `Mbmo`Ybmd9'  MMbmmd'      .JMML.   .JMML.YMMMMMb .JMML  JMML.`Mbmo      `Mbmo.JMML  JMML.`Mbmmd'.JMML.   `Mbmmd'     db db db 
-                        MM                         6'     dP                                                                             
-                      .JMML.                       Ybmmmd'                                                                               
-
-Pattern Lab doesn't have any CSS requirements, which means you can write your styles however you want. Hooray!
+//@ sourceURL=foo.js
+/*Pattern Lab doesn't have any CSS requirements, which means you can write your styles however you want. Hooray!
 You can use Sass, Less, vanilla CSS, or some other crazy thing I haven't heard of yet.
-So please don't use these styles. They're just here to put together the demo, and nothing more.
-They're intentionally gray, boring, and crappy because you're supposed to do this stuff yourself.
 
 Atomic design is philosophically complimentary with these CSS approaches:
 
@@ -55,23 +42,18 @@ So feel free to use any of these approaches. Or don't. It's totally up to you.
 
 
 $old-ie: false;
-$breakpoint-to-ems: true;
 
 
 @import "scss/vendor/font-awesome/font-awesome.scss";
-$fa-font-path: "../fonts/font-awesome";
-
-//@import "compass";
-//@import "breakpoint";
 
 
 // ====================
 // MATERIALS
 // ====================
 
-@import 'scss/tools/_mixins.scss';
-@import 'scss/tools/_vars.scss';
-@import 'scss/tools/_mx-mq.scss';
+@import 'scss/tools/mixins/_mixins.scss';
+@import 'scss/tools/mixins/_mx-mq.scss'; // Includes breakpoint vars & other mq options.
+@import 'scss/tools/variables/_vars.scss';
 
 
 // ====================
@@ -106,7 +88,7 @@ $fa-font-path: "../fonts/font-awesome";
 
 @import 'scss/components/_navs.scss';
 @import 'scss/components/_flyout.scss';
-@import 'scss/components/_navbar2.scss';
+@import 'scss/components/_navbar.scss';
 @import 'scss/components/_navbar__search.scss';
 @import 'scss/components/_crumbs.scss';
 

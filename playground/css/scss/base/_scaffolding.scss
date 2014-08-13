@@ -4,7 +4,7 @@
 
 
 // Reset the box-sizing
-
+//
 *,
 *:before,
 *:after {
@@ -35,27 +35,83 @@
 // }
 
 
-// Horizontal rules
-
-// hr {
-//   margin-top:    $line-height-computed;
-//   margin-bottom: $line-height-computed;
-//   border: 0;
-//   //border-top: 1px solid $hr-border;
-// }
-
-
 // Only display content to screen readers
-//
 // See: http://a11yproject.com/posts/how-to-hide-content/
-
+//
 .sr-only {
-  position: absolute;
-  width: 1px;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
   height: 1px;
   margin: -1px;
-  padding: 0;
   overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+
+// Creates css for social media links based on $colors map in vars.scss
+//
+@each $name in map-keys(map-get($colors, social)) {
+  .link-#{$name},
+  %link-#{$name} {
+    background-color: map-fetch($colors, social $name);
+    color: #fff;
+    text-align: center;
+
+    &:hover,
+    &:focus {
+      background-color: darken(map-fetch($colors, social $name), 7%);
+    }
+  }
+}
+
+
+@each $col, $value in $colors {
+  @each $palette in map-keys(map-get($colors, $col)) {
+    .sg-#{$col}-#{$palette} {
+      background-color: map-fetch($colors, $col $palette);
+      &:after {
+        content: "#{map-fetch($colors, $col $palette)}";
+      }
+    }
+  }
+}
+
+.sg-palette {
+  float: left;
+  list-style: none;
+  margin-bottom: 0;
+  margin-right: 20px;
+  margin-top: 0;
+  padding-left: 0; // Override default ul/ol
+
+  > li {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: auto;
+  }
+    
+  .sg-color {
+    color: #fff;
+    display: block;
+    font-size: 12px;
+    height: 100px;
+    line-height: 100px;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+    width: 100px;
+
+    &:after {
+      bottom: -62px;
+      color: #000;
+      font-size: 14px;
+      left: 0;
+      position: absolute;
+      right: 0;
+    }
+  }
 }

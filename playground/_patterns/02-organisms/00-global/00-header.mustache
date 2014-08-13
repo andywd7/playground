@@ -1,23 +1,24 @@
+<!-- Begin .header -->
 <a href="#main" class="sr-only">Skip to main content</a>
 <div id="page" class="navbar__push">
-    <!-- Begin .header -->
-    <header class="l-header" role="banner" style="border-top: 5px solid #444">
+    <header class="l-header navbar" role="banner">
         <div class="l-container">
             {{> atoms-navbar-brand }}
 
             <a href="#" id="js-basket" class="basket" role="button"><i class="fa fa-shopping-cart"></i> Basket <span>(0)</span></a>
             <input type="checkbox" id="js-toggle" class="navbar__check" role="button">
-            <label for="js-toggle" id="leftPush" class="navbar__toggle fa">
+            <label for="js-toggle" id="leftPush" class="navbar__toggle">
+              <span class="navbar__menu">MENU</span>
                 <span class="sr-only">Toggle navigation</span>
             </label>
 
-            <div id="navbar-nav" class="navbar flyout--mobile">
+            <div id="navbar-nav" class="navbar__flyout">
                 <div class="navbar__nav flyout__inner">
                     {{> molecules-navbar-secondary }}
                     {{> molecules-navbar-primary }}
                 </div>
             </div>
 
-            {{> molecules-navbar-crumbs }}
+              <!-- {{> molecules-navbar-crumbs }} -->
         </div>
     </header><!-- end .header -->

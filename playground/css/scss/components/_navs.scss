@@ -7,24 +7,30 @@
 // ----------
 
 .nav {
+  @include cf();
+  list-style: none;
   margin-bottom: 0;
   margin-top: 0;
   padding-left: 0; // Override default ul/ol
-  list-style: none;
-  @include cf();
 
   > li {
-    position: relative;
     display: block;
+    position: relative;
 
     > a {
-      position: relative;
       display: block;
       padding: $nav-link-padding;
+      position: relative;
       &:hover,
       &:focus {
-        text-decoration: none;
         background-color: $nav-link-hover-bg;
+        text-decoration: none;
+      }
+
+      // Prevent IE8 from misplacing imgs
+      // See https://github.com/h5bp/html5-boilerplate/issues/984#issuecomment-3985989
+      > img {
+        max-width: none;
       }
     }
 
@@ -45,10 +51,10 @@
 
       &:hover,
       &:focus {
-        color: $nav-disabled-link-hover-color;
-        text-decoration: none;
         background-color: transparent;
+        color: $nav-disabled-link-hover-color;
         cursor: not-allowed;
+        text-decoration: none;
       }
     }
   }
@@ -62,15 +68,9 @@
       border-color: $link-color;
 
       .caret {
-        border-top-color: $link-hover-color;
         border-bottom-color: $link-hover-color;
+        border-top-color: $link-hover-color;
       }
     }
-  }
-
-  // Prevent IE8 from misplacing imgs
-  // See https://github.com/h5bp/html5-boilerplate/issues/984#issuecomment-3985989
-  > li > a > img {
-    max-width: none;
   }
 }

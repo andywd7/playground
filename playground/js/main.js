@@ -27,7 +27,7 @@ $(document).ready(function() {
 
                     $(this).toggleClass('is-active');
                     $('#toggle-nav > li > a').not(this).removeClass('is-active');
-                    $('.navbar__nav').animate({ scrollTop: $listItemActive * 43 }, 700);
+                    $('.navbar__nav').animate({ scrollTop: $listItemActive * 41 }, 700);
                 });
 
                 if (!$nav.hasClass('.is-active')) {

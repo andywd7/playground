@@ -13,8 +13,8 @@
 // @FUNCTION
 // $colNumber - Found in _vars.scss
 // $totalColumns - Found in _vars.scss
-@function g-calc($colNumber, $totalColumns) {
-  @return percentage(($colNumber / $totalColumns));
+@function g-calc($col-number, $total-columns) {
+  @return percentage(($col-number / $total-columns));
 }
 
 
@@ -31,17 +31,13 @@
     //width: 100%;
     margin: 0;
     //max-width: $row-width;
-  }
 
-  // use @include g-row(nest-collapse); to collapse outer margins on a nested row
-  @else if $behavior == nest-collapse {
+  } @else if $behavior == nest-collapse { // use @include g-row(nest-collapse); to collapse outer margins on a nested row
     //width: auto;
     margin: 0;
     //max-width: none;
-  }
 
-  // use @include g-row; to include a nested row
-  @else {
+  } @else { // use @include g-row; to include a nested row
     //width: auto;
     margin-left: -($column-gutter/2);
     margin-right: -($column-gutter/2);
@@ -94,11 +90,10 @@
   @if $collapse == true {
     padding-left: 0;
     padding-right: 0;
-  }
-  // Gutter padding whenever a column isn't set to collapse
-  // (use $collapse:true to add 0 padding)
-  // (use $collapse:null to add no padding)
-  @else if $collapse == false {
+  } @else if $collapse == false {
+    // Gutter padding whenever a column isn't set to collapse
+    // (use $collapse:true to add 0 padding)
+    // (use $collapse:null to add no padding)
     padding-left: $column-gutter / 2;
     padding-right: $column-gutter / 2;
   }

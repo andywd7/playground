@@ -3,321 +3,551 @@
 // ====================
 
 
-// Wrapper and base class
-//
-// Provide a static navbar from which we expand to create full-width, fixed, and
-// other navbar variations.
-.nav.navbar__nav {
-    > li {
-        a {
-            color: #fff;
-        }
+// Navbar
+.navbar {
+  &:before,
+  &:after {
+    background-color: $navbar-border;
+    content: '';
+    display: block;
+    height: 1px;
+    position: absolute;
+    width: 100%;
+  }
 
-        > a {
-            &:after {
-                font-family: FontAwesome;
-                margin-left: 5px;
-                content: $fa-var-caret-down;
-            }
-        }
+  &:before {
+    left: $navbar-brand-width;
+    top: 40px; //28px;
+  }
+
+  &:after {
+    top: 103px;
+  }
+
+  @include mq($from: navbar) {
+    &:before {
+      background-color: color(primary);
+      height: 26px;
+      left: 0;
+      top: 0;
     }
+
+    &:after {
+      top: 149px;
+      width: 100%;
+    }
+  }
 }
+
 
 // Brand/project name
 .navbar__brand {
-    display: block;
-    float: left;
-    padding: sz(20) 0;
+  background-color: #fff;
+  border-right: 1px solid $navbar-border;
+  display: block;
+  float: left;
+  padding: sz(15px 0);
+  position: relative;
+  text-align: center;
+  width: $navbar-brand-width;
+
+  @include mq($from: navbar) {
+    border-right: 0;
+    margin-top: 26px;
+    padding: sz(25px);
+    //text-align: left;
+    width: auto;        
+  }
 }
 
-.check {
-    overflow: hidden;
-    width: 0;
 
+// Navbar checkbox
+.navbar__check {
+  display: none; // find better solution
+  overflow: hidden;
+  width: 0;
+
+  &:checked {
+    + .navbar__toggle {
+      &:before {
+        content: $fa-var-times;
+      }
+
+      @include mq($to: navbar) {
+        + .navbar__flyout {
+          right: 0;
+          z-index: 1001;
+        }
+      }
+    }
+  }
+
+  &:focus {
+    outline: 0;
+
+    //+ label {
+    //    outline: 2px auto -webkit-focus-ring-color;
+    //}
+  }
+}
+
+
+// Navbar toggle
+//
+// Custom button for toggling the `.navbar-collapse`, powered by the collapse
+// JavaScript plugin.
+.navbar__toggle {
+  background-color: #fff;
+  border-left: 1px solid $navbar-border;
+  //clear: right;
+  cursor: pointer;
+  //float: right;
+  font-family: FontAwesome;
+  font-size: sz(17px);
+  line-height: $line-height-base;
+  margin: sz(0);
+  padding: sz(9px 25px 8px);
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  z-index: 1001;
+
+  // We remove the `outline` here, but later compensate by attaching `:hover`
+  // styles to `:focus`.
+  &:focus {
+    outline: none;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $navbar-toggle-hover-bg;
+    border-color: darken($navbar-toggle-hover-bg, 10%);
+  }
+      
+  &:before {
+    content: $fa-var-bars;
+  }
+
+  .navbar__menu {
+    display: none;
+  }
+
+  @include mq($from: mobile) {
+    .navbar__menu {
+      display: inline-block;
+      font-family: $font-family-base;
+      font-size: sz(15px);
+    }
+  }
+
+  @include mq($from: navbar) {
+    display: none;
+  }
+}
+
+
+// Push class applied to the body (Had to add to div that wraps whole doc
+// as Firefox slide transition animation doesn't play ball)
+.navbar__push {
+  @include transition(all .3s ease);
+  @include backface-visibility(hidden);
+  left: 0;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.navbar__push--right {
+  left: sz(-$navbar-width);
+}
+
+
+.basket {
+  background-color: $navbar-bg-inv;
+  color: $navbar-color-inv;
+  display: inline-block;
+  padding: sz(11px 15px);
+
+  &:hover,
+  &:focus {
+    background-color: darken($navbar-bg-inv, 7%);
+    color: $navbar-color-inv;
+    text-decoration: none;
+  }
+
+  &.is-empty {
+    &,
+    &:hover,
     &:focus {
-        outline: 0;
-
-        + label {
-            outline: 2px auto -webkit-focus-ring-color;
-        }
+      background-color: color(grey, lighter);
+      color: color(grey);
     }
-}
+  }
 
-.dropdown--mega {
-    @include transition(max-height .35s .1s ease);
-    max-height: 0;
-    overflow: hidden;
+  .fa {
+    font-size: sz(15px);
+  }
 
-    > .l-container {
-        @include transition(opacity .5s ease);
-        @include opacity(0);
-    }
-
-    .nav {
-        > li {
-            > a {
-                padding: sz(8px 30px 8px 15px);
-
-                &:hover,
-                &:focus,
-                &:active {
-                    background-color: darken($brand-primary, 7%);
-                }
-            }
-        }
-    }
+  @include mq($from: navbar) {
+    //border-right: 1px solid $navbar-border;
+    float: right;
+    font-size: sz(13px);
+    padding: sz(4px 10px);
+  }
 }
 
 
-
-@include mq($to: navbar) {
-    .navbar {
-        background-color: $brand-primary;
-        right: sz(-$navbar-width);
-        position: fixed;
-        width: sz($navbar-width);
-        height: 100%;
-        overflow: hidden;
-        top: 0;
-    }
-
-    // Navbar toggle
-    //
-    // Custom button for toggling the `.navbar-collapse`, powered by the collapse
-    // JavaScript plugin.
-    .navbar__toggle {
-        position: relative;
-        float: right;
-        padding: sz(9px 10px);
-        margin: sz(39px 0);
-        height: 34px;
-        width: 44px;
-        font-size: 17px;
-        line-height: .9;
-        text-align: center;
-        background-color: transparent;
-        background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-        border: 1px solid $navbar-toggle-border-color;
-        border-radius: $border-radius-base;
-        z-index: 1001;
-
-        // We remove the `outline` here, but later compensate by attaching `:hover`
-        // styles to `:focus`.
-        &:focus {
-            outline: none;
-        }
+// Navbar inner scroll wrapper
+.navbar__nav {
+  padding-bottom: sz(41px);
+  position: relative;
+  width: sz($navbar-width + 30);
+  z-index: 1001;
+    
+  .nav {
+    > li {
+      > a {
+        //border-bottom: 1px solid darken($navbar-bg, 5%);
+        color: $navbar-color;
 
         &:hover,
         &:focus {
-            background-color: $navbar-toggle-hover-bg;
+          background-color: $navbar-bg;
         }
-      
-        &:before {
-            content: $fa-var-bars;
-        }
+      }
     }
-    label.navbar__toggle {
-        cursor: pointer;
-    }
+  }
 
-    .nav.navbar__nav {
-        position: relative;
-        z-index: 1001;
-
-        > li {
-            a {
-                border-bottom: 1px solid darken($brand-primary, 7%);
-                letter-spacing: 1px;
-            }
-
-            > a {
-                &:hover,
-                &:focus,
-                &:active {
-                    background-color: darken($brand-primary, 7%);
-                }
-
-                &.is-active:after {
-                    content: $fa-var-caret-up;
-                }
-            }
-        }
-
-        &.navbar__scroller {
-            width: sz($navbar-width + 30);
-            height: 100%;
-            margin-bottom: $line-height-computed * 2;
-            overflow-y: auto;
-        }
-    }
-  
-    .is-active + .dropdown--mega {
-        background-color: darken($brand-primary, 3%);
-        max-height: 700px;
-    
-        > .l-container {
-            @include opacity(1);
-        }
-    }
-
-    .dropdown--mega {    
-        > .l-container {
-            width: 100%;
-        }
-    }
-
-    // Vertical menu that slides from the right
-    .no-js #js-toggle:checked + .navbar__toggle + .navbar, 
-    .navbar.is-active {
-        right: 0;
-    }
-  
-  
-    .navbar__overlay {
-        display: none;
-
-        &.is-active {
-            @include backface-visibility(hidden);
-            @include transition(background .3s ease);
-            @include box-shadow(4px 0 4px rgba(0, 0, 0, .1));
-            //cursor: pointer;
-            display: block;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-        }
-    }
-
-    // Push class applied to the body
-    .navbar__push {
-        overflow-x: hidden;
-        position: relative;
-        left: 0;
-    }
-
-    .navbar__push--right {
-        left: sz(-$navbar-width);
-    }
-   
-    .navbar,
-    .navbar__push {
-        @include transition(all .3s ease);
-        @include backface-visibility(hidden);
-    }
-
-
-    .no-js {
-        .navbar__toggle {
-            @include transition(all .3s ease);
-            right: 0;
-        }
-
-        .navbar__nav > li > a:after {
-            display: none;
-        }
-
-        #js-toggle:checked {
-            + .navbar__toggle {
-                right: sz($navbar-width);
-
-                &:before {
-                    content: $fa-var-times;
-                }
-            }
-        }
-    }
+  @include mq($from: navbar) {
+    padding-bottom: 0;
+  }
 }
 
 
+// Primary Navbar with dropdowns
+.navbar__primary {
+  display: table-header-group;
 
-@include mq($from: navbar) {
-    .navbar {
-        clear: both;
-        position: relative;
-        z-index: 1001;
-    }
+  .nav {
+    .join {
+      border-bottom: 1px solid darken($navbar-bg, 5%);
+      padding: sz(10px 15px);
 
-    .navbar__toggle {
-        display: none;
-    }
+      a {
+        background-color: color(green, dark);
+        border: 0;
+        color: $navbar-color-inv;
 
-    .nav.navbar__nav {
-        position: relative;
-
-        > li {
-            @include transition(background-color .35s .1s ease-in);
-            float: left;
-            margin-left: sz(2px);
-            position: static;
-
-            &:first-child {
-                margin-left: 0;
-            }
-
-            &.navbar__secondary-item {
-                float: right;
-            } 
-
-            > a {
-                @include transition(color .35s ease-in);
-                color: $text-color;
-
-                &:hover,
-                &:focus,
-                &:active {
-                    @include transition(color 0s);
-                    background-color: $brand-primary;
-                    color: #fff;
-                }
-            }
-
-            &:hover,
-            &:focus {
-                @include transition(background-color 0s);
-                background-color: $brand-primary;
-
-                > a {
-                    color: #fff;
-
-                    &:after {
-                        content: $fa-var-caret-up;
-                    }
-
-                    + .dropdown--mega {
-                        //@include box-shadow(0 2px 3px rgba(0,0,0,.2));
-                        max-height: 700px;
-                        z-index: 100;
-                        
-                        > .l-container {
-                           @include opacity(1);
-                        }
-                    }
-                }
-            }
+        &:hover,
+        &:focus {
+          background-color: darken(color(green, dark), 7%);
         }
 
-        .dropdown--mega {
-            background-color: $brand-primary;
-            position: absolute;
-            left: 0;
-            width: 100%;
-            z-index: 10;
+        // &:after {
+        //   font-family: FontAwesome;
+        //   margin-left: 5px;
+        //   content: $fa-var-arrow-circle-right;
+        // }
+      }
 
-            > .l-container {
-                padding: $line-height-computed 0;
-                //@include opacity(0);
-            }
+      @include mq($from: navbar) {
+        border: 0;
+        padding: 0;
 
-            .nav {
-                @include g-col($columns:4,$collapse:null);
-            }
-
-            h3 {
-                display: none;
-            }
+        a {
+          float: right;
         }
+      }
     }
+
+    > .navbar__dd {
+      // dropdown link arrow-down
+      > a {       
+        letter-spacing: 1px;
+
+        &:after {
+          content: $fa-var-caret-down;
+          font-family: FontAwesome;
+          margin-left: 5px;
+        }
+      }
+
+      &.is-active > .navbar__dd-mega {
+        //background-color: $navbar-bg;
+        max-height: 2500px;
+    
+        > .l-container {
+          @include opacity(1);
+        }
+      }
+
+      @include mq($to: navbar) {
+        // dropdown link arrow-up
+        &.is-active > a:after {
+          content: $fa-var-caret-up;
+        }
+
+        > a {
+          letter-spacing: normal;
+        }
+      }
+
+      @include mq($from: navbar) {
+        @include transition(background-color .3s .1s ease-in);
+        float: left;
+        //margin-left: sz(2px);
+        position: static;
+
+        //&:first-child {
+        //    margin-left: 0;
+        //} 
+
+        > a {
+          @include transition(color .3s .1s ease-in);
+          border: 0;
+          color: $navbar-color;
+          font-size: sz(16px);
+          letter-spacing: normal;
+
+          &:hover,
+          &:focus {
+            @include transition(color 0s);
+            background-color: transparent;
+          }
+        }
+
+        &:hover {
+          @include transition(background-color 0s);
+          background-color: $navbar-dd-bg;
+
+          a {
+            //color: $navbar-dd-color;
+
+            + .navbar__dd-mega {
+              max-height: 1000px;
+                         
+              > .l-container {
+                @include opacity(1);
+              }
+            }
+          }
+
+          > a:after {
+            content: $fa-var-caret-up;
+          }
+        }
+      }
+    }
+  }
+
+  @include mq($from: navbar) {
+    display: block;
+  }
+}
+
+
+.navbar__dd-mega {
+  @include transition(max-height .35s ease);
+  max-height: 0;
+  overflow: hidden;
+
+  > .l-container {
+    @include transition(opacity .35s .1s ease);
+    @include opacity(0);
+    width: 100%;
+  }
+
+  .nav {
+    > li {
+      > a {
+        font-size: sz(13px);
+        margin-left: sz(23px);
+        padding: sz(6px 10px);
+
+        //&:hover,
+        //&:focus {
+        //    background-color: darken($navbar-bg, 7%);
+        //}
+      }
+    }
+  }
+
+  @include mq($from: navbar) {
+    background-color: $navbar-dd-bg;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+
+    > .l-container {
+      padding: $line-height-computed 0;
+    }
+
+    .nav {
+      @include g-col($columns:4, $collapse:null);
+
+      > li {
+        > a:hover,
+        > a:focus {
+          background-color: darken($navbar-dd-bg, 7%);
+        }
+      }
+    }
+  }
+}
+
+
+.navbar__secondary {
+  display: table-footer-group;
+  font-size: sz(13px);
+
+  li {
+    a {
+      padding: sz(5px 15px);
+      //text-transform: uppercase;
+    }
+  }
+
+    //.navbar__nav--social {
+    //    display: table-footer-group;
+    //    padding-bottom: sz(40px);
+    //    
+    //    > li {
+    //        float: left;
+
+    //        a {
+    //            font-size: sz(17px);
+    //            width: sz($navbar-width / 4);
+    //        }
+
+    //        .link-facebook {
+    //            @extend %link-facebook;
+    //        }
+    //        .link-linkedin {
+    //            @extend %link-linkedin;
+    //        }
+    //        .link-twitter {
+    //            @extend %link-twitter;
+    //        }
+    //        .link-youtube {
+    //            @extend %link-youtube;
+    //        }
+    //    }
+    //}
+
+  .navbar__nav--mini {
+    display: table-header-group;
+  }
+
+  @include mq($from: navbar) {
+    background-color: color(primary);
+    //border-bottom: 1px solid $navbar-border;
+    display: block;
+    font-size: sz(12px);
+    overflow: auto;
+    margin-bottom: sz(45px);
+    //max-width: 83%;
+
+    //li:first-child + .social {
+    //    clear: none;
+    //}
+
+    .nav {
+      > li {
+        > a {
+          color: #fff; // $navbar-color;
+
+          &:hover,
+          &:focus {
+            //background-color: $navbar-bg-inv;
+            //border-color: $navbar-bg-inv;
+            //color: $navbar-color-inv;
+          }
+        }
+      }
+    }
+
+    //.navbar__nav--mini,
+    li {
+      float: left;
+    }
+
+    .navbar__nav--mini {
+      //margin-top: 32px;
+      display: block;
+
+      a {
+        border-right: 1px solid $navbar-border;
+        //padding-top: 0;
+        //padding-bottom: 0;
+      }
+      li:last-child a {
+        border-right: 0;
+      }
+    }
+
+    //> .navbar__nav--social {
+    //    display: block;
+    //    float: right;
+    //    padding-bottom: 0;
+
+    //    > li > a {
+    //        border: 0;
+    //        padding: sz(3px 0);
+    //        width: 31px;
+    //    }
+    //}
+  }
+}
+
+
+.navbar__crumbs {
+  @include cf;
+  //background-color: #444;
+  clear: left;
+  //margin-left: $navbar-brand-width;
+
+  .crumbs {
+    float: left;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+
+  //.navbar__search {
+  //    margin-top: -1px;
+  //}
+
+  @include mq($from: navbar) {
+    border-top: 1px solid $navbar-border;
+    clear: none;
+    margin-left: $navbar-brand-width + 35;
+        
+    .crumbs {
+      width: auto;
+    }
+  }
+}
+
+
+// Flyout used $to: navbar
+.navbar__flyout {
+  @extend %flyout;
+  background-color: $navbar-bg;
+  //border-top: 4px solid darken($navbar-bg, 7%);
+  right: sz(-$navbar-width);
+  width: sz($navbar-width);
+
+  @include mq($from: navbar) {
+    background-color: transparent;
+    //border-top: 0;
+    margin-left: $navbar-brand-width;
+    position: static;
+    right: auto;
+    width: auto;
+
+    > .flyout__inner {
+      width: auto;
+    }
+  }
 }

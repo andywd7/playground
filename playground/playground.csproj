@@ -136,12 +136,15 @@
     <Content Include="js\bootstrap\tooltip.js" />
     <Content Include="js\bootstrap\transition.js" />
     <Content Include="js\fitvids.js" />
+    <Content Include="js\global.js" />
     <Content Include="js\init.js" />
     <Content Include="js\jquery-2.0.0b2.js" />
     <Content Include="js\jquery-accessibleMegaMenu.js" />
     <Content Include="js\jquery.min.js" />
     <Content Include="js\main.js" />
+    <Content Include="js\min\global.min.js" />
     <Content Include="js\modernizr.js" />
+    <Content Include="js\navbar.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -158,10 +161,7 @@
     <Content Include="fonts\icons.eot" />
     <Content Include="css\style.scss" />
     <Content Include="config\README" />
-    <Content Include="css\scss\tools\_vars.scss" />
-    <Content Include="css\scss\tools\_mixins.scss" />
     <Content Include="css\scss\base\_normalize.custom.scss" />
-    <Content Include="css\scss\tools\_mx-mq.scss" />
     <Content Include="css\scss\components\_navbar.scss" />
     <Content Include="css\scss\components\_navbar2.scss" />
     <Content Include="css\scss\components\_navs.scss" />
@@ -196,6 +196,10 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="css\scss\tools\mixins\_mixins.scss" />
+    <Content Include="css\scss\tools\mixins\_mx-mq.scss" />
+    <Content Include="css\scss\tools\variables\_vars.scss" />
+    <Content Include=".scss-lint.yml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
