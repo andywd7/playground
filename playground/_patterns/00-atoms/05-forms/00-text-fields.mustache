@@ -1,39 +1,49 @@
-<fieldset class="fieldset">
-  <legend class="legend">Legend</legend>
-    <div class="field-container">
-        <label for="text">Text Input <abbr title="Required">*</abbr></label>
-        <input id="text" type="text" placeholder="Text Input">
+<form action="#" role="form">
+  <fieldset class="fieldset">
+    <legend class="legend">Inputs</legend>
+    <div class="f-group">
+      <label for="text">
+        Text Input <abbr title="Required">*</abbr>
+      </label>
+      <input id="text" type="text" class="f-control" placeholder="Text Input" />
     </div>
-    <div class="field-container">
-        <label for="password">Password</label>
-        <input id="password" type="password" placeholder="Type your Password">
+    <div class="f-group">
+      <label for="text">
+        Disabled Text Input <abbr title="Required">*</abbr>
+      </label>
+      <input id="text" type="text" class="f-control" placeholder="Disabled Text Input" disabled="" />
     </div>
-    <div class="field-container">
-        <label for="webaddress">Web Address</label>
-        <input id="webaddress" type="url" placeholder="http://yoursite.com">
+    <div class="f-group">
+      <label for="password">Password</label>
+      <input id="password" type="password" class="f-control" placeholder="Type your Password" autocomplete="" />
     </div>
-    <div class="field-container">
-        <label for="emailaddress">Email Address</label>
-        <input id="emailaddress" type="email" placeholder="name@email.com">
+    <div class="f-group">
+      <label for="webaddress">Web Address</label>
+      <input id="webaddress" type="url" class="f-control" placeholder="http://yoursite.com" />
     </div>
-    <div class="field-container">
-        <label for="search">Search</label>
-        <input id="search" type="search" placeholder="Enter Search Term">
+    <div class="f-group">
+      <label for="emailaddress">Email Address</label>
+      <input id="emailaddress" type="email" class="f-control" placeholder="name@email.com" />
     </div>
-    <div class="field-container">
-        <label for="text">Number Input <abbr title="Required">*</abbr></label>
-        <input id="text" type="number" placeholder="Enter a Number" pattern="[0-9]*">
+    <div class="f-group">
+      <label for="search">Search</label>
+      <input id="search" type="search" class="f-control" placeholder="Enter Search Term" />
     </div>
-    <div class="field-container">
-        <label for="textarea">Textarea</label>
-        <textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here"></textarea>
+    <div class="f-group">
+      <label for="num">Number Input</label>
+      <input id="num" type="number" class="f-control" placeholder="Enter a Number" pattern="[0-9]*" />
     </div>
-    <div class="field-container">
-        <label class="error">Error Input</label>
-        <input class="is-error" type="text" placeholder="Text Input">
+    <div class="f-group">
+      <label for="textarea">Textarea</label>
+      <textarea id="textarea" class="f-control" rows="8" cols="48" placeholder="Enter your message here"></textarea>
     </div>
-    <div class="field-container">
-        <label  class="valid">Valid</label>
-        <input  class="is-valid" type="text" placeholder="Text Input">
+    <div class="f-group">
+      <label for="error" class="error">Error Input</label>
+      <input id="error" class="f-control is-error" type="text" placeholder="Text Input" />
     </div>
-</fieldset>
+    <div class="f-group">
+      <label for="valid" class="valid">Valid Input</label>
+      <input id="valid" class="f-control is-valid" type="text" placeholder="Text Input" />
+    </div>
+  </fieldset>
+</form>

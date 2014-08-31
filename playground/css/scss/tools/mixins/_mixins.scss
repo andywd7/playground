@@ -56,7 +56,10 @@
 // Placeholder text
 @mixin placeholder($color: $input-color-placeholder) {
   &:-moz-placeholder            { color: $color; } // Firefox 4-18
-  &::-moz-placeholder           { color: $color; opacity: 1; } // Firefox 19+
+  &::-moz-placeholder { 
+    color: $color;
+    opacity: 1;
+  } // Firefox 19+
   &:-ms-input-placeholder       { color: $color; } // Internet Explorer 10+
   &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
 }
@@ -72,11 +75,11 @@
 // CSS image replacement
 // Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
 @mixin text-hide() {
-  font: #{0/0} a;
-  color: transparent;
-  text-shadow: none;
   background-color: transparent;
   border: 0;
+  color: transparent;
+  font: #{0/0} a;
+  text-shadow: none;
 }
 
 // map-fetch($map, $keys)
@@ -89,7 +92,7 @@
   $key: nth($keys, 1);
   $length: length($keys);
   $value: map-get($map, $key);
-  @if ($length > 1) {
+  @if $length > 1 {
     $rest: ();
     @for $i from 2 through $length {
       $rest: append($rest, nth($keys, $i))
@@ -100,7 +103,8 @@
   }
 }
 
-
+// color-palettes
+//
 @function color($color, $tone: 'base') {
   @if map-has-key($colors, $color) {
     @return map-get(map-get($colors, $color), $tone);
@@ -111,17 +115,19 @@
 }
 
 
+// px -> rem
+//
 @function strip-unit($num) {
   @return $num / ($num * 0 + 1);
 }
 
 @function size($value, $base-value: $font-value-base) {
-  @if ($old-ie == false) {
+  @if $old-ie == false {
     $value: strip-unit($value) / strip-unit($base-value) * 1rem;
-    @if ($value == 0rem) { $value: 0; } // Turn 0rem into 0
-  } @else if ($old-ie == true) {
+    @if $value == 0rem { $value: 0; } // Turn 0rem into 0
+  } @else if $old-ie == true {
     $value: strip-unit(round($value)) * 1px;
-    @if ($value == 0px) { $value: 0; } // Turn 0em into 0
+    @if $value == 0px { $value: 0; } // Turn 0em into 0
   }
   @return $value;
 }
@@ -139,27 +145,39 @@
 }
 
 
+
 // ===============
 // CSS3 PROPERTIES
 // ===============
 
+// Border Radius - mixin used so can switch between including code if radius wanted
+// else don't include radius code
+@mixin border-radius($radius) {
+  @if $radius == null or $radius == false {
+    // if radius is null or false output nothing
+  } @else {
+    border-radius: $radius;
+  }
+}
+
 // Single side border-radius
 @mixin border-tr($radius) {
   border-top-right-radius: $radius;
-   border-top-left-radius: $radius;
+  border-top-left-radius: $radius;
 }
 @mixin border-rr($radius) {
   border-bottom-right-radius: $radius;
-     border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
 }
 @mixin border-br($radius) {
   border-bottom-right-radius: $radius;
-   border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
 }
 @mixin border-lr($radius) {
   border-bottom-left-radius: $radius;
-     border-top-left-radius: $radius;
+  border-top-left-radius: $radius;
 }
+
 
 // Drop shadows
 @mixin box-shadow($shadow...) {
@@ -167,27 +185,31 @@
           box-shadow: $shadow;
 }
 
+
 // Transitions
 @mixin transition($transition...) {
   -webkit-transition: $transition;
           transition: $transition;
 }
 
+
 // Backface visibility
 // Prevent browsers from flickering when using CSS 3D transforms.
 // Default value is `visible`, but can be changed to `hidden`
-@mixin backface-visibility($visibility){
+@mixin backface-visibility($visibility) {
   -webkit-backface-visibility: $visibility;
      -moz-backface-visibility: $visibility;
           backface-visibility: $visibility;
 }
 
+
 // Box sizing
 @mixin box-sizing($boxmodel) {
-     -moz-box-sizing: $boxmodel;
   -webkit-box-sizing: $boxmodel;
+     -moz-box-sizing: $boxmodel;
           box-sizing: $boxmodel;
 }
+
 
 // User select
 // For selecting text on the page
@@ -198,11 +220,13 @@
           user-select: $select;
 }
 
+
 @mixin rotate($degrees) {
   -webkit-transform: rotate($degrees);
       -ms-transform: rotate($degrees); // IE9 only
           transform: rotate($degrees);
 }
+
 
 @mixin transform-origin($origin) {
   -webkit-transform-origin: $origin;
@@ -211,6 +235,7 @@
           transform-origin: $origin;
 }
 
+
 // Opacity
 @mixin opacity($opacity) {
   opacity: $opacity;
@@ -218,6 +243,7 @@
   $opacity-ie: ($opacity * 100);
   filter: #{alpha(opacity=$opacity-ie)};
 }
+
 
 
 // =========
@@ -229,10 +255,10 @@
 // Creates two color stops, start and end, by specifying a color and position for each color stop.
 // Color stops are not available in IE9 and below.
 @mixin gradient-horizontal($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+  background-image:  linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); // Standard, IE10
+  background-image: -moz-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // FF 3.6+
   background-image: -webkit-gradient(linear, $start-percent top, $end-percent top, from($start-color), to($end-color)); // Safari 4+, Chrome 2+
   background-image: -webkit-linear-gradient(left, color-stop($start-color $start-percent), color-stop($end-color $end-percent)); // Safari 5.1+, Chrome 10+
-  background-image: -moz-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // FF 3.6+
-  background-image:  linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); // Standard, IE10
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
 }
@@ -242,10 +268,10 @@
 // Creates two color stops, start and end, by specifying a color and position for each color stop.
 // Color stops are not available in IE9 and below.
 @mixin gradient-vertical($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+  background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent); // Standard, IE10
+  background-image: -moz-linear-gradient(top, $start-color $start-percent, $end-color $end-percent); // FF 3.6+
   background-image: -webkit-gradient(linear, left $start-percent, left $end-percent, from($start-color), to($end-color)); // Safari 4+, Chrome 2+
   background-image: -webkit-linear-gradient(top, $start-color $start-percent, $end-color $end-percent); // Safari 5.1+, Chrome 10+
-  background-image:  -moz-linear-gradient(top, $start-color $start-percent, $end-color $end-percent); // FF 3.6+
-  background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent); // Standard, IE10
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
 }
@@ -285,9 +311,10 @@
 
 @mixin img-responsive($display: block) {
   display: $display;
-  max-width: 100%; // Part 1: Set a maximum relative to the parent
-  height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+  height: auto; // Part 1: Scale the height according to the width, otherwise you get stretching
+  max-width: 100%; // Part 2: Set a maximum relative to the parent
 }
+
 
 
 // ================
@@ -298,11 +325,12 @@
 // -------------------
 // Dividers (basically an hr) within dropdowns and nav lists
 @mixin nav-divider($color: #e5e5e5) {
+  background-color: $color;
   height: 1px;
   margin: (($line-height-computed / 2) - 1) 0;
   overflow: hidden;
-  background-color: $color;
 }
+
 
 // Tables
 // ------
@@ -332,57 +360,67 @@
   }
 }
 
+
 // Button variants
 // ---------------
 // Easily pump out default styles, as well as :hover, :focus, :active,
 // and disabled options for all buttons
-@mixin button-variant($color, $background, $border) {
-  color: $color;
+@mixin button-variant($color, $background) {
+  @extend %btn;
   background-color: $background;
-  border-color: $border;
+  //border-color: $border;
+  color: $color;
 
   &:hover,
   &:focus,
-  &:active,
-  &.active {
+  //&:active,
+  &.is-active {
+    background-color: darken($background, 6%);
+    //border-color: darken($border, 12%);
     color: $color;
-    background-color: darken($background, 8%);
-        border-color: darken($border, 12%);
   }
-  .open & { &.dropdown-toggle {
-    color: $color;
-    background-color: darken($background, 8%);
-        border-color: darken($border, 12%);
-  } }
-  &:active,
-  &.active {
+  //.open & { 
+  //  &.dropdown-toggle {
+  //    background-color: darken($background, 6%);
+  //    border-color: darken($border, 12%);
+  //    color: $color;
+  //  } 
+  //}
+  //&:active,
+  &.is-active {
     background-image: none;
   }
-  .open & { &.dropdown-toggle {
-    background-image: none;
-  } }
-  &.disabled,
-  &[disabled],
-  fieldset[disabled] & {
-    &,
-    &:hover,
-    &:focus,
-    &:active,
-    &.active {
-      background-color: $background;
-          border-color: $border;
+  //.open & { 
+  //  &.dropdown-toggle {
+  //    background-image: none;
+  //  } 
+  //}
+  .ie-old & {
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+      &,
+      &:hover,
+      &:focus,
+      //&:active,
+      &.is-active {
+        background-color: $background;
+        //border-color: $border;
+      }
     }
   }
 }
 
+
 // Button sizes
 // ------------
 @mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
-  padding: $padding-vertical $padding-horizontal;
+  @include border-radius($border-radius);
   font-size: $font-size;
   line-height: $line-height;
-  border-radius: $border-radius;
+  padding: $padding-vertical $padding-horizontal;
 }
+
 
 // Responsive utilities
 // --------------------
@@ -394,6 +432,7 @@
   th#{$parent},
   td#{$parent} { display: table-cell !important; }
 }
+
 
 // [converter] $parent hack
 @mixin responsive-invisibility($parent) {
@@ -416,26 +455,35 @@
   .radio,
   .checkbox,
   .radio-inline,
-  .checkbox-inline  {
+  .checkbox-inline,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label {
     color: $text-color;
   }
   // Set the border and box shadow on specific inputs to match
-  .form-control {
+  .f-control {
+    @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, .075)); // Redeclare so transitions work
     border-color: $border-color;
-    @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075)); // Redeclare so transitions work
     &:focus {
-      border-color: darken($border-color, 10%);
-      $shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten($border-color, 20%);
+      $shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px lighten($border-color, 20%);
       @include box-shadow($shadow);
+      border-color: darken($border-color, 10%);
     }
   }
   // Set validation states also for addons
   .input-group-addon {
-    color: $text-color;
-    border-color: $border-color;
     background-color: $background-color;
+    border-color: $border-color;
+    color: $text-color;
+  }
+  // Optional feedback icon
+  .f-control-icon {
+    color: $text-color;
   }
 }
+
 
 // Form control focus state
 //
@@ -453,11 +501,12 @@
 @mixin form-control-focus($color: $input-border-focus) {
   $color-rgba: rgba(red($color), green($color), blue($color), .6);
   &:focus {
+    @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px $color-rgba);
     border-color: $color;
     outline: 0;
-    @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $color-rgba);
   }
 }
+
 
 // Form control sizing
 //
@@ -467,11 +516,14 @@
 
 // [converter] $parent hack
 @mixin input-size($parent, $input-height, $padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
-  #{$parent} { height: $input-height;
-  padding: $padding-vertical $padding-horizontal;
-  font-size: $font-size;
-  line-height: $line-height;
-  border-radius: $border-radius; }
+  #{$parent} { 
+    @include border-radius($border-radius);
+    font-size: $font-size;
+    height: $input-height;
+    line-height: $line-height;
+    padding: $padding-vertical $padding-horizontal;
+  }
+
   select#{$parent} {
     height: $input-height;
     line-height: $input-height;

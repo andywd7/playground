@@ -141,10 +141,9 @@
     <Content Include="js\jquery-2.0.0b2.js" />
     <Content Include="js\jquery-accessibleMegaMenu.js" />
     <Content Include="js\jquery.min.js" />
-    <Content Include="js\main.js" />
     <Content Include="js\min\global.min.js" />
-    <Content Include="js\modernizr.js" />
     <Content Include="js\navbar.js" />
+    <Content Include="js\modernizr.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -159,21 +158,26 @@
     <Content Include="fonts\icons.woff" />
     <Content Include="fonts\icons.ttf" />
     <Content Include="fonts\icons.eot" />
-    <Content Include="css\style.scss" />
     <Content Include="config\README" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="css\scss\base\_buttons.scss" />
     <Content Include="css\scss\base\_normalize.custom.scss" />
+    <Content Include="css\scss\base\_scaffolding.scss" />
+    <Content Include="css\scss\components\_crumbs.scss" />
+    <Content Include="css\scss\components\_flyout.scss" />
     <Content Include="css\scss\components\_navbar.scss" />
     <Content Include="css\scss\components\_navbar2.scss" />
+    <Content Include="css\scss\components\_navbar__search.scss" />
     <Content Include="css\scss\components\_navs.scss" />
-    <Content Include="css\scss\components\_flyout.scss" />
-    <Content Include="css\scss\base\_scaffolding.scss" />
     <Content Include="css\scss\layout\_ads.scss" />
     <Content Include="css\scss\layout\_grid.scss" />
     <Content Include="css\scss\layout\_layouts.scss" />
-    <Content Include="css\scss\base\_buttons.scss" />
-    <Content Include="css\scss\base\_forms.scss" />
-    <Content Include="css\scss\components\_navbar__search.scss" />
-    <Content Include="css\scss\components\_crumbs.scss" />
+    <Content Include="css\scss\tools\mixins\_mixins.scss" />
+    <Content Include="css\scss\tools\mixins\_mx-mq.scss" />
+    <Content Include="css\scss\tools\variables\_vars.scss" />
     <Content Include="css\scss\utils\_component-animations.scss" />
     <Content Include="css\scss\utils\_utilities.scss" />
     <Content Include="css\scss\vendor\font-awesome\font-awesome.scss" />
@@ -192,14 +196,11 @@
     <Content Include="css\scss\vendor\font-awesome\_variables.scss" />
     <Content Include="css\scss\_shame.scss" />
     <Content Include="css\style.ie-old.scss" />
-    <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="css\scss\tools\mixins\_mixins.scss" />
-    <Content Include="css\scss\tools\mixins\_mx-mq.scss" />
-    <Content Include="css\scss\tools\variables\_vars.scss" />
-    <Content Include=".scss-lint.yml" />
+    <Content Include="css\style.scss" />
+    <Content Include="css\scss\base\forms\_form-atoms.scss" />
+    <Content Include="css\scss\base\forms\_form-layouts.scss" />
+    <Content Include="css\scss\base\forms\_form-icons.scss" />
+    <Content Include="css\scss\base\forms\_form-input-groups.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -223,7 +224,9 @@
     <Content Include="_patterns\02-organisms\02-comments\00-comment-thread.mustache" />
     <Content Include="_patterns\02-organisms\01-article\00-article-body.mustache" />
     <Content Include="_patterns\02-organisms\00-global\01-footer.mustache" />
-    <Content Include="_patterns\02-organisms\00-global\00-header.mustache" />
+    <Content Include="_patterns\02-organisms\00-global\00-header.mustache">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="_patterns\01-molecules\07-messaging\00-alert.mustache" />
     <Content Include="_patterns\01-molecules\06-components\02-single-comment.mustache" />
     <Content Include="_patterns\01-molecules\06-components\01-accordion.mustache" />
@@ -232,7 +235,9 @@
     <Content Include="_patterns\01-molecules\05-navigation\03-pagination.mustache" />
     <Content Include="_patterns\01-molecules\05-navigation\02-navbar-crumbs.mustache" />
     <Content Include="_patterns\01-molecules\05-navigation\01-footer-nav.mustache" />
-    <Content Include="_patterns\01-molecules\05-navigation\00-navbar-primary.mustache" />
+    <Content Include="_patterns\01-molecules\05-navigation\00-navbar-primary.mustache">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="_patterns\01-molecules\04-forms\02-newsletter.mustache" />
     <Content Include="_patterns\01-molecules\04-forms\01-comment-form.mustache" />
     <Content Include="_patterns\01-molecules\04-forms\00-search.mustache" />
@@ -255,12 +260,20 @@
     <Content Include="_patterns\00-atoms\08-media\_01-audio.mustache" />
     <Content Include="_patterns\00-atoms\08-media\_00-video.mustache" />
     <Content Include="_patterns\00-atoms\07-tables\00-table.mustache" />
-    <Content Include="_patterns\00-atoms\06-buttons\00-buttons.mustache" />
+    <Content Include="_patterns\00-atoms\06-buttons\00-buttons.mustache">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="_patterns\00-atoms\05-forms\04-html5-inputs.mustache" />
-    <Content Include="_patterns\00-atoms\05-forms\03-radio-buttons.mustache" />
-    <Content Include="_patterns\00-atoms\05-forms\02-checkbox.mustache" />
+    <Content Include="_patterns\00-atoms\05-forms\03-radio-buttons.mustache">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_patterns\00-atoms\05-forms\02-checkbox.mustache">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="_patterns\00-atoms\05-forms\01-select-menu.mustache" />
-    <Content Include="_patterns\00-atoms\05-forms\00-text-fields.mustache" />
+    <Content Include="_patterns\00-atoms\05-forms\00-text-fields.mustache">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="_patterns\00-atoms\04-images\07-favicon.mustache" />
     <Content Include="_patterns\00-atoms\04-images\06-loading-icon.mustache" />
     <Content Include="_patterns\00-atoms\04-images\05-icons.mustache" />
@@ -288,7 +301,18 @@
     <Content Include="_data\_listitems.json" />
     <Content Include="_data\_data.json" />
     <Content Include="_patterns\00-atoms\04-images\08-navbar-brand.mustache" />
-    <Content Include="_patterns\01-molecules\05-navigation\05-navbar-secondary.mustache" />
+    <Content Include="_patterns\01-molecules\05-navigation\05-navbar-secondary.mustache">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_patterns\00-atoms\06-buttons\01-buttons-sizes.mustache">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_patterns\00-atoms\05-forms\05-Validation.mustache">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_patterns\00-atoms\05-forms\06-horizontal.mustache">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

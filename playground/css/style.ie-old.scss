@@ -61,7 +61,16 @@ $old-ie: true;
 
 @import 'scss/base/_normalize.custom.scss';
 @import 'scss/base/_scaffolding.scss';
-@import 'scss/base/_forms.scss';
+@import 'scss/layout/_grid.scss'; // has to come before forms.scss as is used within it.
+
+  // Forms
+  // ====================
+
+  @import 'scss/base/forms/_form-atoms.scss';
+  @import 'scss/base/forms/_form-layouts.scss';
+  @import 'scss/base/forms/_form-icons.scss';
+  @import 'scss/base/forms/_form-input-groups.scss';
+
 @import 'scss/base/_buttons.scss';
 
 
@@ -69,7 +78,6 @@ $old-ie: true;
 // LAYOUTS
 // ====================
 
-@import 'scss/layout/_grid.scss';
 @import 'scss/layout/_layouts.scss';
 @import 'scss/layout/_ads.scss';
 

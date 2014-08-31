@@ -1,0 +1,74 @@
+//
+// Forms
+// --------------------------------------------------
+
+
+// Form control feedback states
+//
+// Apply contextual and semantic states to individual form controls.
+
+.has-icon,
+.has-icon--left {
+  // Enable absolute positioning
+  position: relative;
+}
+.has-icon {
+  // Ensure icons don't overlap text
+  .f-control {
+    padding-right: $input-height-base;
+  }
+}
+.has-icon--left {
+  .f-control {
+    padding-left: $input-height-base;
+  }
+  .f-control-icon {
+    left: 0;
+  }
+}
+// Feedback icon (requires .glyphicon classes)
+.f-control-icon {
+  position: absolute;
+  top: ($line-height-computed + sz(4px)); // Height of the `label` and its margin
+  right: 0;
+  z-index: 2; // Ensure icon is above input groups
+  display: block;
+  width: $input-height-base;
+  height: $input-height-base;
+  line-height: $input-height-base;
+  text-align: center;
+}
+
+.input-lg + .f-control-icon {
+  width: $input-height-lg;
+  height: $input-height-lg;
+  line-height: $input-height-lg;
+}
+.input-sm + .f-control-icon {
+  width: $input-height-sm;
+  height: $input-height-sm;
+  line-height: $input-height-sm;
+}
+
+// Feedback states
+.has-success {
+  @include form-control-validation($state-success-text, $state-success-text, $state-success-bg);
+}
+.has-warning {
+  @include form-control-validation($state-warning-text, $state-warning-text, $state-warning-bg);
+}
+.has-error {
+  @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
+}
+
+// Reposition feedback icon if input has visible label above
+.has-icon label,
+.has-icon--left label {
+
+  //& ~ .f-control-icon {
+  //   top: ($line-height-computed + sz(4px)); // Height of the `label` and its margin
+  //}
+  &.sr-only ~ .f-control-icon {
+     top: 0;
+  }
+}

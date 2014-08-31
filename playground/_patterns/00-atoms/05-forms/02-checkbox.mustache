@@ -1,10 +1,40 @@
-<form action="#">
-    <fieldset class="options">
-        <legend>Checkbox <abbr title="Required">*</abbr></legend>
-        <ul>
-            <li><label for="checkbox1"><input id="checkbox1" name="checkbox" type="checkbox" checked="checked"> Choice A</label></li>
-            <li><label for="checkbox2"><input id="checkbox2" name="checkbox" type="checkbox"> Choice B</label></li>
-            <li><label for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox"> Choice C</label></li>
-        </ul>
-    </fieldset>
+<form action="#" role="form">
+  <fieldset class="f-group">
+    <legend>Checkbox</legend>
+    <label for="checkbox1" class="checkbox">
+      <input id="checkbox1" name="checkbox" type="checkbox" checked /> Option 1
+    </label>
+    <label for="checkbox2" class="checkbox">
+      <input id="checkbox2" name="checkbox" type="checkbox" /> Option 2
+    </label>
+    <label for="checkbox3" class="checkbox">
+      <input id="checkbox3" name="checkbox" type="checkbox" /> Option 3
+    </label>
+  </fieldset>
+
+  <fieldset class="f-group">
+    <legend>Checkbox Inline</legend>
+    <label for="checkbox4" class="checkbox-inline">
+      <input id="checkbox4" name="checkboxInline" type="checkbox" checked /> Option 1
+    </label>
+    <label for="checkbox5" class="checkbox-inline">
+      <input id="checkbox5" name="checkboxInline" type="checkbox" /> Option 2
+    </label>
+    <label for="checkbox6" class="checkbox-inline">
+      <input id="checkbox6" name="checkboxInline" type="checkbox" /> Option 3
+    </label>
+  </fieldset>
+
+  <fieldset class="f-group" disabled>
+    <legend>Checkbox Disabled</legend>
+    <label for="checkbox4" class="checkbox">
+      <input id="checkbox4" name="checkboxDisabled" type="checkbox" /> Option 1
+    </label>
+    <label for="checkbox5" class="checkbox">
+      <input id="checkbox5" name="checkboxDisabled" type="checkbox" /> Option 2
+    </label>
+    <label for="checkbox6" class="checkbox">
+      <input id="checkbox6" name="checkboxDisabled" type="checkbox" /> Option 3
+    </label>
+  </fieldset>
 </form>

@@ -39,8 +39,8 @@
 
   } @else { // use @include g-row; to include a nested row
     //width: auto;
-    margin-left: -($column-gutter/2);
-    margin-right: -($column-gutter/2);
+    margin-left: -($column-gutter / 2);
+    margin-right: -($column-gutter / 2);
     //margin-top: 0;
     //margin-bottom: 0;
     //max-width: none;
@@ -96,7 +96,7 @@
     // (use $collapse:null to add no padding)
     padding-left: $column-gutter / 2;
     padding-right: $column-gutter / 2;
-  }
+  } //@else if $collapse == null { }
 
   // If a column number is given, calculate width
   @if $columns {
@@ -129,3 +129,71 @@
   @if $offset { margin-left: g-calc($offset, $total-columns) !important; }
 
 }
+
+// Framework grid generation
+//
+// Used only by Bootstrap to generate the correct number of grid classes given
+// any value of `$grid-columns`.
+
+// [converter] This is defined recursively in LESS, but Sass supports real loops
+@mixin make-grid-columns($i: 1, $list: ".w-#{$i}") {
+  @for $i from (1 + 1) through $total-columns {
+    $list: "#{$list}, .w-#{$i}, .wf-#{$i} .control-label";
+  }
+  #{$list} {
+    @include g-col(
+      // Control the number of columns
+      //$columns:6
+      // Specify whethere or not this is the last column in the row
+      //$last-column:true,
+      // Choose whether or not to center this column
+      //$center:true,
+      // Choose the number of columns to offset this element by
+      //$offset:3,
+      // Specify how many columns to push this element past
+      //$push:3,
+      // Specify how many columns to pull this element past
+      //$pull:9,
+      // Set to true to remove column padding
+      //$collapse:null,
+      // Specify the float direction
+      //$float:left
+    );
+  }
+}
+
+@mixin calc-grid-column($index, $type) {
+  @if ($type == width) and ($index > 0) {
+    .w-#{$index},
+    .wf-#{$index} .control-label {
+      @include g-col(
+        // Control the number of columns
+        $columns: $index,
+        $collapse: null,
+        $float: null
+      );
+    }
+  }
+  @if ($type == offset) {
+    .w-offset-#{$index} {
+      @include g-col(
+        // Choose the number of columns to offset this element by
+        $offset: $index,
+        $collapse: null,
+        $float: null
+      );
+    }
+  }
+}
+
+// [converter] This is defined recursively in LESS, but Sass supports real loops
+@mixin loop-grid-columns($columns, $type) {
+  @for $i from 0 through $columns {
+    @include calc-grid-column($i, $type);
+  }
+}
+
+
+@include make-grid-columns($total-columns);
+@include loop-grid-columns($total-columns, width);
+@include loop-grid-columns($total-columns, offset);

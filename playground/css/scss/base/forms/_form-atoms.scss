@@ -128,7 +128,7 @@ input[type="checkbox"]:focus {
   font-size: $font-size-base;
   height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
   line-height: $line-height-base;
-  padding: $padding-base-vertical ($padding-base-horizontal / 2);
+  padding: $padding-base-vertical ($column-gutter / 2);
   width: 100%;
 
   // Customize the `:focus` state to imitate native WebKit styles.
@@ -195,16 +195,6 @@ textarea.f-control {
 //    line-height: $input-height-lg;
 //  }
 //}
-
-
-// Form groups
-//
-// Designed to help with the organization and spacing of vertical forms. For
-// horizontal forms, use the predefined grid classes.
-
-.f-group {
-  margin-bottom: sz(15px);
-}
 
 
 // Checkboxes and radios
@@ -302,65 +292,6 @@ input[type="checkbox"] {
 // @include input-size('.input-lg', $input-height-lg, $padding-lg-vertical, $padding-lg-horizontal, $font-size-lg, $line-height-lg, $border-radius-lg);
 
 
-// Form control feedback states
-//
-// Apply contextual and semantic states to individual form controls.
-
-.has-feedback {
-  // Enable absolute positioning
-  position: relative;
-
-  // Ensure icons don't overlap text
-  .f-control {
-    padding-right: ($input-height-base * 1.25);
-  }
-}
-// Feedback icon (requires .glyphicon classes)
-.f-control-feedback {
-  position: absolute;
-  top: ($line-height-computed + sz(4px)); // Height of the `label` and its margin
-  right: 0;
-  z-index: 2; // Ensure icon is above input groups
-  display: block;
-  width: $input-height-base;
-  height: $input-height-base;
-  line-height: $input-height-base;
-  text-align: center;
-}
-.input-lg + .f-control-feedback {
-  width: $input-height-lg;
-  height: $input-height-lg;
-  line-height: $input-height-lg;
-}
-.input-sm + .f-control-feedback {
-  width: $input-height-sm;
-  height: $input-height-sm;
-  line-height: $input-height-sm;
-}
-
-// Feedback states
-.has-success {
-  @include form-control-validation($state-success-text, $state-success-text, $state-success-bg);
-}
-.has-warning {
-  @include form-control-validation($state-warning-text, $state-warning-text, $state-warning-bg);
-}
-.has-error {
-  @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
-}
-
-// Reposition feedback icon if input has visible label above
-.has-feedback label {
-
-  & ~ .form-control-feedback {
-     top: ($line-height-computed + sz(5px)); // Height of the `label` and its margin
-  }
-  &.sr-only ~ .form-control-feedback {
-     top: 0;
-  }
-}
-
-
 // Help text
 //
 // Apply to any element you wish to create light text for placement immediately
@@ -373,163 +304,3 @@ input[type="checkbox"] {
 //   margin-bottom: sz(10px);
 //   color: lighten($text-color, 25%); // lighten the text some for contrast
 // }
-
-
-
-// Inline forms
-//
-// Make forms appear inline(-block) by adding the `.f-inline` class. Inline
-// forms begin stacked on extra small (mobile) devices and then go inline when
-// viewports reach <768px.
-//
-// Requires wrapping inputs and labels with `.f-group` for proper display of
-// default HTML form controls and our custom form controls (e.g., input groups).
-//
-// Heads up! This is mixin-ed into `.navbar-form` in navbars.less.
-
-// .f-inline {
-
-
-//   // Kick in the inline
-//   @media (min-width: $screen-sm-min) {
-//     // Inline-block all the things for "inline"
-//     .f-group {
-//       display: inline-block;
-//       margin-bottom: 0;
-//       vertical-align: middle;
-//     }
-
-//     // In navbar-form, allow folks to *not* use `.f-group`
-//     .f-control {
-//       display: inline-block;
-//       width: auto; // Prevent labels from stacking above inputs in `.f-group`
-//       vertical-align: middle;
-//     }
-
-//     .input-group {
-//       display: inline-table;
-//       vertical-align: middle;
-
-//       .input-group-addon,
-//       .input-group-btn,
-//       .f-control {
-//         width: auto;
-//       }
-//     }
-
-//     // Input groups need that 100% width though
-//     .input-group > .f-control {
-//       width: 100%;
-//     }
-
-//     .control-label {
-//       margin-bottom: 0;
-//       vertical-align: middle;
-//     }
-
-//     // Remove default margin on radios/checkboxes that were used for stacking, and
-//     // then undo the floating of radios and checkboxes to match (which also avoids
-//     // a bug in WebKit: https://github.com/twbs/bootstrap/issues/1969).
-//     .radio,
-//     .checkbox {
-//       display: inline-block;
-//       margin-top: 0;
-//       margin-bottom: 0;
-//       padding-left: 0;
-//       vertical-align: middle;
-//         label {
-//           padding-left: 0;
-//		   }
-//     }
-//     .radio input[type="radio"],
-//     .checkbox input[type="checkbox"] {
-//       margin-left: 0;
-//       position: relative;
-//     }
-
-//     // Validation states
-//     //
-//     // Reposition the icon because it's now within a grid column and columns have
-//     // `position: relative;` on them. Also accounts for the grid gutter padding.
-//     .has-feedback .f-control-feedback {
-//       top: 0;
-//     }
-//   }
-// }
-
-
-// Horizontal forms
-//
-// Horizontal forms are built on grid classes and allow you to create forms with
-// labels on the left and inputs on the right.
-
-// .f-horizontal {
-
-//   // Consistent vertical alignment of radios and checkboxes
-//   //
-//   // Labels also get some reset styles, but that is scoped to a media query below.
-//   .radio,
-//   .checkbox,
-//   .radio-inline,
-//   .checkbox-inline {
-//     margin-top: 0;
-//     margin-bottom: 0;
-//     padding-top: ($padding-base-vertical + 1); // Default padding plus a border
-//   }
-//   // Account for padding we're adding to ensure the alignment and of help text
-//   // and other content below items
-//   .radio,
-//   .checkbox {
-//     min-height: ($line-height-computed + ($padding-base-vertical + 1));
-//   }
-
-//   // Make form groups behave like rows
-//   .f-group {
-//     @include make-row();
-//   }
-
-//   // Reset spacing and right align labels, but scope to media queries so that
-//   // labels on narrow viewports stack the same as a default form example.
-//   @media (min-width: $screen-sm-min) {
-//     .control-label {
-//       text-align: right;
-//       margin-bottom: 0;
-//       padding-top: ($padding-base-vertical + 1); // Default padding plus a border
-//     }
-//   }
-
-//   // Validation states
-//   //
-//   // Reposition the icon because it's now within a grid column and columns have
-//   // `position: relative;` on them. Also accounts for the grid gutter padding.
-//   .has-feedback .f-control-feedback {
-//     top: 0;
-//     right: ($grid-gutter-width / 2);
-//   }
-
-
-// Form group sizes
-//
-// Quick utility class for applying `.input-lg` and `.input-sm` styles to the
-// inputs and labels within a `.f-group`.
-//.f-group-lg {
-//  @include mq($from: mobile) {
-//	  .control-label {
-//		  padding-top: (($padding-lg-vertical * $line-height-lg) + 1);
-//		}
-//  }
-//	.f-control {
-//		@extend .input-lg;
-//  }
-//}
-
-//.f-group-sm {
-//	@include mq($from: desktop) {
-//    .control-label {
-//			padding-top: ($padding-sm-vertical + 1);
-//		}
-//	}
-//	.f-control {
-//	  @extend .input-sm;
-//	}
-//}

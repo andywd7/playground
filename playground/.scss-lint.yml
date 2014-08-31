@@ -71,7 +71,7 @@ linters:
 
   NameFormat:
     enabled: true
-    convention: hyphenated_lowercase # or 'BEM', or a regex pattern ((^#)(?:[0-9A-Fa-f]{6}|[0-9A-Fa-f]{3}))|(js-)|(-|_|\.|@|%|\$)
+    convention: hyphenated_lowercase # or 'BEM', or a regex pattern
 
   PlaceholderInExtend:
     enabled: true
