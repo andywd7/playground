@@ -1,23 +1,24 @@
+&lt;!-- Begin .header --&gt;
 &lt;a href=&quot;#main&quot; class=&quot;sr-only&quot;&gt;Skip to main content&lt;/a&gt;
 &lt;div id=&quot;page&quot; class=&quot;navbar__push&quot;&gt;
-    &lt;!-- Begin .header --&gt;
-    &lt;header class=&quot;l-header&quot; role=&quot;banner&quot; style=&quot;border-top: 5px solid #444&quot;&gt;
+    &lt;header class=&quot;l-header navbar&quot; role=&quot;banner&quot;&gt;
         &lt;div class=&quot;l-container&quot;&gt;
             {{&gt; atoms-navbar-brand }}
 
             &lt;a href=&quot;#&quot; id=&quot;js-basket&quot; class=&quot;basket&quot; role=&quot;button&quot;&gt;&lt;i class=&quot;fa fa-shopping-cart&quot;&gt;&lt;/i&gt; Basket &lt;span&gt;(0)&lt;/span&gt;&lt;/a&gt;
             &lt;input type=&quot;checkbox&quot; id=&quot;js-toggle&quot; class=&quot;navbar__check&quot; role=&quot;button&quot;&gt;
-            &lt;label for=&quot;js-toggle&quot; id=&quot;leftPush&quot; class=&quot;navbar__toggle fa&quot;&gt;
+            &lt;label for=&quot;js-toggle&quot; id=&quot;leftPush&quot; class=&quot;navbar__toggle&quot;&gt;
+              &lt;span class=&quot;navbar__menu&quot;&gt;MENU&lt;/span&gt;
                 &lt;span class=&quot;sr-only&quot;&gt;Toggle navigation&lt;/span&gt;
             &lt;/label&gt;
 
-            &lt;div id=&quot;navbar-nav&quot; class=&quot;navbar flyout--mobile&quot;&gt;
+            &lt;div id=&quot;navbar-nav&quot; class=&quot;navbar__flyout&quot;&gt;
                 &lt;div class=&quot;navbar__nav flyout__inner&quot;&gt;
                     {{&gt; molecules-navbar-secondary }}
                     {{&gt; molecules-navbar-primary }}
                 &lt;/div&gt;
             &lt;/div&gt;
 
-            {{&gt; molecules-navbar-crumbs }}
+              &lt;!-- {{&gt; molecules-navbar-crumbs }} --&gt;
         &lt;/div&gt;
     &lt;/header&gt;&lt;!-- end .header --&gt;

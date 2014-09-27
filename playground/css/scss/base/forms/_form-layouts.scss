@@ -139,7 +139,8 @@
   //
   // Reposition the icon because it's now within a grid column and columns have
   // `position: relative;` on them. Also accounts for the grid gutter padding.
-  .has-icon .f-control-icon {
+  .has-icon .f-control-icon,
+  .has-icon--right .f-control-icon {
     top: 0;
     right: ($column-gutter / 2);
   }

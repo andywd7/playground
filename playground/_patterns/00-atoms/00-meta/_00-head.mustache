@@ -1,28 +1,29 @@
 ﻿<!DOCTYPE html>
-<!--[if lte IE 8]>       <html class="no-js ie8 ie-old {{ htmlClass }}"> <![endif]-->
-<!--[if IE 9]>           <html class="no-js ie9 ie-old {{ htmlClass }}"> <![endif]-->
-<!--[if gte IE 10]><!--> <html class="no-js {{ htmlClass }}"> <!--<![endif]-->
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ title }}</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width" />
+	<!--[if lte IE 8]>       <html class="no-js ie8 ie-old {{ htmlClass }}"> <![endif]-->
+	<!--[if IE 9]>           <html class="no-js ie9 ie-old {{ htmlClass }}"> <![endif]-->
+	<!--[if gte IE 10]><!--> <html class="no-js {{ htmlClass }}"> <!--<![endif]-->
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>{{ title }}</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width" />
 
-    <!--[if (lte IE 8) | (IEMobile)]>
-        <link rel="stylesheet" href="../../styles/style.ie-old.css?{{ cacheBuster }}" media="all">
-    <![endif]-->
-    <!--[if (gte IE 9) | (!IEMobile)]><!-->
-        <link rel="stylesheet" href="../../css/style.css?{{ cacheBuster }}" media="all" />
-    <!--<![endif]-->
+		<!--[if (lte IE 8) | (IEMobile)]>
+			<link rel="stylesheet" href="../../styles/style.ie-old.css?{{ cacheBuster }}" media="all">
+		<![endif]-->
+		<!--[if (gte IE 9) | (!IEMobile)]><!-->
+			<link rel="stylesheet" href="../../css/style.css?{{ cacheBuster }}" media="all" />
+			<link rel="stylesheet" href="../../css/docs/docs.css?{{ cacheBuster }}" media="all" />
+		<!--<![endif]-->
 
-    <script src="../../js/modernizr.js"></script>
+		<script src="../../js/modernizr.js"></script>
 
-    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    {% pattern-lab-head %}
-    <!-- End Pattern Lab -->
-</head>
-    <body class="{{ bodyClass }}">
+		<!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+		{% pattern-lab-head %}
+		<!-- End Pattern Lab -->
+	</head>
+    <body class="{{ bodyClass }}" style="border: 1px solid #eee; margin: 20px 20px 21px; padding: 21px 20px 0;">
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->

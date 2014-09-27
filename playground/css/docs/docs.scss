@@ -1,0 +1,74 @@
+// ====================
+// DOCS
+// ====================
+$old-ie: false;
+
+@import '../scss/tools/mixins/_mixins.scss';
+@import '../scss/tools/mixins/_mx-mq.scss'; // Includes breakpoint vars & other mq options.
+@import '../scss/tools/variables/_vars.scss';
+
+$fonts: (
+    heading: $headings-font-family,
+    body:    $font-family-base
+) !default;
+
+
+@each $font, $val in $fonts {
+  .docs-#{$font} {
+    font-family: $val;
+    &:after {
+      content: "#{$val}";
+      padding-left: 5px;
+    }
+  }
+}
+
+
+@each $color, $val in $colors {
+  @each $tone in map-keys(map-get($colors, $color)) {
+    .sg-#{$color}-#{$tone} {
+      background-color: map-fetch($colors, $color $tone);
+      &:after {
+        content: "#{map-fetch($colors, $color $tone)}";
+      }
+    }
+  }
+}
+
+.sg-palette {
+  float: left;
+  list-style: none;
+  margin-bottom: 0;
+  margin-right: 20px;
+  margin-top: 0;
+  padding-left: 0; // Override default ul/ol
+
+  > li {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: auto;
+  }
+    
+  .sg-color {
+    color: #fff;
+    display: block;
+    font-size: 12px;
+    height: 100px;
+    line-height: 100px;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+    width: 100px;
+
+    &:after {
+      bottom: -62px;
+      color: #000;
+      font-size: 14px;
+      left: 0;
+      position: absolute;
+      right: 0;
+    }
+  }
+}

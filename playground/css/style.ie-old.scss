@@ -62,11 +62,13 @@ $old-ie: true;
 @import 'scss/base/_normalize.custom.scss';
 @import 'scss/base/_scaffolding.scss';
 @import 'scss/layout/_grid.scss'; // has to come before forms.scss as is used within it.
+@import 'scss/base/_type.scss';
+@import 'scss/base/_lists.scss';
 
   // Forms
   // ====================
 
-  @import 'scss/base/forms/_form-atoms.scss';
+  @import 'scss/base/forms/_form-elements.scss';
   @import 'scss/base/forms/_form-layouts.scss';
   @import 'scss/base/forms/_form-icons.scss';
   @import 'scss/base/forms/_form-input-groups.scss';
@@ -78,11 +80,11 @@ $old-ie: true;
 // LAYOUTS
 // ====================
 
+
 @import 'scss/layout/_layouts.scss';
 @import 'scss/layout/_ads.scss';
 
 
-// ====================
 // UTILITIES
 // ====================
 
@@ -90,7 +92,7 @@ $old-ie: true;
 
 
 // ====================
-// MODULES
+// COMPONENTS
 // ====================
 
 @import 'scss/components/_navs.scss';
@@ -100,10 +102,19 @@ $old-ie: true;
 @import 'scss/components/_crumbs.scss';
 
 
+// ========================================
+// UTILITIES (continued)
+// ========================================
+
 @import 'scss/utils/_utilities.scss';
+@import 'scss/utils/_txt.scss';
 
 
-//@import 'scss/_shame.scss';
+// ====================
+// MISC
+// ====================
+
+@import 'scss/_shame.scss';
 
 
 

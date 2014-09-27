@@ -1,0 +1,319 @@
+/* line 17, docs.scss */
+.docs-heading {
+  font-family: "Shaker Regular", Tahoma, Verdana, Geneva, sans-serif;
+}
+/* line 19, docs.scss */
+.docs-heading:after {
+  content: '"Shaker Regular", Tahoma, Verdana, Geneva, sans-serif';
+  padding-left: 5px;
+}
+
+/* line 17, docs.scss */
+.docs-body {
+  font-family: Tahoma, Verdana, Geneva, sans-serif;
+}
+/* line 19, docs.scss */
+.docs-body:after {
+  content: "Tahoma, Verdana, Geneva, sans-serif";
+  padding-left: 5px;
+}
+
+/* line 29, docs.scss */
+.sg-gray-darker {
+  background-color: #333333;
+}
+/* line 31, docs.scss */
+.sg-gray-darker:after {
+  content: "#333333";
+}
+
+/* line 29, docs.scss */
+.sg-gray-dark {
+  background-color: #666666;
+}
+/* line 31, docs.scss */
+.sg-gray-dark:after {
+  content: "#666666";
+}
+
+/* line 29, docs.scss */
+.sg-gray-base {
+  background-color: #999999;
+}
+/* line 31, docs.scss */
+.sg-gray-base:after {
+  content: "#999999";
+}
+
+/* line 29, docs.scss */
+.sg-gray-light {
+  background-color: #cccccc;
+}
+/* line 31, docs.scss */
+.sg-gray-light:after {
+  content: "#cccccc";
+}
+
+/* line 29, docs.scss */
+.sg-gray-lighter {
+  background-color: #e6e6e6;
+}
+/* line 31, docs.scss */
+.sg-gray-lighter:after {
+  content: "#e6e6e6";
+}
+
+/* line 29, docs.scss */
+.sg-gray-lightest {
+  background-color: #f4f4f4;
+}
+/* line 31, docs.scss */
+.sg-gray-lightest:after {
+  content: "#f4f4f4";
+}
+
+/* line 29, docs.scss */
+.sg-primary-dark {
+  background-color: #3b6883;
+}
+/* line 31, docs.scss */
+.sg-primary-dark:after {
+  content: "#3b6883";
+}
+
+/* line 29, docs.scss */
+.sg-primary-base {
+  background-color: #467c9c;
+}
+/* line 31, docs.scss */
+.sg-primary-base:after {
+  content: "#467c9c";
+}
+
+/* line 29, docs.scss */
+.sg-primary-light {
+  background-color: #548fb2;
+}
+/* line 31, docs.scss */
+.sg-primary-light:after {
+  content: "#548fb2";
+}
+
+/* line 29, docs.scss */
+.sg-primary-txt {
+  background-color: #005373;
+}
+/* line 31, docs.scss */
+.sg-primary-txt:after {
+  content: "#005373";
+}
+
+/* line 29, docs.scss */
+.sg-green-dark {
+  background-color: #069369;
+}
+/* line 31, docs.scss */
+.sg-green-dark:after {
+  content: "#069369";
+}
+
+/* line 29, docs.scss */
+.sg-green-base {
+  background-color: #44aa8c;
+}
+/* line 31, docs.scss */
+.sg-green-base:after {
+  content: "#44aa8c";
+}
+
+/* line 29, docs.scss */
+.sg-green-light {
+  background-color: #a1ccbc;
+}
+/* line 31, docs.scss */
+.sg-green-light:after {
+  content: "#a1ccbc";
+}
+
+/* line 29, docs.scss */
+.sg-gold-dark {
+  background-color: #bf9227;
+}
+/* line 31, docs.scss */
+.sg-gold-dark:after {
+  content: "#bf9227";
+}
+
+/* line 29, docs.scss */
+.sg-gold-base {
+  background-color: #e4c52d;
+}
+/* line 31, docs.scss */
+.sg-gold-base:after {
+  content: "#e4c52d";
+}
+
+/* line 29, docs.scss */
+.sg-gold-light {
+  background-color: #ebd66d;
+}
+/* line 31, docs.scss */
+.sg-gold-light:after {
+  content: "#ebd66d";
+}
+
+/* line 29, docs.scss */
+.sg-red-dark {
+  background-color: #a00a2d;
+}
+/* line 31, docs.scss */
+.sg-red-dark:after {
+  content: "#a00a2d";
+}
+
+/* line 29, docs.scss */
+.sg-red-base {
+  background-color: #b84762;
+}
+/* line 31, docs.scss */
+.sg-red-base:after {
+  content: "#b84762";
+}
+
+/* line 29, docs.scss */
+.sg-red-light {
+  background-color: #ca7589;
+}
+/* line 31, docs.scss */
+.sg-red-light:after {
+  content: "#ca7589";
+}
+
+/* line 29, docs.scss */
+.sg-blue-dark {
+  background-color: #006186;
+}
+/* line 31, docs.scss */
+.sg-blue-dark:after {
+  content: "#006186";
+}
+
+/* line 29, docs.scss */
+.sg-blue-base {
+  background-color: #0c9aac;
+}
+/* line 31, docs.scss */
+.sg-blue-base:after {
+  content: "#0c9aac";
+}
+
+/* line 29, docs.scss */
+.sg-blue-light {
+  background-color: #64b7cf;
+}
+/* line 31, docs.scss */
+.sg-blue-light:after {
+  content: "#64b7cf";
+}
+
+/* line 29, docs.scss */
+.sg-purple-dark {
+  background-color: #592b71;
+}
+/* line 31, docs.scss */
+.sg-purple-dark:after {
+  content: "#592b71";
+}
+
+/* line 29, docs.scss */
+.sg-purple-base {
+  background-color: #733e8d;
+}
+/* line 31, docs.scss */
+.sg-purple-base:after {
+  content: "#733e8d";
+}
+
+/* line 29, docs.scss */
+.sg-purple-light {
+  background-color: #b699c0;
+}
+/* line 31, docs.scss */
+.sg-purple-light:after {
+  content: "#b699c0";
+}
+
+/* line 29, docs.scss */
+.sg-social-facebook {
+  background-color: #3b5998;
+}
+/* line 31, docs.scss */
+.sg-social-facebook:after {
+  content: "#3b5998";
+}
+
+/* line 29, docs.scss */
+.sg-social-linkedin {
+  background-color: #0976b4;
+}
+/* line 31, docs.scss */
+.sg-social-linkedin:after {
+  content: "#0976b4";
+}
+
+/* line 29, docs.scss */
+.sg-social-twitter {
+  background-color: #55acee;
+}
+/* line 31, docs.scss */
+.sg-social-twitter:after {
+  content: "#55acee";
+}
+
+/* line 29, docs.scss */
+.sg-social-youtube {
+  background-color: #cc181e;
+}
+/* line 31, docs.scss */
+.sg-social-youtube:after {
+  content: "#cc181e";
+}
+
+/* line 38, docs.scss */
+.sg-palette {
+  float: left;
+  list-style: none;
+  margin-bottom: 0;
+  margin-right: 20px;
+  margin-top: 0;
+  padding-left: 0;
+}
+/* line 46, docs.scss */
+.sg-palette > li {
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: auto;
+}
+/* line 54, docs.scss */
+.sg-palette .sg-color {
+  color: #fff;
+  display: block;
+  font-size: 12px;
+  height: 100px;
+  line-height: 100px;
+  margin-bottom: 20px;
+  position: relative;
+  text-align: center;
+  width: 100px;
+}
+/* line 65, docs.scss */
+.sg-palette .sg-color:after {
+  bottom: -62px;
+  color: #000;
+  font-size: 14px;
+  left: 0;
+  position: absolute;
+  right: 0;
+}

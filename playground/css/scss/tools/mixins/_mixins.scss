@@ -66,7 +66,7 @@
 
 // Text overflow
 // Requires inline-block or block & width or max-width for proper styling
-@mixin text-overflow() {
+@mixin txt-overflow() {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -74,7 +74,7 @@
 
 // CSS image replacement
 // Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
-@mixin text-hide() {
+@mixin txt-hide() {
   background-color: transparent;
   border: 0;
   color: transparent;
@@ -313,6 +313,20 @@
   display: $display;
   height: auto; // Part 1: Scale the height according to the width, otherwise you get stretching
   max-width: 100%; // Part 2: Set a maximum relative to the parent
+}
+
+
+// Typography
+// ----------------
+
+// [converter] $parent hack
+@mixin txt-emphasis-variant($parent, $color) {
+  #{$parent} {
+    color: $color;
+  }
+  a#{$parent}:hover {
+    color: darken($color, 10%);
+  }
 }
 
 

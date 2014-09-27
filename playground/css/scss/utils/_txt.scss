@@ -1,0 +1,29 @@
+//
+// Text(.txt-) Utility classes
+// --------------------------------------------------
+
+
+// Alignment
+.txt-left           { text-align: left; }
+.txt-right          { text-align: right; }
+.txt-center         { text-align: center; }
+.txt-justify        { text-align: justify; }
+.txt-nowrap         { white-space: nowrap; }
+
+
+// Transformation
+.txt-lower          { text-transform: lowercase; }
+.txt-upper          { text-transform: uppercase; }
+.txt-caps           { text-transform: capitalize; }
+
+
+// Contextual colors
+.txt-muted {
+  color: $txt-muted;
+}
+
+@include txt-emphasis-variant('.txt-primary', color(primary));
+@include txt-emphasis-variant('.txt-default', $txt-color);
+/*@include txt-emphasis-variant('.txt-info', $state-info-txt);
+@include txt-emphasis-variant('.txt-warning', $state-warning-txt);
+@include txt-emphasis-variant('.txt-danger', $state-danger-txt);*/

@@ -5,18 +5,39 @@
 // Floats
 // -------------------------
 
-.u-cf {
-  @include cf();
-}
-.u-center-block {
-  @include center-block();
-}
 .u-fr {
   float: right !important;
 }
 .u-fl {
   float: left !important;
 }
+.u-fn {
+  float: none !important;
+}
+
+
+// Clears
+// -------------------------
+
+.u-cf {
+  @include cf();
+}
+//.u-cr {
+//  clear: right !important;
+//}
+//.u-cl {
+//  clear: left !important;
+//}
+//.u-cn {
+//  clear: none !important;
+//}
+//.u-cb {
+//  clear: both !important;
+//}
+
+//.u-center-block {
+//  @include center-block();
+//}
 
 
 // Toggling content
@@ -32,14 +53,11 @@
 .u-invisible {
   visibility: hidden;
 }
-.u-text-hide {
-  @include text-hide();
+.txt-hide {
+  @include txt-hide();
 }
 
-
-// Hide from screenreaders and browsers
-//
-// Credit: HTML5 Boilerplate
+// Hide from screenreaders and browsers. Credit: HTML5 Boilerplate
 
 .u-hidden {
   display: none !important;
@@ -50,6 +68,6 @@
 // For Affix plugin
 // -------------------------
 
-.u-affix {
-  position: fixed;
-}
+//.u-affix {
+//  position: fixed;
+//}
