@@ -1,37 +1,38 @@
 <!DOCTYPE html>
-<!--[if lte IE 8]>       <html class="no-js ie8 ie-old pl"> <![endif]-->
-<!--[if IE 9]>           <html class="no-js ie9 ie-old pl"> <![endif]-->
-<!--[if gte IE 10]><!--> <html class="no-js pl"> <!--<![endif]-->
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Pattern Lab</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width" />
+	<!--[if lte IE 8]>       <html class="no-js ie8 ie-old pl"> <![endif]-->
+	<!--[if IE 9]>           <html class="no-js ie9 ie-old pl"> <![endif]-->
+	<!--[if gte IE 10]><!--> <html class="no-js pl"> <!--<![endif]-->
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Pattern Lab</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width" />
 
-    <!--[if (lte IE 8) | (IEMobile)]>
-        <link rel="stylesheet" href="../../styles/style.ie-old.css?635407781983185404" media="all">
-    <![endif]-->
-    <!--[if (gte IE 9) | (!IEMobile)]><!-->
-        <link rel="stylesheet" href="../../css/style.css?635407781983185404" media="all" />
-    <!--<![endif]-->
+		<!--[if (lte IE 8) | (IEMobile)]>
+			<link rel="stylesheet" href="../../styles/style.ie-old.css?635455283751408651" media="all">
+		<![endif]-->
+		<!--[if (gte IE 9) | (!IEMobile)]><!-->
+			<link rel="stylesheet" href="../../css/style.css?635455283751408651" media="all" />
+			<link rel="stylesheet" href="../../css/docs/docs.css?635455283751408651" media="all" />
+		<!--<![endif]-->
 
-    <script src="../../js/modernizr.js"></script>
+		<script src="../../js/modernizr.js"></script>
 
-    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-    		<!-- never cache patterns -->
+		<!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+				<!-- never cache patterns -->
 		<meta http-equiv="cache-control" content="max-age=0" />
 		<meta http-equiv="cache-control" content="no-cache" />
 		<meta http-equiv="expires" content="0" />
 		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 		<meta http-equiv="pragma" content="no-cache" />
 		
-		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?635407781983185404" media="all">
-		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?635407781983185404" media="all" />
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?635455283751408651" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?635455283751408651" media="all" />
 		
-    <!-- End Pattern Lab -->
-</head>
-    <body class="body">
+		<!-- End Pattern Lab -->
+	</head>
+    <body class="body" style="border: 1px solid #eee; margin: 20px 20px 21px; padding: 21px 20px 0;">
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -45,86 +46,92 @@
 					<div id="atoms-text-fields" class="sg-pattern">
 						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-05-forms-00-text-fields/00-atoms-05-forms-00-text-fields.html" class="patternLink" data-patternpartial="atoms-text-fields">Text Fields</a></h2>
 						<div class="sg-pattern-body">
-							<fieldset>
-    <div class="field-container">
-        <label for="text">Text Input <abbr title="Required">*</abbr></label>
-        <input id="text" type="text" placeholder="Text Input">
+							<form action="#" role="form">
+  <fieldset class="fieldset">
+    <legend class="legend">Inputs</legend>
+    <div class="f-group">
+      <label for="text">
+        Text Input <abbr title="Required">*</abbr>
+      </label>
+      <input id="text" type="text" class="f-control" placeholder="Text Input" />
     </div>
-    <div class="field-container">
-        <label for="password">Password</label>
-        <input id="password" type="password" placeholder="Type your Password">
+    <div class="f-group">
+      <label for="text">
+        Disabled Text Input <abbr title="Required">*</abbr>
+      </label>
+      <input id="text" type="text" class="f-control" placeholder="Disabled Text Input" disabled="" />
     </div>
-    <div class="field-container">
-        <label for="webaddress">Web Address</label>
-        <input id="webaddress" type="url" placeholder="http://yoursite.com">
+    <div class="f-group">
+      <label for="password">Password</label>
+      <input id="password" type="password" class="f-control" placeholder="Type your Password" autocomplete="" />
     </div>
-    <div class="field-container">
-        <label for="emailaddress">Email Address</label>
-        <input id="emailaddress" type="email" placeholder="name@email.com">
+    <div class="f-group">
+      <label for="webaddress">Web Address</label>
+      <input id="webaddress" type="url" class="f-control" placeholder="http://yoursite.com" />
     </div>
-    <div class="field-container">
-        <label for="search">Search</label>
-        <input id="search" type="search" placeholder="Enter Search Term">
+    <div class="f-group">
+      <label for="emailaddress">Email Address</label>
+      <input id="emailaddress" type="email" class="f-control" placeholder="name@email.com" />
     </div>
-    <div class="field-container">
-        <label for="text">Number Input <abbr title="Required">*</abbr></label>
-        <input id="text" type="number" placeholder="Enter a Number" pattern="[0-9]*">
+    <div class="f-group">
+      <label for="search">Search</label>
+      <input id="search" type="search" class="f-control" placeholder="Enter Search Term" />
     </div>
-    <div class="field-container">
-        <label for="textarea">Textarea</label>
-        <textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here"></textarea>
+    <div class="f-group">
+      <label for="num">Number Input</label>
+      <input id="num" type="number" class="f-control" placeholder="Enter a Number" pattern="[0-9]*" />
     </div>
-    <div class="field-container">
-        <label class="error">Error Input</label>
-        <input class="is-error" type="text" placeholder="Text Input">
+    <div class="f-group">
+      <label for="textarea">Textarea</label>
+      <textarea id="textarea" class="f-control" rows="8" cols="48" placeholder="Enter your message here"></textarea>
     </div>
-    <div class="field-container">
-        <label  class="valid">Valid</label>
-        <input  class="is-valid" type="text" placeholder="Text Input">
-    </div>
-</fieldset>
+  </fieldset>
+</form>
 							<div class="sg-code" style="display: none">
 								<h3 class="sg-code-head">HTML</h3>
 								<pre class="sg-code-html">
 									<code>
-										&lt;fieldset&gt;
-    &lt;div class=&quot;field-container&quot;&gt;
-        &lt;label for=&quot;text&quot;&gt;Text Input &lt;abbr title=&quot;Required&quot;&gt;*&lt;/abbr&gt;&lt;/label&gt;
-        &lt;input id=&quot;text&quot; type=&quot;text&quot; placeholder=&quot;Text Input&quot;&gt;
+										&lt;form action=&quot;#&quot; role=&quot;form&quot;&gt;
+  &lt;fieldset class=&quot;fieldset&quot;&gt;
+    &lt;legend class=&quot;legend&quot;&gt;Inputs&lt;/legend&gt;
+    &lt;div class=&quot;f-group&quot;&gt;
+      &lt;label for=&quot;text&quot;&gt;
+        Text Input &lt;abbr title=&quot;Required&quot;&gt;*&lt;/abbr&gt;
+      &lt;/label&gt;
+      &lt;input id=&quot;text&quot; type=&quot;text&quot; class=&quot;f-control&quot; placeholder=&quot;Text Input&quot; /&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;field-container&quot;&gt;
-        &lt;label for=&quot;password&quot;&gt;Password&lt;/label&gt;
-        &lt;input id=&quot;password&quot; type=&quot;password&quot; placeholder=&quot;Type your Password&quot;&gt;
+    &lt;div class=&quot;f-group&quot;&gt;
+      &lt;label for=&quot;text&quot;&gt;
+        Disabled Text Input &lt;abbr title=&quot;Required&quot;&gt;*&lt;/abbr&gt;
+      &lt;/label&gt;
+      &lt;input id=&quot;text&quot; type=&quot;text&quot; class=&quot;f-control&quot; placeholder=&quot;Disabled Text Input&quot; disabled=&quot;&quot; /&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;field-container&quot;&gt;
-        &lt;label for=&quot;webaddress&quot;&gt;Web Address&lt;/label&gt;
-        &lt;input id=&quot;webaddress&quot; type=&quot;url&quot; placeholder=&quot;http://yoursite.com&quot;&gt;
+    &lt;div class=&quot;f-group&quot;&gt;
+      &lt;label for=&quot;password&quot;&gt;Password&lt;/label&gt;
+      &lt;input id=&quot;password&quot; type=&quot;password&quot; class=&quot;f-control&quot; placeholder=&quot;Type your Password&quot; autocomplete=&quot;&quot; /&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;field-container&quot;&gt;
-        &lt;label for=&quot;emailaddress&quot;&gt;Email Address&lt;/label&gt;
-        &lt;input id=&quot;emailaddress&quot; type=&quot;email&quot; placeholder=&quot;name@email.com&quot;&gt;
+    &lt;div class=&quot;f-group&quot;&gt;
+      &lt;label for=&quot;webaddress&quot;&gt;Web Address&lt;/label&gt;
+      &lt;input id=&quot;webaddress&quot; type=&quot;url&quot; class=&quot;f-control&quot; placeholder=&quot;http://yoursite.com&quot; /&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;field-container&quot;&gt;
-        &lt;label for=&quot;search&quot;&gt;Search&lt;/label&gt;
-        &lt;input id=&quot;search&quot; type=&quot;search&quot; placeholder=&quot;Enter Search Term&quot;&gt;
+    &lt;div class=&quot;f-group&quot;&gt;
+      &lt;label for=&quot;emailaddress&quot;&gt;Email Address&lt;/label&gt;
+      &lt;input id=&quot;emailaddress&quot; type=&quot;email&quot; class=&quot;f-control&quot; placeholder=&quot;name@email.com&quot; /&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;field-container&quot;&gt;
-        &lt;label for=&quot;text&quot;&gt;Number Input &lt;abbr title=&quot;Required&quot;&gt;*&lt;/abbr&gt;&lt;/label&gt;
-        &lt;input id=&quot;text&quot; type=&quot;number&quot; placeholder=&quot;Enter a Number&quot; pattern=&quot;[0-9]*&quot;&gt;
+    &lt;div class=&quot;f-group&quot;&gt;
+      &lt;label for=&quot;search&quot;&gt;Search&lt;/label&gt;
+      &lt;input id=&quot;search&quot; type=&quot;search&quot; class=&quot;f-control&quot; placeholder=&quot;Enter Search Term&quot; /&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;field-container&quot;&gt;
-        &lt;label for=&quot;textarea&quot;&gt;Textarea&lt;/label&gt;
-        &lt;textarea id=&quot;textarea&quot; rows=&quot;8&quot; cols=&quot;48&quot; placeholder=&quot;Enter your message here&quot;&gt;&lt;/textarea&gt;
+    &lt;div class=&quot;f-group&quot;&gt;
+      &lt;label for=&quot;num&quot;&gt;Number Input&lt;/label&gt;
+      &lt;input id=&quot;num&quot; type=&quot;number&quot; class=&quot;f-control&quot; placeholder=&quot;Enter a Number&quot; pattern=&quot;[0-9]*&quot; /&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;field-container&quot;&gt;
-        &lt;label class=&quot;error&quot;&gt;Error Input&lt;/label&gt;
-        &lt;input class=&quot;is-error&quot; type=&quot;text&quot; placeholder=&quot;Text Input&quot;&gt;
+    &lt;div class=&quot;f-group&quot;&gt;
+      &lt;label for=&quot;textarea&quot;&gt;Textarea&lt;/label&gt;
+      &lt;textarea id=&quot;textarea&quot; class=&quot;f-control&quot; rows=&quot;8&quot; cols=&quot;48&quot; placeholder=&quot;Enter your message here&quot;&gt;&lt;/textarea&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;field-container&quot;&gt;
-        &lt;label  class=&quot;valid&quot;&gt;Valid&lt;/label&gt;
-        &lt;input  class=&quot;is-valid&quot; type=&quot;text&quot; placeholder=&quot;Text Input&quot;&gt;
-    &lt;/div&gt;
-&lt;/fieldset&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
 									</code>
 								</pre>
 							</div>
@@ -133,33 +140,73 @@
 					<div id="atoms-select-menu" class="sg-pattern">
 						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-05-forms-01-select-menu/00-atoms-05-forms-01-select-menu.html" class="patternLink" data-patternpartial="atoms-select-menu">Select Menu</a></h2>
 						<div class="sg-pattern-body">
-							<fieldset>
-    <div class="field-container">
-        <label for="select">Select</label>
-        <select id="select">
-            <optgroup label="Option Group">
-                <option>Option One</option>
-                <option>Option Two</option>
-                <option>Option Three</option>
-            </optgroup>
-        </select>
-    </div>
+							<fieldset class="f-group">
+  <legend>Select</legend>
+  <label for="select">Select</label>
+  <select id="select" class="f-control">
+      <optgroup label="Option Group">
+          <option>Option One</option>
+          <option>Option Two</option>
+          <option>Option Three</option>
+      </optgroup>
+    <optgroup label="Option Group">
+      <option>Option One</option>
+      <option>Option Two</option>
+      <option>Option Three</option>
+    </optgroup>
+    <option>Option One</option>
+    <option>Option Two</option>
+    <option>Option Three</option>
+  </select>
+</fieldset>
+
+<fieldset class="f-group">
+  <legend>Select Multiple</legend>
+  <label for="select">Select</label>
+  <select id="select" class="f-control" multiple>
+    <option>Option One</option>
+    <option>Option Two</option>
+    <option>Option Three</option>
+    <option>Option Four</option>
+    <option>Option Five</option>
+    <option>Option Six</option>
+  </select>
 </fieldset>
 							<div class="sg-code" style="display: none">
 								<h3 class="sg-code-head">HTML</h3>
 								<pre class="sg-code-html">
 									<code>
-										&lt;fieldset&gt;
-    &lt;div class=&quot;field-container&quot;&gt;
-        &lt;label for=&quot;select&quot;&gt;Select&lt;/label&gt;
-        &lt;select id=&quot;select&quot;&gt;
-            &lt;optgroup label=&quot;Option Group&quot;&gt;
-                &lt;option&gt;Option One&lt;/option&gt;
-                &lt;option&gt;Option Two&lt;/option&gt;
-                &lt;option&gt;Option Three&lt;/option&gt;
-            &lt;/optgroup&gt;
-        &lt;/select&gt;
-    &lt;/div&gt;
+										&lt;fieldset class=&quot;f-group&quot;&gt;
+  &lt;legend&gt;Select&lt;/legend&gt;
+  &lt;label for=&quot;select&quot;&gt;Select&lt;/label&gt;
+  &lt;select id=&quot;select&quot; class=&quot;f-control&quot;&gt;
+      &lt;optgroup label=&quot;Option Group&quot;&gt;
+          &lt;option&gt;Option One&lt;/option&gt;
+          &lt;option&gt;Option Two&lt;/option&gt;
+          &lt;option&gt;Option Three&lt;/option&gt;
+      &lt;/optgroup&gt;
+    &lt;optgroup label=&quot;Option Group&quot;&gt;
+      &lt;option&gt;Option One&lt;/option&gt;
+      &lt;option&gt;Option Two&lt;/option&gt;
+      &lt;option&gt;Option Three&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;option&gt;Option One&lt;/option&gt;
+    &lt;option&gt;Option Two&lt;/option&gt;
+    &lt;option&gt;Option Three&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/fieldset&gt;
+
+&lt;fieldset class=&quot;f-group&quot;&gt;
+  &lt;legend&gt;Select Multiple&lt;/legend&gt;
+  &lt;label for=&quot;select&quot;&gt;Select&lt;/label&gt;
+  &lt;select id=&quot;select&quot; class=&quot;f-control&quot; multiple&gt;
+    &lt;option&gt;Option One&lt;/option&gt;
+    &lt;option&gt;Option Two&lt;/option&gt;
+    &lt;option&gt;Option Three&lt;/option&gt;
+    &lt;option&gt;Option Four&lt;/option&gt;
+    &lt;option&gt;Option Five&lt;/option&gt;
+    &lt;option&gt;Option Six&lt;/option&gt;
+  &lt;/select&gt;
 &lt;/fieldset&gt;
 									</code>
 								</pre>
@@ -169,29 +216,115 @@
 					<div id="atoms-checkbox" class="sg-pattern">
 						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-05-forms-02-checkbox/00-atoms-05-forms-02-checkbox.html" class="patternLink" data-patternpartial="atoms-checkbox">Checkbox</a></h2>
 						<div class="sg-pattern-body">
-							<form action="#">
-    <fieldset class="options">
-        <legend>Checkbox <abbr title="Required">*</abbr></legend>
-        <ul>
-            <li><label for="checkbox1"><input id="checkbox1" name="checkbox" type="checkbox" checked="checked"> Choice A</label></li>
-            <li><label for="checkbox2"><input id="checkbox2" name="checkbox" type="checkbox"> Choice B</label></li>
-            <li><label for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox"> Choice C</label></li>
-        </ul>
-    </fieldset>
+							<form action="#" role="form">
+  <fieldset class="f-group">
+    <legend>Checkboxes</legend>
+    <label for="checkbox1" class="ckbx">
+      <input id="checkbox1" name="checkbox" type="checkbox" checked /> Option 1
+    </label>
+    <label for="checkbox2" class="ckbx">
+      <input id="checkbox2" name="checkbox" type="checkbox" /> Option 2
+    </label>
+    <label for="checkbox3" class="ckbx">
+      <input id="checkbox3" name="checkbox" type="checkbox" /> Option 3
+    </label>
+  </fieldset>
+
+  <fieldset class="f-group">
+    <legend>Checkboxes to the right of text</legend>
+    <label for="checkbox1" class="ckbx ckbx--right">
+      Option 1 <input id="checkbox1" name="checkbox" type="checkbox" checked="" />
+    </label>
+    <label for="checkbox2" class="ckbx ckbx--right">
+      Option 2 <input id="checkbox2" name="checkbox" type="checkbox" />
+    </label>
+    <label for="checkbox3" class="ckbx ckbx--right">
+      Option 3 <input id="checkbox3" name="checkbox" type="checkbox" />
+    </label>
+  </fieldset>
+
+  <fieldset class="f-group">
+    <legend>Checkboxes Inline</legend>
+    <label for="checkbox4" class="ckbx-inline">
+      <input id="checkbox4" name="checkboxInline" type="checkbox" checked /> Option 1
+    </label>
+    <label for="checkbox5" class="ckbx-inline">
+      <input id="checkbox5" name="checkboxInline" type="checkbox" /> Option 2
+    </label>
+    <label for="checkbox6" class="ckbx-inline">
+      <input id="checkbox6" name="checkboxInline" type="checkbox" /> Option 3
+    </label>
+  </fieldset>
+
+  <fieldset class="f-group" disabled>
+    <legend>Checkboxes Disabled</legend>
+    <label for="checkbox4" class="ckbx">
+      <input id="checkbox4" name="checkboxDisabled" type="checkbox" /> Option 1
+    </label>
+    <label for="checkbox5" class="ckbx">
+      <input id="checkbox5" name="checkboxDisabled" type="checkbox" /> Option 2
+    </label>
+    <label for="checkbox6" class="ckbx">
+      <input id="checkbox6" name="checkboxDisabled" type="checkbox" /> Option 3
+    </label>
+  </fieldset>
 </form>
 							<div class="sg-code" style="display: none">
 								<h3 class="sg-code-head">HTML</h3>
 								<pre class="sg-code-html">
 									<code>
-										&lt;form action=&quot;#&quot;&gt;
-    &lt;fieldset class=&quot;options&quot;&gt;
-        &lt;legend&gt;Checkbox &lt;abbr title=&quot;Required&quot;&gt;*&lt;/abbr&gt;&lt;/legend&gt;
-        &lt;ul&gt;
-            &lt;li&gt;&lt;label for=&quot;checkbox1&quot;&gt;&lt;input id=&quot;checkbox1&quot; name=&quot;checkbox&quot; type=&quot;checkbox&quot; checked=&quot;checked&quot;&gt; Choice A&lt;/label&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;label for=&quot;checkbox2&quot;&gt;&lt;input id=&quot;checkbox2&quot; name=&quot;checkbox&quot; type=&quot;checkbox&quot;&gt; Choice B&lt;/label&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;label for=&quot;checkbox3&quot;&gt;&lt;input id=&quot;checkbox3&quot; name=&quot;checkbox&quot; type=&quot;checkbox&quot;&gt; Choice C&lt;/label&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/fieldset&gt;
+										&lt;form action=&quot;#&quot; role=&quot;form&quot;&gt;
+  &lt;fieldset class=&quot;f-group&quot;&gt;
+    &lt;legend&gt;Checkboxes&lt;/legend&gt;
+    &lt;label for=&quot;checkbox1&quot; class=&quot;ckbx&quot;&gt;
+      &lt;input id=&quot;checkbox1&quot; name=&quot;checkbox&quot; type=&quot;checkbox&quot; checked /&gt; Option 1
+    &lt;/label&gt;
+    &lt;label for=&quot;checkbox2&quot; class=&quot;ckbx&quot;&gt;
+      &lt;input id=&quot;checkbox2&quot; name=&quot;checkbox&quot; type=&quot;checkbox&quot; /&gt; Option 2
+    &lt;/label&gt;
+    &lt;label for=&quot;checkbox3&quot; class=&quot;ckbx&quot;&gt;
+      &lt;input id=&quot;checkbox3&quot; name=&quot;checkbox&quot; type=&quot;checkbox&quot; /&gt; Option 3
+    &lt;/label&gt;
+  &lt;/fieldset&gt;
+
+  &lt;fieldset class=&quot;f-group&quot;&gt;
+    &lt;legend&gt;Checkboxes to the right of text&lt;/legend&gt;
+    &lt;label for=&quot;checkbox1&quot; class=&quot;ckbx ckbx--right&quot;&gt;
+      Option 1 &lt;input id=&quot;checkbox1&quot; name=&quot;checkbox&quot; type=&quot;checkbox&quot; checked=&quot;&quot; /&gt;
+    &lt;/label&gt;
+    &lt;label for=&quot;checkbox2&quot; class=&quot;ckbx ckbx--right&quot;&gt;
+      Option 2 &lt;input id=&quot;checkbox2&quot; name=&quot;checkbox&quot; type=&quot;checkbox&quot; /&gt;
+    &lt;/label&gt;
+    &lt;label for=&quot;checkbox3&quot; class=&quot;ckbx ckbx--right&quot;&gt;
+      Option 3 &lt;input id=&quot;checkbox3&quot; name=&quot;checkbox&quot; type=&quot;checkbox&quot; /&gt;
+    &lt;/label&gt;
+  &lt;/fieldset&gt;
+
+  &lt;fieldset class=&quot;f-group&quot;&gt;
+    &lt;legend&gt;Checkboxes Inline&lt;/legend&gt;
+    &lt;label for=&quot;checkbox4&quot; class=&quot;ckbx-inline&quot;&gt;
+      &lt;input id=&quot;checkbox4&quot; name=&quot;checkboxInline&quot; type=&quot;checkbox&quot; checked /&gt; Option 1
+    &lt;/label&gt;
+    &lt;label for=&quot;checkbox5&quot; class=&quot;ckbx-inline&quot;&gt;
+      &lt;input id=&quot;checkbox5&quot; name=&quot;checkboxInline&quot; type=&quot;checkbox&quot; /&gt; Option 2
+    &lt;/label&gt;
+    &lt;label for=&quot;checkbox6&quot; class=&quot;ckbx-inline&quot;&gt;
+      &lt;input id=&quot;checkbox6&quot; name=&quot;checkboxInline&quot; type=&quot;checkbox&quot; /&gt; Option 3
+    &lt;/label&gt;
+  &lt;/fieldset&gt;
+
+  &lt;fieldset class=&quot;f-group&quot; disabled&gt;
+    &lt;legend&gt;Checkboxes Disabled&lt;/legend&gt;
+    &lt;label for=&quot;checkbox4&quot; class=&quot;ckbx&quot;&gt;
+      &lt;input id=&quot;checkbox4&quot; name=&quot;checkboxDisabled&quot; type=&quot;checkbox&quot; /&gt; Option 1
+    &lt;/label&gt;
+    &lt;label for=&quot;checkbox5&quot; class=&quot;ckbx&quot;&gt;
+      &lt;input id=&quot;checkbox5&quot; name=&quot;checkboxDisabled&quot; type=&quot;checkbox&quot; /&gt; Option 2
+    &lt;/label&gt;
+    &lt;label for=&quot;checkbox6&quot; class=&quot;ckbx&quot;&gt;
+      &lt;input id=&quot;checkbox6&quot; name=&quot;checkboxDisabled&quot; type=&quot;checkbox&quot; /&gt; Option 3
+    &lt;/label&gt;
+  &lt;/fieldset&gt;
 &lt;/form&gt;
 									</code>
 								</pre>
@@ -201,62 +334,356 @@
 					<div id="atoms-radio-buttons" class="sg-pattern">
 						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-05-forms-03-radio-buttons/00-atoms-05-forms-03-radio-buttons.html" class="patternLink" data-patternpartial="atoms-radio-buttons">Radio Buttons</a></h2>
 						<div class="sg-pattern-body">
-							<form action="#">
-    <fieldset class="options">
-        <legend>Radio</legend>
-        <ul>
-            <li><label for="radio1"><input id="radio1" name="radio" type="radio" class="radio" checked="checked"> Option 1</label></li>
-            <li><label for="radio2"><input id="radio2" name="radio" type="radio" class="radio"> Option 2</label></li>
-            <li><label for="radio3"><input id="radio3" name="radio" type="radio" class="radio"> Option 3</label></li>
-        </ul>
-    </fieldset>
+							<form action="#" role="form">
+  <fieldset class="f-group">
+    <legend>Radio Buttons</legend>
+    <label for="radio1" class="radio">
+      <input id="radio1" name="radio" type="radio" checked /> Option 1
+    </label>
+    <label for="radio2" class="radio">
+      <input id="radio2" name="radio" type="radio" /> Option 2
+    </label>
+    <label for="radio3" class="radio">
+      <input id="radio3" name="radio" type="radio" /> Option 3
+    </label>
+  </fieldset>
+
+  <fieldset class="f-group">
+    <legend>Radio Button to the right of text</legend>
+    <label for="radio4" class="radio radio--right">
+      Option 1 <input id="radio4" name="radio" type="radio" checked />
+    </label>
+    <label for="radio5" class="radio radio--right">
+      Option 2 <input id="radio5" name="radio" type="radio" />
+    </label>
+    <label for="radio6" class="radio radio--right">
+      Option 3 <input id="radio6" name="radio" type="radio" />
+    </label>
+  </fieldset>
+
+  <fieldset class="f-group">
+    <legend>Radio Button Inline</legend>
+    <label for="radio7" class="radio-inline">
+      <input id="radio7" name="radioInline" type="radio" checked /> Option 1
+    </label>
+    <label for="radio8" class="radio-inline">
+      <input id="radio8" name="radioInline" type="radio" /> Option 2
+    </label>
+    <label for="radio9" class="radio-inline">
+        <input id="radio9" name="radioInline" type="radio" /> Option 3
+    </label>
+  </fieldset>
+
+  <fieldset class="f-group" disabled>
+    <legend>Radio Button Disabled</legend>
+    <label for="radio10" class="radio">
+      <input id="radio10" name="radioDisabled" type="radio" /> Option 1
+    </label>
+    <label for="radio11" class="radio">
+      <input id="radio11" name="radioDisabled" type="radio" /> Option 2
+    </label>
+    <label for="radio12" class="radio">
+      <input id="radio12" name="radioDisabled" type="radio" /> Option 3
+    </label>
+  </fieldset>
 </form>
 							<div class="sg-code" style="display: none">
 								<h3 class="sg-code-head">HTML</h3>
 								<pre class="sg-code-html">
 									<code>
-										&lt;form action=&quot;#&quot;&gt;
-    &lt;fieldset class=&quot;options&quot;&gt;
-        &lt;legend&gt;Radio&lt;/legend&gt;
-        &lt;ul&gt;
-            &lt;li&gt;&lt;label for=&quot;radio1&quot;&gt;&lt;input id=&quot;radio1&quot; name=&quot;radio&quot; type=&quot;radio&quot; class=&quot;radio&quot; checked=&quot;checked&quot;&gt; Option 1&lt;/label&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;label for=&quot;radio2&quot;&gt;&lt;input id=&quot;radio2&quot; name=&quot;radio&quot; type=&quot;radio&quot; class=&quot;radio&quot;&gt; Option 2&lt;/label&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;label for=&quot;radio3&quot;&gt;&lt;input id=&quot;radio3&quot; name=&quot;radio&quot; type=&quot;radio&quot; class=&quot;radio&quot;&gt; Option 3&lt;/label&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/fieldset&gt;
+										&lt;form action=&quot;#&quot; role=&quot;form&quot;&gt;
+  &lt;fieldset class=&quot;f-group&quot;&gt;
+    &lt;legend&gt;Radio Buttons&lt;/legend&gt;
+    &lt;label for=&quot;radio1&quot; class=&quot;radio&quot;&gt;
+      &lt;input id=&quot;radio1&quot; name=&quot;radio&quot; type=&quot;radio&quot; checked /&gt; Option 1
+    &lt;/label&gt;
+    &lt;label for=&quot;radio2&quot; class=&quot;radio&quot;&gt;
+      &lt;input id=&quot;radio2&quot; name=&quot;radio&quot; type=&quot;radio&quot; /&gt; Option 2
+    &lt;/label&gt;
+    &lt;label for=&quot;radio3&quot; class=&quot;radio&quot;&gt;
+      &lt;input id=&quot;radio3&quot; name=&quot;radio&quot; type=&quot;radio&quot; /&gt; Option 3
+    &lt;/label&gt;
+  &lt;/fieldset&gt;
+
+  &lt;fieldset class=&quot;f-group&quot;&gt;
+    &lt;legend&gt;Radio Button to the right of text&lt;/legend&gt;
+    &lt;label for=&quot;radio4&quot; class=&quot;radio radio--right&quot;&gt;
+      Option 1 &lt;input id=&quot;radio4&quot; name=&quot;radio&quot; type=&quot;radio&quot; checked /&gt;
+    &lt;/label&gt;
+    &lt;label for=&quot;radio5&quot; class=&quot;radio radio--right&quot;&gt;
+      Option 2 &lt;input id=&quot;radio5&quot; name=&quot;radio&quot; type=&quot;radio&quot; /&gt;
+    &lt;/label&gt;
+    &lt;label for=&quot;radio6&quot; class=&quot;radio radio--right&quot;&gt;
+      Option 3 &lt;input id=&quot;radio6&quot; name=&quot;radio&quot; type=&quot;radio&quot; /&gt;
+    &lt;/label&gt;
+  &lt;/fieldset&gt;
+
+  &lt;fieldset class=&quot;f-group&quot;&gt;
+    &lt;legend&gt;Radio Button Inline&lt;/legend&gt;
+    &lt;label for=&quot;radio7&quot; class=&quot;radio-inline&quot;&gt;
+      &lt;input id=&quot;radio7&quot; name=&quot;radioInline&quot; type=&quot;radio&quot; checked /&gt; Option 1
+    &lt;/label&gt;
+    &lt;label for=&quot;radio8&quot; class=&quot;radio-inline&quot;&gt;
+      &lt;input id=&quot;radio8&quot; name=&quot;radioInline&quot; type=&quot;radio&quot; /&gt; Option 2
+    &lt;/label&gt;
+    &lt;label for=&quot;radio9&quot; class=&quot;radio-inline&quot;&gt;
+        &lt;input id=&quot;radio9&quot; name=&quot;radioInline&quot; type=&quot;radio&quot; /&gt; Option 3
+    &lt;/label&gt;
+  &lt;/fieldset&gt;
+
+  &lt;fieldset class=&quot;f-group&quot; disabled&gt;
+    &lt;legend&gt;Radio Button Disabled&lt;/legend&gt;
+    &lt;label for=&quot;radio10&quot; class=&quot;radio&quot;&gt;
+      &lt;input id=&quot;radio10&quot; name=&quot;radioDisabled&quot; type=&quot;radio&quot; /&gt; Option 1
+    &lt;/label&gt;
+    &lt;label for=&quot;radio11&quot; class=&quot;radio&quot;&gt;
+      &lt;input id=&quot;radio11&quot; name=&quot;radioDisabled&quot; type=&quot;radio&quot; /&gt; Option 2
+    &lt;/label&gt;
+    &lt;label for=&quot;radio12&quot; class=&quot;radio&quot;&gt;
+      &lt;input id=&quot;radio12&quot; name=&quot;radioDisabled&quot; type=&quot;radio&quot; /&gt; Option 3
+    &lt;/label&gt;
+  &lt;/fieldset&gt;
 &lt;/form&gt;
 									</code>
 								</pre>
 							</div>
 						</div>
 					</div>
-					<div id="atoms-html5-inputs" class="sg-pattern">
-						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-05-forms-04-html5-inputs/00-atoms-05-forms-04-html5-inputs.html" class="patternLink" data-patternpartial="atoms-html5-inputs">Html5 Inputs</a></h2>
+					<div id="atoms-Validation" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-05-forms-05-Validation/00-atoms-05-forms-05-Validation.html" class="patternLink" data-patternpartial="atoms-Validation">Validation</a></h2>
 						<div class="sg-pattern-body">
-								<fieldset>
-    <div class="field-container"><label for="ic">Color input</label> <input type="color" id="ic" value="#000000"></div>
-    <div class="field-container"><label for="in">Number input</label> <input type="number" id="in" min="0" max="10" value="5"></div>
-    <div class="field-container"><label for="ir">Range input</label> <input type="range" id="ir" value="10"></div>
-    <div class="field-container"><label for="idd">Date input</label> <input type="date" id="idd" value="1970-01-01"></div>
-    <div class="field-container"><label for="idm">Month input</label> <input type="month" id="idm" value="1970-01"></div>
-    <div class="field-container"><label for="idw">Week input</label> <input type="week" id="idw" value="1970-W01"></div>
-    <div class="field-container"><label for="idt">Datetime input</label> <input type="datetime" id="idt" value="1970-01-01T00:00:00Z"></div>
-    <div class="field-container"><label for="idtl">Datetime-local input</label> <input type="datetime-local" id="idtl" value="1970-01-01T00:00"></div>
-</fieldset>
+							<form action="#" role="form">
+  <fieldset class="fieldset">
+    <legend>Validation</legend>
+    <div class="f-group has-success">
+      <label class="control-label" for="inputSuccess1">Input with success</label>
+      <input type="text" class="f-control" id="inputSuccess1" />
+    </div>
+    <div class="f-group has-warning">
+      <label class="control-label" for="inputWarning1">Input with warning</label>
+      <input type="text" class="f-control" id="inputWarning1" />
+    </div>
+    <div class="f-group has-error">
+      <label class="control-label" for="inputError1">Input with error</label>
+      <input type="text" class="f-control" id="inputError1" />
+    </div>
+  </fieldset>
+
+  <fieldset class="fieldset">
+    <legend>Validation with icon</legend>
+    <div class="f-group has-success has-icon--right">
+      <label class="control-label" for="inputSuccess2">Input with success</label>
+      <input type="text" class="f-control" id="inputSuccess2" />
+      <span class="fa fa-check f-control-icon"></span>
+    </div>
+    <div class="f-group has-warning has-icon--right">
+      <label class="control-label" for="inputWarning2">Input with warning</label>
+      <input type="text" class="f-control" id="inputWarning2" />
+      <span class="fa fa-exclamation-triangle f-control-icon"></span>
+    </div>
+    <div class="f-group has-error has-icon--right">
+      <label class="control-label" for="inputError2">Input with error</label>
+      <input type="text" class="f-control" id="inputError2" />
+      <span class="fa fa-times f-control-icon"></span>
+    </div>
+  </fieldset>
+
+  <fieldset class="fieldset">
+    <legend>Validation with icon</legend>
+    <div class="f-group has-icon--right">
+      <label class="control-label" for="inputSuccess2">Input with success</label>
+      <input type="text" class="f-control" id="inputSuccess2" />
+      <span class="fa fa-check f-control-icon"></span>
+    </div>
+    <div class="f-group has-icon--right">
+      <label class="control-label" for="inputWarning2">Input with warning</label>
+      <input type="text" class="f-control" id="inputWarning2" />
+      <span class="fa fa-exclamation-triangle f-control-icon"></span>
+    </div>
+    <div class="f-group has-icon--right">
+      <label class="control-label" for="inputError2">Input with error</label>
+      <input type="text" class="f-control" id="inputError2" />
+      <span class="fa fa-times f-control-icon"></span>
+    </div>
+  </fieldset>
+
+  <fieldset class="fieldset">
+    <legend>Validation with icon</legend>
+    <div class="f-group has-icon">
+      <label class="control-label" for="inputSuccess2">Input with success</label>
+      <input type="text" class="f-control" id="inputSuccess2" />
+      <span class="fa fa-check f-control-icon"></span>
+    </div>
+    <div class="f-group has-icon">
+      <label class="control-label" for="inputWarning2">Input with warning</label>
+      <input type="text" class="f-control" id="inputWarning2" />
+      <span class="fa fa-exclamation-triangle f-control-icon"></span>
+    </div>
+    <div class="f-group has-icon">
+      <label class="control-label" for="inputError2">Input with error</label>
+      <input type="text" class="f-control" id="inputError2" />
+      <span class="fa fa-times f-control-icon"></span>
+    </div>
+  </fieldset>
+</form>
 							<div class="sg-code" style="display: none">
 								<h3 class="sg-code-head">HTML</h3>
 								<pre class="sg-code-html">
 									<code>
-											&lt;fieldset&gt;
-    &lt;div class=&quot;field-container&quot;&gt;&lt;label for=&quot;ic&quot;&gt;Color input&lt;/label&gt; &lt;input type=&quot;color&quot; id=&quot;ic&quot; value=&quot;#000000&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;field-container&quot;&gt;&lt;label for=&quot;in&quot;&gt;Number input&lt;/label&gt; &lt;input type=&quot;number&quot; id=&quot;in&quot; min=&quot;0&quot; max=&quot;10&quot; value=&quot;5&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;field-container&quot;&gt;&lt;label for=&quot;ir&quot;&gt;Range input&lt;/label&gt; &lt;input type=&quot;range&quot; id=&quot;ir&quot; value=&quot;10&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;field-container&quot;&gt;&lt;label for=&quot;idd&quot;&gt;Date input&lt;/label&gt; &lt;input type=&quot;date&quot; id=&quot;idd&quot; value=&quot;1970-01-01&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;field-container&quot;&gt;&lt;label for=&quot;idm&quot;&gt;Month input&lt;/label&gt; &lt;input type=&quot;month&quot; id=&quot;idm&quot; value=&quot;1970-01&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;field-container&quot;&gt;&lt;label for=&quot;idw&quot;&gt;Week input&lt;/label&gt; &lt;input type=&quot;week&quot; id=&quot;idw&quot; value=&quot;1970-W01&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;field-container&quot;&gt;&lt;label for=&quot;idt&quot;&gt;Datetime input&lt;/label&gt; &lt;input type=&quot;datetime&quot; id=&quot;idt&quot; value=&quot;1970-01-01T00:00:00Z&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;field-container&quot;&gt;&lt;label for=&quot;idtl&quot;&gt;Datetime-local input&lt;/label&gt; &lt;input type=&quot;datetime-local&quot; id=&quot;idtl&quot; value=&quot;1970-01-01T00:00&quot;&gt;&lt;/div&gt;
-&lt;/fieldset&gt;
+										&lt;form action=&quot;#&quot; role=&quot;form&quot;&gt;
+  &lt;fieldset class=&quot;fieldset&quot;&gt;
+    &lt;legend&gt;Validation&lt;/legend&gt;
+    &lt;div class=&quot;f-group has-success&quot;&gt;
+      &lt;label class=&quot;control-label&quot; for=&quot;inputSuccess1&quot;&gt;Input with success&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;f-control&quot; id=&quot;inputSuccess1&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;f-group has-warning&quot;&gt;
+      &lt;label class=&quot;control-label&quot; for=&quot;inputWarning1&quot;&gt;Input with warning&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;f-control&quot; id=&quot;inputWarning1&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;f-group has-error&quot;&gt;
+      &lt;label class=&quot;control-label&quot; for=&quot;inputError1&quot;&gt;Input with error&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;f-control&quot; id=&quot;inputError1&quot; /&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+
+  &lt;fieldset class=&quot;fieldset&quot;&gt;
+    &lt;legend&gt;Validation with icon&lt;/legend&gt;
+    &lt;div class=&quot;f-group has-success has-icon--right&quot;&gt;
+      &lt;label class=&quot;control-label&quot; for=&quot;inputSuccess2&quot;&gt;Input with success&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;f-control&quot; id=&quot;inputSuccess2&quot; /&gt;
+      &lt;span class=&quot;fa fa-check f-control-icon&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;f-group has-warning has-icon--right&quot;&gt;
+      &lt;label class=&quot;control-label&quot; for=&quot;inputWarning2&quot;&gt;Input with warning&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;f-control&quot; id=&quot;inputWarning2&quot; /&gt;
+      &lt;span class=&quot;fa fa-exclamation-triangle f-control-icon&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;f-group has-error has-icon--right&quot;&gt;
+      &lt;label class=&quot;control-label&quot; for=&quot;inputError2&quot;&gt;Input with error&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;f-control&quot; id=&quot;inputError2&quot; /&gt;
+      &lt;span class=&quot;fa fa-times f-control-icon&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+
+  &lt;fieldset class=&quot;fieldset&quot;&gt;
+    &lt;legend&gt;Validation with icon&lt;/legend&gt;
+    &lt;div class=&quot;f-group has-icon--right&quot;&gt;
+      &lt;label class=&quot;control-label&quot; for=&quot;inputSuccess2&quot;&gt;Input with success&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;f-control&quot; id=&quot;inputSuccess2&quot; /&gt;
+      &lt;span class=&quot;fa fa-check f-control-icon&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;f-group has-icon--right&quot;&gt;
+      &lt;label class=&quot;control-label&quot; for=&quot;inputWarning2&quot;&gt;Input with warning&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;f-control&quot; id=&quot;inputWarning2&quot; /&gt;
+      &lt;span class=&quot;fa fa-exclamation-triangle f-control-icon&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;f-group has-icon--right&quot;&gt;
+      &lt;label class=&quot;control-label&quot; for=&quot;inputError2&quot;&gt;Input with error&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;f-control&quot; id=&quot;inputError2&quot; /&gt;
+      &lt;span class=&quot;fa fa-times f-control-icon&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+
+  &lt;fieldset class=&quot;fieldset&quot;&gt;
+    &lt;legend&gt;Validation with icon&lt;/legend&gt;
+    &lt;div class=&quot;f-group has-icon&quot;&gt;
+      &lt;label class=&quot;control-label&quot; for=&quot;inputSuccess2&quot;&gt;Input with success&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;f-control&quot; id=&quot;inputSuccess2&quot; /&gt;
+      &lt;span class=&quot;fa fa-check f-control-icon&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;f-group has-icon&quot;&gt;
+      &lt;label class=&quot;control-label&quot; for=&quot;inputWarning2&quot;&gt;Input with warning&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;f-control&quot; id=&quot;inputWarning2&quot; /&gt;
+      &lt;span class=&quot;fa fa-exclamation-triangle f-control-icon&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;f-group has-icon&quot;&gt;
+      &lt;label class=&quot;control-label&quot; for=&quot;inputError2&quot;&gt;Input with error&lt;/label&gt;
+      &lt;input type=&quot;text&quot; class=&quot;f-control&quot; id=&quot;inputError2&quot; /&gt;
+      &lt;span class=&quot;fa fa-times f-control-icon&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="atoms-horizontal" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-05-forms-06-horizontal/00-atoms-05-forms-06-horizontal.html" class="patternLink" data-patternpartial="atoms-horizontal">Horizontal</a></h2>
+						<div class="sg-pattern-body">
+							<form class="f-horizontal" action="#" role="form">
+  <fieldset class="fieldset wf-2">
+    <legend class="legend">Inputs</legend>
+    <div class="f-group">
+      <label for="text" class="control-label">Username</label>
+      <div class="w-3">
+        <input id="text" type="text" class="f-control w-3" placeholder="Text Input" />
+      </div>
+    </div>
+    <div class="f-group">
+      <label for="password" class="control-label">Password</label>
+      <div class="w-3">
+        <input id="password" type="password" class="f-control" placeholder="Type your Password" autocomplete="" />
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="f-group">
+    <div class="w-10 w-offset-2">
+      <label for="radio1" class="radio">
+        <input id="radio1" name="radio" type="radio" checked="" /> Option 1
+      </label>
+      <label for="radio2" class="radio">
+        <input id="radio2" name="radio" type="radio" /> Option 2
+      </label>
+    </div>
+  </div>
+  
+  <div class="f-group">
+    <div class="w-3 w-offset-2">
+      <button type="submit" class="btn--primary">Login</button>
+    </div>
+  </div>
+</form>
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;form class=&quot;f-horizontal&quot; action=&quot;#&quot; role=&quot;form&quot;&gt;
+  &lt;fieldset class=&quot;fieldset wf-2&quot;&gt;
+    &lt;legend class=&quot;legend&quot;&gt;Inputs&lt;/legend&gt;
+    &lt;div class=&quot;f-group&quot;&gt;
+      &lt;label for=&quot;text&quot; class=&quot;control-label&quot;&gt;Username&lt;/label&gt;
+      &lt;div class=&quot;w-3&quot;&gt;
+        &lt;input id=&quot;text&quot; type=&quot;text&quot; class=&quot;f-control w-3&quot; placeholder=&quot;Text Input&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;f-group&quot;&gt;
+      &lt;label for=&quot;password&quot; class=&quot;control-label&quot;&gt;Password&lt;/label&gt;
+      &lt;div class=&quot;w-3&quot;&gt;
+        &lt;input id=&quot;password&quot; type=&quot;password&quot; class=&quot;f-control&quot; placeholder=&quot;Type your Password&quot; autocomplete=&quot;&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+
+  &lt;div class=&quot;f-group&quot;&gt;
+    &lt;div class=&quot;w-10 w-offset-2&quot;&gt;
+      &lt;label for=&quot;radio1&quot; class=&quot;radio&quot;&gt;
+        &lt;input id=&quot;radio1&quot; name=&quot;radio&quot; type=&quot;radio&quot; checked=&quot;&quot; /&gt; Option 1
+      &lt;/label&gt;
+      &lt;label for=&quot;radio2&quot; class=&quot;radio&quot;&gt;
+        &lt;input id=&quot;radio2&quot; name=&quot;radio&quot; type=&quot;radio&quot; /&gt; Option 2
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class=&quot;f-group&quot;&gt;
+    &lt;div class=&quot;w-3 w-offset-2&quot;&gt;
+      &lt;button type=&quot;submit&quot; class=&quot;btn--primary&quot;&gt;Login&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
 									</code>
 								</pre>
 							</div>
@@ -274,23 +701,12 @@
 		</script>
 		
 
-        <div class="flyout__overlay"></div>
+      <div class="flyout__overlay"></div>
     </div>
 
     <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/min/global.min.js"></script>
 
-    <script src="../../js/bootstrap/transition.js"></script>
-    <script src="../../js/bootstrap/collapse.js"></script>
-    <!-- <script src="../../js/jquery-accessibleMegaMenu.js"></script> -->
-    <script src="../../js/main.js"></script>
-
-    <!-- initialize a selector as an accessibleMegaMenu -->
-    <!-- <script>
-        $('#navbar-nav').accessibleMegaMenu();
-    </script> -->
-    <script>
-        new UISearch(document.getElementById('js-navbarSearch'));
-    </script>
 	<!--DO NOT REMOVE-->
 		<script>
 			/*!
@@ -324,10 +740,10 @@
 				
 			}
 		</script>
-		<script id="pl-js-polyfill-insert-635407781983185404">
+		<script id="pl-js-polyfill-insert-635455283751408651">
 			(function() {
 				if (self != top) {
-					var cb = '635407781983185404';
+					var cb = '635455283751408651';
 					var js = [];
 					if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
 						js.push("styleguide/js/vendor/classlist-polyfill.js");
@@ -336,10 +752,10 @@
 				}
 			})();
 		</script>
-		<script id="pl-js-insert-635407781983185404">
+		<script id="pl-js-insert-635455283751408651">
 			(function() {
 				if (self != top) {
-					var cb = '635407781983185404';
+					var cb = '635455283751408651';
 					var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
 					scriptLoader.run(js,cb,'pl-js-insert');
 				}
