@@ -136,8 +136,8 @@
 // any value of `$grid-columns`.
 
 // [converter] This is defined recursively in LESS, but Sass supports real loops
-@mixin make-grid-columns($i: 1, $list: ".w-#{$i}") {
-  @for $i from (1 + 1) through $total-columns {
+@mixin make-grid-columns($i: 1, $list: ".w-#{$i}, .wf-#{$i} .control-label") {
+  @for $i from 1 through $total-columns - 1 {
     $list: "#{$list}, .w-#{$i}, .wf-#{$i} .control-label";
   }
   #{$list} {
@@ -193,7 +193,9 @@
   }
 }
 
-
+.g-row {
+  @include g-row();
+}
 @include make-grid-columns($total-columns);
 @include loop-grid-columns($total-columns, width);
 @include loop-grid-columns($total-columns, offset);

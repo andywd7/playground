@@ -10,11 +10,11 @@
 		<meta name="viewport" content="width=device-width" />
 
 		<!--[if (lte IE 8) | (IEMobile)]>
-			<link rel="stylesheet" href="../../styles/style.ie-old.css?635455283751408651" media="all">
+			<link rel="stylesheet" href="../../styles/style.ie-old.css?635475367704068139" media="all">
 		<![endif]-->
 		<!--[if (gte IE 9) | (!IEMobile)]><!-->
-			<link rel="stylesheet" href="../../css/style.css?635455283751408651" media="all" />
-			<link rel="stylesheet" href="../../css/docs/docs.css?635455283751408651" media="all" />
+			<link rel="stylesheet" href="../../css/style.css?635475367704068139" media="all" />
+			<link rel="stylesheet" href="../../css/docs/docs.css?635475367704068139" media="all" />
 		<!--<![endif]-->
 
 		<script src="../../js/modernizr.js"></script>
@@ -27,8 +27,8 @@
 		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 		<meta http-equiv="pragma" content="no-cache" />
 		
-		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?635455283751408651" media="all">
-		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?635455283751408651" media="all" />
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?635475367704068139" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?635475367704068139" media="all" />
 		
 		<!-- End Pattern Lab -->
 	</head>
@@ -179,6 +179,200 @@
 							</div>
 						</div>
 					</div>
+					<div id="molecules-address-form" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-04-forms-03-address-form/01-molecules-04-forms-03-address-form.html" class="patternLink" data-patternpartial="molecules-address-form">Address Form</a></h2>
+						<div class="sg-pattern-body">
+							<form class="f-horizontal g-row" action="#" role="form">
+    <fieldset class="fieldset w-6 wf-4">
+        <legend class="legend">Address</legend>
+        <div class="f-group">
+            <label for="country" class="control-label">Country <abbr title="required">*</abbr></label>
+            <div class="w-5">
+                <select id="country" class="f-control w-3">
+                    <option>Please Select...</option>
+                    <optgroup label="United Kingdom">
+                        <option>England</option>
+                        <option>Jersey</option>
+                        <option>Scotland</option>
+                    </optgroup>
+                    <optgroup label="Rest of World">
+                        <option>Australia</option>
+                        <option>New Zealand</option>
+                        <option>USA</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        <div class="f-group">
+            <label for="postcode" class="control-label">Postcode <abbr title="required">*</abbr></label>
+            <div class="w-3">
+                <input id="postcode" type="text" class="f-control" placeholder="Postcode" autocomplete />
+            </div>
+            <button type="button" class="btn u-fl"><i class="fa fa-search"></i> Find</button>
+        </div>
+        <div class="f-group">
+            <label for="address" class="control-label">Select your Address</label>
+            <div class="w-7">
+                <select id="address" class="f-control w-3">
+                    <option>1, The Street</option>
+                    <option>2, The Street</option>
+                    <option>3, The Street</option>
+                </select>
+            </div>
+        </div>
+        <div class="f-group">
+            <label for="addressLine1" class="control-label">Address Line 1 <abbr title="required">*</abbr></label>
+            <div class="w-7">
+                <input id="addressLine1" type="text" class="f-control" placeholder="Address Line 1" autocomplete />
+            </div>
+        </div>
+        <div class="f-group">
+            <label for="addressLine2" class="control-label">Address Line 2</label>
+            <div class="w-7">
+                <input id="addressLine2" type="text" class="f-control" placeholder="Address Line 2" autocomplete />
+            </div>
+        </div>
+        <div class="f-group">
+            <label for="addressLine3" class="control-label">Address Line 3</label>
+            <div class="w-7">
+                <input id="addressLine3" type="text" class="f-control" placeholder="Address Line 3" autocomplete />
+            </div>
+        </div>
+        <div class="f-group">
+            <label for="town" class="control-label">Town/City <abbr title="required">*</abbr></label>
+            <div class="w-7">
+                <input id="town" type="text" class="f-control" placeholder="town or city" autocomplete />
+            </div>
+        </div>
+        <div class="f-group">
+            <label for="county" class="control-label">County/State</label>
+            <div class="w-7">
+                <input id="county" type="text" class="f-control" placeholder="county or state" autocomplete />
+            </div>
+        </div>
+    </fieldset>
+</form>
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;form class=&quot;f-horizontal g-row&quot; action=&quot;#&quot; role=&quot;form&quot;&gt;
+    &lt;fieldset class=&quot;fieldset w-6 wf-4&quot;&gt;
+        &lt;legend class=&quot;legend&quot;&gt;Address&lt;/legend&gt;
+        &lt;div class=&quot;f-group&quot;&gt;
+            &lt;label for=&quot;country&quot; class=&quot;control-label&quot;&gt;Country &lt;abbr title=&quot;required&quot;&gt;*&lt;/abbr&gt;&lt;/label&gt;
+            &lt;div class=&quot;w-5&quot;&gt;
+                &lt;select id=&quot;country&quot; class=&quot;f-control w-3&quot;&gt;
+                    &lt;option&gt;Please Select...&lt;/option&gt;
+                    &lt;optgroup label=&quot;United Kingdom&quot;&gt;
+                        &lt;option&gt;England&lt;/option&gt;
+                        &lt;option&gt;Jersey&lt;/option&gt;
+                        &lt;option&gt;Scotland&lt;/option&gt;
+                    &lt;/optgroup&gt;
+                    &lt;optgroup label=&quot;Rest of World&quot;&gt;
+                        &lt;option&gt;Australia&lt;/option&gt;
+                        &lt;option&gt;New Zealand&lt;/option&gt;
+                        &lt;option&gt;USA&lt;/option&gt;
+                    &lt;/optgroup&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;f-group&quot;&gt;
+            &lt;label for=&quot;postcode&quot; class=&quot;control-label&quot;&gt;Postcode &lt;abbr title=&quot;required&quot;&gt;*&lt;/abbr&gt;&lt;/label&gt;
+            &lt;div class=&quot;w-3&quot;&gt;
+                &lt;input id=&quot;postcode&quot; type=&quot;text&quot; class=&quot;f-control&quot; placeholder=&quot;Postcode&quot; autocomplete /&gt;
+            &lt;/div&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn u-fl&quot;&gt;&lt;i class=&quot;fa fa-search&quot;&gt;&lt;/i&gt; Find&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;f-group&quot;&gt;
+            &lt;label for=&quot;address&quot; class=&quot;control-label&quot;&gt;Select your Address&lt;/label&gt;
+            &lt;div class=&quot;w-7&quot;&gt;
+                &lt;select id=&quot;address&quot; class=&quot;f-control w-3&quot;&gt;
+                    &lt;option&gt;1, The Street&lt;/option&gt;
+                    &lt;option&gt;2, The Street&lt;/option&gt;
+                    &lt;option&gt;3, The Street&lt;/option&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;f-group&quot;&gt;
+            &lt;label for=&quot;addressLine1&quot; class=&quot;control-label&quot;&gt;Address Line 1 &lt;abbr title=&quot;required&quot;&gt;*&lt;/abbr&gt;&lt;/label&gt;
+            &lt;div class=&quot;w-7&quot;&gt;
+                &lt;input id=&quot;addressLine1&quot; type=&quot;text&quot; class=&quot;f-control&quot; placeholder=&quot;Address Line 1&quot; autocomplete /&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;f-group&quot;&gt;
+            &lt;label for=&quot;addressLine2&quot; class=&quot;control-label&quot;&gt;Address Line 2&lt;/label&gt;
+            &lt;div class=&quot;w-7&quot;&gt;
+                &lt;input id=&quot;addressLine2&quot; type=&quot;text&quot; class=&quot;f-control&quot; placeholder=&quot;Address Line 2&quot; autocomplete /&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;f-group&quot;&gt;
+            &lt;label for=&quot;addressLine3&quot; class=&quot;control-label&quot;&gt;Address Line 3&lt;/label&gt;
+            &lt;div class=&quot;w-7&quot;&gt;
+                &lt;input id=&quot;addressLine3&quot; type=&quot;text&quot; class=&quot;f-control&quot; placeholder=&quot;Address Line 3&quot; autocomplete /&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;f-group&quot;&gt;
+            &lt;label for=&quot;town&quot; class=&quot;control-label&quot;&gt;Town/City &lt;abbr title=&quot;required&quot;&gt;*&lt;/abbr&gt;&lt;/label&gt;
+            &lt;div class=&quot;w-7&quot;&gt;
+                &lt;input id=&quot;town&quot; type=&quot;text&quot; class=&quot;f-control&quot; placeholder=&quot;town or city&quot; autocomplete /&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;f-group&quot;&gt;
+            &lt;label for=&quot;county&quot; class=&quot;control-label&quot;&gt;County/State&lt;/label&gt;
+            &lt;div class=&quot;w-7&quot;&gt;
+                &lt;input id=&quot;county&quot; type=&quot;text&quot; class=&quot;f-control&quot; placeholder=&quot;county or state&quot; autocomplete /&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-date-range" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-04-forms-04-date-range/01-molecules-04-forms-04-date-range.html" class="patternLink" data-patternpartial="molecules-date-range">Date Range</a></h2>
+						<div class="sg-pattern-body">
+							<form class="f-horizontal g-row" action="#" role="form">
+    <fieldset class="fieldset w-6 wf-3">
+        <legend class="legend">Date Range</legend>
+        <div class="f-group">
+            <label for="startDate" class="control-label">Date Range <abbr title="required">*</abbr></label>
+            <div class="w-4">
+                <input id="startDate" type="text" class="f-control" placeholder="Start Date" autocomplete />
+            </div>
+            <p class="f-control-static u-fl">to</p>
+            <div class="w-4">
+                <input id="endDate" type="text" class="f-control" placeholder="End Date" autocomplete />
+            </div>
+        </div>
+    </fieldset>
+</form>
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;form class=&quot;f-horizontal g-row&quot; action=&quot;#&quot; role=&quot;form&quot;&gt;
+    &lt;fieldset class=&quot;fieldset w-6 wf-3&quot;&gt;
+        &lt;legend class=&quot;legend&quot;&gt;Date Range&lt;/legend&gt;
+        &lt;div class=&quot;f-group&quot;&gt;
+            &lt;label for=&quot;startDate&quot; class=&quot;control-label&quot;&gt;Date Range &lt;abbr title=&quot;required&quot;&gt;*&lt;/abbr&gt;&lt;/label&gt;
+            &lt;div class=&quot;w-4&quot;&gt;
+                &lt;input id=&quot;startDate&quot; type=&quot;text&quot; class=&quot;f-control&quot; placeholder=&quot;Start Date&quot; autocomplete /&gt;
+            &lt;/div&gt;
+            &lt;p class=&quot;f-control-static u-fl&quot;&gt;to&lt;/p&gt;
+            &lt;div class=&quot;w-4&quot;&gt;
+                &lt;input id=&quot;endDate&quot; type=&quot;text&quot; class=&quot;f-control&quot; placeholder=&quot;End Date&quot; autocomplete /&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
 			</div> <!--end #sg-patterns-->
 	
 		</div><!--end .sg-main-->
@@ -230,10 +424,10 @@
 				
 			}
 		</script>
-		<script id="pl-js-polyfill-insert-635455283751408651">
+		<script id="pl-js-polyfill-insert-635475367704068139">
 			(function() {
 				if (self != top) {
-					var cb = '635455283751408651';
+					var cb = '635475367704068139';
 					var js = [];
 					if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
 						js.push("styleguide/js/vendor/classlist-polyfill.js");
@@ -242,10 +436,10 @@
 				}
 			})();
 		</script>
-		<script id="pl-js-insert-635455283751408651">
+		<script id="pl-js-insert-635475367704068139">
 			(function() {
 				if (self != top) {
-					var cb = '635455283751408651';
+					var cb = '635475367704068139';
 					var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
 					scriptLoader.run(js,cb,'pl-js-insert');
 				}

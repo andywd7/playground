@@ -122,7 +122,7 @@ input[type="checkbox"]:focus {
   @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
   background-color: $input-bg;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  border: 1px solid $input-border;
+  border: 2px solid $input-border;
   color: $input-color;
   display: block;
   font-size: $font-size-base;
@@ -276,19 +276,19 @@ input[type="checkbox"] {
 // Apply class to a `p` element to make any string of text align with labels in
 // a horizontal form layout.
 
-//.f-control-static {
-//  // Size it appropriately next to real form controls
-//  padding-top: ($padding-base-vertical + 1);
-//  padding-bottom: ($padding-base-vertical + 1);
-//  // Remove default margin from `p`
-//  margin-bottom: 0;
+.f-control-static {
+  // Size it appropriately next to real form controls
+  padding-top: $padding-base-vertical;
+  //padding-bottom: $padding-base-vertical;
+  // Remove default margin from `p`
+  margin-bottom: 0;
 
-//  &.input-lg,
-//  &.input-sm {
-//    padding-left: 0;
-//    padding-right: 0;
-//  }
-//}
+  &.input-lg,
+  &.input-sm {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 
 
 // Form control sizing

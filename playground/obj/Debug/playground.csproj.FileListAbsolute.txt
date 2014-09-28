@@ -48,3 +48,4 @@ C:\Users\Andrew.Denham\Desktop\ownsteam-projects\playground-master\playground\bi
 C:\Users\Andrew.Denham\Desktop\ownsteam-projects\playground-master\playground\obj\Debug\playground.dll
 C:\Users\Andrew.Denham\Desktop\ownsteam-projects\playground-master\playground\obj\Debug\playground.pdb
 C:\Users\Andrew.Denham\Desktop\ownsteam-projects\playground-master\playground\obj\Debug\playground.csprojResolveAssemblyReference.cache
+D:\Andy\Documents\GitHub\playground\playground\obj\Debug\playground.csprojResolveAssemblyReference.cache

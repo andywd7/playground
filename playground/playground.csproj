@@ -361,6 +361,8 @@
     <Content Include="_patterns\00-atoms\02-text\05-blockquote-box--alt%40inprogress.mustache">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="_patterns\01-molecules\04-forms\03-address-form.mustache" />
+    <Content Include="_patterns\01-molecules\04-forms\04-date-range.mustache" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

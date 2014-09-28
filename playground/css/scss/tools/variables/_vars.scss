@@ -20,7 +20,7 @@ $colors: (
     // Brand Colours
 	// ====================
     primary: (
-    	dark:  darken(#467c9c, 7%),
+      dark:  darken(#467c9c, 7%),
       base:  #467c9c,
       light: lighten(#467c9c, 7%),
       txt:   #005373
@@ -206,14 +206,14 @@ $input-bg-disabled:              color(grey, lighter) !default;
 // Text color for `<input>`s
 $input-color:                    color(grey, dark) !default;
 // `<input>` border color
-$input-border:                   color(grey, light) !default;
+$input-border:                   color(grey, lighter) !default;
 // `<input>` border radius
 $input-border-radius:            $border-radius-base !default;
 // Border color for inputs on focus
 $input-border-focus:             #66afe9 !default;
 
 // Placeholder text color
-$input-color-placeholder:        lighten(color(grey), 7%) !default;
+$input-color-placeholder:        color(grey, light) !default;
 
 // Default `.f-control` height
 $input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + sz(1.5px)) !default;
