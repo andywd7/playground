@@ -18,9 +18,9 @@ $mq-breakpoints: (
     // Large screen / desktop
     desktop: 980px,
     // Extra large screen / wide desktop
-    xlg:     1140px,
+    lg:     1140px,
     // Extra extra large screen / very wide desktop
-    xxlg:    1300px,
+    xlg:    1300px,
     // Retina & High Pixel screen
     retina: min-resolution 1.5dppx
 ) !default;

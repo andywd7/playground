@@ -18,12 +18,9 @@
 
 
 // Contextual colors
-.txt-muted {
-  color: $txt-muted;
-}
-
-@include txt-emphasis-variant('.txt-primary', color(primary));
 @include txt-emphasis-variant('.txt-default', $txt-color);
-/*@include txt-emphasis-variant('.txt-info', $state-info-txt);
-@include txt-emphasis-variant('.txt-warning', $state-warning-txt);
-@include txt-emphasis-variant('.txt-danger', $state-danger-txt);*/
+@include txt-emphasis-variant('.txt-muted', $txt-muted);
+@include txt-emphasis-variant('.txt-primary', color(primary));
+//@include txt-emphasis-variant('.txt-info', $state-info-txt);
+//@include txt-emphasis-variant('.txt-warning', $state-warning-txt);
+//@include txt-emphasis-variant('.txt-danger', $state-danger-txt);

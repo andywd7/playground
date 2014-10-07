@@ -16,6 +16,11 @@ fieldset,
   // See https://github.com/twbs/bootstrap/issues/12359.
   min-width: 0;
   padding: 0;
+
+  + fieldset,
+  + .fieldset {
+    margin-top: $line-height-computed;
+  }
 }
 
 legend,
@@ -36,7 +41,7 @@ legend,
 label {
   display: inline-block;
   //font-weight: bold;
-  margin-bottom: sz(5px);
+  margin-bottom: sz(2px);
   max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
 }
 
@@ -128,7 +133,7 @@ input[type="checkbox"]:focus {
   font-size: $font-size-base;
   height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
   line-height: $line-height-base;
-  padding: $padding-base-vertical ($column-gutter / 2);
+  padding: $padding-base-vertical ($padding-base-horizontal / 2);
   width: 100%;
 
   // Customize the `:focus` state to imitate native WebKit styles.
@@ -157,7 +162,10 @@ input[type="checkbox"]:focus {
 textarea.f-control {
   height: auto;
 }
-
+// Adjust padding for select so inner text/placeholders align vertically
+select.f-control {
+  padding-left: ($padding-base-horizontal / 2) - sz(2px);
+}
 
 // Search inputs in iOS
 //
@@ -278,16 +286,16 @@ input[type="checkbox"] {
 
 .f-control-static {
   // Size it appropriately next to real form controls
-  padding-top: $padding-base-vertical;
-  //padding-bottom: $padding-base-vertical;
+  padding-top: ($padding-base-vertical + sz(1px));
+  padding-bottom: ($padding-base-vertical + sz(1px));
   // Remove default margin from `p`
   margin-bottom: 0;
 
-  &.input-lg,
-  &.input-sm {
-    padding-left: 0;
-    padding-right: 0;
-  }
+//  &.input-lg,
+//  &.input-sm {
+//    padding-left: 0;
+//    padding-right: 0;
+//  }
 }
 
 
@@ -306,10 +314,14 @@ input[type="checkbox"] {
 // Apply to any element you wish to create light text for placement immediately
 // below a form control. Use for general help, formatting, or instructional text.
 
-// .help-block {
-//   display: block; // account for any element using help-block
-//   font-size: sz(12px);
-//   margin-top: sz(5px);
-//   margin-bottom: sz(10px);
-//   color: lighten($txt-color, 25%); // lighten the text some for contrast
-// }
+.help-block {
+  color: lighten($txt-color, 25%); // lighten the text some for contrast
+  display: block; // account for any element using help-block
+  font-size: sz(12px);
+  margin-top: sz(5px);
+  margin-bottom: sz(10px);
+
+  .f-group & {
+    margin-bottom: 0;
+  }
+}

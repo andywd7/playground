@@ -4,19 +4,23 @@
 	"bodyClass": "body",
 	"img": {
 		"landscape-4x3": {
-			"src": "../../images/fpo_4x3.png",
+			"src": "http://placeimg.com/400/300/tech",
 			"alt": "4x3 Image"
 		},
 		"landscape-16x9": {
-			"src": "../../images/fpo_16x9.png",
+			"src": "http://placeimg.com/640/360/tech",
 			"alt": "16x9 Image"
 		},
 		"square": {
-			"src": "../../images/fpo_square.png",
+			"src": "http://placeimg.com/300/300/nature",
+			"alt": "Square Thumbnail"
+		},
+		"square-200x200": {
+			"src": "http://placeimg.com/200/200/nature",
 			"alt": "Square Thumbnail"
 		},
 		"avatar" : {
-			"src" : "../../images/fpo_avatar.png",
+			"src" : "http://placeimg.com/100/100/people",
 			"alt" : "Person Name"
 		},
 		"rectangle": {
@@ -89,5 +93,6 @@
 		{ },
 		{ },
 		{ }
-	]
+	],
+	"demo" : true
 }

@@ -3,6 +3,16 @@
 // --------------------------------------------------
 
 
+// Loading Spinner icon
+//
+
+.loader {
+  @extend .fa-spinner;
+  @extend .fa-spin;
+  font-size: sz(16px);
+}
+
+
 // Form control feedback states
 //
 // Apply contextual and semantic states to individual form controls.

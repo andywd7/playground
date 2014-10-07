@@ -1,0 +1,110 @@
+{{# demo }}
+<form class="f-horizontal" action="#" role="form">
+{{/ demo }}
+  <div class="f-address-control">
+    <fieldset class="wf-2">
+      <legend class="legend">Find Address</legend>
+      <div class="f-group">
+        <label for="findCountry" class="control-label">
+          Country <abbr title="required">*</abbr>
+        </label>
+        <div class="w-5">
+          <select id="findCountry" class="f-control js-findCountry">
+            <option value="0">Please Select...</option>
+            <optgroup label="United Kingdom" id="js-uk">
+              <option value="1">England</option>
+              <option value="2">Jersey</option>
+              <option value="3">Scotland</option>
+            </optgroup>
+            <optgroup label="Rest of World" id="js-restOfWorld">
+              <option value="4">Australia</option>
+              <option value="5">New Zealand</option>
+              <option value="6">USA</option>
+            </optgroup>
+          </select>
+          <p class="help-block">Select your country to find your address</p>
+        </div>
+      </div>
+      <div class="f-find_postcode f-group">
+        <label for="findPostcode" class="control-label">
+          Postcode <abbr title="required">*</abbr>
+        </label>
+        <div class="w-3">
+          <div class="input-group">
+            <input id="findPostcode" type="text" class="f-control" placeholder="Postcode" disabled />
+            <span class="input-group-btn">
+              <button type="button" class="btn btn--primary" disabled>
+                <i class="fa fa-search"></i> Find
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="f-find_address f-group">
+        <label for="address" class="control-label">Select your Address</label>
+        <div class="w-5">
+          <select id="address" class="f-control" size="3" disabled>
+            <option>1, The Street</option>
+            <option>2, The Street</option>
+            <option>3, The Street</option>
+            <!--<option>4, The Street</option>-->
+          </select>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="f-address wf-2">
+      <legend class="legend">Address</legend>
+      <div class="f-group">
+        <label for="addressLine1" class="control-label">
+          Address Line 1 <abbr title="required">*</abbr>
+        </label>
+        <div class="w-5">
+          <input id="addressLine1" type="text" class="f-control" placeholder="Address Line 1" />
+        </div>
+      </div>
+      <div class="f-group">
+        <label for="addressLine2" class="control-label">Address Line 2</label>
+        <div class="w-5">
+          <input id="addressLine2" type="text" class="f-control" placeholder="Address Line 2" />
+        </div>
+      </div>
+      <div class="f-group">
+        <label for="addressLine3" class="control-label">Address Line 3</label>
+        <div class="w-5">
+          <input id="addressLine3" type="text" class="f-control" placeholder="Address Line 3" />
+        </div>
+      </div>
+      <div class="f-group">
+        <label for="town" class="control-label">
+          Town/City <abbr title="required">*</abbr>
+        </label>
+        <div class="w-5">
+          <input id="town" type="text" class="f-control" placeholder="Town or City" />
+        </div>
+      </div>
+      <div class="f-group">
+        <label for="county" class="control-label">County/State</label>
+        <div class="w-5">
+          <input id="county" type="text" class="f-control" placeholder="County or State" />
+        </div>
+      </div>
+      <div class="f-address_postcode f-group">
+        <label for="postcode" class="control-label">
+          Postcode <abbr title="required">*</abbr>
+        </label>
+        <div class="w-5">
+          <input id="postcode" type="text" class="f-control" placeholder="Postcode" />
+        </div>
+      </div>
+      <div class="f-address_country f-group">
+        <label for="country" class="control-label">Country</label>
+        <div class="w-5">
+          <p class="f-control-static js-country"></p>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+{{# demo }}
+</form>
+{{/ demo }}

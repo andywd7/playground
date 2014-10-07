@@ -17,10 +17,10 @@ $colors: (
 		  lighter:  lighten(#000, 90%),  // #e6e6e6
 		  lightest: lighten(#000, 95.5%) // #f4f4f4
     ),
-    // Brand Colours
+  // Brand Colours
 	// ====================
     primary: (
-      dark:  darken(#467c9c, 7%),
+    	dark:  darken(#467c9c, 7%),
       base:  #467c9c,
       light: lighten(#467c9c, 7%),
       txt:   #005373
@@ -110,7 +110,7 @@ $fa-font-path:            "../fonts/font-awesome";
 //
 // Based on 1.4em(14px) font-size and 1.4 line-height (~20px to start)
 
-$padding-base-vertical:     sz(6px) !default;
+$padding-base-vertical:     sz(5px) !default;
 $padding-base-horizontal:   sz(12px) !default;
 
 $padding-xs-vertical:       sz(1px) !default;
@@ -125,9 +125,9 @@ $padding-lg-horizontal:     sz(16px) !default;
 $line-height-sm:            1.5 !default;
 $line-height-lg:            1.33 !default;
 
-$border-radius-base:        false !default; // false if no radius code required
-$border-radius-lg:          false !default; // false if no radius code required
-$border-radius-sm:          false !default; // false if no radius code required
+$border-radius-base:        null !default; // false if no radius code required
+$border-radius-lg:          null !default; // false if no radius code required
+$border-radius-sm:          null !default; // false if no radius code required
 
 
 
@@ -213,10 +213,10 @@ $input-border-radius:            $border-radius-base !default;
 $input-border-focus:             #66afe9 !default;
 
 // Placeholder text color
-$input-color-placeholder:        color(grey, light) !default;
+$input-color-placeholder:        lighten(color(grey), 7%) !default;
 
 // Default `.f-control` height
-$input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + sz(1.5px)) !default;
+$input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + sz(2px)) !default;
 // Large `.f-control` height
 $input-height-lg:                (ceil($font-size-lg * $line-height-lg) + ($padding-lg-vertical * 2) + 2) !default;
 // Small `.f-control` height
