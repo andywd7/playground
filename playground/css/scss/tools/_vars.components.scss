@@ -1,0 +1,83 @@
+/*======================*\
+   #COMPONENT VARIABLES
+\*======================*/
+
+
+/**
+ * Navbar/Header
+ */
+// Header
+$header-bg:                        #357f76 !default;
+
+// Navbar
+$navbar-border:                    color(grey, lighter);
+$navbar-color:                     #fff;
+$navbar-bg:                        $brand-primary;
+$navbar-hover-bg:                  darken($navbar-bg, 4%);
+$navbar-inv-color:                 #fff;
+$navbar-inv-bg:                    color(primary);
+
+$navbar-dd-bg:                     #357f76;
+$navbar-dd-hover-bg:               darken($navbar-dd-bg, 4%);
+$navbar-dd-color:                  color(grey, dark);
+$navbar-brand-width:               332px !default;
+$navbar-width:                     240px !default;
+
+// Navbar toggle
+$navbar-toggle-hover-bg:           color(grey, lightest) !default;
+//$navbar-toggle-border:             #444 !default;
+
+
+
+/**
+ * Navs
+ */
+$nav-link-padding-vertical:        $padding-lg-vertical !default;
+$nav-link-padding:                 $nav-link-padding-vertical $padding-base-horizontal !default;
+$nav-link-hover-bg:                color(grey, lightest) !default;
+$nav-active-link-color:            $brand-primary !default;
+//$nav-active-link-bg:               color(grey, lightest) !default;
+$nav-active-link-border:           $brand-primary !default;
+
+$nav-disabled-link-color:          color(grey, light) !default;
+
+// Pills
+$nav-pills-active-link-hover-bg:            $brand-primary !default;
+$nav-pills-active-link-hover-color:         #fff !default;
+
+
+
+/**
+ * Tabs
+ */
+$tab-content-padding:              $padding-lg-horizontal !default;
+$tab-content-bg:                   #fff !default;
+$tab-link-bg:                      color(grey, lighter) !default;
+$tab-link-hover-bg:                $nav-link-hover-bg !default;
+$tab-link-hover-color:             #000 !default;
+$tab-active-link-color:            $nav-active-link-color !default;
+$tab-active-link-bg:               color(grey, lightest) !default;
+$tab-active-link-border:           $nav-active-link-border !default;
+
+
+
+/**
+ * Form states and alerts
+ * ----------------------------------------------------------------
+ * Define colors for form feedback states and, by default, alerts.
+ */
+$state-success-txt:              color(green, dark) !default;
+$state-success-bg:               color(green, light) !default;
+$state-success-border:           color(green, dark) !default; // darken(adjust-hue($state-success-bg, -10), 5%) !default;
+
+$state-info-txt:                 color(blue, dark) !default;
+$state-info-bg:                  color(blue) !default;
+$state-info-border:              color(blue, dark) !default; // darken(adjust-hue($state-info-bg, -10), 7%) !default;
+
+$state-warning-txt:              color(yellow, dark) !default;
+$state-warning-bg:               color(yellow, light) !default;
+$state-warning-border:           color(yellow, dark) !default; // darken(adjust-hue($state-warning-bg, -10), 5%) !default;
+
+$state-danger-txt:               color(red, dark) !default;
+$state-danger-bg:                color(red, light) !default;
+$state-danger-border:            color(red, dark) !default; // darken(adjust-hue($state-danger-bg, -10), 5%) !default;

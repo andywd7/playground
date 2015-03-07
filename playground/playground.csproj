@@ -98,6 +98,29 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\docs\docs.css" />
+    <Content Include="css\scss\vendor\jquery-ui\images\ui-icons_333333_256x240.png" />
+    <Content Include="css\scss\vendor\jquery-ui\images\ui-icons_467c9c_256x240.png" />
+    <Content Include="css\scss\vendor\jquery-ui\images\ui-icons_ff0000_256x240.png" />
+    <Content Include="css\scss\vendor\jquery-ui\_jquery-ui.structure.scss" />
+    <Content Include="css\scss\vendor\jquery-ui\_jquery-ui.theme.scss" />
+    <Content Include="css\scss\vendor\jquery-ui\_jquery-ui.custom.scss" />
+    <Content Include="css\scss\components\_tabs.scss" />
+    <Content Include="css\scss\objects\_toggle.scss" />
+    <Content Include="css\scss\objects\_button-groups.scss" />
+    <Content Include="css\scss\components\_events.scss" />
+    <Content Include="css\scss\components\_wells.scss" />
+    <Content Include="css\scss\components\_ecommerce.scss" />
+    <None Include="css\scss\icons\icon-sprite.hbs" />
+    <Content Include="css\scss\vendor\jquery-ui\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="css\scss\vendor\jquery-ui\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="css\scss\vendor\jquery-ui\images\ui-bg_flat_55_ffffff_40x100.png" />
+    <Content Include="css\scss\vendor\jquery-ui\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="css\scss\vendor\jquery-ui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="css\scss\vendor\jquery-ui\images\ui-bg_highlight-soft_100_f6f6f6_1x100.png" />
+    <Content Include="css\scss\vendor\jquery-ui\images\ui-bg_highlight-soft_25_0073ea_1x100.png" />
+    <Content Include="css\scss\vendor\jquery-ui\images\ui-bg_highlight-soft_50_dddddd_1x100.png" />
+    <Content Include="css\scss\vendor\jquery-ui\images\ui-icons_666666_256x240.png" />
+    <Content Include="css\scss\vendor\jquery-ui\images\ui-icons_ffffff_256x240.png" />
     <Content Include="css\scss\vendor\font-awesome\font-awesome.css" />
     <Content Include="css\style.css" />
     <Content Include="css\style.ie-old.css" />
@@ -106,12 +129,38 @@
     <Content Include="fonts\icons.dev.svg" />
     <Content Include="fonts\icons.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Gruntfile.js" />
     <Content Include="images\favicon.ico" />
     <Content Include="images\favicon_32x32.jpg" />
     <Content Include="images\fpo_16x9.png" />
     <Content Include="images\fpo_4x3.png" />
     <Content Include="images\fpo_avatar.png" />
     <Content Include="images\fpo_square.png" />
+    <Content Include="images\icons-svg\default\basket.svg" />
+    <Content Include="images\icons-svg\default\calendar.svg" />
+    <Content Include="images\icons-svg\default\facebook.svg" />
+    <Content Include="images\icons-svg\default\home.svg" />
+    <Content Include="images\icons-svg\default\linkedin.svg" />
+    <Content Include="images\icons-svg\default\m-menu.svg" />
+    <Content Include="images\icons-svg\default\m-search.svg" />
+    <Content Include="images\icons-svg\default\m-triangle-down.svg" />
+    <Content Include="images\icons-svg\default\m-triangle-up.svg" />
+    <Content Include="images\icons-svg\default\times.svg" />
+    <Content Include="images\icons-svg\default\twitter.svg" />
+    <Content Include="images\icons-svg\white\basket.svg" />
+    <Content Include="images\icons-svg\white\calendar.svg" />
+    <Content Include="images\icons-svg\white\facebook.svg" />
+    <Content Include="images\icons-svg\white\home.svg" />
+    <Content Include="images\icons-svg\white\linkedin.svg" />
+    <Content Include="images\icons-svg\white\m-menu.svg" />
+    <Content Include="images\icons-svg\white\m-search.svg" />
+    <Content Include="images\icons-svg\white\m-times.svg" />
+    <Content Include="images\icons-svg\white\m-triangle-down.svg" />
+    <Content Include="images\icons-svg\white\m-triangle-up.svg" />
+    <Content Include="images\icons-svg\white\twitter.svg" />
+    <Content Include="images\logo.svg">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="images\logo.gif" />
     <Content Include="images\sample\landscape-16x9-mountains.jpg" />
     <Content Include="images\sample\thumb-square-fire.jpg" />
@@ -122,6 +171,15 @@
     <Content Include="images\sample\tout-4x3-climber.jpg" />
     <Content Include="images\sample\tout-4x3-climbers.jpg" />
     <Content Include="images\sample\tout-4x3-stream.jpg" />
+    <Content Include="images\sprites\sprite-master-sm.png" />
+    <Content Include="images\sprites\sprite-master.svg" />
+    <Content Include="images\sprites\sprite-sm.png" />
+    <Content Include="images\sprites\sprite-white-sm.png" />
+    <Content Include="images\sprites\sprite-white.svg" />
+    <Content Include="images\sprites\sprite.svg" />
+    <Content Include="images\test-sprite.svg">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="js\bootstrap\affix.js" />
     <Content Include="js\bootstrap\alert.js" />
     <Content Include="js\bootstrap\button.js" />
@@ -137,15 +195,63 @@
     <Content Include="js\forms.js" />
     <Content Include="js\fitvids.js" />
     <Content Include="js\global.js" />
-    <Content Include="js\init.js" />
-    <Content Include="js\jquery-2.0.0b2.js" />
+    <Content Include="js\jquery-1.11.1.js" />
     <Content Include="js\jquery-accessibleMegaMenu.js" />
-    <Content Include="js\jquery.min.js" />
+    <Content Include="js\jquery-ui.js" />
     <Content Include="js\min\forms.min.js" />
     <Content Include="js\min\global.min.js" />
+    <Content Include="js\min\jquery-1.11.1.min.js" />
+    <Content Include="js\min\modernizr.min.js" />
+    <Content Include="js\min\picturefill.min.js" />
+    <Content Include="js\min\tabs.min.js" />
     <Content Include="js\navbar.js" />
     <Content Include="js\modernizr.js" />
+    <Content Include="js\picturefill.js" />
+    <Content Include="js\tabs.js" />
     <Content Include="Web.config" />
+    <Content Include="_patterns\00-atoms\01-global\20-icons%40inprogress.mustache">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_patterns\00-atoms\05-forms\40-datepicker%40inprogress.mustache">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_patterns\03-templates\04-jqueryui%40inprogress.mustache">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_patterns\01-molecules\05-navigation\30-tabs.mustache">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_patterns\00-atoms\06-buttons\20-toggle-menu%40inreview.mustache">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_patterns\01-molecules\05-navigation\40-navs.mustache">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_patterns\01-molecules\05-navigation\31-tabs-vertical.mustache">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_patterns\01-molecules\05-navigation\32-tabs-vertical-right.mustache">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_patterns\01-molecules\06-components\30-flyout.mustache">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_patterns\00-atoms\06-buttons\30-toggle-basket%40inreview.mustache">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_patterns\00-atoms\03-lists\60-list-steps%40inprogress.mustache" />
+    <Content Include="_patterns\01-molecules\06-components\40-event-date.mustache">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_patterns\00-atoms\06-buttons\11-buttons-styles%40inreview.mustache">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_patterns\00-atoms\06-buttons\12-buttons-icons%40inreview.mustache">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_patterns\00-atoms\01-global\01-color-test%40inreview.mustache">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -166,18 +272,16 @@
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="css\scss\base\_buttons.scss" />
     <Content Include="css\scss\base\_normalize.custom.scss" />
-    <Content Include="css\scss\base\_scaffolding.scss" />
     <Content Include="css\scss\components\_crumbs.scss" />
-    <Content Include="css\scss\components\_flyout.scss" />
+    <Content Include="css\scss\objects\_flyout.scss" />
     <Content Include="css\scss\components\_navbar.scss" />
-    <Content Include="css\scss\components\_navbar2.scss" />
-    <Content Include="css\scss\components\_navbar__search.scss" />
+    <Content Include="css\scss\components\_navbar-search.scss" />
     <Content Include="css\scss\components\_navs.scss" />
     <Content Include="css\scss\layout\_ads.scss" />
     <Content Include="css\scss\layout\_layouts.scss" />
-    <Content Include="css\scss\tools\mixins\_mixins.scss" />
-    <Content Include="css\scss\tools\mixins\_mx-mq.scss" />
-    <Content Include="css\scss\tools\variables\_vars.scss" />
+    <Content Include="css\scss\tools\_mixins.scss" />
+    <Content Include="css\scss\tools\_mx.mq.scss" />
+    <Content Include="css\scss\tools\_vars.scss" />
     <Content Include="css\scss\utils\_component-animations.scss" />
     <Content Include="css\scss\utils\_utilities.scss" />
     <Content Include="css\scss\vendor\font-awesome\font-awesome.scss">
@@ -218,19 +322,37 @@
       <CompileStyle>Nested</CompileStyle>
       <DebugInfo>False</DebugInfo>
     </Content>
-    <Content Include="css\scss\base\forms\_form-elements.scss" />
-    <Content Include="css\scss\base\forms\_form-layouts.scss" />
-    <Content Include="css\scss\base\forms\_form-icons.scss" />
-    <Content Include="css\scss\base\forms\_form-input-groups.scss" />
+    <Content Include="css\scss\base\_form-elements.scss" />
+    <Content Include="css\scss\layout\_form-layouts.scss" />
+    <Content Include="css\scss\base\_input-icons.scss" />
+    <Content Include="css\scss\base\_input-groups.scss" />
     <Content Include=".scss-lint.yml" />
     <Content Include="css\scss\base\_type.scss" />
     <Content Include="css\scss\base\_lists.scss" />
     <Content Include="css\scss\utils\_txt.scss" />
-    <Content Include="css\docs\docs.scss" />
+    <Content Include="css\docs\docs.scss">
+      <Compile>False</Compile>
+      <Minify>True</Minify>
+      <IgnoreWarnings>True</IgnoreWarnings>
+      <IgnoreErrors>True</IgnoreErrors>
+      <CompileStyle>Nested</CompileStyle>
+      <DebugInfo>False</DebugInfo>
+    </Content>
     <Content Include="css\scss\layout\_grid.scss" />
-    <Content Include="css\scss\components\_forms.scss" />
-    <Content Include="css\scss\components\_media.scss" />
+    <Content Include="css\scss\objects\_forms.scss" />
+    <Content Include="css\scss\objects\_media.scss" />
     <Content Include="css\scss\utils\_responsive.scss" />
+    <Content Include="css\scss\base\_tables.scss" />
+    <Content Include="css\scss\tools\_mx.grid.scss" />
+    <Content Include="css\scss\components\_navbar-secondary.scss" />
+    <Content Include="css\scss\components\_navbar-primary.scss" />
+    <Content Include="css\scss\tools\_mx.css3.scss" />
+    <Content Include="config\config.ini" />
+    <Content Include="css\scss\icons\_icons-svg.scss" />
+    <Content Include="css\scss\tools\_vars.components.scss" />
+    <Content Include="css\scss\objects\_toolbar.scss" />
+    <Content Include="css\scss\icons\_i-icon-sprite.scss" />
+    <Content Include="css\scss\icons\_i-master-sprite.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -264,33 +386,42 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="_patterns\01-molecules\07-messaging\00-alert.mustache" />
-    <Content Include="_patterns\01-molecules\06-components\02-single-comment.mustache" />
+    <Content Include="_patterns\01-molecules\06-components\20-toolbar.mustache">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="_patterns\01-molecules\06-components\01-accordion.mustache" />
     <Content Include="_patterns\01-molecules\06-components\00-social-share.mustache" />
-    <Content Include="_patterns\01-molecules\05-navigation\04-tabs.mustache" />
     <Content Include="_patterns\01-molecules\05-navigation\03-pagination.mustache" />
-    <Content Include="_patterns\01-molecules\05-navigation\02-navbar-crumbs.mustache" />
+    <Content Include="_patterns\01-molecules\05-navigation\02-navbar-crumbs.mustache">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="_patterns\01-molecules\05-navigation\01-footer-nav.mustache" />
     <Content Include="_patterns\01-molecules\05-navigation\00-navbar-primary.mustache">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="_patterns\01-molecules\04-forms\_02-newsletter.mustache" />
     <Content Include="_patterns\01-molecules\04-forms\_01-comment-form.mustache" />
-    <Content Include="_patterns\01-molecules\04-forms\00-search%40inreview.mustache" />
+    <Content Include="_patterns\01-molecules\04-forms\00-search%40inreview.mustache">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="_patterns\01-molecules\03-media\00-figure-with-caption.mustache" />
     <Content Include="_patterns\01-molecules\02-blocks\_30-block-inset.mustache" />
     <Content Include="_patterns\01-molecules\02-blocks\_25-block-headline.mustache" />
     <Content Include="_patterns\01-molecules\02-blocks\_20-block-thumb-headline.mustache" />
     <Content Include="_patterns\01-molecules\02-blocks\_15-block-hero.mustache" />
     <Content Include="_patterns\01-molecules\02-blocks\_10-block-headline-byline.mustache" />
-    <Content Include="_patterns\01-molecules\02-blocks\00-media%40inreview.mustache" />
+    <Content Include="_patterns\01-molecules\02-blocks\00-media%40inreview.mustache">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="_patterns\01-molecules\01-layout\03-four-up.mustache" />
     <Content Include="_patterns\01-molecules\01-layout\02-three-up.mustache" />
     <Content Include="_patterns\01-molecules\01-layout\01-two-up.mustache" />
     <Content Include="_patterns\01-molecules\01-layout\00-one-up.mustache" />
     <Content Include="_patterns\01-molecules\00-text\_04-intro-text.mustache" />
     <Content Include="_patterns\01-molecules\00-text\10-blockquote-with-citation%40inreview.mustache" />
-    <Content Include="_patterns\01-molecules\00-text\_02-heading-group.mustache" />
+    <Content Include="_patterns\01-molecules\00-text\20-heading%40inprogress.mustache">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="_patterns\01-molecules\00-text\00-address%40inreview.mustache" />
     <Content Include="_patterns\01-molecules\00-text\_00-byline.mustache" />
     <Content Include="_patterns\00-atoms\06-buttons\00-buttons%40inreview.mustache">
@@ -309,12 +440,12 @@
     </Content>
     <Content Include="_patterns\00-atoms\04-images\50-favicon%40complete.mustache" />
     <Content Include="_patterns\00-atoms\04-images\70-loading-icon%40inprogress.mustache" />
-    <Content Include="_patterns\00-atoms\04-images\60-icons%40inprogress.mustache" />
     <Content Include="_patterns\00-atoms\04-images\30-avatar%40inreview.mustache" />
     <Content Include="_patterns\00-atoms\04-images\20-square%40inreview.mustache" />
-    <Content Include="_patterns\00-atoms\04-images\10-landscape-16x9%40inreview.mustache" />
-    <Content Include="_patterns\00-atoms\04-images\00-landscape-4x3%40inreview.mustache" />
-    <Content Include="_patterns\00-atoms\04-images\40-logo%40inreview.mustache" />
+    <Content Include="_patterns\00-atoms\04-images\00-landscape%40inreview.mustache" />
+    <Content Include="_patterns\00-atoms\04-images\40-logo%40inreview.mustache">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="_patterns\00-atoms\02-text\30-blockquote%40inreview.mustache">
       <SubType>Designer</SubType>
     </Content>
@@ -327,7 +458,9 @@
     <Content Include="_patterns\00-atoms\09-helpers\_03-visibility.mustache" />
     <Content Include="_patterns\00-atoms\01-global\_02-animations.mustache" />
     <Content Include="_patterns\00-atoms\01-global\10-fonts%40inreview.mustache" />
-    <Content Include="_patterns\00-atoms\01-global\00-colors%40inreview.mustache" />
+    <Content Include="_patterns\00-atoms\01-global\00-colors%40inreview.mustache">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="_patterns\00-atoms\00-meta\_10-foot.mustache">
       <SubType>Designer</SubType>
     </Content>
@@ -348,12 +481,16 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="_patterns\03-templates\03-typography.mustache" />
-    <Content Include="_patterns\00-atoms\03-lists\00-unordered-list%40complete.mustache" />
-    <Content Include="_patterns\00-atoms\03-lists\10-ordered-list%40complete.mustache" />
-    <Content Include="_patterns\00-atoms\03-lists\20-unstyled-list%40complete.mustache" />
-    <Content Include="_patterns\00-atoms\03-lists\30-inline-list%40inreview.mustache" />
-    <Content Include="_patterns\00-atoms\03-lists\40-definition-list%40inprogress.mustache" />
-    <Content Include="_patterns\00-atoms\03-lists\50-inline-definition-list%40inprogress.mustache" />
+    <Content Include="_patterns\00-atoms\03-lists\00-list-unordered%40complete.mustache">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_patterns\00-atoms\03-lists\10-list-ordered%40complete.mustache" />
+    <Content Include="_patterns\00-atoms\03-lists\20-list-unstyled%40complete.mustache" />
+    <Content Include="_patterns\00-atoms\03-lists\30-list-inline%40inreview.mustache">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_patterns\00-atoms\03-lists\40-list-definition%40inprogress.mustache" />
+    <Content Include="_patterns\00-atoms\03-lists\50-list-inline-definition%40inprogress.mustache" />
     <Content Include="_patterns\00-atoms\09-helpers\00-alignment%40complete.mustache" />
     <Content Include="_patterns\00-atoms\09-helpers\10-text-case%40complete.mustache" />
     <Content Include="_patterns\00-atoms\09-helpers\20-text-context-colors%40inprogress.mustache" />
@@ -363,7 +500,7 @@
     <Content Include="_patterns\00-atoms\02-text\50-blockquote-box--alt%40inprogress.mustache">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="_patterns\01-molecules\04-forms\_04-inline%40inprogress.mustache">
+    <Content Include="_patterns\01-molecules\04-forms\02-input-groups%40inprogress.mustache">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="_patterns\01-molecules\04-forms\40-mixed%40inprogress.mustache">
@@ -387,8 +524,23 @@
     <Content Include="_patterns\01-molecules\02-blocks\10-media-right%40inreview.mustache" />
     <Content Include="_patterns\01-molecules\02-blocks\20-media-link%40inreview.mustache" />
     <Content Include="_patterns\01-molecules\02-blocks\30-media-link-right%40inreview.mustache" />
-    <Content Include="_patterns\00-atoms\04-images\21-square-200x200%40inreview.mustache" />
-    <Content Include="_patterns\00-atoms\09-helpers\30-responsive%40inprogress.mustache" />
+    <Content Include="_patterns\00-atoms\09-helpers\30-responsive%40inprogress.mustache">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_patterns\00-atoms\07-tables\00-table%40inprogress.mustache" />
+    <Content Include="_patterns\00-atoms\07-tables\_10-table-striped%40inprogress.mustache" />
+    <Content Include="_patterns\00-atoms\07-tables\20-table-bordered%40inprogress.mustache" />
+    <Content Include="_patterns\00-atoms\07-tables\30-table-hover%40inprogress.mustache" />
+    <Content Include="_patterns\00-atoms\07-tables\_40-table-condensed%40inprogress.mustache" />
+    <Content Include="_patterns\00-atoms\07-tables\60-table-context%40inprogress.mustache" />
+    <Content Include="_patterns\00-atoms\07-tables\50-table-responsive%40inprogress.mustache" />
+    <Content Include="_patterns\01-molecules\08-tables\_00-table-inline-edit%40inprogress.mustache">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_patterns\01-molecules\08-tables\50-table-responsive%40inprogress.mustache" />
+    <Content Include="_patterns\00-atoms\04-images\22-picturefill%40inprogress.mustache">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

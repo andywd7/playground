@@ -4,3 +4,22 @@
   margin: .2em 0;
   padding: .2em 0;
 }
+
+// use svg
+//.logo {
+//  height: 59px;
+//  width: 75px;
+//}
+
+// if no support for svg and lt-ie9
+//.no-js.lt-ie9 {
+  .logo {
+    @include nope(svg) {
+      background: url('/images/logo.gif') no-repeat;
+
+      img {
+        @extend .u-sr;
+      }
+    }
+  }
+//}

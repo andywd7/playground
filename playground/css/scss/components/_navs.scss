@@ -1,76 +1,95 @@
-// ====
-// Navs
-// ====
+/*================*\
+   #NAVS
+\*================*/
 
 
-// Base class
-// ----------
-
+/**
+ * Base class
+ */
 .nav {
   @include cf();
   list-style: none;
   margin-bottom: 0;
+  margin-right: -1px;
   margin-top: 0;
-  padding-left: 0; // Override default ul/ol
+  padding-left: 0; /* Override default ul/ol */
+  position: relative;
 
   > li {
     display: block;
     position: relative;
 
     > a {
+      border-right: 3px solid transparent;
+      color: color(grey, dark);
       display: block;
       padding: $nav-link-padding;
       position: relative;
+      //text-decoration: none;
+
       &:hover,
       &:focus {
         background-color: $nav-link-hover-bg;
-        text-decoration: none;
       }
 
-      // Prevent IE8 from misplacing imgs
-      // See https://github.com/h5bp/html5-boilerplate/issues/984#issuecomment-3985989
+      /**
+      * Prevent IE8 from misplacing imgs
+      * See https://github.com/h5bp/html5-boilerplate/issues/984#issuecomment-3985989
+      */
       > img {
         max-width: none;
       }
     }
-
-    // &.is-active > a {
-    //   color: $nav-disabled-link-color;
-
-    //   &:hover,
-    //   &:focus {
-    //     color: $nav-disabled-link-hover-color;
-    //     //text-decoration: none;
-    //     //background-color: transparent;
-    //   }
-    // }
-
-    // Disabled state sets text to gray and nukes hover/tab effects
-    &.is-disabled > a {
-      color: $nav-disabled-link-color;
-
-      &:hover,
-      &:focus {
-        background-color: transparent;
-        color: $nav-disabled-link-hover-color;
-        cursor: not-allowed;
-        text-decoration: none;
-      }
-    }
   }
 
-  // Open dropdowns
-  .open > a {
-    &,
+  .is-active > a {
+    background-color: transparent;
+    border-right-color: $nav-active-link-border;
+    color: $nav-active-link-color;
+
     &:hover,
     &:focus {
       background-color: $nav-link-hover-bg;
-      border-color: $link-color;
+    }
+  }
+    
+  /**
+  * Disabled state sets text to gray and nukes hover/tab effects but DOES NOT
+  * remove functionality
+  */
+  .is-disabled > a {
+    background-color: transparent;
+    color: $nav-disabled-link-color;
 
-      .caret {
-        border-bottom-color: $link-hover-color;
-        border-top-color: $link-hover-color;
-      }
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      border-color: $border-base;
+      color: $nav-disabled-link-color;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.nav--inline {
+  > li {
+    float: left;
+
+    > a {
+      border-right: 0;
+    }
+  }
+}
+
+
+.nav--pills {
+    // Active state
+  > .is-active > a {
+    &,
+    &:hover,
+    &:focus {
+      background-color: $nav-pills-active-link-hover-bg;
+      color: $nav-pills-active-link-hover-color;
     }
   }
 }

@@ -1,0 +1,280 @@
+/*=======*\
+   #TABS
+\*=======*/
+
+
+/**
+ * Tabs Content ul/ol
+ */
+.tabs_content {
+  @include cf();
+  background-color: $tab-content-bg;
+  border: 1px solid $border-base;
+  list-style: none;
+  //margin-bottom: 0;
+  padding: $tab-content-padding;
+
+  > li {
+    display: none;
+
+    &.is-active {
+      display: block;
+    }
+  }
+}
+
+
+/**
+ * Tabs nav wrapper
+ */
+.nav--tabs {
+  > li {
+    &.is-active > a {
+      border-bottom-color: $tab-active-link-border;
+
+      &:hover,
+      &:focus {
+        color: $tab-active-link-color;
+      }
+    }
+
+    > a {
+      border-bottom: 3px solid transparent;
+      border-right: 0;
+
+      &:hover,
+      &:focus {
+        border-bottom-color: $border-base;
+        color: $tab-link-hover-color;
+      }
+    }
+  }
+}
+
+
+/**
+ * Toggle (can't go inside media query as @extending)
+ */
+.toggle_chkbx:checked + .toggle_btn {
+  &.i-menu:before {
+    @extend .i-times:before;
+  }
+}
+
+
+.tabs_actions {
+  .btn {
+    border-radius: 0;
+    border-width: 0 1px;
+    //max-height: sz(35px);
+    padding-top: ($nav-link-padding-vertical + sz(1px));
+    padding-bottom: $nav-link-padding-vertical;
+  }
+}
+
+
+.tabs-btn_left,
+.tabs-btn_right {
+  display: none;
+}
+
+
+
+@include mq($to: navbar) {
+  .tabs_content {
+    border-top: 0;
+  }
+
+  .nav--tabs {
+    background-color: $tab-link-bg;
+    //overflow: hidden;
+    margin-right: 0;
+    max-height: 34px;
+    overflow: hidden;
+    position: relative;
+    transition: max-height .5s ease-in-out;
+  }
+
+  .tabs {
+    position: relative;
+
+    li {
+      //display: block;
+      position: static;
+
+      &.is-active a {
+        background-color: $tab-active-link-bg;
+        position: relative;
+        z-index: 1;
+      }
+
+      > a,
+      .btn-group {
+        border-right: 0;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+    }
+
+    .toggle_chkbx:checked + .toggle_btn {
+      + .toggle_target {
+        max-height: 500px;
+        
+        li > a,
+        .btn-group {
+          display: block;
+          position: relative;
+        }
+      }
+    }
+
+    .toggle_btn {
+      padding: ($nav-link-padding-vertical + sz(1px)) $nav-link-padding-vertical;
+      position: absolute;
+      right: 0;
+      z-index: 2;
+    }
+  }
+
+
+  .nav--tabs {
+    left: 0 !important;
+  }
+}
+
+
+@include mq($from: navbar) {
+  .tabs {
+    overflow: hidden;
+  }
+
+  .tabs_content {
+    margin-top: -1px;
+  }
+
+  .nav--tabs {
+    min-height: sz(35px);
+
+    > li > a {
+      &:hover,
+      &:focus {
+        border-bottom-color: $tab-active-link-border;
+      }
+    }
+  }
+
+  .tabs_wrapper {
+    margin: sz(0 34px);
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .tabs,
+  .tabs_wrapper > .nav--tabs {
+    position: relative;
+  }
+  
+  .tabs {
+    li {
+      display: inline-block;
+    }
+
+    //.tabs_actions {
+    //  float: right;
+
+    //  .btn {
+    //    border-width: 1px;
+    //
+    //    &:first-child {
+    //      border-top-left-radius: $border-radius-base;
+    //    }
+
+    //    &:last-child {
+    //      border-top-right-radius: $border-radius-base;
+    //    }
+    //  }
+    //}
+  }
+
+  //.tabs:not(.tabs--vertical) .nav--tabs {
+  //  > li > a {
+  //    &:hover,
+  //    &:focus {
+  //      background-color: transparent;
+  //    }
+  //  }
+  //}
+
+  
+  .tabs-btn_left,
+  .tabs-btn_right {
+    border: 0;
+    border-radius: 0;
+    display: block;
+    padding: 7px 9px;
+    position: absolute;
+    z-index: 2;
+
+    &[disabled] {
+      box-shadow: none;
+    }
+  }
+  .tabs-btn_left {
+    box-shadow: 2px 0 6px rgba(0,0,0,.15);
+    left: 0;
+    transform: rotate(90deg);
+  }
+  .tabs-btn_right {
+    box-shadow: -2px 0 6px rgba(0,0,0,.15);
+    right: 0;
+    transform: rotate(-90deg);
+  }
+
+
+  /**
+  * Vertical Tabs
+  */
+  .tabs--vertical {
+    @include g-col($columns:3, $collapse:null);
+    overflow: visible;
+
+    li {
+      display: block;
+
+      a {
+        border-bottom: 0;
+        border-right: 3px solid transparent;
+      }
+    }
+
+    + .tabs_content {
+      @include g-col($columns:9, $collapse:null);
+      margin-top: 0;
+    }
+  }
+
+  .tabs--vertical--right {
+    float: right;
+
+    .nav--tabs {
+      margin-left: -1px;
+      margin-right: 0;
+    }
+
+    li {
+      a {
+        border-left: 3px solid transparent;
+        border-right: 0;
+      }
+
+      &.is-active a {
+        border-left-color: $tab-active-link-border;
+        border-right: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,107 @@
+//===================
+// #NAVBAR-SECONDARY
+//===================
+
+
+.navbar_secondary {
+  display: table-footer-group;
+  font-size: sz(12px);
+
+  .nav {
+    margin-right: 0;
+  }
+
+  li {
+    line-height: 1.5;
+
+    &:first-child {
+      border-top: 1px solid $navbar-border;
+      //margin-top: sz(15px);
+      padding-top: sz(15px);
+    }
+
+    a {
+      text-transform: uppercase;
+    }
+  }
+
+    //.navbar__nav--social {
+    //    display: table-footer-group;
+    //    padding-bottom: sz(40px);
+    //    
+    //    > li {
+    //        float: left;
+
+    //        a {
+    //            font-size: sz(17px);
+    //            width: sz($navbar-width / 4);
+    //        }
+
+    //        .link-facebook {
+    //            @extend %link-facebook;
+    //        }
+    //        .link-linkedin {
+    //            @extend %link-linkedin;
+    //        }
+    //        .link-twitter {
+    //            @extend %link-twitter;
+    //        }
+    //        .link-youtube {
+    //            @extend %link-youtube;
+    //        }
+    //    }
+    //}
+
+  .navbar_nav--mini {
+    //display: table-header-group;
+  }
+
+  @include mq($from: navbar) {
+    border-bottom: 1px solid $navbar-border;
+    border-top: 1px solid $navbar-border;
+    display: block;
+    overflow: auto;
+    margin-bottom: sz(43px);
+    //max-width: 83%;
+
+    li:first-child {
+      border-top: 0;
+      margin-top: 0;
+      padding-top: 0;
+
+      //+ .social {
+      //  clear: none;
+      //}
+    }
+
+    //.navbar__nav--mini,
+    li {
+      float: left;
+    }
+
+    .navbar_nav--mini {
+      background-color: $navbar-bg;
+
+      a {
+        border-right: 1px solid $navbar-border;
+        padding: sz(2px) $padding-base-horizontal;
+      }
+
+      //li:last-child a {
+      //  border-right: 0;
+      //}
+    }
+
+    //> .navbar__nav--social {
+    //    display: block;
+    //    float: right;
+    //    padding-bottom: 0;
+
+    //    > li > a {
+    //        border: 0;
+    //        padding: sz(3px 0);
+    //        width: 31px;
+    //    }
+    //}
+  }
+}

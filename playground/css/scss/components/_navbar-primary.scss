@@ -1,0 +1,231 @@
+/*=================*\
+   #NAVBAR-PRIMARY
+\*=================*/
+
+
+/**
+ * Primary Navbar with dropdowns
+ */
+.navbar_primary {
+  display: table-header-group;
+
+  @include mq($from: navbar) {
+    display: block;
+  }
+
+  .nav {
+    .join {
+      border-top: 1px solid $navbar-border;
+      padding: sz(10px) $padding-base-horizontal;
+
+      a {
+        background-color: color(olive);
+        border: 0;
+        color: $navbar-inv-color;
+
+        &:hover,
+        &:focus {
+          background-color: color(olive, dark);
+        }
+      }
+
+      @include mq($from: navbar) {
+        border-top-color: color(olive);
+        float: right;
+        margin-bottom: -1px;
+        padding: 0;
+      }
+    }
+
+
+    > .navbar_dd {
+      @include cf();
+
+      > a {
+        border-right: 0;
+        float: left;
+        font-weight: 700;
+        //letter-spacing: sz(1px);
+        padding: sz(10px) $padding-base-horizontal;
+        text-transform: uppercase;
+        width: 75%;
+      }
+
+      &.is-active {
+        .btn--link {
+          background-color: $navbar-dd-bg;
+        }
+
+        .i:before {
+          background-position: -198px 0;
+        }
+
+        > .navbar_dd-mega {
+          max-height: 1000px;
+          @include opacity(1);
+          //transition: max-height .9s ease;
+    
+          //> .l-container {
+          //  @include opacity(1);
+          //  transition: opacity .4s ease;
+          //}
+        }
+      }
+
+
+      @include mq($from: navbar) {
+        float: left;
+        //margin-left: sz(2px);
+        position: static;
+        transition: background-color .3s .1s ease;
+
+        //&:first-child {
+        //    margin-left: 0;
+        //} 
+
+        > a {
+          float: none;
+          font-weight: 400;
+          letter-spacing: normal;
+          padding: $nav-link-padding;
+          text-transform: capitalize;
+          //transition: color .3s .1s ease-in;
+          width: auto;
+
+          &:hover,
+          &:focus {
+            background-color: transparent;
+            //transition: color 0s;
+          }
+        }
+
+        &:hover {
+          background-color: $navbar-dd-hover-bg;
+          transition: background-color 0s;
+
+          a {
+            ~ .navbar_dd-mega {
+              max-height: 1000px;
+              //@include opacity(1);
+
+              //> .l-container {
+              //  @include opacity(1);
+              //  //transition: opacity .3s ease;
+              //}
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .btn--link {
+    border: 0;
+    padding: sz(9px);
+    width: 25%;
+
+    &:hover,
+    &:focus {
+      background-color: $navbar-dd-hover-bg;
+    }
+
+    @include mq($from: navbar) {
+      display: none;
+    }
+  }
+
+  .i:before {
+    background-position: -176px 0;
+    height: 22px;
+    top: 0;
+    width: 22px;
+  }
+}
+
+
+.navbar_dd-mega {
+  //@include opacity(0);
+  clear: left;
+  max-height: 0;
+  overflow: hidden;
+  transition: all .5s ease-out;
+
+  /**
+   * 1. used only to prevent blurry text on transition in Chrome
+   */
+  > .l-container {
+    //@include opacity(0);
+    //transform: translateZ(0); /* 1 */
+    //transition: opacity .5s ease;
+    width: $navbar-width;
+  }
+
+  .nav {
+    background-color: $navbar-dd-bg;
+    border-bottom: 3px solid $brand-primary;
+    line-height: 1.5;
+    padding-bottom: $padding-lg-vertical;
+    padding-top: $padding-lg-vertical;
+
+    > li {
+      > a {
+        font-size: sz(13px);
+        padding-bottom: sz(5px);
+        padding-top: sz(5px);
+        text-transform: capitalize;
+
+        &:hover,
+        &:focus {
+          background-color: $navbar-dd-hover-bg;
+        }
+      }
+    }
+  }
+
+  .navbar_title {
+    margin: 0;
+
+    a {
+      border-bottom: 1px solid darken($navbar-dd-bg, 7%);
+      color: $brand-primary;
+      display: block;
+      margin: sz(10px 14px 11px);
+      padding-bottom: sz(10px);
+      //text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: $brand-primary;
+      }
+    }
+  }
+
+  @include mq($from: navbar) {
+    background-color: $navbar-dd-bg;
+    //box-shadow: -1px 0 0 $navbar-bg;
+    box-shadow: 0 2px 3px rgba(0,0,0,.15);
+    left: -1px;
+    position: absolute;
+    transition: all .5s ease;
+    width: 100%;
+    z-index: 100;
+
+    > .l-container {
+      padding: $line-height-computed 0;
+      width: auto;
+    }
+
+    .nav {
+      @include g-col($columns:4, $collapse:null);
+      background-color: $navbar-dd-bg;
+      border-bottom: 0;
+
+      > li > a {
+        &:hover,
+        &:focus {
+          background-color: $navbar-dd-hover-bg;
+        }
+      }
+    }
+  }
+}

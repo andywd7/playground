@@ -1,19 +1,13 @@
-// ====================
-// LAYOUTS
-// ====================
+/*==========*\
+   #LAYOUTS
+\*==========*/
+
 
 .l-container {
   @include cf();
   margin: 0 auto;
   width: 96%;
   
-
-  //@include breakpoint($bp-mobile-w) {
-  //  max-width: (560 / 14) * 1em;
-  //}
-	//@include breakpoint($bp-tablet-w) {
-  //  max-width: (740 / 14) * 1em;
-  //}
   @include mq($from: desktop) {
     //max-width: (980 / 14) * 1em;
     max-width: sz(980);
@@ -21,15 +15,6 @@
   @include mq($from: xlg) {
     //max-width: (1140 / 14) * 1em;
     max-width: sz(1140);
-  }
-  //@include breakpoint($bp-desktop-xl-w) {
-  //  max-width: (1300 / 14) * 1em;
-  //}
-}
-
-.g-container {
-  @include mq($from: tablet) {
-    @include g-row();
   }
 }
 
@@ -62,19 +47,7 @@
 //  }
 //}
 
-.panel {
-  background-color: #fff;
-  min-height: 300px;
-}
-
-.l-header {
-  background-color: $header-bg;
-  //border-top: 5px solid #444;
-  border-bottom: 1px solid color(grey, lighter);
-  margin-bottom: $line-height-computed;
-
-  // @include mq($from: navbar) {
-  //   position: relative;
-  //   z-index: 1001;
-  // }
-}
+//.panel {
+//  background-color: #fff;
+//  min-height: 300px;
+//}

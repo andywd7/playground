@@ -1,0 +1,39 @@
+/*========*\
+   #WELLS
+\*========*/
+
+
+// Base class
+.well {
+  background-color: #fff; // $well-bg;
+  border: 1px solid $border-base;
+  border-bottom: 0;
+  box-shadow: 0 5px $blockquote-highlight;
+  margin: 0 0 $line-height-computed + sz(5px);
+  min-height: 20px;
+  padding: $padding-base-horizontal;
+
+  blockquote {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/**
+ * Alternative colour
+ */
+.well--alt {
+  background-color: color(grey, lightest);
+  border: 0;
+}
+
+/**
+ * Sizes
+ */
+.well--lg {
+  padding: $padding-lg-horizontal;
+}
+.well--sm {
+  padding: $padding-sm-horizontal;
+}

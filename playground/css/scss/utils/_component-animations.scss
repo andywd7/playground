@@ -1,29 +1,47 @@
-//
-// Component animations
-// --------------------------------------------------
+/*========================*\
+   #COMPONENTS ANIMATIONS
+\*========================*/
 
-// Heads up!
-//
-// We don't use the `.opacity()` mixin here since it causes a bug with text
-// fields in IE7-8. Source: https://github.com/twitter/bootstrap/pull/3552.
 
+/**
+ * Heads up!
+--------------------------------------------------------------------------------
+ * We don't use the `.opacity()` mixin here since it causes a bug with text
+ * fields in IE7-8. Source: https://github.com/twitter/bootstrap/pull/3552.
+ */
 .fade {
-  @include transition(opacity .15s linear);
   opacity: 0;
+  transition: opacity .15s linear;
+
   &.in {
     opacity: 1;
   }
 }
 
+
 .collapse {
   display: none;
+
   &.in {
     display: block;
   }
 }
+
 .collapsing {
-  @include transition(height .35s ease);
   height: 0;
   overflow: hidden;
   position: relative;
+  transition: height .35s ease;
+}
+
+.is-collapsed {
+  @include opacity(0);
+  max-height: 0;
+  overflow: hidden;
+  transition: all .2s ease;
+
+  &.not {
+    @include opacity(1);
+    max-height: 500px;
+  }
 }

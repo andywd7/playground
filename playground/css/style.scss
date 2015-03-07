@@ -40,20 +40,24 @@ So feel free to use any of these approaches. Or don't. It's totally up to you.
  * TOC To Be Continued
  */
 
+// true = include media queries and use rems
+// false = exclude media queries and use px (for ie8 use)
+$not-ie: true;
 
-$old-ie: false;
-
-
-@import "scss/vendor/font-awesome/font-awesome.scss";
+//@import "scss/vendor/font-awesome/font-awesome.scss";
 
 
 // ====================
-// MATERIALS
+// TOOLS
 // ====================
 
-@import 'scss/tools/mixins/_mixins.scss';
-@import 'scss/tools/mixins/_mx-mq.scss'; // Includes breakpoint vars & other mq options.
-@import 'scss/tools/variables/_vars.scss';
+@import 'scss/tools/_mixins.scss';
+@import 'scss/tools/_mx.css3.scss';
+@import 'scss/tools/_mx.mq.scss'; // Includes breakpoint vars & other mq options.
+@import 'scss/tools/_mx.grid.scss';
+@import 'scss/tools/_vars.scss';
+@import 'scss/tools/_vars.components.scss';
+
 
 
 // ====================
@@ -61,36 +65,49 @@ $old-ie: false;
 // ====================
 
 @import 'scss/base/_normalize.custom.scss';
-@import 'scss/base/_scaffolding.scss';
-@import 'scss/layout/_grid.scss'; // has to come before forms.scss as is used within it.
 @import 'scss/base/_type.scss';
 @import 'scss/base/_lists.scss';
 
-  // Forms
-  // ====================
+@import 'scss/layout/_grid.scss'; // has to come before forms.scss as is used within it.
 
-  //@import 'scss/base/forms/_form-grid.scss';
-  @import 'scss/base/forms/_form-elements.scss';
-  @import 'scss/base/forms/_form-layouts.scss';
-  @import 'scss/base/forms/_form-icons.scss';
-  @import 'scss/base/forms/_form-input-groups.scss';
-
+//@import 'scss/base/forms/_form-grid.scss';
+@import 'scss/base/_form-elements.scss';
+@import 'scss/base/_input-icons.scss';
 @import 'scss/base/_buttons.scss';
+@import 'scss/base/_tables.scss';
+@import 'scss/base/_input-groups.scss'; // HIGH SPECIFICITY
+
 
 
 // ====================
 // LAYOUTS
 // ====================
 
-
+@import 'scss/layout/_form-layouts.scss';
 @import 'scss/layout/_layouts.scss';
 @import 'scss/layout/_ads.scss';
 
 
+
+// ====================
 // UTILITIES
 // ====================
 
-@import 'scss/utils/_component-animations.scss';
+//@import 'scss/utils/_component-animations.scss';
+
+
+
+// ====================
+// OBJECTS
+// ====================
+
+@import 'scss/objects/_button-groups.scss'; // HIGH SPECIFICITY
+@import 'scss/objects/_flyout.scss';
+@import 'scss/objects/_media.scss';
+@import 'scss/objects/_forms.scss';
+@import 'scss/objects/_toolbar.scss';
+@import 'scss/objects/_toggle.scss';
+
 
 
 // ====================
@@ -98,12 +115,22 @@ $old-ie: false;
 // ====================
 
 @import 'scss/components/_navs.scss';
-@import 'scss/components/_flyout.scss';
+
 @import 'scss/components/_navbar.scss';
-@import 'scss/components/_navbar__search.scss';
+@import 'scss/components/_navbar-primary.scss'; // HIGH SPECIFICITY
+@import 'scss/components/_navbar-secondary.scss';
+@import 'scss/components/_navbar-search.scss';
+
 @import 'scss/components/_crumbs.scss';
-@import 'scss/components/_media.scss';
-@import 'scss/components/_forms.scss';
+@import 'scss/components/_tabs.scss';
+@import 'scss/components/_events.scss';
+@import 'scss/components/_ecommerce.scss';
+@import 'scss/components/_wells.scss';
+
+@import 'scss/vendor/jquery-ui/_jquery-ui.structure.scss';
+@import 'scss/vendor/jquery-ui/_jquery-ui.theme.scss';
+@import 'scss/vendor/jquery-ui/_jquery-ui.custom.scss';
+
 
 
 // ========================================
@@ -115,34 +142,11 @@ $old-ie: false;
 @import 'scss/utils/_responsive.scss';
 
 
+
 // ====================
 // MISC
 // ====================
 
+@import "scss/icons/_i-icon-sprite.scss";
+@import "scss/icons/_icons-svg.scss";
 @import 'scss/_shame.scss';
-
-
-
-/*------------------------------------*\
-    $GLOBAL ELEMENTS
-\*------------------------------------*/
-
-
-/*------------------------------------*\
-    $LAYOUT
-\*------------------------------------*/
-
-
-/*------------------------------------*\
-    $PAGE STRUCTURE
-\*------------------------------------*/
-
-
-/*------------------------------------*\
-    $TEXT Styles
-\*------------------------------------*/
-
-
-/*------------------------------------*\
-    $COMPONENTS
-\*------------------------------------*/

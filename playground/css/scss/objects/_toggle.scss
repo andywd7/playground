@@ -1,0 +1,55 @@
+/*================*\
+   #TOGGLE
+\*================*/
+
+
+/**
+ * Toggle checkbox
+ * Hidden, this is used so the item appears out with or without js
+ */
+.toggle_chkbx {
+  display: none; /* find better solution */
+  overflow: hidden;
+  width: 0;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
+/**
+ * Navbar toggle "button"
+ */
+.toggle_btn {
+  cursor: pointer;
+  margin: 0;
+  text-align: center;
+
+  /**
+   * We remove the `outline` here, but later compensate by attaching `:hover`
+   * styles to `:focus`.
+   */
+  &:focus {
+    outline: none;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: rgba(0,0,0,.05);
+  }
+
+  .toggle_txt {
+    display: none;
+  }
+
+  @include mq($from: mobile) {
+    .toggle_txt {
+      display: inline-block;
+    }
+  }
+
+  @include mq($from: navbar) {
+    display: none;
+  }
+}

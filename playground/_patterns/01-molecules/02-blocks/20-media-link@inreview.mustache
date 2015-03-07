@@ -1,11 +1,21 @@
-<div class="media media--link">
+<div class="media">
   <a href="{{ url }}">
-    <div class="media_object u-fl">
+    <div class="media_fl">
       {{> atoms-square:media_element }}
     </div>
-    <h2 class="media_heading">{{ headline.short }}</h2>
+    <h3 class="media_heading">{{ headline.short }}</h3>
   </a>
-	<div class="media_body">
-		<p>{{ excerpt.medium }}</p>
-	</div>
+  <div class="media_body">
+    <p>{{ excerpt.medium }}</p>
+    
+    <div class="media">
+      <div class="media_fl">
+        {{> atoms-avatar:media_element }}
+      </div>
+      <div class="media_body">
+        <h3 class="media_heading">{{ headline.short }}</h3>
+        <p>{{ excerpt.medium }}</p>
+      </div>
+    </div>
+  </div>
 </div>

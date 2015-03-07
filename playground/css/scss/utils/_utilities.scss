@@ -1,105 +1,135 @@
-//
-// Utility classes
-// --------------------------------------------------
+/*==================*\
+   #UTILITY CLASSES
+\*==================*/
 
-// Floats
-// -------------------------
 
-.u-fr {
-  float: right !important;
+/**
+ * Floats
+ */
+.u-fr { float: right !important; }
+.u-fl { float: left !important; }
+.u-fn { float: none !important; }
+
+
+
+/**
+ * Positions
+ */
+.u-relative {
+  position: relative !important;
 }
-.u-fl {
-  float: left !important;
+.u-absolute {
+  position: absolute !important;
 }
-.u-fn {
-  float: none !important;
+
+.u-right {
+  left: auto !important;
+  right: 0 !important;
+}
+
+.u-left {
+  left: 0 !important;
+  right: auto !important;
+}
+
+.u-top {
+  bottom: auto !important;
+  top: 0 !important;
+}
+
+.u-bottom {
+  bottom: 0 !important;
+  top: auto !important;
 }
 
 
-// Clears
-// -------------------------
 
-.u-cf {
-  @include cf();
-}
-//.u-cr {
-//  clear: right !important;
-//}
-//.u-cl {
-//  clear: left !important;
-//}
-//.u-cn {
-//  clear: none !important;
-//}
-//.u-cb {
-//  clear: both !important;
-//}
+/**
+ * Clears
+ */
+.u-cf { @include cf(); }
+.u-cr { clear: right !important; }
+.u-cl { clear: left !important; }
+.u-cn { clear: none !important; }
+.u-cb { clear: both !important; }
 
 //.u-center-block {
 //  @include center-block();
 //}
 
 
-// Toggling content
-// -------------------------
 
-// Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1
-.u-hide {
-  display: none !important;
-}
-.u-show {
-  display: block !important;
-}
-.u-invisible {
-  visibility: hidden;
-}
-.txt-hide {
-  @include txt-hide();
-}
+/**
+ * Images
+----------------------------------------------------------------------
+ * Responsive images (ensure images don't scale beyond their parents)
+ */
+.img-responsive { @include img-responsive(); }
 
 
 
-// Only display content to screen readers
-// See: http://a11yproject.com/posts/how-to-hide-content/
-//
+/**
+ * Toggling content
+-------------------------------------------------------------------------------------
+ * Note: Deprecated .hide in favor of .hidden or .sr-only (as appropriate) in v3.0.1
+ */
+.u-hide { display: none !important; }
+.u-show { display: block !important; }
+.u-invisible { visibility: hidden; }
+.txt-hide { @include txt-hide(); }
+
+
+
+/**
+ * Only display content to screen readers
+-----------------------------------------------------------
+ * See: http://a11yproject.com/posts/how-to-hide-content/
+ */
 .u-sr {
-  position: absolute;
-  width: 1px;
+  border: 0;
+  clip: rect(0,0,0,0);
   height: 1px;
   margin: -1px;
-  padding: 0;
   overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
-// Use in conjunction with .sr-only to only display content when it's focused.
-// Useful for "Skip to main content" links; see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
-// Credit: HTML5 Boilerplate
-//
+
+/**
+ * Use in conjunction with .sr-only to only display content when it's focused.
+--------------------------------------------------------------------------------------------------------
+ * Useful for "Skip to main content" links; see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+ * Credit: HTML5 Boilerplate
+ */
 .u-sr-focus {
   &:active,
   &:focus {
-    position: static;
-    width: auto;
+    clip: auto;
     height: auto;
     margin: 0;
     overflow: visible;
-    clip: auto;
+    position: static;
+    width: auto;
   }
 }
 
 
-// Hide from screenreaders and browsers. Credit: HTML5 Boilerplate
+
+/**
+ * Hide from screenreaders and browsers. Credit: HTML5 Boilerplate
+ */
 .u-hidden {
   display: none !important;
   visibility: hidden !important;
 }
 
 
-// For Affix plugin
-// -------------------------
 
+/**
+ * For Affix plugin
+ */
 //.u-affix {
 //  position: fixed;
 //}

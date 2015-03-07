@@ -1,0 +1,301 @@
+/*============*\
+   #VARIABLES
+\*============*/
+
+
+/**
+ * Global Variables
+ */
+$colors: (
+  /**
+   * Greys
+   */
+  grey: (
+      darkest:  #333,
+      darker:   #666,
+      dark:     #999,
+      base:     #c3c6c8, // STEEL GREY
+      light:    #ddd,
+      lighter:  #e6e6e6,
+      lightest: #f4f4f4
+  ),
+  /**
+   * Brand Colours
+   */
+  primary: (
+    base:  #0e3a4d,
+    light: lighten(#0e3a4d, 10%)
+  ),
+  secondary: (
+    dark:  darken(#357d7f, 10%),
+    base:  #357d7f,
+    light: lighten(#357d7f, 10%)
+  ),
+  olive: (
+    dark:  darken(#6f8b67, 10%),
+    base:  #6f8b67,
+    light: lighten(#6f8b67, 10%)
+  ),
+  green: (
+    dark:  darken(#abd098, 10%),
+    base:  #abd098,
+    light: lighten(#abd098, 10%)
+  ),
+  claret: (
+    dark:  darken(#814f73, 10%),
+    base:  #814f73,
+    light: lighten(#814f73, 10%)
+  ),
+  blue: (
+    dark:  darken(#c8e8f0, 10%),
+    base:  #c8e8f0,
+    light: lighten(#c8e8f0, 10%)
+  ),
+  stone: (
+    dark:  darken(#f0f0e2, 10%),
+    base:  #f0f0e2
+  ),
+  steel: (
+    dark:  darken(#d4d5d1, 10%),
+    base:  #d4d5d1,
+    light: lighten(#d4d5d1, 10%)
+  ),
+  red: (
+    dark:  darken(#a50014, 10%),
+    base:  #a50014,
+    light: lighten(#a50014, 10%)
+  ),
+  yellow: (
+    dark:  darken(#ffe700, 10%),
+    base:  #ffe700,
+    light: lighten(#ffe700, 10%)
+  ),
+  social: (
+    facebook: #3b5998,
+    linkedin: #0976b4,
+    twitter:  #55acee,
+    youtube:  #cc181e
+  )
+) !default;
+
+
+$z-layers: (
+  /**
+   * Greys
+   */
+  flyout: (
+    base: 1000,
+    overlay: 999,
+    toggle: 1001
+  )
+) !default;
+
+
+$brand-primary:         color(primary) !default;
+$brand-danger:          color(red) !default;
+$brand-info:            color(blue) !default;
+$brand-success:         color(green, dark) !default;
+$brand-warning:         color(yellow, dark) !default;
+
+
+
+/**
+ * Scaffolding
+ */
+$body-bg:               #fff !default;
+$txt-color:             color(grey, darkest) !default;
+$txt-muted:             color(grey) !default;
+$border-base:           color(grey, light) !default;
+
+
+/**
+ * Links
+ */
+$link-color:            color(secondary) !default;
+$link-hover-color:      darken($link-color, 15%) !default;
+
+
+/**
+ * Typography
+ */
+$font-family-serif:       'Droid Serif', Georgia, Times, 'Times New Roman', Baskerville, serif !default;
+$font-family-sans-serif:  Tahoma, Helvetica, Arial, sans-serif !default;
+
+$font-family-base:        $font-family-sans-serif !default;
+
+$font-value-base:         14 !default;
+$font-size-html:          percentage($font-value-base / 16) !default;
+
+$font-size-base:          sz($font-value-base) !default; // 1rem or 15px
+$font-size-lg:            sz(18px) !default;
+$font-size-sm:            sz(13px) !default;
+$font-size-xs:            sz(12px) !default;
+
+$line-height-base:        1.4 !default; // 21/16
+$line-height-computed:    sz($font-value-base * $line-height-base) !default; // 21px
+
+// By default, this inherits from the `<body>`.
+$headings-font-family:    $font-family-serif !default;
+$headings-font-weight:    400 !default;
+$headings-line-height:    1.1 !default;
+$headings-color:          $brand-primary !default;
+$headings-sm-color:       color(primary, light) !default;
+
+$fa-font-path:            "../fonts/font-awesome";
+
+
+
+/**
+ * Components
+ * --------------------------------------------------------------------
+ * Based on 1.5em(14px) font-size and 1.45 line-height (~21px to start)
+ */
+$padding-base-vertical:     sz(3px) !default;
+$padding-base-horizontal:   sz(12px) !default;
+
+$padding-xs-vertical:       sz(1px) !default;
+$padding-xs-horizontal:     sz(5px) !default;
+
+$padding-sm-vertical:       sz(2px) !default;
+$padding-sm-horizontal:     sz(7px) !default;
+
+$padding-lg-vertical:       sz(6px) !default;
+$padding-lg-horizontal:     sz(16px) !default;
+
+$line-height-sm:            1.1 !default;
+$line-height-lg:            1.33333 !default;
+
+$border-radius-base:        sz(2px) !default; // null if no radius code required
+$border-radius-lg:          sz(3px) !default; // null if no radius code required
+$border-radius-sm:          $border-radius-base !default; // null if no radius code required
+
+
+
+/**
+ * Base Variables
+ */
+
+
+/**
+ * Grid system
+ */
+$total-columns: 12 !default;
+$row-width: sz(1200px) !default;
+
+// Padding, is divided by 2 in g-col mixin and applied to the left and right of all columns
+$column-gutter: sz(20px) !default;
+
+
+
+/**
+ * Type
+ */
+$font-size-h1:            sz(36px) !default;
+$font-size-h2:            sz(30px) !default;
+$font-size-h3:            sz(24px) !default;
+$font-size-h4:            sz(18px) !default;
+$font-size-h5:            sz(16px) !default;
+$font-size-h6:            sz(13px) !default;
+
+
+// Horizontal offset for forms and lists.
+$component-offset-horizontal: 180px !default;
+// Text muted color
+$txt-muted:                   color(grey, light) !default;
+// Abbreviations and acronyms border color
+$abbr-border-color:           color(grey, light) !default;
+// Blockquote small color
+$blockquote-sm-color:         color(grey, dark) !default;
+// Blockquote font family
+$blockquote-font-family:      $font-family-serif !default;
+// Blockquote font size
+$blockquote-font-size:        ($font-size-base * 1.25) !default;
+// Blockquote font weight
+$blockquote-font-weight:      700 !default;
+// Blockquote border color
+$blockquote-highlight:        $brand-primary !default;
+// Page header border color
+$page-header-border-color:    color(grey, dark) !default;
+// Width of horizontal description list titles
+$dl-horizontal-offset:        $component-offset-horizontal !default;
+// Horizontal line color.
+$hr-border:                   $border-base !default;
+
+
+
+/**
+ * Buttons
+ * -----------------------------------------------------------
+ * For each button, define text, background and border color.
+ */
+$btn-font-weight:                normal !default;
+
+$btn-color:                      color(grey, darker) !default;
+$btn-bg:                         color(grey, light) !default;
+$btn-border:                     $btn-bg !default;
+$btn-color-alt:                  #fff !default;
+
+$btn-primary-bg:                 color(primary) !default;
+$btn-primary-border:             $btn-primary-bg !default;
+
+
+
+/**
+ * Forms
+ */
+// `<input>` background color
+$input-bg:                       #fff !default;
+// `<input disabled>` background color
+$input-bg-disabled:              color(grey, lighter) !default;
+// `<input .is-required>` background color
+$input-bg-required:              color(red) !default;
+
+// Text color for `<input>`s
+$input-color:                    $txt-color !default;
+// `<input>` border color
+$input-border:                   color(grey, light) !default;
+// `<input>` border radius
+$input-border-radius:            $border-radius-base !default;
+// Border color for inputs on focus
+$input-border-focus:             color(blue) !default;
+
+// Placeholder text color
+$input-color-placeholder:        color(grey) !default;
+
+// Default `.f-control` height
+$input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + sz(2px)) !default;
+// Large `.f-control` height
+//$input-height-lg:                (ceil($font-size-lg * $line-height-lg) + ($padding-lg-vertical * 2) + 2) !default;
+// Small `.f-control` height
+//$input-height-sm:                (floor($font-size-sm * $line-height-sm) + ($padding-sm-vertical * 2) + 2) !default;
+
+$legend-color:                   color(grey, dark) !default;
+$legend-border-color:            color(grey, lighter) !default;
+
+// Background color for textual input addons
+$input-group-addon-bg:           color(grey, lighter) !default;
+// Border color for textual input addons
+$input-group-addon-border-color: $input-border !default;
+
+
+
+/**
+ * Tables
+ * --------------------------------------------------------------------------------------------
+ * Customizes the `.table` component with basic values, each used across all table variations.
+ */
+// Padding for `<th>`s and `<td>`s.
+$table-cell-padding:            sz(5px) !default;
+// Padding for cells in `.table-condensed`.
+//$table-condensed-cell-padding:  5px !default;
+
+// Default background color used for all tables.
+$table-bg:                      transparent !default;
+// Background color used for `.table-striped`.
+$table-bg-accent:               rgba(color(grey), .2) !default;
+// Background color used for `.table-hover`.
+$table-bg-hover:                rgba($table-bg-accent, .3) !default;
+//$table-bg-active:               color(primary, light) !default;
+
+// Border color for table and cell borders.
+$table-border-color:            $border-base !default;

@@ -1,0 +1,107 @@
+/*==================================================*\
+   #MEDIA OBJECTS
+   *
+   * Source: http://stubbornella.org/content/?p=497
+\*==================================================*/
+
+
+/**
+ * Common styles
+--------------------
+ * Clear the floats
+ */
+.media,
+.media_body {
+  overflow: hidden;
+  zoom: 1;
+}
+
+//.media_body {
+//  padding: $column-gutter 0;
+//}
+
+/**
+ * Proper spacing between instances of .media
+ */
+.media,
+.media .media {
+  margin-top: sz(15px);
+}
+
+.media:first-child {
+  margin-top: 0;
+}
+
+
+/**
+ * For images and videos, set to block
+ */
+//.media_object {
+//  display: block;
+//}
+
+/**
+ * Reset margins on headings for tighter default spacing
+ */
+.media_heading {
+  margin: sz(0 0 10px);
+}
+
+
+/**
+ * Media image alignment
+ */
+//.media {
+  //border: 1px solid $border-base;
+
+.media_fl,
+.media_fr {
+  display: block;
+  //margin-bottom: ($line-height-computed / 1.5);
+}
+//}
+
+
+@include mq($from: mobile) {
+  //.media {
+    //.media_fl,
+    //.media_fr {
+    //  margin-bottom: 0;
+  //}
+
+  .media_fl {
+    float: left;
+    margin-right: $column-gutter;
+  }
+
+  .media_fr {
+    float: right;
+    margin-left: $column-gutter;
+  }
+  //}
+}
+
+
+
+/**
+ * Media list variation
+-----------------------------
+ * Undo default ul/ol styles
+ */
+.media-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+
+/**
+ * Media link
+ */
+//.media--link {
+//  .media_fl > .media_element {
+//    margin-right: $column-gutter;
+//  }
+//  .media_fr > .media_element {
+//    margin-left: $column-gutter;
+//  }
+//}

@@ -3,19 +3,11 @@
 	"htmlClass": "pl",
 	"bodyClass": "body",
 	"img": {
-		"landscape-4x3": {
-			"src": "http://placeimg.com/400/300/tech",
-			"alt": "4x3 Image"
-		},
-		"landscape-16x9": {
-			"src": "http://placeimg.com/640/360/tech",
-			"alt": "16x9 Image"
+		"landscape": {
+			"src": "http://placeimg.com/500/300/architecture",
+			"alt": "Landscape Image"
 		},
 		"square": {
-			"src": "http://placeimg.com/300/300/nature",
-			"alt": "Square Thumbnail"
-		},
-		"square-200x200": {
 			"src": "http://placeimg.com/200/200/nature",
 			"alt": "Square Thumbnail"
 		},
@@ -30,7 +22,8 @@
 	},
 	"headline" : {
 		"short" : "Lorem ipsum dolor sit (37 characters)",
-		"medium" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. (72 characters)"
+		"medium" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. (72 characters)",
+    "long" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore"
 	},
 	"excerpt" : {
 		"short" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",

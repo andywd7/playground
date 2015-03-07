@@ -1,15 +1,22 @@
+{{# demo }}
 <form class="f-horizontal" action="#" role="form">
   <fieldset class="fieldset wf-3">
     <legend class="legend">Date Range</legend>
-    <div class="f-date-range f-group">
-      <label for="startDate" class="control-label">Course Dates</label>
-      <div class="w-4">
-        <input id="startDate" type="date" class="f-control" placeholder="dd/mm/yyyy" />
-      </div>
-      <p class="f-control-static">to</p>
-      <div class="w-4">
-        <input id="endDate" type="text" class="f-control" placeholder="dd/mm/yyyy" />
-      </div>
-    </div>
+{{/ demo }}
+	  <div class="f-range f-group">
+		<label for="startDate" class="control-label">Course Dates</label>
+		<div class="w-4 has-icon">
+			<input id="startDate" type="date" class="f-control" placeholder="dd/mm/yyyy" />
+			<i class="i i-calendar f-control_icon"></i>
+		</div>
+		<!--<label for="endDate" class="control-label u-sr">Course Dates</label>-->
+		<div class="w-4 has-icon u-fr">
+			<input id="endDate" type="date" class="f-control" placeholder="dd/mm/yyyy" />
+			<i class="i i-calendar f-control_icon"></i>
+		</div>
+		<p class="f-control_static">to</p>
+	</div>
+{{# demo }}
   </fieldset>
 </form>
+{{/ demo }}

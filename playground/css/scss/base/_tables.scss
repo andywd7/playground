@@ -1,0 +1,345 @@
+/*=========*\
+   #TABLES
+\*=========*/
+
+
+table {
+  background-color: $table-bg;
+}
+
+th {
+  text-align: left;
+}
+
+
+/** 
+ * Baseline styles
+ */
+.table {
+  margin-bottom: $line-height-computed;
+  max-width: 100%;
+  width: 100%;
+  
+  /**
+   * Cells
+   */
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border-top: 1px solid $table-border-color;
+        border-left: 1px solid $table-border-color;
+        line-height: $line-height-base;
+        padding: $table-cell-padding;
+        vertical-align: top;
+
+        &:first-child {
+          border-left: 0;
+        }
+      }
+    }
+  }
+
+  /**
+   * Bottom align for column headings
+   */
+  > thead > tr > th {
+    border-bottom: 2px solid $table-border-color;
+    font-family: $headings-font-family;
+    vertical-align: bottom;
+  }
+
+  /**
+   * Bottom align for column headings
+   */
+  > tfoot > tr > th {
+    border-top: 2px solid $table-border-color;
+    //vertical-align: bottom;
+  }
+
+  /**
+   * Remove top border from thead by default
+   */
+  > caption + thead,
+  > colgroup + thead,
+  > thead:first-child {
+    > tr:first-child {
+      > th,
+      > td {
+        border-top: 0;
+      }
+    }
+  }
+
+  /** 
+   * Account for multiple tbody instances
+   */
+  > tbody + tbody {
+    border-top: 2px solid $table-border-color;
+  }
+
+  /**
+   * Nesting
+   */
+  .table {
+    background-color: $body-bg;
+  }
+}
+
+/** 
+ * Large styles
+ */
+//.table--lg {  
+//  /**
+//   * Cells
+//   */
+//  > thead,
+//  > tbody,
+//  > tfoot {
+//    > tr {
+//      > th,
+//      > td {
+//        //line-height: $line-height-base;
+//        padding: ($table-cell-padding * 2);
+//        //vertical-align: middle;
+//      }
+//    }
+//  }
+//}
+
+
+/**
+ * Condensed table w/ half padding
+ */
+//.table--condensed {
+//  > thead,
+//  > tbody,
+//  > tfoot {
+//    > tr {
+//      > th,
+//      > td {
+//        padding: $table-cell-padding;
+//      }
+//    }
+//  }
+//}
+
+
+/**
+ * Bordered version
+-----------------------------------------------------------------
+ * Add borders all around the table and between all the columns.
+ */
+.table--bordered {
+  @extend .table;
+  border: 1px solid $table-border-color;
+
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border: 1px solid $table-border-color;
+      }
+    }
+  }
+  
+  > thead > tr {
+    > th,
+    > td {
+      border-bottom-width: 2px;
+    }
+  }
+
+  > tbody > tr:nth-child(odd) {
+    > td,
+    > th {
+      background-color: $table-bg-accent;
+    }
+  }
+}
+
+
+/**
+ * Zebra-striping
+--------------------------------------------------------------------------------
+ * Default zebra-stripe styles (alternating gray and transparent backgrounds)
+ */
+//.table--striped {
+//  > tbody > tr:nth-child(odd) {
+//    > td,
+//    > th {
+//      background-color: $table-bg-accent;
+//    }
+//  }
+//}
+
+
+/**
+ * Hover effect
+--------------------------------------------------------------------------------
+ * Placed here since it has to come after the potential zebra striping
+ */
+.table--hover {
+  > tbody > tr:hover {
+    > td,
+    > th {
+      background-color: $table-bg-hover;
+    }
+  }
+}
+
+
+/**
+ * Comparison table
+ */
+.table--compare {
+  > colgroup + thead > tr:first-child > th,
+  > thead:first-child > tr:first-child > th {
+    padding: $padding-lg-horizontal $padding-base-horizontal;
+    vertical-align: middle;
+
+    &:first-child {
+      border-left: 1px solid transparent;
+      border-top: 1px solid transparent;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+/**
+ * :not nesting error in sass 3.4.6 (04/11/14), check later to see if fixed
+ */
+.table--compare > thead > tr > th,
+.table--compare > tbody > tr > td:not(:first-child) {
+  text-align: center;
+}
+
+
+
+/**
+ * Table cell sizing
+---------------------------------
+ * Reset default table behavior
+ */
+table col[class*="w-"] {
+  display: table-column;
+  float: none;
+  position: static; // Prevent border hiding in Firefox and IE9/10 (see https://github.com/twbs/bootstrap/issues/11623)
+}
+table {
+  td,
+  th {
+    &[class*="w-"] {
+      display: table-cell;
+      float: none;
+      position: static; // Prevent border hiding in Firefox and IE9/10 (see https://github.com/twbs/bootstrap/issues/11623)
+    }
+  }
+}
+
+
+
+/**
+ * Table backgrounds
+--------------------------------------------------------------------------------
+ * Exact selectors below required to override `.table-striped` and prevent
+ * inheritance to nested tables.
+----------------------------------------
+ * Generate the contextual variants
+ */
+//@include table-row-variant('active', $table-bg-active);
+@include table-row-variant('success', $state-success-bg);
+@include table-row-variant('info', $state-info-bg);
+@include table-row-variant('warning', $state-warning-bg);
+@include table-row-variant('danger', $state-danger-bg);
+@include table-row-variant('muted', color(grey, light));
+
+
+
+/**
+ * Responsive tables
+--------------------------------------------------------------------------------
+ * Wrap your tables in `.table-responsive` and we'll make them mobile friendly
+ * by enabling horizontal scrolling. Only applies <768px. Everything above that
+ * will display normally.
+ */
+.table--responsive {
+  @include mq($to: tablet) {
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid $table-border-color;
+    margin-bottom: ($line-height-computed * .75);
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+
+    /**
+     * Tighten up spacing
+     */
+    > .table {
+      margin-bottom: 0;
+
+      /**
+       * Ensure the content doesn't wrap
+       */
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th,
+          > td {
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+
+    /**
+     * Special overrides for the bordered tables
+     */
+    > .table--bordered {
+      border: 0;
+
+      /**
+       * Nuke the appropriate borders so that the parent can handle them
+       */
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th:first-child,
+          > td:first-child {
+            border-left: 0;
+          }
+          > th:last-child,
+          > td:last-child {
+            border-right: 0;
+          }
+        }
+      }
+
+      /**
+       * Only nuke the last row's bottom-border in `tbody` and `tfoot` since
+       * chances are there will be only one `tr` in a `thead` and that would
+       * remove the border altogether.
+       */
+      > tbody,
+      > tfoot {
+        > tr:last-child {
+          > th,
+          > td {
+            border-bottom: 0;
+          }
+        }
+      }
+
+    }
+  }
+}

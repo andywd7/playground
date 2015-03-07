@@ -1,26 +1,35 @@
-//
-// Text(.txt-) Utility classes
-// --------------------------------------------------
+/*=======================*\
+   #TEXT UTILITY CLASSES
+\*=======================*/
 
 
-// Alignment
-.txt-left           { text-align: left; }
-.txt-right          { text-align: right; }
-.txt-center         { text-align: center; }
-.txt-justify        { text-align: justify; }
-.txt-nowrap         { white-space: nowrap; }
+/**
+ * Alignment
+ */
+.txt-left     { text-align: left; }
+.txt-right    { text-align: right; }
+.txt-center   { text-align: center; }
+.txt-justify  { text-align: justify; }
+.txt-nowrap   { white-space: nowrap; }
 
 
-// Transformation
-.txt-lower          { text-transform: lowercase; }
-.txt-upper          { text-transform: uppercase; }
-.txt-caps           { text-transform: capitalize; }
+
+/**
+ * Transformation
+ */
+.txt-lower  { text-transform: lowercase; }
+.txt-upper  { text-transform: uppercase; }
+.txt-caps,
+.iod   { text-transform: capitalize; }
 
 
-// Contextual colors
+
+/**
+ * Contextual colors
+ */
 @include txt-emphasis-variant('.txt-default', $txt-color);
 @include txt-emphasis-variant('.txt-muted', $txt-muted);
-@include txt-emphasis-variant('.txt-primary', color(primary));
+@include txt-emphasis-variant('.txt-primary', $brand-primary);
 //@include txt-emphasis-variant('.txt-info', $state-info-txt);
 //@include txt-emphasis-variant('.txt-warning', $state-warning-txt);
 //@include txt-emphasis-variant('.txt-danger', $state-danger-txt);

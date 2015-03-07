@@ -1,0 +1,15 @@
+{
+  "name": "playlab",
+  "version": "1.0.0",
+  "description": "aaa",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Andy Denham",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-dr-svg-sprites": "^0.9.15"
+  }
+}

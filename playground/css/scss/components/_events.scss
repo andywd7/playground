@@ -1,0 +1,121 @@
+/*=========*\
+   #EVENTS
+\*=========*/
+
+
+/**
+ * Event Calendar Sheet
+ */
+.event-date {
+  border: 1px solid color(grey, light);
+  border-bottom: 0;
+  border-radius: 2px;
+  box-shadow: 0 3px 0 $brand-primary;
+  display: inline-block;
+  //font-family: $font-family-base;
+  font-weight: 700;
+  margin-bottom: 3px;
+  padding: $padding-base-horizontal;
+  position: relative;
+  text-align: center;
+}
+
+.event-date_cal {
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 6px;
+
+  &:before {
+    @extend .i-calendar:before;
+  }
+}
+
+.event-date_days {
+  //color: $brand-primary;
+  font-size: $font-size-h1;
+}
+
+.event-date_month {
+  font-size: $font-size-h4;
+  //font-weight: 700;
+  letter-spacing: .1em;
+  //margin-top: 6px;
+  text-transform: uppercase;
+}
+
+.event-date_time {
+  border-top: 1px solid color(grey, light);
+  //font-weight: 700;
+  margin-top: 5px;
+  padding-top: 6px;
+}
+
+
+.event-date--sm {
+  //font-weight: 400;
+  padding: $padding-sm-horizontal;
+
+  .event-date_days {
+    font-size: $font-size-h3;
+  }
+
+  .event-date_month {
+    font-size: $font-size-base;
+    margin-top: 0;
+  }
+
+  .event-date_time {
+    margin-top: 2px;
+    padding-top: 4px;
+  }
+}
+
+
+.event-date--single {
+  @extend .event-date--sm;
+  background-color: $brand-primary;
+  border: 0;
+  box-shadow: none;
+  color: #fff;
+  margin-bottom: 0;
+  padding: 2px $padding-sm-horizontal;
+
+  .event-date_days {
+    font-weight: 700;
+    line-height: normal;
+  }
+}
+
+
+.event-date--inline {
+  border-left: 0;
+  padding: 0 $padding-sm-horizontal 0 0;
+
+  .event-date_days,
+  .event-date_month,
+  .event-date_time {
+    border-left: 1px solid color(grey, light);
+    display: inline-block;
+    padding-left: $padding-sm-horizontal;
+    vertical-align: middle;
+  }
+
+  .event-date_time {
+    border-top: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
+.event-date--sm,
+.event-date--inline {
+  .event-date_month {
+    letter-spacing: normal;
+
+    span {
+      display: none;
+    }
+  }
+}

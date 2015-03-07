@@ -1,195 +1,21 @@
-// ====================
-// GRIDS
-// ====================
-//
-// Foundation by ZURB
-// foundation.zurb.com
-// Licensed under MIT Open Source
+/*========*\
+   #GRIDS
+\*========*/
 
 
-// Grid Functions
-// ====================
-
-// @FUNCTION
-// $colNumber - Found in _vars.scss
-// $totalColumns - Found in _vars.scss
-@function g-calc($col-number, $total-columns) {
-  @return percentage(($col-number / $total-columns));
-}
-
-
-// @mixins
-// ====================
-
-// For creating container, nested, and collapsed rows.
-//
-// $behavior - Any special behavior for this row? Default: false. Options: nest, collapse, nest-collapse, false.
-@mixin g-row($col-divide: 2, $behavior: false) {
-
-  // use @include g-row(collapse); to collapsed a container row margins
-  @if $behavior == collapse {
-    //width: 100%;
-    margin: 0;
-    //max-width: $row-width;
-
-  } @else if $behavior == nest-collapse { // use @include g-row(nest-collapse); to collapse outer margins on a nested row
-    //width: auto;
-    margin: 0;
-    //max-width: none;
-
-  } @else { // use @include g-row; to include a nested row
-    //width: auto;
-    margin-left: -($column-gutter / $col-divide);
-    margin-right: -($column-gutter / $col-divide);
-    //margin-top: 0;
-    //margin-bottom: 0;
-    //max-width: none;
-  }
-
-  // use @include g-row; to use a container row
-  // @else {
-  //   //width: 100%;
-  //   margin-left: auto;
-  //   margin-right: auto;
-  //   //margin-top: 0;
-  //   //margin-bottom: 0;
-  //   //max-width: $row-width;
-  // }
-
-  // Clearfix for all rows
-  @include cf();
-}
-
-// Creates a column, should be used inside of a media query to control layouts
-//
-// $columns - The number of columns this should be
-// $last-column - Is this the last column? Default: false.
-// $center - Center these columns? Default: false.
-// $offset - # of columns to offset. Default: false.
-// $push - # of columns to push. Default: false.
-// $pull - # of columns to pull. Default: false.
-// $collapse - Get rid of gutter padding on column? Default: false.
-// $float - Should this float? Default: true. Options: true, false, left, right, none.
-@mixin g-col(
-  $columns:false, 
-  $last-column:false, 
-  $center:false, 
-  $offset:false, 
-  $push:false, 
-  $pull:false, 
-  $collapse:false, 
-  $float:left,
-  $position:false) {
-
-  // If positioned for default .column, include relative position
-  @if $position {
-    position: relative;
-  }
-
-  // If collapsed, get rid of gutter padding
-  @if $collapse == true {
-    padding-left: 0;
-    padding-right: 0;
-  } @else if $collapse == false {
-    // Gutter padding whenever a column isn't set to collapse
-    // (use $collapse:true to add 0 padding)
-    // (use $collapse:null to add no padding)
-    padding-left: $column-gutter / 2;
-    padding-right: $column-gutter / 2;
-  } //@else if $collapse == null { }
-
-  // If a column number is given, calculate width
-  @if $columns {
-    width: g-calc($columns, $total-columns);
-
-    // If last column, float to the right
-    @if $last-column { float: right; }
-  }
-
-  // Source Ordering, adds left/right depending on which you use.
-  @if $push { left: g-calc($push, $total-columns); right: auto; }
-  @if $pull { right: g-calc($pull, $total-columns); left: auto; }
-
-  // If
-  @if $float {
-    @if $float == left { float: left; }
-    @else if $float == right { float: right; }
-    @else if $float == none { float: none; }
-    @else if $float == null { }
-  }
-
-  // If centered, get rid of float and add appropriate margins
-  @if $center {
-    margin-left: auto;
-    margin-right: auto;
-    //float: none !important;
-  }
-
-  // If offset, calculate appropriate margins
-  @if $offset { margin-left: g-calc($offset, $total-columns) !important; }
-
-}
-
-// Framework grid generation
-//
-// Used only by Bootstrap to generate the correct number of grid classes given
-// any value of `$grid-columns`.
-
-// [converter] This is defined recursively in LESS, but Sass supports real loops
-@mixin make-grid-columns($i, $class: ".w-#{$i}, .wf-#{$i} .control-label") {
-  @for $i from 1 through $total-columns - 1 {
-    $class: "#{$class}, .w-#{$i}, .wf-#{$i} .control-label";
-  }
-  #{$class} {
-    @include g-col(
-      $float: null
-    );
-
-    @include mq($from: mobile) {
-      float: left;
-    }
-  }
-}
-
-
-@mixin calc-grid-column($index, $type) {
-  @if ($type == width) and ($index > 0) {
-    @include mq($from: mobile) {
-      .w-#{$index},
-      .wf-#{$index} .control-label {
-        @include g-col(
-          // Control the number of columns
-          $columns: $index,
-          $collapse: null,
-          $float: null
-        );
-      }
-    }
-  }
-  @if ($type == offset) {
-    @include mq($from: mobile) {
-      .w-offset-#{$index} {
-        @include g-col(
-          // Choose the number of columns to offset this element by
-          $offset: $index,
-          $collapse: null,
-          $float: null
-        );
-      }
-    }
-  }
-}
-
-// [converter] This is defined recursively in LESS, but Sass supports real loops
-@mixin loop-grid-columns($columns, $type) {
-  @for $i from 0 through $columns {
-    @include calc-grid-column($i, $type);
-  }
-}
-
-.g-row {
+/**
+ * Grid row
+ */
+.grid-row {
   @include g-row();
 }
+
+
 @include make-grid-columns($total-columns);
-@include loop-grid-columns($total-columns, width);
-@include loop-grid-columns($total-columns, offset);
+//@include make-fixed-grid-columns($total-columns);
+
+@include mq($from: mobile) {
+  @include loop-grid-columns($total-columns, width);
+  @include loop-grid-columns($total-columns, offset);
+  //@include loop-grid-columns($total-columns, width, false);
+}

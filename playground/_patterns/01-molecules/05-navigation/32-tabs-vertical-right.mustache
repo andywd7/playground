@@ -1,0 +1,35 @@
+<nav role='navigation' class="tabs tabs--vertical tabs--vertical--right">
+    {{> atoms-toggle-menu:js-tog-tabs2 }}
+
+    <ul class="nav nav--tabs toggle_target">
+        <li>
+            <a href="#tab-1">Tab 1</a>
+        </li>
+        <li class="is-active">
+            <a href="#tab-2">Tab 2</a>
+        </li>
+        <li>
+            <a href="#tab-3">Tab 3</a>
+        </li>
+        <!--<li>
+            <a href="http://google.com">Go To Google &rarr;</a>
+        </li>-->
+    </ul>
+</nav>
+
+<ul class="tabs_content">
+    <li id="tab-1">
+        <h2>Tab 1</h2>
+        {{> atoms-paragraph }}
+    </li>
+
+    <li id="tab-2" class="is-active">
+        <h2>Tab 2</h2>
+        {{> atoms-paragraph }}
+    </li>
+
+    <li id="tab-3">
+        <h2>Tab 3</h2>
+        {{> atoms-paragraph }}
+    </li>
+</ul>

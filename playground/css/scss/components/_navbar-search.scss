@@ -1,0 +1,113 @@
+/*================*\
+   #NAVBAR SEARCH
+\*================*/
+
+
+.navbar_search {
+  backface-visibility: hidden;
+  height: 29px;
+  min-width: 34px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  transition: width .3s;
+  width: 0;
+
+  &.is-open {
+    .navbar_search-icon {
+      background: $brand-success;
+    }
+  }
+
+  @include mq($from: navbar) {
+    float: right;
+    margin-top: -1px;
+    position: relative;
+  }
+}
+
+.navbar_search-input {
+  //border: 0;
+  height: 29px;
+  padding: 0 sz(39px) 0 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+
+  &:focus {
+    outline: none;
+  }
+}
+ 
+input[type="search"].navbar_search-input {
+  -webkit-border-radius: 0;
+}
+
+.navbar_search-icon,
+.navbar_search-submit {
+  cursor: pointer;
+  display: block;
+  float: left;
+  height: 29px;
+  line-height: 29px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.navbar_search-submit {
+  @include opacity(0);
+  background: #fff; // IE needs this
+  border: 0;
+  color: transparent;
+  outline: none;
+  z-index: -1;
+}
+
+.navbar_search-icon {
+  background: $brand-primary;
+  color: #fff;
+  font-variant: normal;
+  speak: none;
+  text-transform: none;
+  z-index: 11;
+
+  //&:before {
+  //  content: $fa-var-search;
+  //}
+
+  &:hover {
+    background-color: color(primary, light);
+  }
+}
+
+
+.navbar_search.is-open,
+.no-js .navbar_search {
+  width: 96%;
+
+  @include mq($from: mobile) {
+    width: 250px;
+  }
+
+  .navbar_search-submit {
+    z-index: 90;
+  }
+}
+
+.no-js .navbar_search {
+  &,
+  .navbar_search-input {
+    position: static;
+  }
+}
+
+.navbar_search.is-open {
+  .navbar_search-input {
+    //border-left: 1px solid color(grey, lighter);
+    padding: sz(6px) sz(40px) sz(6px) sz(8px);
+  }
+}

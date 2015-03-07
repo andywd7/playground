@@ -1,0 +1,60 @@
+﻿.i:before {
+  @include nope(svg) {
+    background-image: url("../../../images/sprites/sprite-sm.png");
+  }
+  @include yep(svg) {
+    background-image: url("../../../images/sprites/sprite.svg");
+    background-size: cover;
+  }
+}
+.i:before,
+%i {
+  @include opacity(.7);
+  background-repeat: no-repeat;
+  content: '';
+  display: inline-block;
+  height: 16px;
+  line-height: 1;
+  position: relative;
+  top: -2px;
+  vertical-align: middle;
+  width: 16px;
+}
+
+$list-icons: ".i-basket:before" ".i-calendar:before" ".i-facebook:before" ".i-home:before" ".i-linkedin:before" ".i-menu:before" ".i-search:before" ".i-times:before" ".i-triangle-down:before" ".i-triangle-up:before" ".i-twitter:before" ;
+$sprite-width: (length($list-icons) - 1) * 16 !default;
+
+.i-basket:before {
+	background-position: percentage(0 / $sprite-width) 0;
+}
+.i-calendar:before {
+	background-position: percentage(16 / $sprite-width) 0;
+}
+.i-facebook:before {
+	background-position: percentage(32 / $sprite-width) 0;
+}
+.i-home:before {
+	background-position: percentage(48 / $sprite-width) 0;
+}
+.i-linkedin:before {
+	background-position: percentage(64 / $sprite-width) 0;
+}
+.i-menu:before {
+	background-position: percentage(80 / $sprite-width) 0;
+}
+.i-search:before {
+	background-position: percentage(96 / $sprite-width) 0;
+}
+.i-times:before {
+	background-position: percentage(112 / $sprite-width) 0;
+}
+.i-triangle-down:before {
+	background-position: percentage(128 / $sprite-width) 0;
+}
+.i-triangle-up:before {
+	background-position: percentage(144 / $sprite-width) 0;
+}
+.i-twitter:before {
+	background-position: percentage(160 / $sprite-width) 0;
+}
+

@@ -1,11 +1,12 @@
-<div class="media media--link">
+<div class="media">
   <a href="{{ url }}">
-    <div class="media_object u-fr">
+    <div class="media_fr">
       {{> atoms-square:media_element }}
     </div>
-    <h2 class="media_heading">{{ headline.short }}</h2>
+    <h3 class="media_heading">{{ headline.short }}</h3>
   </a>
-	<div class="media_body">
-		<p>{{ excerpt.medium }}</p>
-	</div>
+  <div class="media_body">
+    <p>{{ excerpt.medium }}</p>
+    <a href="#" class="btn btn--primary u-fr">Read more</a>
+  </div>
 </div>

@@ -1,0 +1,101 @@
+/*=========*\
+   #FLYOUT
+\*=========*/
+
+
+.flyout {
+  @include cf();
+  background-color: #fff;
+  border-left: 1px solid $border-base;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  right: sz(-300px);
+  top: 0;
+  transition: .5s ease-in-out;
+  visibility: hidden;
+  width: sz(300px);
+  z-index: z(flyout);
+
+  @include mq($from: mobile) {
+    right: sz(-500px);
+    width: sz(500px);
+  }
+}
+
+
+.flyout_wrapper .toggle_chkbx {
+  &:checked + .toggle_btn + .toggle_target {
+    right: 0;
+    visibility: visible;
+  }
+}
+
+
+/**
+ * Flyout Close "button"
+ */
+.flyout_close {
+  @include cf();
+  border-bottom: 1px solid $border-base;
+
+  .i {
+    border-left: 1px solid $border-base;
+    float: right;
+    margin: 0;
+    padding: sz(12px 22px 11px);
+    text-align: center;
+
+    &:hover,
+    &:focus {
+      background-color: $navbar-hover-bg;
+      cursor: pointer;
+    }
+
+    &:before {
+      top: 0;
+    }
+  }
+}
+
+
+.flyout_heading {
+  float: left;
+  margin: 0;
+  padding: sz(14px) $padding-base-horizontal sz(11px);
+}
+
+
+.flyout_inner {
+  height: 100%;
+  padding: sz(12px 29px 12px 12px);
+  width: sz(300px + 17px);
+
+  @include mq($from: mobile) {
+    width: sz(500px + 17px);
+  }
+
+  @include mq($to: navbar) {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-right: 12px;
+  }
+}
+
+
+.flyout_overlay {
+  @include opacity(0);
+  background-color: #000;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: opacity .3s ease-out;
+
+  &.is-active {
+    @include opacity(.2);
+    bottom: 0;
+    cursor: pointer;
+    right: 0;
+    z-index: z(flyout, overlay);
+  }
+}
