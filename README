@@ -1,5 +1,2 @@
 To populate this directory you need to generate the static output of Pattern Lab for the first time.
 To do so visit `~/generate` in your browser.
-
-If using Windows Github: Open in Git Shell
-git subtree push --prefix playground/public origin gh-pages
