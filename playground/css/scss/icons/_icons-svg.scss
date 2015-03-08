@@ -1,10 +1,10 @@
 .i--white:before {
 	@include opacity(1);
   @include nope(svg) {
-      background-image: url("../../../images/sprites/sprite-white-sm.png");
+      background-image: url("../images/sprites/sprite-white-sm.png");
   }
 	@include yep(svg) {
-		background-image: url("../../../images/sprites/sprite-white.svg");
+		background-image: url("../images/sprites/sprite-white.svg");
 		//background-size: cover;
 	}
 }

@@ -1,9 +1,9 @@
 ﻿.i:before {
   @include nope(svg) {
-    background-image: url("../../../images/sprites/sprite-sm.png");
+    background-image: url("../images/sprites/sprite-sm.png");
   }
   @include yep(svg) {
-    background-image: url("../../../images/sprites/sprite.svg");
+    background-image: url("../images/sprites/sprite.svg");
     background-size: cover;
   }
 }
