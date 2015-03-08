@@ -8,13 +8,13 @@ var comments = {
 	{
 		"el": ".logo",
 		"title" : "Logo",
-		"comment": "The logo image is an SVG file, which ensures that the logo displays crisply even on high resolution displays. A PNG fallback is provided for browsers that don't support SVG images.</p><p>Further reading: <a href=\"http://bradfrostweb.com/blog/mobile/hi-res-optimization/\">Optimizing Web Experiences for High Resolution Screens</a></p>"
+		"comment": "The logo image is an SVG file, which ensures that the logo displays crisply even on high resolution displays. Most browsers support SVG now so = cachable 1 http request. A js Modernizr PNG fallback is provided for browsers that don't support SVG images = cachable 2 http requests. For no-js a PNG background-image is used as fallback = cachable 2 http requests.</p><p>By time of deployment, check SVG support with our top browsers and the fall backs can probably be removed.</p><p>Further reading: <a href=\"http://bradfrostweb.com/blog/mobile/hi-res-optimization/\">Optimizing Web Experiences for High Resolution Screens</a></p>"
 	},
-    {
-        "el": ".docs-favicon",
-        "title": "Favicon",
-        "comment": "The Favicon contains 4 image dimensions for tabs, pinned sites, bookmarks etc... These will be automatically chosen depending on the context in which they are required. They are only displayed as images for the purpose of documentation. <a href=\"http://www.xiconeditor.com/\">Create icon</a></p>"
-    },
+  {
+    "el": ".docs-favicon",
+    "title": "Favicon",
+    "comment": "The Favicon contains 4 image dimensions for tabs, pinned sites, bookmarks etc... These will be automatically chosen depending on the context in which they are required. They are only displayed as images for the purpose of documentation. <a href=\"http://www.xiconeditor.com/\">Create icon</a></p>"
+  },
 	{
 		"el": "#nav",
 		"title" : "Navigation",
