@@ -129,7 +129,6 @@
     <Content Include="fonts\icons.dev.svg" />
     <Content Include="fonts\icons.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Gruntfile.js" />
     <Content Include="images\favicon.ico" />
     <Content Include="images\favicon_32x32.jpg" />
     <Content Include="images\fpo_16x9.png" />

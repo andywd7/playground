@@ -1,0 +1,35 @@
+&lt;nav role=&#39;navigation&#39; class=&quot;tabs tabs--vertical tabs--vertical--right&quot;&gt;
+    {{&gt; atoms-toggle-menu:js-tog-tabs2 }}
+
+    &lt;ul class=&quot;nav nav--tabs toggle_target&quot;&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#tab-1&quot;&gt;Tab 1&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;is-active&quot;&gt;
+            &lt;a href=&quot;#tab-2&quot;&gt;Tab 2&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#tab-3&quot;&gt;Tab 3&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;!--&lt;li&gt;
+            &lt;a href=&quot;http://google.com&quot;&gt;Go To Google &amp;rarr;&lt;/a&gt;
+        &lt;/li&gt;--&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;ul class=&quot;tabs_content&quot;&gt;
+    &lt;li id=&quot;tab-1&quot;&gt;
+        &lt;h2&gt;Tab 1&lt;/h2&gt;
+        {{&gt; atoms-paragraph }}
+    &lt;/li&gt;
+
+    &lt;li id=&quot;tab-2&quot; class=&quot;is-active&quot;&gt;
+        &lt;h2&gt;Tab 2&lt;/h2&gt;
+        {{&gt; atoms-paragraph }}
+    &lt;/li&gt;
+
+    &lt;li id=&quot;tab-3&quot;&gt;
+        &lt;h2&gt;Tab 3&lt;/h2&gt;
+        {{&gt; atoms-paragraph }}
+    &lt;/li&gt;
+&lt;/ul&gt;

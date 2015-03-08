@@ -1,48 +1,117 @@
 <!DOCTYPE html>
-	<!--[if lte IE 8]>       <html class="no-js ie8 ie-old pl"> <![endif]-->
-	<!--[if IE 9]>           <html class="no-js ie9 ie-old pl"> <![endif]-->
-	<!--[if gte IE 10]><!--> <html class="no-js pl"> <!--<![endif]-->
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Pattern Lab</title>
-		<meta charset="UTF-8">
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width" />
+  <!--[if lte IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 pl"> <![endif]-->
+  <!--[if IE 8]>			<html class="no-js lt-ie10 lt-ie9 ie8 pl"> <![endif]-->
+  <!--[if IE 9]>          <html class="no-js lt-ie10 ie9 pl"> <![endif]-->
+  <!--[if gt IE 9]><!-->	<html class="no-js pl"> <!--<![endif]-->
+  <head>
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <title>Pattern Lab</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width" />
 
-		<!--[if (lte IE 8) | (IEMobile)]>
-			<link rel="stylesheet" href="../../styles/style.ie-old.css?635483125278155079" media="all">
-		<![endif]-->
-		<!--[if (gte IE 9) | (!IEMobile)]><!-->
-			<link rel="stylesheet" href="../../css/style.css?635483125278155079" media="all" />
-			<link rel="stylesheet" href="../../css/docs/docs.css?635483125278155079" media="all" />
-		<!--<![endif]-->
+    <script>
+        WebFontConfig = {
+            google: { families: ['Droid+Serif:400,700,400italic,700italic:latin'] }
+        };
+        (function () {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+    <noscript>
+      <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'>
+    </noscript>
 
-		<script src="../../js/modernizr.js"></script>
+    <!--[if (lte IE 8)]>
+      <link rel="stylesheet" href="/css/style.ie-old.css?635613767402488259" media="all">
+    <![endif]-->
+    <!--[if (gte IE 9)]><!-->
+      <link rel="stylesheet" href="/css/style.css?635613767402488259" media="all" />
+    <!--<![endif]-->
+    <link rel="stylesheet" href="/css/docs/docs.css?635613767402488259" media="all" />
 
-		<!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-				<!-- never cache patterns -->
+    <script src="/js/min/picturefill.min.js" async></script>
+    <script src="/js/min/modernizr.min.js"></script>
+
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+      		<!-- never cache patterns -->
 		<meta http-equiv="cache-control" content="max-age=0" />
 		<meta http-equiv="cache-control" content="no-cache" />
 		<meta http-equiv="expires" content="0" />
 		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 		<meta http-equiv="pragma" content="no-cache" />
 		
-		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?635483125278155079" media="all">
-		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?635483125278155079" media="all" />
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?635613767402488259" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?635613767402488259" media="all" />
 		
-		<!-- End Pattern Lab -->
-	</head>
-    <body class="body" style="border: 1px solid #eee; margin: 20px 20px 21px; padding: 21px 20px;">
-        <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
+    <!-- End Pattern Lab -->
+  </head>
+  <body class="body u-cf">
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 		
 		<!-- View All Patterns in a Pattern Sub-Type -->
 		<div class="sg-main" role="main">
 			
 			<!-- Patterns -->
 			<div id="sg-patterns">
+					<div id="atoms-list-unordered" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-03-lists-00-list-unordered/00-atoms-03-lists-00-list-unordered.html" class="patternLink" data-patternpartial="atoms-list-unordered">List Unordered</a></h2>
+						<div class="sg-pattern-body">
+							<ul>
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>Integer molestie lorem at massa</li>
+  <li>Facilisis in pretium nisl aliquet</li>
+  <li>
+    Nulla volutpat aliquam velit
+    <ul>
+      <li>Phasellus iaculis neque</li>
+      <li>Purus sodales ultricies</li>
+      <li>Vestibulum laoreet porttitor sem</li>
+      <li>Ac tristique libero volutpat at</li>
+    </ul>
+  </li>
+  <li>Faucibus porta lacus fringilla vel</li>
+  <li>Aenean sit amet erat nunc</li>
+  <li>Eget porttitor lorem</li>
+</ul>
+
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;ul&gt;
+  &lt;li&gt;Lorem ipsum dolor sit amet&lt;/li&gt;
+  &lt;li&gt;Consectetur adipiscing elit&lt;/li&gt;
+  &lt;li&gt;Integer molestie lorem at massa&lt;/li&gt;
+  &lt;li&gt;Facilisis in pretium nisl aliquet&lt;/li&gt;
+  &lt;li&gt;
+    Nulla volutpat aliquam velit
+    &lt;ul&gt;
+      &lt;li&gt;Phasellus iaculis neque&lt;/li&gt;
+      &lt;li&gt;Purus sodales ultricies&lt;/li&gt;
+      &lt;li&gt;Vestibulum laoreet porttitor sem&lt;/li&gt;
+      &lt;li&gt;Ac tristique libero volutpat at&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Faucibus porta lacus fringilla vel&lt;/li&gt;
+  &lt;li&gt;Aenean sit amet erat nunc&lt;/li&gt;
+  &lt;li&gt;Eget porttitor lorem&lt;/li&gt;
+&lt;/ul&gt;
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
 					<div id="atoms-unordered-list" class="sg-pattern">
 						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-03-lists-00-unordered-list/00-atoms-03-lists-00-unordered-list.html" class="patternLink" data-patternpartial="atoms-unordered-list">Unordered List</a></h2>
 						<div class="sg-pattern-body">
@@ -93,6 +162,56 @@
 							</div>
 						</div>
 					</div>
+					<div id="atoms-list-ordered" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-03-lists-10-list-ordered/00-atoms-03-lists-10-list-ordered.html" class="patternLink" data-patternpartial="atoms-list-ordered">List Ordered</a></h2>
+						<div class="sg-pattern-body">
+							<ol>
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>Integer molestie lorem at massa</li>
+  <li>Facilisis in pretium nisl aliquet</li>
+  <li>
+    Nulla volutpat aliquam velit
+    <ul>
+      <li>Phasellus iaculis neque</li>
+      <li>Purus sodales ultricies</li>
+      <li>Vestibulum laoreet porttitor sem</li>
+      <li>Ac tristique libero volutpat at</li>
+    </ul>
+  </li>
+  <li>Faucibus porta lacus fringilla vel</li>
+  <li>Aenean sit amet erat nunc</li>
+  <li>Eget porttitor lorem</li>
+</ol>
+
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;ol&gt;
+  &lt;li&gt;Lorem ipsum dolor sit amet&lt;/li&gt;
+  &lt;li&gt;Consectetur adipiscing elit&lt;/li&gt;
+  &lt;li&gt;Integer molestie lorem at massa&lt;/li&gt;
+  &lt;li&gt;Facilisis in pretium nisl aliquet&lt;/li&gt;
+  &lt;li&gt;
+    Nulla volutpat aliquam velit
+    &lt;ul&gt;
+      &lt;li&gt;Phasellus iaculis neque&lt;/li&gt;
+      &lt;li&gt;Purus sodales ultricies&lt;/li&gt;
+      &lt;li&gt;Vestibulum laoreet porttitor sem&lt;/li&gt;
+      &lt;li&gt;Ac tristique libero volutpat at&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Faucibus porta lacus fringilla vel&lt;/li&gt;
+  &lt;li&gt;Aenean sit amet erat nunc&lt;/li&gt;
+  &lt;li&gt;Eget porttitor lorem&lt;/li&gt;
+&lt;/ol&gt;
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
 					<div id="atoms-ordered-list" class="sg-pattern">
 						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-03-lists-10-ordered-list/00-atoms-03-lists-10-ordered-list.html" class="patternLink" data-patternpartial="atoms-ordered-list">Ordered List</a></h2>
 						<div class="sg-pattern-body">
@@ -137,6 +256,56 @@
   &lt;li&gt;Aenean sit amet erat nunc&lt;/li&gt;
   &lt;li&gt;Eget porttitor lorem&lt;/li&gt;
 &lt;/ol&gt;
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="atoms-list-unstyled" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-03-lists-20-list-unstyled/00-atoms-03-lists-20-list-unstyled.html" class="patternLink" data-patternpartial="atoms-list-unstyled">List Unstyled</a></h2>
+						<div class="sg-pattern-body">
+							<ul class="list-unstyled">
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>Integer molestie lorem at massa</li>
+  <li>Facilisis in pretium nisl aliquet</li>
+  <li>
+    Nulla volutpat aliquam velit
+    <ul>
+      <li>Phasellus iaculis neque</li>
+      <li>Purus sodales ultricies</li>
+      <li>Vestibulum laoreet porttitor sem</li>
+      <li>Ac tristique libero volutpat at</li>
+    </ul>
+  </li>
+  <li>Faucibus porta lacus fringilla vel</li>
+  <li>Aenean sit amet erat nunc</li>
+  <li>Eget porttitor lorem</li>
+</ul>
+
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;ul class=&quot;list-unstyled&quot;&gt;
+  &lt;li&gt;Lorem ipsum dolor sit amet&lt;/li&gt;
+  &lt;li&gt;Consectetur adipiscing elit&lt;/li&gt;
+  &lt;li&gt;Integer molestie lorem at massa&lt;/li&gt;
+  &lt;li&gt;Facilisis in pretium nisl aliquet&lt;/li&gt;
+  &lt;li&gt;
+    Nulla volutpat aliquam velit
+    &lt;ul&gt;
+      &lt;li&gt;Phasellus iaculis neque&lt;/li&gt;
+      &lt;li&gt;Purus sodales ultricies&lt;/li&gt;
+      &lt;li&gt;Vestibulum laoreet porttitor sem&lt;/li&gt;
+      &lt;li&gt;Ac tristique libero volutpat at&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Faucibus porta lacus fringilla vel&lt;/li&gt;
+  &lt;li&gt;Aenean sit amet erat nunc&lt;/li&gt;
+  &lt;li&gt;Eget porttitor lorem&lt;/li&gt;
+&lt;/ul&gt;
 
 									</code>
 								</pre>
@@ -217,8 +386,64 @@
 							</div>
 						</div>
 					</div>
+					<div id="atoms-list-inline" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-03-lists-30-list-inline/00-atoms-03-lists-30-list-inline.html" class="patternLink" data-patternpartial="atoms-list-inline">List Inline</a></h2>
+						<div class="sg-pattern-body">
+							<ul class="list-inline">
+  <li>Lorem ipsum</li>
+  <li>Phasellus iaculis</li>
+  <li>Nulla volutpat</li>
+</ul>
+
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;ul class=&quot;list-inline&quot;&gt;
+  &lt;li&gt;Lorem ipsum&lt;/li&gt;
+  &lt;li&gt;Phasellus iaculis&lt;/li&gt;
+  &lt;li&gt;Nulla volutpat&lt;/li&gt;
+&lt;/ul&gt;
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
 					<div id="atoms-definition-list" class="sg-pattern">
 						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-03-lists-40-definition-list/00-atoms-03-lists-40-definition-list.html" class="patternLink" data-patternpartial="atoms-definition-list">Definition List</a></h2>
+						<div class="sg-pattern-body">
+							<dl>
+  <dt>Description lists</dt>
+  <dd>A description list is perfect for defining terms.</dd>
+  <dt>Euismod</dt>
+  <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+  <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+  <dt>Malesuada porta</dt>
+  <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+</dl>
+
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;dl&gt;
+  &lt;dt&gt;Description lists&lt;/dt&gt;
+  &lt;dd&gt;A description list is perfect for defining terms.&lt;/dd&gt;
+  &lt;dt&gt;Euismod&lt;/dt&gt;
+  &lt;dd&gt;Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.&lt;/dd&gt;
+  &lt;dd&gt;Donec id elit non mi porta gravida at eget metus.&lt;/dd&gt;
+  &lt;dt&gt;Malesuada porta&lt;/dt&gt;
+  &lt;dd&gt;Etiam porta sem malesuada magna mollis euismod.&lt;/dd&gt;
+&lt;/dl&gt;
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="atoms-list-definition" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-03-lists-40-list-definition/00-atoms-03-lists-40-list-definition.html" class="patternLink" data-patternpartial="atoms-list-definition">List Definition</a></h2>
 						<div class="sg-pattern-body">
 							<dl>
   <dt>Description lists</dt>
@@ -285,6 +510,78 @@
 							</div>
 						</div>
 					</div>
+					<div id="atoms-list-inline-definition" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-03-lists-50-list-inline-definition/00-atoms-03-lists-50-list-inline-definition.html" class="patternLink" data-patternpartial="atoms-list-inline-definition">List Inline Definition</a></h2>
+						<div class="sg-pattern-body">
+							<dl class="dl-horizontal">
+  <dt>Description lists</dt>
+  <dd>A description list is perfect for defining terms.</dd>
+  <dt>Euismod</dt>
+  <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+  <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+  <dt>Malesuada porta</dt>
+  <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+  <dt>Felis euismod semper eget lacinia</dt>
+  <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
+</dl>
+
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;dl class=&quot;dl-horizontal&quot;&gt;
+  &lt;dt&gt;Description lists&lt;/dt&gt;
+  &lt;dd&gt;A description list is perfect for defining terms.&lt;/dd&gt;
+  &lt;dt&gt;Euismod&lt;/dt&gt;
+  &lt;dd&gt;Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.&lt;/dd&gt;
+  &lt;dd&gt;Donec id elit non mi porta gravida at eget metus.&lt;/dd&gt;
+  &lt;dt&gt;Malesuada porta&lt;/dt&gt;
+  &lt;dd&gt;Etiam porta sem malesuada magna mollis euismod.&lt;/dd&gt;
+  &lt;dt&gt;Felis euismod semper eget lacinia&lt;/dt&gt;
+  &lt;dd&gt;Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.&lt;/dd&gt;
+&lt;/dl&gt;
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="atoms-list-steps" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-03-lists-60-list-steps/00-atoms-03-lists-60-list-steps.html" class="patternLink" data-patternpartial="atoms-list-steps">List Steps</a></h2>
+						<div class="sg-pattern-body">
+							<div class="list-collapsable">
+  <h3 class="list-collapsable_header">
+    <a href="#" class="i i-triangle-down">Where Am I?</a>
+  </h3>
+  <ol class="list-collapsable_list list-steps">
+    <li>Register</li>
+    <li class="is-current">Join</li>
+    <li>Type</li>
+    <li>Pay</li>
+  </ol>
+</div>
+
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;div class=&quot;list-collapsable&quot;&gt;
+  &lt;h3 class=&quot;list-collapsable_header&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;i i-triangle-down&quot;&gt;Where Am I?&lt;/a&gt;
+  &lt;/h3&gt;
+  &lt;ol class=&quot;list-collapsable_list list-steps&quot;&gt;
+    &lt;li&gt;Register&lt;/li&gt;
+    &lt;li class=&quot;is-current&quot;&gt;Join&lt;/li&gt;
+    &lt;li&gt;Type&lt;/li&gt;
+    &lt;li&gt;Pay&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
 			</div> <!--end #sg-patterns-->
 	
 		</div><!--end .sg-main-->
@@ -297,12 +594,14 @@
 		</script>
 		
 
-      <div class="flyout__overlay"></div>
-    </div>
+  <div class="flyout_overlay"></div>
+</div>
 
-    <script src="../../js/jquery.min.js"></script>
-    <script src="../../js/min/global.min.js"></script>
-    <script src="../../js/forms.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/min/jquery-1.11.1.min.js"><\/script>')</script>
+    <script src="/js/min/global.min.js"></script>
+    <script src="/js/min/forms.min.js"></script>
+	<script src="/js/tabs.js"></script>
 
 	<!--DO NOT REMOVE-->
 		<script>
@@ -337,10 +636,10 @@
 				
 			}
 		</script>
-		<script id="pl-js-polyfill-insert-635483125278155079">
+		<script id="pl-js-polyfill-insert-635613767402488259">
 			(function() {
 				if (self != top) {
-					var cb = '635483125278155079';
+					var cb = '635613767402488259';
 					var js = [];
 					if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
 						js.push("styleguide/js/vendor/classlist-polyfill.js");
@@ -349,10 +648,10 @@
 				}
 			})();
 		</script>
-		<script id="pl-js-insert-635483125278155079">
+		<script id="pl-js-insert-635613767402488259">
 			(function() {
 				if (self != top) {
-					var cb = '635483125278155079';
+					var cb = '635613767402488259';
 					var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
 					scriptLoader.run(js,cb,'pl-js-insert');
 				}

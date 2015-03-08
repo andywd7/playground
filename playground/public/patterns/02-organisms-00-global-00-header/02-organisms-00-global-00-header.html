@@ -1,221 +1,258 @@
 <!DOCTYPE html>
-	<!--[if lte IE 8]>       <html class="no-js ie8 ie-old pl"> <![endif]-->
-	<!--[if IE 9]>           <html class="no-js ie9 ie-old pl"> <![endif]-->
-	<!--[if gte IE 10]><!--> <html class="no-js pl"> <!--<![endif]-->
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Pattern Lab</title>
-		<meta charset="UTF-8">
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width" />
+  <!--[if lte IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 pl"> <![endif]-->
+  <!--[if IE 8]>			<html class="no-js lt-ie10 lt-ie9 ie8 pl"> <![endif]-->
+  <!--[if IE 9]>          <html class="no-js lt-ie10 ie9 pl"> <![endif]-->
+  <!--[if gt IE 9]><!-->	<html class="no-js pl"> <!--<![endif]-->
+  <head>
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <title>Pattern Lab</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width" />
 
-		<!--[if (lte IE 8) | (IEMobile)]>
-			<link rel="stylesheet" href="../../styles/style.ie-old.css?635483125278155079" media="all">
-		<![endif]-->
-		<!--[if (gte IE 9) | (!IEMobile)]><!-->
-			<link rel="stylesheet" href="../../css/style.css?635483125278155079" media="all" />
-			<link rel="stylesheet" href="../../css/docs/docs.css?635483125278155079" media="all" />
-		<!--<![endif]-->
+    <script>
+        WebFontConfig = {
+            google: { families: ['Droid+Serif:400,700,400italic,700italic:latin'] }
+        };
+        (function () {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+    <noscript>
+      <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'>
+    </noscript>
 
-		<script src="../../js/modernizr.js"></script>
+    <!--[if (lte IE 8)]>
+      <link rel="stylesheet" href="/css/style.ie-old.css?635613767402488259" media="all">
+    <![endif]-->
+    <!--[if (gte IE 9)]><!-->
+      <link rel="stylesheet" href="/css/style.css?635613767402488259" media="all" />
+    <!--<![endif]-->
+    <link rel="stylesheet" href="/css/docs/docs.css?635613767402488259" media="all" />
 
-		<!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-				<!-- never cache patterns -->
+    <script src="/js/min/picturefill.min.js" async></script>
+    <script src="/js/min/modernizr.min.js"></script>
+
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+      		<!-- never cache patterns -->
 		<meta http-equiv="cache-control" content="max-age=0" />
 		<meta http-equiv="cache-control" content="no-cache" />
 		<meta http-equiv="expires" content="0" />
 		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 		<meta http-equiv="pragma" content="no-cache" />
 		
-		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?635483125278155079" media="all">
-		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?635483125278155079" media="all" />
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?635613767402488259" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?635613767402488259" media="all" />
 		
-		<!-- End Pattern Lab -->
-	</head>
-    <body class="body" style="border: 1px solid #eee; margin: 20px 20px 21px; padding: 21px 20px;">
-        <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
+    <!-- End Pattern Lab -->
+  </head>
+  <body class="body u-cf">
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 <!-- Begin .header -->
-<a href="#main" class="sr-only">Skip to main content</a>
-<div id="page" class="navbar__push">
-    <header class="l-header navbar" role="banner">
-        <div class="l-container">
-            <a href="#" class="navbar__brand">
-              <img src="../../images/logo.gif" alt="Institute of Directors" /></a>
-            <a href="#" id="js-basket" class="basket" role="button"><i class="fa fa-shopping-cart"></i> Basket <span>(0)</span></a>
-            <input type="checkbox" id="js-toggle" class="navbar__check" role="button">
-            <label for="js-toggle" id="leftPush" class="navbar__toggle">
-              <span class="navbar__menu">MENU</span>
-                <span class="sr-only">Toggle navigation</span>
-            </label>
-
-            <div id="navbar-nav" class="navbar__flyout">
-                <div class="navbar__nav flyout__inner">
-                    <div class="navbar__secondary">
-                        <!--<ul class="nav navbar__nav--social">
-                            <li>
-                                <a href="#" class="link-linkedin"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="link-twitter"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="link-facebook"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="link-youtube"><i class="fa fa-youtube-play"></i></a>
-                            </li>
-                        </ul>-->
-                        <nav class="navbar__nav--mini" role="navigation">
-                            <ul class="nav">
-                                <li>
-                                    <a href="#">Director</a>
-                                </li>
-                                <li>
-                                    <a href="#">About Us</a>
-                                </li>
-                                <li>
-                                    <a href="#">Events</a>
-                                </li>
-                                <li>
-                                    <a href="#">Contact Us</a>
-                                </li>
-                                <li>
-                                    <a href="#">Login <i class="fa fa-caret-right"></i></a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>                    <nav class="navbar__primary" role="navigation">
-                        <ul id="toggle-nav" class="nav">
-                            <li class="navbar__dd">
-                                <a href="#">Guiding</a>
-                                <div class="navbar__dd-mega">
-                                    <div class="l-container">
-                                        <ul class="nav">
-                                            <li><a href="#">Advice and information</a></li>
-                                            <li><a href="#">Ask Anna</a></li>
-                                            <li><a href="#">Business topics</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="navbar__dd">
-                                <a href="#">Developing</a>
-                                <div class="navbar__dd-mega">
-                                    <div class="l-container">
-                                        <ul class="nav">
-                                            <li><a href="#">Board development</a></li>
-                                            <li><a href="#">Chartered Director</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="navbar__dd">
-                                <a href="#">Connecting</a>
-                                <div class="navbar__dd-mega">
-                                    <div class="l-container">
-                                        <ul class="nav">
-                                            <li><a href="#">Events</a></li>
-                                            <li><a href="#">Annual Convention 2013</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="navbar__dd">
-                                <a href="#">Influencing</a>
-                                <div class="navbar__dd-mega">
-                                    <div class="l-container">
-                                        <ul class="nav">
-                                            <li><a href="#">Area of influence</a></li>
-                                            <li><a href="#">The economy</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="navbar__dd">
-                                <a href="#">You</a>
-                                <div class="navbar__dd-mega">
-                                    <div class="l-container">
-                                        <ul class="nav">
-                                            <li><h4><a href="#">Your venues and benefits</a></h4></li>
-                                            <li><a href="#">International</a></li>
-                                            <li><a href="#">East Midlands</a></li>
-                                        </ul>
-                                        <ul class="nav">
-                                            <li><h4><a href="#">Your local network</a></h4></li>
-                                            <li><a href="#">Director training and development</a></li>
-                                            <li><a href="#">Events</a></li>
-                                            <li><a href="#">Legal alert</a></li>
-                                            <li><a href="#">Directors' Advisory Service</a></li>
-                                            <li><a href="#">Directors' Law Express</a></li>
-                                            <li><a href="#">Directors' Tax Line</a></li>
-                                            <li><a href="#">Publications</a></li>
-                                            <li><a href="#">Legal alert</a></li>
-                                            <li><a href="#">Directors' Advisory Service</a></li>
-                                            <li><a href="#">Directors' Law Express</a></li>
-                                            <li><a href="#">Directors' Tax Line</a></li>
-                                            <li><a href="#">Publications</a></li>
-                                            <li><a href="#">Legal alert</a></li>
-                                            <li><a href="#">Directors' Advisory Service</a></li>
-                                            <li><a href="#">Directors' Law Express</a></li>
-                                            <li><a href="#">Directors' Tax Line</a></li>
-                                            <li><a href="#">Publications</a></li>
-                                            <li><a href="#">Legal alert</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="join">
-                                <a href="#">Join the IoD</a>
-                            </li>
-                        </ul>
-                    </nav>                </div>
-            </div>
-
-              <!-- <div class="navbar__crumbs">
-     <nav id="breadcrumbs" class="crumbs">
-         <h3 class="crumbs__header"><a href="#breadcrumbs">Where Am I?</a></h3>
-         <ul class="crumbs__list">
-             <li class="crumbs__item">
-                 <a href="/">Home</a>
-             </li>
-             <li class="crumbs__item">
-                 <a href="/level-1">Level 1</a>
-             </li>
-             <li class="crumbs__item crumbs__item--last">
-                 <a href="/">Level 2</a>
-             </li>
-         </ul>
-     </nav>
- 
-     <div id="js-navbarSearch" class="navbar__search">
-         <form>
-             <label for="search" class="sr-only">Search website</label>
-             <input type="search" id="search" class="f-control navbar__search-input" placeholder="Search website">
-             <input type="submit" id="btnSearch" class="navbar__search-submit" aria-label="Search">
-             <span class="fa navbar__search-icon" title="Click to Search"></span>
-         </form>
-     </div>
- </div> -->
+<a href="#main" class="u-sr">Skip to main content</a>
+<div class="flyout_wrapper">
+  <header class="navbar" role="banner">
+    <div class="l-container">
+      <a href="#" class="navbar_brand logo" title="Return Home">
+        <img id="js-logo" src="/images/IoD-logo.png" alt="Institute of Directors" class="img-responsive" />
+      </a>
+      <input type="checkbox" id="js-tog-navbar" class="toggle_chkbx" aria-pressed="false" />
+      <label for="js-tog-navbar" id="leftPush" class="toggle_btn i i-menu" role="button">
+      	<span class="toggle_txt">MENU</span>
+      	<!--<span class="u-sr">Toggle menu</span>-->
+      </label>
+      <div class="navbar_flyout toggle_target">
+        <div class="flyout_close">
+          <h5 class="flyout_heading">MENU</h5>
+          <label for="js-tog-navbar" class="i i-times"></label>
         </div>
-    </header><!-- end .header -->	
+        <div class="navbar_nav flyout_inner">
+          <div class="navbar_secondary">
+              <!--<ul class="nav navbar__nav--social">
+                  <li>
+                      <a href="#" class="link-linkedin"><i class="fa fa-linkedin"></i></a>
+                  </li>
+                  <li>
+                      <a href="#" class="link-twitter"><i class="fa fa-twitter"></i></a>
+                  </li>
+                  <li>
+                      <a href="#" class="link-facebook"><i class="fa fa-facebook"></i></a>
+                  </li>
+                  <li>
+                      <a href="#" class="link-youtube"><i class="fa fa-youtube-play"></i></a>
+                  </li>
+              </ul>-->
+              <nav class="navbar_nav--mini" role="navigation">
+                  <ul class="nav">
+                      <li>
+                          <a href="#">Director</a>
+                      </li>
+                      <li>
+                          <a href="#">About Us</a>
+                      </li>
+                      <li>
+                          <a href="#">Events</a>
+                      </li>
+                      <li>
+                          <a href="#">Contact Us</a>
+                      </li>
+                      <li>
+                          <a href="#">Login <i class="fa fa-caret-right"></i></a>
+                      </li>
+                  </ul>
+              </nav>
+          </div>          <nav class="navbar_primary" role="navigation">
+              <ul id="toggle-nav" class="nav">
+                  <li class="navbar_dd">
+                      <a href="#">Guiding</a>
+          			<button type="button" class="btn--link">
+          				<i class="i"></i>
+          			</button>
+                      <div class="navbar_dd-mega">
+                          <div class="l-container">
+                              <ul class="nav">
+                                  <li><a href="#">Advice and information</a></li>
+                                  <li><a href="#">Ask Anna</a></li>
+                                  <li><a href="#">Business topics</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </li>
+                  <li class="navbar_dd">
+                      <a href="#">Developing</a>
+          			<button type="button" class="btn--link">
+          				<i class="i"></i>
+          			</button>
+                      <div class="navbar_dd-mega">
+                          <div class="l-container">
+                              <ul class="nav">
+                                  <li><a href="#">Board development</a></li>
+                                  <li><a href="#">Chartered Director</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </li>
+                  <li class="navbar_dd">
+                      <a href="#">Connecting</a>
+          			<button type="button" class="btn--link">
+          				<i class="i"></i>
+          			</button>
+                      <div class="navbar_dd-mega">
+                          <div class="l-container">
+                              <ul class="nav">
+                                  <li><a href="#">Events</a></li>
+                                  <li><a href="#">Annual Convention 2013</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </li>
+                  <li class="navbar_dd">
+                      <a href="#">Influencing</a>
+          			<button type="button" class="btn--link">
+          				<i class="i"></i>
+          			</button>
+                      <div class="navbar_dd-mega">
+                          <div class="l-container">
+                              <ul class="nav">
+                                  <li><a href="#">Area of influence</a></li>
+                                  <li><a href="#">The economy</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </li>
+                  <li class="navbar_dd">
+                      <a href="#">You</a>
+          			<button type="button" class="btn--link">
+          				<i class="i"></i>
+          			</button>
+                      <div class="navbar_dd-mega">
+                          <div class="l-container">
+                              <ul class="nav">
+                                  <li><h4 class="navbar_title"><a href="#">Your venues and benefits</a></h4></li>
+                                  <li><a href="#">International</a></li>
+                                  <li><a href="#">East Midlands</a></li>
+                              </ul>
+                              <ul class="nav">
+                                  <li><h4 class="navbar_title"><a href="#">Your local network</a></h4></li>
+                                  <li><a href="#">Director training and development</a></li>
+                                  <li><a href="#">Events</a></li>
+                                  <li><a href="#">Legal alert</a></li>
+                                  <li><a href="#">Directors' Advisory Service</a></li>
+                                  <li><a href="#">Directors' Law Express</a></li>
+                                  <li><a href="#">Directors' Tax Line</a></li>
+                                  <li><a href="#">Publications</a></li>
+                                  <li><a href="#">Legal alert</a></li>
+                                  <li><a href="#">Directors' Advisory Service</a></li>
+                                  <li><a href="#">Directors' Law Express</a></li>
+                                  <li><a href="#">Directors' Tax Line</a></li>
+                                  <li><a href="#">Publications</a></li>
+                                  <li><a href="#">Legal alert</a></li>
+                                  <li><a href="#">Directors' Advisory Service</a></li>
+                                  <li><a href="#">Directors' Law Express</a></li>
+                                  <li><a href="#">Directors' Tax Line</a></li>
+                                  <li><a href="#">Publications</a></li>
+                                  <li><a href="#">Legal alert</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </li>
+                  <li class="join">
+                      <a href="#">Join the IoD</a>
+                  </li>
+              </ul>
+          </nav>        </div>
+      </div>
+
+      <input type="checkbox" id="js-tog-flyout" class="toggle_chkbx" aria-pressed="false" />
+      <label for="js-tog-flyout" id="leftPush" class="basket toggle_btn i i-basket i--white" role="button">
+        <span class="toggle_txt">Basket</span>
+        <small>(1)</small>
+      </label>      <div class="flyout toggle_target">
+        <div class="flyout_close">
+          <h5 class="flyout_heading">FLYOUT</h5>
+          <label for="js-tog-flyout" class="i i-times"></label>
+        </div>
+        <div class="flyout_inner">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <div class="l-container">
+    <div class="tabs">
+	<ul class="tab-list">
+		<li><a href="#" class="active">Tab 1</a></li>
+		<li><a href="#">Tab 2</a></li>
+		<li><a href="#">Tab 3</a></li>
+	</ul>
+</div>  </div>	
 	<script>
 		// handle injection of items
 		var patternPartial = "organisms-header";
-		var lineage        = [{"lineagePath":"../../patterns/00-atoms-04-images-45-navbar-brand/00-atoms-04-images-45-navbar-brand.html","lineagePattern":"atoms-navbar-brand","lineageState":"inprogress"},{"lineagePath":"../../patterns/01-molecules-05-navigation-05-navbar-secondary/01-molecules-05-navigation-05-navbar-secondary.html","lineagePattern":"molecules-navbar-secondary","lineageState":null},{"lineagePath":"../../patterns/01-molecules-05-navigation-00-navbar-primary/01-molecules-05-navigation-00-navbar-primary.html","lineagePattern":"molecules-navbar-primary","lineageState":null},{"lineagePath":"../../patterns/01-molecules-05-navigation-02-navbar-crumbs/01-molecules-05-navigation-02-navbar-crumbs.html","lineagePattern":"molecules-navbar-crumbs","lineageState":null}];
+		var lineage        = [{"lineagePath":"../../patterns/00-atoms-04-images-45-navbar-brand/00-atoms-04-images-45-navbar-brand.html","lineagePattern":"atoms-navbar-brand","lineageState":"inprogress"},{"lineagePath":"../../patterns/00-atoms-06-buttons-20-toggle-menu/00-atoms-06-buttons-20-toggle-menu.html","lineagePattern":"atoms-toggle-menu","lineageState":"inreview"},{"lineagePath":"../../patterns/01-molecules-05-navigation-05-navbar-secondary/01-molecules-05-navigation-05-navbar-secondary.html","lineagePattern":"molecules-navbar-secondary","lineageState":null},{"lineagePath":"../../patterns/01-molecules-05-navigation-00-navbar-primary/01-molecules-05-navigation-00-navbar-primary.html","lineagePattern":"molecules-navbar-primary","lineageState":null},{"lineagePath":"../../patterns/00-atoms-06-buttons-30-toggle-basket/00-atoms-06-buttons-30-toggle-basket.html","lineagePattern":"atoms-toggle-basket","lineageState":"inreview"},{"lineagePath":"../../patterns/01-molecules-05-navigation-04-tabs/01-molecules-05-navigation-04-tabs.html","lineagePattern":"molecules-tabs","lineageState":null}];
 		var lineageR       = [{"lineagePath":"../../patterns/03-templates-00-homepage/03-templates-00-homepage.html","lineagePattern":"templates-homepage","lineageState":"inprogress"},{"lineagePath":"../../patterns/03-templates-01-blog/03-templates-01-blog.html","lineagePattern":"templates-blog","lineageState":"inprogress"},{"lineagePath":"../../patterns/03-templates-02-article/03-templates-02-article.html","lineagePattern":"templates-article","lineageState":"inprogress"},{"lineagePath":"../../patterns/03-templates-03-typography/03-templates-03-typography.html","lineagePattern":"templates-typography","lineageState":"inprogress"},{"lineagePath":"../../patterns/04-pages-01-blog/04-pages-01-blog.html","lineagePattern":"pages-blog","lineageState":"inprogress"}];
 		var patternState   = "inprogress";
 		var cssEnabled     = false;
 	</script>
 	
-      <div class="flyout__overlay"></div>
-    </div>
+  <div class="flyout_overlay"></div>
+</div>
 
-    <script src="../../js/jquery.min.js"></script>
-    <script src="../../js/min/global.min.js"></script>
-    <script src="../../js/forms.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/min/jquery-1.11.1.min.js"><\/script>')</script>
+    <script src="/js/min/global.min.js"></script>
+    <script src="/js/min/forms.min.js"></script>
+	<script src="/js/tabs.js"></script>
 
 	<!--DO NOT REMOVE-->
 		<script>
@@ -250,10 +287,10 @@
 				
 			}
 		</script>
-		<script id="pl-js-polyfill-insert-635483125278155079">
+		<script id="pl-js-polyfill-insert-635613767402488259">
 			(function() {
 				if (self != top) {
-					var cb = '635483125278155079';
+					var cb = '635613767402488259';
 					var js = [];
 					if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
 						js.push("styleguide/js/vendor/classlist-polyfill.js");
@@ -262,10 +299,10 @@
 				}
 			})();
 		</script>
-		<script id="pl-js-insert-635483125278155079">
+		<script id="pl-js-insert-635613767402488259">
 			(function() {
 				if (self != top) {
-					var cb = '635483125278155079';
+					var cb = '635613767402488259';
 					var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
 					scriptLoader.run(js,cb,'pl-js-insert');
 				}
