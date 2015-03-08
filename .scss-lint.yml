@@ -3,9 +3,11 @@
 exclude: 
   - css/scss/vendor/**
   - css/scss/tools/**
-  - css/scss/components/_navbar2.scss
 
 linters:
+  BangFormat:
+    space_before_bang: true
+
   BorderZero:
     enabled: true
 
@@ -15,14 +17,17 @@ linters:
   ColorKeyword:
     enabled: true
 
-  Comment:
+  ColorVariable:
     enabled: true
+
+  Comment:
+    enabled: false
 
   DebugStatement:
     enabled: true
 
   DeclarationOrder:
-    enabled: true
+    enabled: false
 
   DuplicateProperty:
     enabled: true
@@ -53,7 +58,7 @@ linters:
   HexValidation:
     enabled: true
 
-  IdWithExtraneousSelector:
+  IdSelector:
     enabled: true
 
   Indentation:
@@ -73,6 +78,10 @@ linters:
     enabled: true
     convention: hyphenated_lowercase # or 'BEM', or a regex pattern
 
+  NestingDepth:
+    enabled: true
+    max_Depth: 3
+
   PlaceholderInExtend:
     enabled: true
 
@@ -83,6 +92,14 @@ linters:
   PropertySpelling:
     enabled: true
     extra_properties: []
+
+  QualifyingElement:
+    enabled: true
+    allow_element_with_attribute: true
+    allow_element_with_class: true
+
+  SelectorFormat:
+    enabled: false
 
   SelectorDepth:
     enabled: true
@@ -96,10 +113,10 @@ linters:
     allow_single_line_rule_sets: true
 
   SingleLinePerSelector:
-    enabled: true
+    enabled: false
 
   SpaceAfterComma:
-    enabled: true
+    enabled: false
 
   SpaceAfterPropertyColon:
     enabled: true
@@ -134,6 +151,13 @@ linters:
 
   UrlQuotes:
     enabled: true
+
+  VariableForProperty:
+    enabled: true
+    properties:
+      - color
+      - font-family
+      - background-color
 
   ZeroUnit:
     enabled: true
