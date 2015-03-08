@@ -98,7 +98,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\docs\docs.css" />
-    <Content Include="css\scss\components\_ecommerce.css" />
     <Content Include="css\scss\vendor\jquery-ui\images\ui-icons_333333_256x240.png" />
     <Content Include="css\scss\vendor\jquery-ui\images\ui-icons_467c9c_256x240.png" />
     <Content Include="css\scss\vendor\jquery-ui\images\ui-icons_ff0000_256x240.png" />
@@ -130,7 +129,6 @@
     <Content Include="Global.asax" />
     <Content Include="images\ajax-loader.gif" />
     <Content Include="images\favicon.ico" />
-    <Content Include="images\favicon_16x16.jpg" />
     <Content Include="images\favicon_32x32.jpg" />
     <Content Include="images\fpo_16x9.png" />
     <Content Include="images\fpo_4x3.png" />
@@ -159,7 +157,6 @@
     <Content Include="images\icons-svg\white\m-triangle-up.svg" />
     <Content Include="images\icons-svg\white\twitter.svg" />
     <Content Include="images\IoD-logo.png" />
-    <Content Include="images\logo.png" />
     <Content Include="images\logo.svg">
       <SubType>Designer</SubType>
     </Content>
@@ -197,9 +194,7 @@
     <Content Include="js\forms.js" />
     <Content Include="js\fitvids.js" />
     <Content Include="js\global.js" />
-    <Content Include="js\init.js" />
     <Content Include="js\jquery-1.11.1.js" />
-    <Content Include="js\jquery-2.0.0b2.js" />
     <Content Include="js\jquery-accessibleMegaMenu.js" />
     <Content Include="js\jquery-ui.js" />
     <Content Include="js\min\forms.min.js" />
@@ -220,7 +215,6 @@
     <Content Include="public\fonts\fontawesome-webfont.svg" />
     <Content Include="public\images\ajax-loader.gif" />
     <Content Include="public\images\favicon.ico" />
-    <Content Include="public\images\favicon_16x16.jpg" />
     <Content Include="public\images\favicon_32x32.jpg" />
     <Content Include="public\images\fpo_16x9.png" />
     <Content Include="public\images\fpo_4x3.png" />
@@ -250,7 +244,6 @@
     <Content Include="public\images\icons-svg\white\twitter.svg" />
     <Content Include="public\images\IoD-logo.png" />
     <Content Include="public\images\logo.gif" />
-    <Content Include="public\images\logo.png" />
     <Content Include="public\images\logo.svg" />
     <Content Include="public\images\sample\landscape-16x9-mountains.jpg" />
     <Content Include="public\images\sample\thumb-square-fire.jpg" />
@@ -261,7 +254,6 @@
     <Content Include="public\images\sample\tout-4x3-climber.jpg" />
     <Content Include="public\images\sample\tout-4x3-climbers.jpg" />
     <Content Include="public\images\sample\tout-4x3-stream.jpg" />
-    <Content Include="public\images\sprites\IoD-logo.png" />
     <Content Include="public\images\sprites\sprite-master-sm.png" />
     <Content Include="public\images\sprites\sprite-master.svg" />
     <Content Include="public\images\sprites\sprite-sm.png" />
@@ -287,7 +279,6 @@
     <Content Include="public\js\global.js" />
     <Content Include="public\js\init.js" />
     <Content Include="public\js\jquery-1.11.1.js" />
-    <Content Include="public\js\jquery-2.0.0b2.js" />
     <Content Include="public\js\jquery-accessibleMegaMenu.js" />
     <Content Include="public\js\jquery-ui.js" />
     <Content Include="public\js\min\fitvids.min.js" />
@@ -314,8 +305,6 @@
     <Content Include="public\patterns\00-atoms-01-global\index.html" />
     <Content Include="public\patterns\00-atoms-02-text-00-headings\00-atoms-02-text-00-headings.escaped.html" />
     <Content Include="public\patterns\00-atoms-02-text-00-headings\00-atoms-02-text-00-headings.html" />
-    <Content Include="public\patterns\00-atoms-02-text-04-time\00-atoms-02-text-04-time.escaped.html" />
-    <Content Include="public\patterns\00-atoms-02-text-04-time\00-atoms-02-text-04-time.html" />
     <Content Include="public\patterns\00-atoms-02-text-10-paragraph\00-atoms-02-text-10-paragraph.escaped.html" />
     <Content Include="public\patterns\00-atoms-02-text-10-paragraph\00-atoms-02-text-10-paragraph.html" />
     <Content Include="public\patterns\00-atoms-02-text-20-lead\00-atoms-02-text-20-lead.escaped.html" />
@@ -479,8 +468,6 @@
     <Content Include="public\patterns\01-molecules-06-components-00-social-share\01-molecules-06-components-00-social-share.html" />
     <Content Include="public\patterns\01-molecules-06-components-01-accordion\01-molecules-06-components-01-accordion.escaped.html" />
     <Content Include="public\patterns\01-molecules-06-components-01-accordion\01-molecules-06-components-01-accordion.html" />
-    <Content Include="public\patterns\01-molecules-06-components-02-single-comment\01-molecules-06-components-02-single-comment.escaped.html" />
-    <Content Include="public\patterns\01-molecules-06-components-02-single-comment\01-molecules-06-components-02-single-comment.html" />
     <Content Include="public\patterns\01-molecules-06-components-20-toolbar\01-molecules-06-components-20-toolbar.escaped.html" />
     <Content Include="public\patterns\01-molecules-06-components-20-toolbar\01-molecules-06-components-20-toolbar.html" />
     <Content Include="public\patterns\01-molecules-06-components-30-flyout\01-molecules-06-components-30-flyout.escaped.html" />
@@ -695,6 +682,11 @@
     <Content Include="css\scss\objects\_toolbar.scss" />
     <Content Include="css\scss\icons\_i-icon-sprite.scss" />
     <Content Include="css\scss\icons\_i-master-sprite.scss" />
+    <Content Include="prepros.cfg" />
+    <Content Include="css\style.css.map" />
+    <Content Include="css\style.ie-old.css.map" />
+    <Content Include="public\css\style.css.map" />
+    <Content Include="public\css\style.ie-old.css.map" />
     <Content Include="public\fonts\fontawesome-webfont.eot" />
     <Content Include="public\fonts\fontawesome-webfont.ttf" />
     <Content Include="public\fonts\fontawesome-webfont.woff" />
@@ -704,7 +696,6 @@
     <Content Include="public\patterns\00-atoms-01-global-10-fonts\00-atoms-01-global-10-fonts.mustache" />
     <Content Include="public\patterns\00-atoms-01-global-20-icons\00-atoms-01-global-20-icons.mustache" />
     <Content Include="public\patterns\00-atoms-02-text-00-headings\00-atoms-02-text-00-headings.mustache" />
-    <Content Include="public\patterns\00-atoms-02-text-04-time\00-atoms-02-text-04-time.mustache" />
     <Content Include="public\patterns\00-atoms-02-text-10-paragraph\00-atoms-02-text-10-paragraph.mustache" />
     <Content Include="public\patterns\00-atoms-02-text-20-lead\00-atoms-02-text-20-lead.mustache" />
     <Content Include="public\patterns\00-atoms-02-text-30-blockquote\00-atoms-02-text-30-blockquote.mustache" />
@@ -780,7 +771,6 @@
     <Content Include="public\patterns\01-molecules-05-navigation-40-navs\01-molecules-05-navigation-40-navs.mustache" />
     <Content Include="public\patterns\01-molecules-06-components-00-social-share\01-molecules-06-components-00-social-share.mustache" />
     <Content Include="public\patterns\01-molecules-06-components-01-accordion\01-molecules-06-components-01-accordion.mustache" />
-    <Content Include="public\patterns\01-molecules-06-components-02-single-comment\01-molecules-06-components-02-single-comment.mustache" />
     <Content Include="public\patterns\01-molecules-06-components-20-toolbar\01-molecules-06-components-20-toolbar.mustache" />
     <Content Include="public\patterns\01-molecules-06-components-30-flyout\01-molecules-06-components-30-flyout.mustache" />
     <Content Include="public\patterns\01-molecules-06-components-40-event-date\01-molecules-06-components-40-event-date.mustache" />
@@ -806,8 +796,6 @@
     <Content Include="public\styleguide\fonts\icomoon.ttf" />
     <Content Include="public\styleguide\fonts\icomoon.woff" />
     <Content Include="public\styleguide\html\README" />
-    <Content Include="css\style.css.map" />
-    <Content Include="css\style.ie-old.css.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
