@@ -1,42 +1,61 @@
 <!DOCTYPE html>
-	<!--[if lte IE 8]>       <html class="no-js ie8 ie-old pl"> <![endif]-->
-	<!--[if IE 9]>           <html class="no-js ie9 ie-old pl"> <![endif]-->
-	<!--[if gte IE 10]><!--> <html class="no-js pl"> <!--<![endif]-->
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Pattern Lab</title>
-		<meta charset="UTF-8">
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width" />
+  <!--[if lte IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 pl"> <![endif]-->
+  <!--[if IE 8]>			<html class="no-js lt-ie10 lt-ie9 ie8 pl"> <![endif]-->
+  <!--[if IE 9]>          <html class="no-js lt-ie10 ie9 pl"> <![endif]-->
+  <!--[if gt IE 9]><!-->	<html class="no-js pl"> <!--<![endif]-->
+  <head>
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <title>Pattern Lab</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width" />
 
-		<!--[if (lte IE 8) | (IEMobile)]>
-			<link rel="stylesheet" href="../../styles/style.ie-old.css?635483125278155079" media="all">
-		<![endif]-->
-		<!--[if (gte IE 9) | (!IEMobile)]><!-->
-			<link rel="stylesheet" href="../../css/style.css?635483125278155079" media="all" />
-			<link rel="stylesheet" href="../../css/docs/docs.css?635483125278155079" media="all" />
-		<!--<![endif]-->
+    <script>
+        WebFontConfig = {
+            google: { families: ['Droid+Serif:400,700,400italic,700italic:latin'] }
+        };
+        (function () {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+    <noscript>
+      <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'>
+    </noscript>
 
-		<script src="../../js/modernizr.js"></script>
+    <!--[if (lte IE 8)]>
+      <link rel="stylesheet" href="/css/style.ie-old.css?635613767402488259" media="all">
+    <![endif]-->
+    <!--[if (gte IE 9)]><!-->
+      <link rel="stylesheet" href="/css/style.css?635613767402488259" media="all" />
+    <!--<![endif]-->
+    <link rel="stylesheet" href="/css/docs/docs.css?635613767402488259" media="all" />
 
-		<!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-				<!-- never cache patterns -->
+    <script src="/js/min/picturefill.min.js" async></script>
+    <script src="/js/min/modernizr.min.js"></script>
+
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+      		<!-- never cache patterns -->
 		<meta http-equiv="cache-control" content="max-age=0" />
 		<meta http-equiv="cache-control" content="no-cache" />
 		<meta http-equiv="expires" content="0" />
 		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 		<meta http-equiv="pragma" content="no-cache" />
 		
-		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?635483125278155079" media="all">
-		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?635483125278155079" media="all" />
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?635613767402488259" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?635613767402488259" media="all" />
 		
-		<!-- End Pattern Lab -->
-	</head>
-    <body class="body" style="border: 1px solid #eee; margin: 20px 20px 21px; padding: 21px 20px;">
-        <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
+    <!-- End Pattern Lab -->
+  </head>
+  <body class="body u-cf">
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 		
 		<!-- View All Patterns in a Pattern Sub-Type -->
 		<div class="sg-main" role="main">
@@ -46,11 +65,14 @@
 					<div id="molecules-navbar-primary" class="sg-pattern">
 						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-05-navigation-00-navbar-primary/01-molecules-05-navigation-00-navbar-primary.html" class="patternLink" data-patternpartial="molecules-navbar-primary">Navbar Primary</a></h2>
 						<div class="sg-pattern-body">
-							<nav class="navbar__primary" role="navigation">
+							<nav class="navbar_primary" role="navigation">
     <ul id="toggle-nav" class="nav">
-        <li class="navbar__dd">
+        <li class="navbar_dd">
             <a href="#">Guiding</a>
-            <div class="navbar__dd-mega">
+			<button type="button" class="btn--link">
+				<i class="i"></i>
+			</button>
+            <div class="navbar_dd-mega">
                 <div class="l-container">
                     <ul class="nav">
                         <li><a href="#">Advice and information</a></li>
@@ -60,9 +82,12 @@
                 </div>
             </div>
         </li>
-        <li class="navbar__dd">
+        <li class="navbar_dd">
             <a href="#">Developing</a>
-            <div class="navbar__dd-mega">
+			<button type="button" class="btn--link">
+				<i class="i"></i>
+			</button>
+            <div class="navbar_dd-mega">
                 <div class="l-container">
                     <ul class="nav">
                         <li><a href="#">Board development</a></li>
@@ -71,9 +96,12 @@
                 </div>
             </div>
         </li>
-        <li class="navbar__dd">
+        <li class="navbar_dd">
             <a href="#">Connecting</a>
-            <div class="navbar__dd-mega">
+			<button type="button" class="btn--link">
+				<i class="i"></i>
+			</button>
+            <div class="navbar_dd-mega">
                 <div class="l-container">
                     <ul class="nav">
                         <li><a href="#">Events</a></li>
@@ -82,9 +110,12 @@
                 </div>
             </div>
         </li>
-        <li class="navbar__dd">
+        <li class="navbar_dd">
             <a href="#">Influencing</a>
-            <div class="navbar__dd-mega">
+			<button type="button" class="btn--link">
+				<i class="i"></i>
+			</button>
+            <div class="navbar_dd-mega">
                 <div class="l-container">
                     <ul class="nav">
                         <li><a href="#">Area of influence</a></li>
@@ -93,17 +124,20 @@
                 </div>
             </div>
         </li>
-        <li class="navbar__dd">
+        <li class="navbar_dd">
             <a href="#">You</a>
-            <div class="navbar__dd-mega">
+			<button type="button" class="btn--link">
+				<i class="i"></i>
+			</button>
+            <div class="navbar_dd-mega">
                 <div class="l-container">
                     <ul class="nav">
-                        <li><h4><a href="#">Your venues and benefits</a></h4></li>
+                        <li><h4 class="navbar_title"><a href="#">Your venues and benefits</a></h4></li>
                         <li><a href="#">International</a></li>
                         <li><a href="#">East Midlands</a></li>
                     </ul>
                     <ul class="nav">
-                        <li><h4><a href="#">Your local network</a></h4></li>
+                        <li><h4 class="navbar_title"><a href="#">Your local network</a></h4></li>
                         <li><a href="#">Director training and development</a></li>
                         <li><a href="#">Events</a></li>
                         <li><a href="#">Legal alert</a></li>
@@ -135,11 +169,14 @@
 								<h3 class="sg-code-head">HTML</h3>
 								<pre class="sg-code-html">
 									<code>
-										&lt;nav class=&quot;navbar__primary&quot; role=&quot;navigation&quot;&gt;
+										&lt;nav class=&quot;navbar_primary&quot; role=&quot;navigation&quot;&gt;
     &lt;ul id=&quot;toggle-nav&quot; class=&quot;nav&quot;&gt;
-        &lt;li class=&quot;navbar__dd&quot;&gt;
+        &lt;li class=&quot;navbar_dd&quot;&gt;
             &lt;a href=&quot;#&quot;&gt;Guiding&lt;/a&gt;
-            &lt;div class=&quot;navbar__dd-mega&quot;&gt;
+			&lt;button type=&quot;button&quot; class=&quot;btn--link&quot;&gt;
+				&lt;i class=&quot;i&quot;&gt;&lt;/i&gt;
+			&lt;/button&gt;
+            &lt;div class=&quot;navbar_dd-mega&quot;&gt;
                 &lt;div class=&quot;l-container&quot;&gt;
                     &lt;ul class=&quot;nav&quot;&gt;
                         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Advice and information&lt;/a&gt;&lt;/li&gt;
@@ -149,9 +186,12 @@
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/li&gt;
-        &lt;li class=&quot;navbar__dd&quot;&gt;
+        &lt;li class=&quot;navbar_dd&quot;&gt;
             &lt;a href=&quot;#&quot;&gt;Developing&lt;/a&gt;
-            &lt;div class=&quot;navbar__dd-mega&quot;&gt;
+			&lt;button type=&quot;button&quot; class=&quot;btn--link&quot;&gt;
+				&lt;i class=&quot;i&quot;&gt;&lt;/i&gt;
+			&lt;/button&gt;
+            &lt;div class=&quot;navbar_dd-mega&quot;&gt;
                 &lt;div class=&quot;l-container&quot;&gt;
                     &lt;ul class=&quot;nav&quot;&gt;
                         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Board development&lt;/a&gt;&lt;/li&gt;
@@ -160,9 +200,12 @@
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/li&gt;
-        &lt;li class=&quot;navbar__dd&quot;&gt;
+        &lt;li class=&quot;navbar_dd&quot;&gt;
             &lt;a href=&quot;#&quot;&gt;Connecting&lt;/a&gt;
-            &lt;div class=&quot;navbar__dd-mega&quot;&gt;
+			&lt;button type=&quot;button&quot; class=&quot;btn--link&quot;&gt;
+				&lt;i class=&quot;i&quot;&gt;&lt;/i&gt;
+			&lt;/button&gt;
+            &lt;div class=&quot;navbar_dd-mega&quot;&gt;
                 &lt;div class=&quot;l-container&quot;&gt;
                     &lt;ul class=&quot;nav&quot;&gt;
                         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Events&lt;/a&gt;&lt;/li&gt;
@@ -171,9 +214,12 @@
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/li&gt;
-        &lt;li class=&quot;navbar__dd&quot;&gt;
+        &lt;li class=&quot;navbar_dd&quot;&gt;
             &lt;a href=&quot;#&quot;&gt;Influencing&lt;/a&gt;
-            &lt;div class=&quot;navbar__dd-mega&quot;&gt;
+			&lt;button type=&quot;button&quot; class=&quot;btn--link&quot;&gt;
+				&lt;i class=&quot;i&quot;&gt;&lt;/i&gt;
+			&lt;/button&gt;
+            &lt;div class=&quot;navbar_dd-mega&quot;&gt;
                 &lt;div class=&quot;l-container&quot;&gt;
                     &lt;ul class=&quot;nav&quot;&gt;
                         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Area of influence&lt;/a&gt;&lt;/li&gt;
@@ -182,17 +228,20 @@
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/li&gt;
-        &lt;li class=&quot;navbar__dd&quot;&gt;
+        &lt;li class=&quot;navbar_dd&quot;&gt;
             &lt;a href=&quot;#&quot;&gt;You&lt;/a&gt;
-            &lt;div class=&quot;navbar__dd-mega&quot;&gt;
+			&lt;button type=&quot;button&quot; class=&quot;btn--link&quot;&gt;
+				&lt;i class=&quot;i&quot;&gt;&lt;/i&gt;
+			&lt;/button&gt;
+            &lt;div class=&quot;navbar_dd-mega&quot;&gt;
                 &lt;div class=&quot;l-container&quot;&gt;
                     &lt;ul class=&quot;nav&quot;&gt;
-                        &lt;li&gt;&lt;h4&gt;&lt;a href=&quot;#&quot;&gt;Your venues and benefits&lt;/a&gt;&lt;/h4&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;h4 class=&quot;navbar_title&quot;&gt;&lt;a href=&quot;#&quot;&gt;Your venues and benefits&lt;/a&gt;&lt;/h4&gt;&lt;/li&gt;
                         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;International&lt;/a&gt;&lt;/li&gt;
                         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;East Midlands&lt;/a&gt;&lt;/li&gt;
                     &lt;/ul&gt;
                     &lt;ul class=&quot;nav&quot;&gt;
-                        &lt;li&gt;&lt;h4&gt;&lt;a href=&quot;#&quot;&gt;Your local network&lt;/a&gt;&lt;/h4&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;h4 class=&quot;navbar_title&quot;&gt;&lt;a href=&quot;#&quot;&gt;Your local network&lt;/a&gt;&lt;/h4&gt;&lt;/li&gt;
                         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Director training and development&lt;/a&gt;&lt;/li&gt;
                         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Events&lt;/a&gt;&lt;/li&gt;
                         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Legal alert&lt;/a&gt;&lt;/li&gt;
@@ -252,59 +301,65 @@
 					<div id="molecules-navbar-crumbs" class="sg-pattern">
 						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-05-navigation-02-navbar-crumbs/01-molecules-05-navigation-02-navbar-crumbs.html" class="patternLink" data-patternpartial="molecules-navbar-crumbs">Navbar Crumbs</a></h2>
 						<div class="sg-pattern-body">
-							<div class="navbar__crumbs">
-    <nav id="breadcrumbs" class="crumbs">
-        <h3 class="crumbs__header"><a href="#breadcrumbs">Where Am I?</a></h3>
-        <ul class="crumbs__list">
-            <li class="crumbs__item">
-                <a href="/">Home</a>
+							<div class="navbar_crumbs">
+    <nav class="list-collapsable crumbs">
+        <h3 class="list-collapsable_header"><a href="#" class="i i-triangle-down">Where Am I?</a></h3>
+        <ul class="list-collapsable_list">
+            <li class="crumbs_item crumbs_item--first">
+                <a href="/" class="i i-home" title="Home">
+                  <span>Home</span>
+                </a>
             </li>
-            <li class="crumbs__item">
-                <a href="/level-1">Level 1</a>
+            <li class="crumbs_item">
+                <a href="/level-1" title="Connecting">Connecting</a>
             </li>
-            <li class="crumbs__item crumbs__item--last">
-                <a href="/">Level 2</a>
+            <li class="crumbs_item">
+                <a href="/" title="Events">Events</a>
             </li>
+          <li class="crumbs_item crumbs_item--last">Annual Convention 2015</li>
         </ul>
     </nav>
 
-    <div id="js-navbarSearch" class="navbar__search">
+    <!--<div id="js-navbarSearch" class="navbar__search">
         <form>
             <label for="search" class="sr-only">Search website</label>
             <input type="search" id="search" class="f-control navbar__search-input" placeholder="Search website">
             <input type="submit" id="btnSearch" class="navbar__search-submit" aria-label="Search">
             <span class="fa navbar__search-icon" title="Click to Search"></span>
         </form>
-    </div>
+    </div>-->
 </div>
 							<div class="sg-code" style="display: none">
 								<h3 class="sg-code-head">HTML</h3>
 								<pre class="sg-code-html">
 									<code>
-										&lt;div class=&quot;navbar__crumbs&quot;&gt;
-    &lt;nav id=&quot;breadcrumbs&quot; class=&quot;crumbs&quot;&gt;
-        &lt;h3 class=&quot;crumbs__header&quot;&gt;&lt;a href=&quot;#breadcrumbs&quot;&gt;Where Am I?&lt;/a&gt;&lt;/h3&gt;
-        &lt;ul class=&quot;crumbs__list&quot;&gt;
-            &lt;li class=&quot;crumbs__item&quot;&gt;
-                &lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;
+										&lt;div class=&quot;navbar_crumbs&quot;&gt;
+    &lt;nav class=&quot;list-collapsable crumbs&quot;&gt;
+        &lt;h3 class=&quot;list-collapsable_header&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;i i-triangle-down&quot;&gt;Where Am I?&lt;/a&gt;&lt;/h3&gt;
+        &lt;ul class=&quot;list-collapsable_list&quot;&gt;
+            &lt;li class=&quot;crumbs_item crumbs_item--first&quot;&gt;
+                &lt;a href=&quot;/&quot; class=&quot;i i-home&quot; title=&quot;Home&quot;&gt;
+                  &lt;span&gt;Home&lt;/span&gt;
+                &lt;/a&gt;
             &lt;/li&gt;
-            &lt;li class=&quot;crumbs__item&quot;&gt;
-                &lt;a href=&quot;/level-1&quot;&gt;Level 1&lt;/a&gt;
+            &lt;li class=&quot;crumbs_item&quot;&gt;
+                &lt;a href=&quot;/level-1&quot; title=&quot;Connecting&quot;&gt;Connecting&lt;/a&gt;
             &lt;/li&gt;
-            &lt;li class=&quot;crumbs__item crumbs__item--last&quot;&gt;
-                &lt;a href=&quot;/&quot;&gt;Level 2&lt;/a&gt;
+            &lt;li class=&quot;crumbs_item&quot;&gt;
+                &lt;a href=&quot;/&quot; title=&quot;Events&quot;&gt;Events&lt;/a&gt;
             &lt;/li&gt;
+          &lt;li class=&quot;crumbs_item crumbs_item--last&quot;&gt;Annual Convention 2015&lt;/li&gt;
         &lt;/ul&gt;
     &lt;/nav&gt;
 
-    &lt;div id=&quot;js-navbarSearch&quot; class=&quot;navbar__search&quot;&gt;
+    &lt;!--&lt;div id=&quot;js-navbarSearch&quot; class=&quot;navbar__search&quot;&gt;
         &lt;form&gt;
             &lt;label for=&quot;search&quot; class=&quot;sr-only&quot;&gt;Search website&lt;/label&gt;
             &lt;input type=&quot;search&quot; id=&quot;search&quot; class=&quot;f-control navbar__search-input&quot; placeholder=&quot;Search website&quot;&gt;
             &lt;input type=&quot;submit&quot; id=&quot;btnSearch&quot; class=&quot;navbar__search-submit&quot; aria-label=&quot;Search&quot;&gt;
             &lt;span class=&quot;fa navbar__search-icon&quot; title=&quot;Click to Search&quot;&gt;&lt;/span&gt;
         &lt;/form&gt;
-    &lt;/div&gt;
+    &lt;/div&gt;--&gt;
 &lt;/div&gt;
 									</code>
 								</pre>
@@ -315,26 +370,54 @@
 						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-05-navigation-03-pagination/01-molecules-05-navigation-03-pagination.html" class="patternLink" data-patternpartial="molecules-pagination">Pagination</a></h2>
 						<div class="sg-pattern-body">
 							<ol class="pagination">
-	<li class="current"><a href="#">1</a></li>
-	<li><a href="#">2</a></li>
-	<li><a href="#">3</a></li>
-	<li><a href="#">4</a></li>
-	<li><a href="#">5</a></li>
-	<li><a href="#">6</a></li>
-	<li><a href="#">7</a></li>
+  <li>
+    <a href="#"  class="btn btn--sm">1</a>
+  </li>
+  <li class="is-current">
+    <a href="#" class="btn btn--sm">2</a>
+  </li>
+  <li>
+    <a href="#" class="btn btn--sm">3</a>
+  </li>
+  <li>
+    <a href="#" class="btn btn--sm">4</a>
+  </li>
+  <li>
+    <a href="#" class="btn btn--sm">5</a>
+  </li>
+  <li>
+    <a href="#" class="btn btn--sm">6</a>
+  </li>
+  <li>
+    <a href="#" class="btn btn--sm">7</a>
+  </li>
 </ol>
 							<div class="sg-code" style="display: none">
 								<h3 class="sg-code-head">HTML</h3>
 								<pre class="sg-code-html">
 									<code>
 										&lt;ol class=&quot;pagination&quot;&gt;
-	&lt;li class=&quot;current&quot;&gt;&lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;4&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;5&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;6&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;#&quot;&gt;7&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;#&quot;  class=&quot;btn btn--sm&quot;&gt;1&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;is-current&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;btn btn--sm&quot;&gt;2&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;#&quot; class=&quot;btn btn--sm&quot;&gt;3&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;#&quot; class=&quot;btn btn--sm&quot;&gt;4&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;#&quot; class=&quot;btn btn--sm&quot;&gt;5&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;#&quot; class=&quot;btn btn--sm&quot;&gt;6&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;#&quot; class=&quot;btn btn--sm&quot;&gt;7&lt;/a&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 									</code>
 								</pre>
@@ -370,7 +453,7 @@
 					<div id="molecules-navbar-secondary" class="sg-pattern">
 						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-05-navigation-05-navbar-secondary/01-molecules-05-navigation-05-navbar-secondary.html" class="patternLink" data-patternpartial="molecules-navbar-secondary">Navbar Secondary</a></h2>
 						<div class="sg-pattern-body">
-							<div class="navbar__secondary">
+							<div class="navbar_secondary">
     <!--<ul class="nav navbar__nav--social">
         <li>
             <a href="#" class="link-linkedin"><i class="fa fa-linkedin"></i></a>
@@ -385,7 +468,7 @@
             <a href="#" class="link-youtube"><i class="fa fa-youtube-play"></i></a>
         </li>
     </ul>-->
-    <nav class="navbar__nav--mini" role="navigation">
+    <nav class="navbar_nav--mini" role="navigation">
         <ul class="nav">
             <li>
                 <a href="#">Director</a>
@@ -409,7 +492,7 @@
 								<h3 class="sg-code-head">HTML</h3>
 								<pre class="sg-code-html">
 									<code>
-										&lt;div class=&quot;navbar__secondary&quot;&gt;
+										&lt;div class=&quot;navbar_secondary&quot;&gt;
     &lt;!--&lt;ul class=&quot;nav navbar__nav--social&quot;&gt;
         &lt;li&gt;
             &lt;a href=&quot;#&quot; class=&quot;link-linkedin&quot;&gt;&lt;i class=&quot;fa fa-linkedin&quot;&gt;&lt;/i&gt;&lt;/a&gt;
@@ -424,7 +507,7 @@
             &lt;a href=&quot;#&quot; class=&quot;link-youtube&quot;&gt;&lt;i class=&quot;fa fa-youtube-play&quot;&gt;&lt;/i&gt;&lt;/a&gt;
         &lt;/li&gt;
     &lt;/ul&gt;--&gt;
-    &lt;nav class=&quot;navbar__nav--mini&quot; role=&quot;navigation&quot;&gt;
+    &lt;nav class=&quot;navbar_nav--mini&quot; role=&quot;navigation&quot;&gt;
         &lt;ul class=&quot;nav&quot;&gt;
             &lt;li&gt;
                 &lt;a href=&quot;#&quot;&gt;Director&lt;/a&gt;
@@ -449,6 +532,545 @@
 							</div>
 						</div>
 					</div>
+					<div id="molecules-tabs" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-05-navigation-30-tabs/01-molecules-05-navigation-30-tabs.html" class="patternLink" data-patternpartial="molecules-tabs">Tabs</a></h2>
+						<div class="sg-pattern-body">
+							<hr/>
+<nav role='navigation' class="tabs">
+  <input type="checkbox" id="js-tog-tabs" class="toggle_chkbx" aria-pressed="false" />
+  <label for="js-tog-tabs" id="leftPush" class="toggle_btn i i-menu" role="button">
+  	<span class="toggle_txt">MENU</span>
+  	<!--<span class="u-sr">Toggle menu</span>-->
+  </label>  
+  <ul class="nav nav--tabs toggle_target">
+    <li class="is-active">
+        <a href="#tab-1">Tab 1fdgfdpppp</a>
+    </li>
+    <li>
+        <a href="#tab-2">Tab 2dfgfdgsdf</a>
+    </li>
+    <li>
+        <a href="#tab-3">Tab 3fdgfdgfd</a>
+    </li>
+    <li>
+      <a href="#tab-4">Tab 4fdgfdgfd</a>
+    </li>
+    <li>
+      <a href="#tab-5">Tab 5fdgfdgfd</a>
+    </li>
+    <li>
+      <a href="#tab-6">Tab 6fdgfdgfd</a>
+    </li>
+    <li>
+      <a href="#tab-7">Tab 7fdgfdgfd</a>
+    </li>
+    <li>
+        <a href="http://google.com" target="_blank">Go To Google &rarr;</a>
+    </li>
+    <!--<li class="tabs_actions">
+        <div class="btn-group">
+            <a href="#" class="btn btn--twitter i i-twitter i--white"></a>
+            <button type="button" class="btn btn--neutral i i-search"></button>
+        </div>
+    </li>-->
+  </ul>
+</nav>
+
+<ul class="tabs_content">
+  <li id="tab-1" class="is-active">
+      <h2>Tab 1</h2>
+      <p class="">A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>  </li>
+  <li id="tab-2">
+      <h2>Tab 2</h2>
+      <p class="">A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>  </li>
+  <li id="tab-3">
+      <h2>Tab 3</h2>
+      <p class="">A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>  </li>
+  <li id="tab-4">
+    <h2>Tab 4</h2>
+    <p class="">A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>  </li>
+  <li id="tab-5">
+    <h2>Tab 5</h2>
+    <p class="">A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>  </li>
+  <li id="tab-6">
+    <h2>Tab 6</h2>
+    <p class="">A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>  </li>
+  <li id="tab-7">
+    <h2>Tab 7</h2>
+    <p class="">A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>  </li>
+</ul>
+
+							<div class="sg-code" style="display: none">
+									<div class="sg-code-contains">
+										This pattern contains: 
+											<a href="../../patterns/00-atoms-06-buttons-20-toggle-menu/00-atoms-06-buttons-20-toggle-menu.html"><code>atoms-toggle-menu</code></a>
+											<a href="../../patterns/00-atoms-02-text-10-paragraph/00-atoms-02-text-10-paragraph.html"><code>atoms-paragraph</code></a>
+									</div>
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;hr/&gt;
+&lt;nav role=&#39;navigation&#39; class=&quot;tabs&quot;&gt;
+  &lt;input type=&quot;checkbox&quot; id=&quot;js-tog-tabs&quot; class=&quot;toggle_chkbx&quot; aria-pressed=&quot;false&quot; /&gt;
+  &lt;label for=&quot;js-tog-tabs&quot; id=&quot;leftPush&quot; class=&quot;toggle_btn i i-menu&quot; role=&quot;button&quot;&gt;
+  	&lt;span class=&quot;toggle_txt&quot;&gt;MENU&lt;/span&gt;
+  	&lt;!--&lt;span class=&quot;u-sr&quot;&gt;Toggle menu&lt;/span&gt;--&gt;
+  &lt;/label&gt;  
+  &lt;ul class=&quot;nav nav--tabs toggle_target&quot;&gt;
+    &lt;li class=&quot;is-active&quot;&gt;
+        &lt;a href=&quot;#tab-1&quot;&gt;Tab 1fdgfdpppp&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#tab-2&quot;&gt;Tab 2dfgfdgsdf&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;#tab-3&quot;&gt;Tab 3fdgfdgfd&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#tab-4&quot;&gt;Tab 4fdgfdgfd&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#tab-5&quot;&gt;Tab 5fdgfdgfd&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#tab-6&quot;&gt;Tab 6fdgfdgfd&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#tab-7&quot;&gt;Tab 7fdgfdgfd&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&quot;http://google.com&quot; target=&quot;_blank&quot;&gt;Go To Google &amp;rarr;&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;!--&lt;li class=&quot;tabs_actions&quot;&gt;
+        &lt;div class=&quot;btn-group&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;btn btn--twitter i i-twitter i--white&quot;&gt;&lt;/a&gt;
+            &lt;button type=&quot;button&quot; class=&quot;btn btn--neutral i i-search&quot;&gt;&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;--&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;ul class=&quot;tabs_content&quot;&gt;
+  &lt;li id=&quot;tab-1&quot; class=&quot;is-active&quot;&gt;
+      &lt;h2&gt;Tab 1&lt;/h2&gt;
+      &lt;p class=&quot;&quot;&gt;A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.&lt;/p&gt;  &lt;/li&gt;
+  &lt;li id=&quot;tab-2&quot;&gt;
+      &lt;h2&gt;Tab 2&lt;/h2&gt;
+      &lt;p class=&quot;&quot;&gt;A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.&lt;/p&gt;  &lt;/li&gt;
+  &lt;li id=&quot;tab-3&quot;&gt;
+      &lt;h2&gt;Tab 3&lt;/h2&gt;
+      &lt;p class=&quot;&quot;&gt;A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.&lt;/p&gt;  &lt;/li&gt;
+  &lt;li id=&quot;tab-4&quot;&gt;
+    &lt;h2&gt;Tab 4&lt;/h2&gt;
+    &lt;p class=&quot;&quot;&gt;A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.&lt;/p&gt;  &lt;/li&gt;
+  &lt;li id=&quot;tab-5&quot;&gt;
+    &lt;h2&gt;Tab 5&lt;/h2&gt;
+    &lt;p class=&quot;&quot;&gt;A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.&lt;/p&gt;  &lt;/li&gt;
+  &lt;li id=&quot;tab-6&quot;&gt;
+    &lt;h2&gt;Tab 6&lt;/h2&gt;
+    &lt;p class=&quot;&quot;&gt;A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.&lt;/p&gt;  &lt;/li&gt;
+  &lt;li id=&quot;tab-7&quot;&gt;
+    &lt;h2&gt;Tab 7&lt;/h2&gt;
+    &lt;p class=&quot;&quot;&gt;A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.&lt;/p&gt;  &lt;/li&gt;
+&lt;/ul&gt;
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-tabs-vertical" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-05-navigation-31-tabs-vertical/01-molecules-05-navigation-31-tabs-vertical.html" class="patternLink" data-patternpartial="molecules-tabs-vertical">Tabs Vertical</a></h2>
+						<div class="sg-pattern-body">
+							<nav role='navigation' class="tabs tabs--vertical">
+    <input type="checkbox" id="js-tog-tabs1" class="toggle_chkbx" aria-pressed="false" />
+    <label for="js-tog-tabs1" id="leftPush" class="toggle_btn i i-menu" role="button">
+    	<span class="toggle_txt">MENU</span>
+    	<!--<span class="u-sr">Toggle menu</span>-->
+    </label>
+    <ul class="nav nav--tabs toggle_target">
+        <li>
+            <a href="#tab-1">Tab 1</a>
+        </li>
+        <li class="is-active">
+            <a href="#tab-2">Tab 2</a>
+        </li>
+        <li>
+            <a href="#tab-3">Tab 3</a>
+        </li>
+        <!--<li>
+            <a href="http://google.com">Go To Google &rarr;</a>
+        </li>-->
+    </ul>
+</nav>
+
+<ul class="tabs_content">
+  <li id="tab-1">
+      <h2>Tab 1</h2>
+      <p class="">A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>  </li>
+
+  <li id="tab-2" class="is-active">
+      <h2>Tab 2</h2>
+      <p class="">A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>  </li>
+
+  <li id="tab-3">
+      <h2>Tab 3</h2>
+      <p class="">A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>  </li>
+</ul>
+
+							<div class="sg-code" style="display: none">
+									<div class="sg-code-contains">
+										This pattern contains: 
+											<a href="../../patterns/00-atoms-06-buttons-20-toggle-menu/00-atoms-06-buttons-20-toggle-menu.html"><code>atoms-toggle-menu</code></a>
+											<a href="../../patterns/00-atoms-02-text-10-paragraph/00-atoms-02-text-10-paragraph.html"><code>atoms-paragraph</code></a>
+									</div>
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;nav role=&#39;navigation&#39; class=&quot;tabs tabs--vertical&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;js-tog-tabs1&quot; class=&quot;toggle_chkbx&quot; aria-pressed=&quot;false&quot; /&gt;
+    &lt;label for=&quot;js-tog-tabs1&quot; id=&quot;leftPush&quot; class=&quot;toggle_btn i i-menu&quot; role=&quot;button&quot;&gt;
+    	&lt;span class=&quot;toggle_txt&quot;&gt;MENU&lt;/span&gt;
+    	&lt;!--&lt;span class=&quot;u-sr&quot;&gt;Toggle menu&lt;/span&gt;--&gt;
+    &lt;/label&gt;
+    &lt;ul class=&quot;nav nav--tabs toggle_target&quot;&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#tab-1&quot;&gt;Tab 1&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;is-active&quot;&gt;
+            &lt;a href=&quot;#tab-2&quot;&gt;Tab 2&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#tab-3&quot;&gt;Tab 3&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;!--&lt;li&gt;
+            &lt;a href=&quot;http://google.com&quot;&gt;Go To Google &amp;rarr;&lt;/a&gt;
+        &lt;/li&gt;--&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;ul class=&quot;tabs_content&quot;&gt;
+  &lt;li id=&quot;tab-1&quot;&gt;
+      &lt;h2&gt;Tab 1&lt;/h2&gt;
+      &lt;p class=&quot;&quot;&gt;A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.&lt;/p&gt;  &lt;/li&gt;
+
+  &lt;li id=&quot;tab-2&quot; class=&quot;is-active&quot;&gt;
+      &lt;h2&gt;Tab 2&lt;/h2&gt;
+      &lt;p class=&quot;&quot;&gt;A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.&lt;/p&gt;  &lt;/li&gt;
+
+  &lt;li id=&quot;tab-3&quot;&gt;
+      &lt;h2&gt;Tab 3&lt;/h2&gt;
+      &lt;p class=&quot;&quot;&gt;A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.&lt;/p&gt;  &lt;/li&gt;
+&lt;/ul&gt;
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-tabs-vertical-right" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-05-navigation-32-tabs-vertical-right/01-molecules-05-navigation-32-tabs-vertical-right.html" class="patternLink" data-patternpartial="molecules-tabs-vertical-right">Tabs Vertical Right</a></h2>
+						<div class="sg-pattern-body">
+							<nav role='navigation' class="tabs tabs--vertical tabs--vertical--right">
+    <input type="checkbox" id="js-tog-tabs2" class="toggle_chkbx" aria-pressed="false" />
+    <label for="js-tog-tabs2" id="leftPush" class="toggle_btn i i-menu" role="button">
+    	<span class="toggle_txt">MENU</span>
+    	<!--<span class="u-sr">Toggle menu</span>-->
+    </label>
+    <ul class="nav nav--tabs toggle_target">
+        <li>
+            <a href="#tab-1">Tab 1</a>
+        </li>
+        <li class="is-active">
+            <a href="#tab-2">Tab 2</a>
+        </li>
+        <li>
+            <a href="#tab-3">Tab 3</a>
+        </li>
+        <!--<li>
+            <a href="http://google.com">Go To Google &rarr;</a>
+        </li>-->
+    </ul>
+</nav>
+
+<ul class="tabs_content">
+    <li id="tab-1">
+        <h2>Tab 1</h2>
+        <p class="">A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>    </li>
+
+    <li id="tab-2" class="is-active">
+        <h2>Tab 2</h2>
+        <p class="">A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>    </li>
+
+    <li id="tab-3">
+        <h2>Tab 3</h2>
+        <p class="">A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>    </li>
+</ul>
+
+							<div class="sg-code" style="display: none">
+									<div class="sg-code-contains">
+										This pattern contains: 
+											<a href="../../patterns/00-atoms-06-buttons-20-toggle-menu/00-atoms-06-buttons-20-toggle-menu.html"><code>atoms-toggle-menu</code></a>
+											<a href="../../patterns/00-atoms-02-text-10-paragraph/00-atoms-02-text-10-paragraph.html"><code>atoms-paragraph</code></a>
+									</div>
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;nav role=&#39;navigation&#39; class=&quot;tabs tabs--vertical tabs--vertical--right&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; id=&quot;js-tog-tabs2&quot; class=&quot;toggle_chkbx&quot; aria-pressed=&quot;false&quot; /&gt;
+    &lt;label for=&quot;js-tog-tabs2&quot; id=&quot;leftPush&quot; class=&quot;toggle_btn i i-menu&quot; role=&quot;button&quot;&gt;
+    	&lt;span class=&quot;toggle_txt&quot;&gt;MENU&lt;/span&gt;
+    	&lt;!--&lt;span class=&quot;u-sr&quot;&gt;Toggle menu&lt;/span&gt;--&gt;
+    &lt;/label&gt;
+    &lt;ul class=&quot;nav nav--tabs toggle_target&quot;&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#tab-1&quot;&gt;Tab 1&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;is-active&quot;&gt;
+            &lt;a href=&quot;#tab-2&quot;&gt;Tab 2&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#tab-3&quot;&gt;Tab 3&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;!--&lt;li&gt;
+            &lt;a href=&quot;http://google.com&quot;&gt;Go To Google &amp;rarr;&lt;/a&gt;
+        &lt;/li&gt;--&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;ul class=&quot;tabs_content&quot;&gt;
+    &lt;li id=&quot;tab-1&quot;&gt;
+        &lt;h2&gt;Tab 1&lt;/h2&gt;
+        &lt;p class=&quot;&quot;&gt;A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.&lt;/p&gt;    &lt;/li&gt;
+
+    &lt;li id=&quot;tab-2&quot; class=&quot;is-active&quot;&gt;
+        &lt;h2&gt;Tab 2&lt;/h2&gt;
+        &lt;p class=&quot;&quot;&gt;A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.&lt;/p&gt;    &lt;/li&gt;
+
+    &lt;li id=&quot;tab-3&quot;&gt;
+        &lt;h2&gt;Tab 3&lt;/h2&gt;
+        &lt;p class=&quot;&quot;&gt;A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.&lt;/p&gt;    &lt;/li&gt;
+&lt;/ul&gt;
+
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="molecules-navs" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-05-navigation-40-navs/01-molecules-05-navigation-40-navs.html" class="patternLink" data-patternpartial="molecules-navs">Navs</a></h2>
+						<div class="sg-pattern-body">
+							<nav role="navigation">
+    <ul class="nav">
+        <li>
+            <a href="#">Advice and information</a>
+        </li>
+        <li class="is-disabled">
+            <a href="#">Ask Anna</a>
+        </li>
+        <li class="is-active">
+            <a href="#">Business topics</a>
+        </li>
+        <li>
+            <a href="#">Business topics</a>
+        </li>
+    </ul>
+</nav>
+
+<nav role="navigation">
+    <ul class="nav nav--inline">
+        <li>
+            <a href="#">Advice and information</a>
+        </li>
+        <li class="is-disabled">
+            <a href="#">Ask Anna</a>
+        </li>
+        <li class="is-active">
+            <a href="#">Business topics</a>
+        </li>
+        <li>
+            <a href="#">Business topics</a>
+        </li>
+    </ul>
+</nav>
+
+<nav role="navigation">
+    <ul class="nav list--rows">
+        <li>
+            <a href="#">Advice and information</a>
+        </li>
+        <li class="is-disabled">
+            <a href="#">Ask Anna</a>
+        </li>
+        <li class="is-active">
+            <a href="#">Business topics</a>
+        </li>
+        <li>
+            <a href="#">Business topics</a>
+        </li>
+    </ul>
+</nav>
+
+<nav class="u-fr" role="navigation">
+    <ul class="nav nav--inline list--cols">
+        <li>
+            <a href="#">Advice and information</a>
+        </li>
+        <li class="is-disabled">
+            <a href="#">Ask Anna</a>
+        </li>
+        <li class="is-active">
+            <a href="#">Business topics</a>
+        </li>
+        <li>
+            <a href="#">Business topics</a>
+        </li>
+    </ul>
+</nav>
+
+<nav class="u-cr" role="navigation">
+    <ul class="nav nav--pills">
+        <li>
+            <a href="#">Advice and information</a>
+        </li>
+        <li class="is-disabled">
+            <a href="#">Ask Anna</a>
+        </li>
+        <li class="is-active">
+            <a href="#">Business topics</a>
+        </li>
+        <li>
+            <a href="#">Business topics</a>
+        </li>
+    </ul>
+</nav>
+
+<nav role="navigation">
+    <ul class="nav nav--pills nav--inline">
+        <li>
+            <a href="#">Advice and information</a>
+        </li>
+        <li class="is-disabled">
+            <a href="#">Ask Anna</a>
+        </li>
+        <li class="is-active">
+            <a href="#">Business topics</a>
+        </li>
+        <li>
+            <a href="#">Business topics</a>
+        </li>
+    </ul>
+</nav>
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;nav role=&quot;navigation&quot;&gt;
+    &lt;ul class=&quot;nav&quot;&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Advice and information&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;is-disabled&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;Ask Anna&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;is-active&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;Business topics&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Business topics&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;nav role=&quot;navigation&quot;&gt;
+    &lt;ul class=&quot;nav nav--inline&quot;&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Advice and information&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;is-disabled&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;Ask Anna&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;is-active&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;Business topics&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Business topics&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;nav role=&quot;navigation&quot;&gt;
+    &lt;ul class=&quot;nav list--rows&quot;&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Advice and information&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;is-disabled&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;Ask Anna&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;is-active&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;Business topics&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Business topics&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;nav class=&quot;u-fr&quot; role=&quot;navigation&quot;&gt;
+    &lt;ul class=&quot;nav nav--inline list--cols&quot;&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Advice and information&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;is-disabled&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;Ask Anna&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;is-active&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;Business topics&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Business topics&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;nav class=&quot;u-cr&quot; role=&quot;navigation&quot;&gt;
+    &lt;ul class=&quot;nav nav--pills&quot;&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Advice and information&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;is-disabled&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;Ask Anna&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;is-active&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;Business topics&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Business topics&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;nav role=&quot;navigation&quot;&gt;
+    &lt;ul class=&quot;nav nav--pills nav--inline&quot;&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Advice and information&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;is-disabled&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;Ask Anna&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;is-active&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;Business topics&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Business topics&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
 			</div> <!--end #sg-patterns-->
 	
 		</div><!--end .sg-main-->
@@ -461,12 +1083,14 @@
 		</script>
 		
 
-      <div class="flyout__overlay"></div>
-    </div>
+  <div class="flyout_overlay"></div>
+</div>
 
-    <script src="../../js/jquery.min.js"></script>
-    <script src="../../js/min/global.min.js"></script>
-    <script src="../../js/forms.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/min/jquery-1.11.1.min.js"><\/script>')</script>
+    <script src="/js/min/global.min.js"></script>
+    <script src="/js/min/forms.min.js"></script>
+	<script src="/js/tabs.js"></script>
 
 	<!--DO NOT REMOVE-->
 		<script>
@@ -501,10 +1125,10 @@
 				
 			}
 		</script>
-		<script id="pl-js-polyfill-insert-635483125278155079">
+		<script id="pl-js-polyfill-insert-635613767402488259">
 			(function() {
 				if (self != top) {
-					var cb = '635483125278155079';
+					var cb = '635613767402488259';
 					var js = [];
 					if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
 						js.push("styleguide/js/vendor/classlist-polyfill.js");
@@ -513,10 +1137,10 @@
 				}
 			})();
 		</script>
-		<script id="pl-js-insert-635483125278155079">
+		<script id="pl-js-insert-635613767402488259">
 			(function() {
 				if (self != top) {
-					var cb = '635483125278155079';
+					var cb = '635613767402488259';
 					var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
 					scriptLoader.run(js,cb,'pl-js-insert');
 				}
