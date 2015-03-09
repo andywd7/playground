@@ -23,6 +23,22 @@
     }
   });
 
+  jQuery('lt-ie10 .has-icon .i, lt-ie10 .has-icon--right .i').on('mouseover mouseleave click', function (e) {
+      var $btn = jQuery(this).siblings('.btn:not(:disabled)');
+      if (e.type == 'mouseover') {
+          $btn.addClass('is-hover');
+      } else if (e.type == 'mouseleave') {
+          $btn.removeClass('is-hover');
+      } else {
+          $btn.click();
+          console.log('clicked');
+      }
+      //e.stopPropagation();
+  });
+  jQuery('.lt-ie10 .has-icon input[type=submit],lt-ie10 .has-icon--right input[type=submit]').on('click', function () {
+      console.log('clicked');
+  });
+
   jQuery(function () {
     //@prepros-append navbar.js
     //new uiSearch(document.getElementById('js-navbarSearch'));

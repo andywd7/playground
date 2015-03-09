@@ -20,7 +20,7 @@
 /**
  * Icon only button
  */
-.btn:empty.i,
+//.btn:empty.i,
 .btn.i--only {
   //color: transparent;
   font-size: 0;
@@ -28,7 +28,7 @@
   padding: 4px;
   width: 27px;
 }
-.btn:empty.i,
+//.btn:empty.i,
 .btn.i--only,
 .btn.i--only > .i {
   &:before {
@@ -41,13 +41,13 @@
 /**
  * .btn--xs & .btn--sm icon
  */
-.svg .btn--xs:empty.i,
+//.svg .btn--xs:empty.i,
 .svg .btn--xs.i--only {
   padding: 0;
   width: 18px;
 }
 
-.svg .btn--sm:empty.i,
+//.svg .btn--sm:empty.i,
 .svg .btn--sm.i--only {
   padding: 0 2px;
   width: 21px;
@@ -67,8 +67,8 @@
 /**
  * .btn--lg icon only
  */
-.svg .btn--lg:empty.i,
-.svg .btn--cta:empty.i,
+//.svg .btn--lg:empty.i,
+//.svg .btn--cta:empty.i,
 .svg .btn--lg.i--only,
 .svg .btn--cta.i--only {
   padding: 0 8px;

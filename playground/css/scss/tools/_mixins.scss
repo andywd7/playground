@@ -352,14 +352,15 @@
   color: $color;
 
   &:hover,
-  &:focus {
+  &:focus,
+  &.is-hover {
     background-color: darken($background, 7%);
     border-color: darken($border, 7%);
     color: $color;
   }
-  &:active {
-    background-color: darken($background, 10%);
-  }
+  //&:active {
+  //  background-color: darken($background, 10%);
+  //}
   &,
   &.is-disabled:hover, &.is-disabled:focus, &.is-disabled:active,
   &[disabled]:hover, &[disabled]:focus, &[disabled]:active {

@@ -1354,6 +1354,9 @@ input[type="checkbox"] {
   /* Enable absolute positioning */
   position: relative; }
 
+.has-icon--submit {
+  display: inline-block; }
+
 .is-required {
   /* Ensure required tag don't overlap text */ }
   .is-required .f-control {
@@ -1364,10 +1367,12 @@ input[type="checkbox"] {
 
 .has-icon {
   /* Ensure icons don't overlap text */ }
-  .has-icon .f-control {
+  .has-icon .f-control,
+  .has-icon .btn {
     padding-left: 2.25714rem; }
 
-.has-icon--right .f-control {
+.has-icon--right .f-control,
+.has-icon--right .btn {
   padding-right: 2.25714rem; }
 
 .has-icon .f-control_icon,
@@ -1388,8 +1393,7 @@ input[type="checkbox"] {
   line-height: 1.97143rem;
   position: absolute;
   text-align: center;
-  top: 1.50714rem;
-  /* Height of the `label` and its margin */
+  top: 0;
   width: 2.54286rem;
   z-index: 3
   /* Ensure icon is above input groups and .is-required element */ }
@@ -1397,9 +1401,19 @@ input[type="checkbox"] {
   .has-icon--right .f-control_icon:before {
     top: -1px; }
 
-/**
- * Feedback states
- */
+.has-icon--submit .i {
+  pointer-events: none; }
+  .has-icon--submit .i:hover {
+    cursor: pointer; }
+
+.has-icon .control-label ~ .f-control_icon,
+.has-icon--right .control-label ~ .f-control_icon {
+  top: 1.50714rem
+  /* Height of the `label` and its margin */ }
+
+ /**
+* Feedback states
+*/
 .has-success .help-block,
 .has-success .control-label,
 .has-success .radio,
@@ -1436,18 +1450,18 @@ input[type="checkbox"] {
 .has-error .f-control-icon {
   color: #72000e; }
 
-/**
- * Reposition feedback icon if input has visible label above
- */
+ /**
+* Reposition feedback icon if input has visible label above
+*/
 .has-icon label.u-sr + .f-control_icon,
 .has-icon--right label.u-sr + .f-control_icon,
 .is-required label.u-sr + .f-control_icon,
 .is-required--right label.u-sr + .f-control_icon {
   top: 0; }
 
-/**
- * Colored input corners to mark required field
- */
+ /**
+* Colored input corners to mark required field
+*/
 .is-required_tag {
   background-color: #a50014;
   border-radius: 2px;
@@ -1506,12 +1520,10 @@ abbr.is-required_tag {
           user-select: none;
   vertical-align: middle;
   white-space: nowrap; }
-  .btn:hover, .btn:focus {
+  .btn:hover, .btn:focus, .btn.is-hover {
     background-color: #cbcbcb;
     border-color: #cbcbcb;
     color: #666; }
-  .btn:active {
-    background-color: #c4c4c4; }
   .btn, .btn.is-disabled:hover, .btn.is-disabled:focus, .btn.is-disabled:active, .btn[disabled]:hover, .btn[disabled]:focus, .btn[disabled]:active {
     background-color: #ddd;
     border-color: #ddd; }
@@ -1532,12 +1544,10 @@ abbr.is-required_tag {
 
 .btn--primary, .pagination > .is-current a {
   color: #fff; }
-  .btn--primary:hover, .pagination > .is-current a:hover, .btn--primary:focus, .pagination > .is-current a:focus {
+  .btn--primary:hover, .pagination > .is-current a:hover, .btn--primary:focus, .pagination > .is-current a:focus, .btn--primary.is-hover, .pagination > .is-current a.is-hover {
     background-color: #09232f;
     border-color: #09232f;
     color: #fff; }
-  .btn--primary:active, .pagination > .is-current a:active {
-    background-color: #061922; }
   .btn--primary, .pagination > .is-current a, .btn--primary.is-disabled:hover, .pagination > .is-current a.is-disabled:hover, .btn--primary.is-disabled:focus, .pagination > .is-current a.is-disabled:focus, .btn--primary.is-disabled:active, .pagination > .is-current a.is-disabled:active, .btn--primary[disabled]:hover, .pagination > .is-current a[disabled]:hover, .btn--primary[disabled]:focus, .pagination > .is-current a[disabled]:focus, .btn--primary[disabled]:active, .pagination > .is-current a[disabled]:active {
     background-color: #0e3a4d;
     border-color: #0e3a4d; }
@@ -5288,14 +5298,12 @@ p [href*="youtube.com"]:before {
 /**
  * Icon only button
  */
-.btn:empty.i,
 .btn.i--only {
   font-size: 0;
   overflow: hidden;
   padding: 4px;
   width: 27px; }
 
-.btn:empty.i:before,
 .btn.i--only:before,
 .btn.i--only > .i:before {
   margin-right: 0;
@@ -5304,12 +5312,10 @@ p [href*="youtube.com"]:before {
 /**
  * .btn--xs & .btn--sm icon
  */
-.svg .btn--xs:empty.i,
 .svg .btn--xs.i--only {
   padding: 0;
   width: 18px; }
 
-.svg .btn--sm:empty.i,
 .svg .btn--sm.i--only {
   padding: 0 2px;
   width: 21px; }
@@ -5324,10 +5330,7 @@ p [href*="youtube.com"]:before {
 /**
  * .btn--lg icon only
  */
-.svg .btn--lg:empty.i, .svg .btn--cta:empty.i,
-.svg .btn--cta:empty.i,
-.svg .btn--lg.i--only,
-.svg .i--only.btn--cta,
+.svg .btn--lg.i--only, .svg .i--only.btn--cta,
 .svg .btn--cta.i--only {
   padding: 0 8px;
   width: 35px; }
