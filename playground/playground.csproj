@@ -357,6 +357,7 @@
     <Content Include="css\scss\tools\mixins\_mx.sass-mq.scss" />
     <Content Include="css\scss\components\_wells.scss" />
     <Content Include="prepros.cfg" />
+    <Content Include=".scss-lint.yml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
