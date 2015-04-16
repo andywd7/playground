@@ -1,43 +1,15 @@
 <!DOCTYPE html>
   <!--[if lte IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 pl"> <![endif]-->
-  <!--[if IE 8]>			<html class="no-js lt-ie10 lt-ie9 ie8 pl"> <![endif]-->
+  <!--[if IE 8]>          <html class="no-js lt-ie10 lt-ie9 ie8 pl"> <![endif]-->
   <!--[if IE 9]>          <html class="no-js lt-ie10 ie9 pl"> <![endif]-->
-  <!--[if gt IE 9]><!-->	<html class="no-js pl"> <!--<![endif]-->
+  <!--[if gt IE 9]><!-->  <html class="no-js pl"> <!--<![endif]-->
   <head>
-    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Pattern Lab</title>
-    <meta charset="UTF-8">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width" />
-
-    <script>
-        WebFontConfig = {
-            google: { families: ['Droid+Serif:400,700,400italic,700italic:latin'] }
-        };
-        (function () {
-            var wf = document.createElement('script');
-            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-            wf.type = 'text/javascript';
-            wf.async = 'true';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(wf, s);
-        })();
-    </script>
-    <noscript>
-      <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'>
-    </noscript>
-
-    <!--[if (lte IE 8)]>
-      <link rel="stylesheet" href="/css/style.ie-old.css?635614148585352547" media="all">
-    <![endif]-->
-    <!--[if (gte IE 9)]><!-->
-      <link rel="stylesheet" href="/css/style.css?635614148585352547" media="all" />
-    <!--<![endif]-->
-    <link rel="stylesheet" href="/css/docs/docs.css?635614148585352547" media="all" />
-
-    <script src="/js/min/picturefill.min.js" async></script>
-    <script src="/js/min/modernizr.min.js"></script>
+    <!--<meta name="viewport" content="width=device-width" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
       		<!-- never cache patterns -->
@@ -47,10 +19,49 @@
 		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 		<meta http-equiv="pragma" content="no-cache" />
 		
-		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?635614148585352547" media="all">
-		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?635614148585352547" media="all" />
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?635648083505232026" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?635648083505232026" media="all" />
 		
     <!-- End Pattern Lab -->
+
+    <!--[if (lte IE 8)]>
+      <link rel="stylesheet" href="../../css/style.ie-old.css?635648083505232026" media="all">
+    <![endif]-->
+    <!--[if (gte IE 9)]><!-->
+      <link rel="stylesheet" href="../../css/style.css?635648083505232026" media="all" />
+    <!--<![endif]-->
+    <link rel="stylesheet" href="../../css/docs/docs.css?635648083505232026" media="all" />
+
+    <!--[if (lte IE 8)]>
+      <script src="../../js/min/svg4everybody.min.js"></script>
+    <![endif]-->
+
+    <script>
+        WebFontConfig = {
+            google: { families: ['Droid+Serif:400,700,400italic,700italic:latin'] }
+        };
+        var cb = function () {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if(raf){
+          raf(cb);
+        }else{
+          window.addEventListener('load', cb);
+        }
+    </script>
+    <noscript>
+      <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'>
+    </noscript>
+
+    <script src="../../js/min/picturefill.min.js" async></script>
+    <script src="../../js/min/modernizr.min.js"></script>
   </head>
   <body class="body u-cf">
     <!--[if lt IE 10]>
@@ -66,208 +77,340 @@
 						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-05-navigation-00-navbar-primary/01-molecules-05-navigation-00-navbar-primary.html" class="patternLink" data-patternpartial="molecules-navbar-primary">Navbar Primary</a></h2>
 						<div class="sg-pattern-body">
 							<nav class="navbar_primary" role="navigation">
-    <ul id="toggle-nav" class="nav">
-        <li class="navbar_dd">
-            <a href="#">Guiding</a>
-			<button type="button" class="btn--link">
-				<i class="i"></i>
-			</button>
-            <div class="navbar_dd-mega">
-                <div class="l-container">
-                    <ul class="nav">
-                        <li><a href="#">Advice and information</a></li>
-                        <li><a href="#">Ask Anna</a></li>
-                        <li><a href="#">Business topics</a></li>
-                    </ul>
-                </div>
-            </div>
-        </li>
-        <li class="navbar_dd">
-            <a href="#">Developing</a>
-			<button type="button" class="btn--link">
-				<i class="i"></i>
-			</button>
-            <div class="navbar_dd-mega">
-                <div class="l-container">
-                    <ul class="nav">
-                        <li><a href="#">Board development</a></li>
-                        <li><a href="#">Chartered Director</a></li>
-                    </ul>
-                </div>
-            </div>
-        </li>
-        <li class="navbar_dd">
-            <a href="#">Connecting</a>
-			<button type="button" class="btn--link">
-				<i class="i"></i>
-			</button>
-            <div class="navbar_dd-mega">
-                <div class="l-container">
-                    <ul class="nav">
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">Annual Convention 2013</a></li>
-                    </ul>
-                </div>
-            </div>
-        </li>
-        <li class="navbar_dd">
-            <a href="#">Influencing</a>
-			<button type="button" class="btn--link">
-				<i class="i"></i>
-			</button>
-            <div class="navbar_dd-mega">
-                <div class="l-container">
-                    <ul class="nav">
-                        <li><a href="#">Area of influence</a></li>
-                        <li><a href="#">The economy</a></li>
-                    </ul>
-                </div>
-            </div>
-        </li>
-        <li class="navbar_dd">
-            <a href="#">You</a>
-			<button type="button" class="btn--link">
-				<i class="i"></i>
-			</button>
-            <div class="navbar_dd-mega">
-                <div class="l-container">
-                    <ul class="nav">
-                        <li><h4 class="navbar_title"><a href="#">Your venues and benefits</a></h4></li>
-                        <li><a href="#">International</a></li>
-                        <li><a href="#">East Midlands</a></li>
-                    </ul>
-                    <ul class="nav">
-                        <li><h4 class="navbar_title"><a href="#">Your local network</a></h4></li>
-                        <li><a href="#">Director training and development</a></li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">Legal alert</a></li>
-                        <li><a href="#">Directors' Advisory Service</a></li>
-                        <li><a href="#">Directors' Law Express</a></li>
-                        <li><a href="#">Directors' Tax Line</a></li>
-                        <li><a href="#">Publications</a></li>
-                        <li><a href="#">Legal alert</a></li>
-                        <li><a href="#">Directors' Advisory Service</a></li>
-                        <li><a href="#">Directors' Law Express</a></li>
-                        <li><a href="#">Directors' Tax Line</a></li>
-                        <li><a href="#">Publications</a></li>
-                        <li><a href="#">Legal alert</a></li>
-                        <li><a href="#">Directors' Advisory Service</a></li>
-                        <li><a href="#">Directors' Law Express</a></li>
-                        <li><a href="#">Directors' Tax Line</a></li>
-                        <li><a href="#">Publications</a></li>
-                        <li><a href="#">Legal alert</a></li>
-                    </ul>
-                </div>
-            </div>
-        </li>
-        <li class="join">
-            <a href="#">Join the IoD</a>
-        </li>
-    </ul>
+  <ul id="toggle-nav" class="nav">
+    <li class="navbar_dd">
+      <a href="#">Guidance</a>
+      <button type="button" class="btn--link">
+        <i class="i"></i>
+      </button>
+      <div class="navbar_dd-mega">
+        <div class="l-container">
+          <ul class="nav">
+            <li>
+              <a href="#">Advice and information</a>
+            </li>
+            <li>
+              <a href="#">Ask Anna</a>
+            </li>
+            <li>
+              <a href="#">Business topics</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li class="navbar_dd">
+      <a href="#">Development</a>
+      <button type="button" class="btn--link">
+        <i class="i"></i>
+      </button>
+      <div class="navbar_dd-mega">
+        <div class="l-container">
+          <ul class="nav">
+            <li>
+              <a href="#">Board development</a>
+            </li>
+            <li>
+              <a href="#">Chartered Director</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li class="navbar_dd">
+      <a href="#">Network</a>
+      <button type="button" class="btn--link">
+        <i class="i"></i>
+      </button>
+      <div class="navbar_dd-mega">
+        <div class="l-container">
+          <ul class="nav">
+            <li>
+              <a href="#">Events</a>
+            </li>
+            <li>
+              <a href="#">Annual Convention 2013</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <li class="navbar_dd">
+      <a href="#">Influence</a>
+      <button type="button" class="btn--link">
+        <i class="i"></i>
+      </button>
+      <div class="navbar_dd-mega">
+        <div class="l-container">
+          <ul class="nav">
+            <li>
+              <a href="#">Area of influence</a>
+            </li>
+            <li>
+              <a href="#">The economy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
+    <!--<li class="navbar_dd">
+      <a href="#">You</a>
+      <button type="button" class="btn--link">
+        <i class="i"></i>
+      </button>
+      <div class="navbar_dd-mega">
+        <div class="l-container">
+          <ul class="nav">
+            <li>
+              <h4 class="navbar_title">
+                <a href="#">Your venues and benefits</a>
+              </h4>
+            </li>
+            <li>
+              <a href="#">International</a>
+            </li>
+            <li>
+              <a href="#">East Midlands</a>
+            </li>
+          </ul>
+          <ul class="nav">
+            <li>
+              <h4 class="navbar_title">
+                <a href="#">Your local network</a>
+              </h4>
+            </li>
+            <li>
+              <a href="#">Director training and development</a>
+            </li>
+            <li>
+              <a href="#">Events</a>
+            </li>
+            <li>
+              <a href="#">Legal alert</a>
+            </li>
+            <li>
+              <a href="#">Directors' Advisory Service</a>
+            </li>
+            <li>
+              <a href="#">Directors' Law Express</a>
+            </li>
+            <li>
+              <a href="#">Directors' Tax Line</a>
+            </li>
+            <li>
+              <a href="#">Publications</a>
+            </li>
+            <li>
+              <a href="#">Legal alert</a>
+            </li>
+            <li>
+              <a href="#">Directors' Advisory Service</a>
+            </li>
+            <li>
+              <a href="#">Directors' Law Express</a>
+            </li>
+            <li>
+              <a href="#">Directors' Tax Line</a>
+            </li>
+            <li>
+              <a href="#">Publications</a>
+            </li>
+            <li>
+              <a href="#">Legal alert</a>
+            </li>
+            <li>
+              <a href="#">Directors' Advisory Service</a>
+            </li>
+            <li>
+              <a href="#">Directors' Law Express</a>
+            </li>
+            <li>
+              <a href="#">Directors' Tax Line</a>
+            </li>
+            <li>
+              <a href="#">Publications</a>
+            </li>
+            <li>
+              <a href="#">Legal alert</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>-->
+    <li class="join">
+      <a href="#">Join the IoD</a>
+    </li>
+  </ul>
 </nav>
 							<div class="sg-code" style="display: none">
 								<h3 class="sg-code-head">HTML</h3>
 								<pre class="sg-code-html">
 									<code>
 										&lt;nav class=&quot;navbar_primary&quot; role=&quot;navigation&quot;&gt;
-    &lt;ul id=&quot;toggle-nav&quot; class=&quot;nav&quot;&gt;
-        &lt;li class=&quot;navbar_dd&quot;&gt;
-            &lt;a href=&quot;#&quot;&gt;Guiding&lt;/a&gt;
-			&lt;button type=&quot;button&quot; class=&quot;btn--link&quot;&gt;
-				&lt;i class=&quot;i&quot;&gt;&lt;/i&gt;
-			&lt;/button&gt;
-            &lt;div class=&quot;navbar_dd-mega&quot;&gt;
-                &lt;div class=&quot;l-container&quot;&gt;
-                    &lt;ul class=&quot;nav&quot;&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Advice and information&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Ask Anna&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Business topics&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-        &lt;li class=&quot;navbar_dd&quot;&gt;
-            &lt;a href=&quot;#&quot;&gt;Developing&lt;/a&gt;
-			&lt;button type=&quot;button&quot; class=&quot;btn--link&quot;&gt;
-				&lt;i class=&quot;i&quot;&gt;&lt;/i&gt;
-			&lt;/button&gt;
-            &lt;div class=&quot;navbar_dd-mega&quot;&gt;
-                &lt;div class=&quot;l-container&quot;&gt;
-                    &lt;ul class=&quot;nav&quot;&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Board development&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Chartered Director&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-        &lt;li class=&quot;navbar_dd&quot;&gt;
-            &lt;a href=&quot;#&quot;&gt;Connecting&lt;/a&gt;
-			&lt;button type=&quot;button&quot; class=&quot;btn--link&quot;&gt;
-				&lt;i class=&quot;i&quot;&gt;&lt;/i&gt;
-			&lt;/button&gt;
-            &lt;div class=&quot;navbar_dd-mega&quot;&gt;
-                &lt;div class=&quot;l-container&quot;&gt;
-                    &lt;ul class=&quot;nav&quot;&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Events&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Annual Convention 2013&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-        &lt;li class=&quot;navbar_dd&quot;&gt;
-            &lt;a href=&quot;#&quot;&gt;Influencing&lt;/a&gt;
-			&lt;button type=&quot;button&quot; class=&quot;btn--link&quot;&gt;
-				&lt;i class=&quot;i&quot;&gt;&lt;/i&gt;
-			&lt;/button&gt;
-            &lt;div class=&quot;navbar_dd-mega&quot;&gt;
-                &lt;div class=&quot;l-container&quot;&gt;
-                    &lt;ul class=&quot;nav&quot;&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Area of influence&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;The economy&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-        &lt;li class=&quot;navbar_dd&quot;&gt;
-            &lt;a href=&quot;#&quot;&gt;You&lt;/a&gt;
-			&lt;button type=&quot;button&quot; class=&quot;btn--link&quot;&gt;
-				&lt;i class=&quot;i&quot;&gt;&lt;/i&gt;
-			&lt;/button&gt;
-            &lt;div class=&quot;navbar_dd-mega&quot;&gt;
-                &lt;div class=&quot;l-container&quot;&gt;
-                    &lt;ul class=&quot;nav&quot;&gt;
-                        &lt;li&gt;&lt;h4 class=&quot;navbar_title&quot;&gt;&lt;a href=&quot;#&quot;&gt;Your venues and benefits&lt;/a&gt;&lt;/h4&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;International&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;East Midlands&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                    &lt;ul class=&quot;nav&quot;&gt;
-                        &lt;li&gt;&lt;h4 class=&quot;navbar_title&quot;&gt;&lt;a href=&quot;#&quot;&gt;Your local network&lt;/a&gt;&lt;/h4&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Director training and development&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Events&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Legal alert&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Directors&#39; Advisory Service&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Directors&#39; Law Express&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Directors&#39; Tax Line&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Publications&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Legal alert&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Directors&#39; Advisory Service&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Directors&#39; Law Express&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Directors&#39; Tax Line&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Publications&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Legal alert&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Directors&#39; Advisory Service&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Directors&#39; Law Express&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Directors&#39; Tax Line&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Publications&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Legal alert&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/li&gt;
-        &lt;li class=&quot;join&quot;&gt;
-            &lt;a href=&quot;#&quot;&gt;Join the IoD&lt;/a&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;
+  &lt;ul id=&quot;toggle-nav&quot; class=&quot;nav&quot;&gt;
+    &lt;li class=&quot;navbar_dd&quot;&gt;
+      &lt;a href=&quot;#&quot;&gt;Guidance&lt;/a&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn--link&quot;&gt;
+        &lt;i class=&quot;i&quot;&gt;&lt;/i&gt;
+      &lt;/button&gt;
+      &lt;div class=&quot;navbar_dd-mega&quot;&gt;
+        &lt;div class=&quot;l-container&quot;&gt;
+          &lt;ul class=&quot;nav&quot;&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Advice and information&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Ask Anna&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Business topics&lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;navbar_dd&quot;&gt;
+      &lt;a href=&quot;#&quot;&gt;Development&lt;/a&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn--link&quot;&gt;
+        &lt;i class=&quot;i&quot;&gt;&lt;/i&gt;
+      &lt;/button&gt;
+      &lt;div class=&quot;navbar_dd-mega&quot;&gt;
+        &lt;div class=&quot;l-container&quot;&gt;
+          &lt;ul class=&quot;nav&quot;&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Board development&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Chartered Director&lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;navbar_dd&quot;&gt;
+      &lt;a href=&quot;#&quot;&gt;Network&lt;/a&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn--link&quot;&gt;
+        &lt;i class=&quot;i&quot;&gt;&lt;/i&gt;
+      &lt;/button&gt;
+      &lt;div class=&quot;navbar_dd-mega&quot;&gt;
+        &lt;div class=&quot;l-container&quot;&gt;
+          &lt;ul class=&quot;nav&quot;&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Events&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Annual Convention 2013&lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;navbar_dd&quot;&gt;
+      &lt;a href=&quot;#&quot;&gt;Influence&lt;/a&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn--link&quot;&gt;
+        &lt;i class=&quot;i&quot;&gt;&lt;/i&gt;
+      &lt;/button&gt;
+      &lt;div class=&quot;navbar_dd-mega&quot;&gt;
+        &lt;div class=&quot;l-container&quot;&gt;
+          &lt;ul class=&quot;nav&quot;&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Area of influence&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;The economy&lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;!--&lt;li class=&quot;navbar_dd&quot;&gt;
+      &lt;a href=&quot;#&quot;&gt;You&lt;/a&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn--link&quot;&gt;
+        &lt;i class=&quot;i&quot;&gt;&lt;/i&gt;
+      &lt;/button&gt;
+      &lt;div class=&quot;navbar_dd-mega&quot;&gt;
+        &lt;div class=&quot;l-container&quot;&gt;
+          &lt;ul class=&quot;nav&quot;&gt;
+            &lt;li&gt;
+              &lt;h4 class=&quot;navbar_title&quot;&gt;
+                &lt;a href=&quot;#&quot;&gt;Your venues and benefits&lt;/a&gt;
+              &lt;/h4&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;International&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;East Midlands&lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+          &lt;ul class=&quot;nav&quot;&gt;
+            &lt;li&gt;
+              &lt;h4 class=&quot;navbar_title&quot;&gt;
+                &lt;a href=&quot;#&quot;&gt;Your local network&lt;/a&gt;
+              &lt;/h4&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Director training and development&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Events&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Legal alert&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Directors&#39; Advisory Service&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Directors&#39; Law Express&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Directors&#39; Tax Line&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Publications&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Legal alert&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Directors&#39; Advisory Service&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Directors&#39; Law Express&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Directors&#39; Tax Line&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Publications&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Legal alert&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Directors&#39; Advisory Service&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Directors&#39; Law Express&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Directors&#39; Tax Line&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Publications&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+              &lt;a href=&quot;#&quot;&gt;Legal alert&lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;--&gt;
+    &lt;li class=&quot;join&quot;&gt;
+      &lt;a href=&quot;#&quot;&gt;Join the IoD&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/nav&gt;
 									</code>
 								</pre>
@@ -303,7 +446,13 @@
 						<div class="sg-pattern-body">
 							<div class="navbar_crumbs">
     <nav class="list-collapsable crumbs">
-        <h3 class="list-collapsable_header"><a href="#" class="i i-triangle-down">Where Am I?</a></h3>
+        <h3 class="list-collapsable_header">
+          <a href="#">
+            <svg class="i">
+              <use xlink:href="/../images/icons/svg-defs.svg#triangle-down" />
+            </svg>Where Am I?
+          </a>
+        </h3>
         <ul class="list-collapsable_list">
             <li class="crumbs_item crumbs_item--first">
                 <a href="/" class="i i-home" title="Home">
@@ -335,7 +484,13 @@
 									<code>
 										&lt;div class=&quot;navbar_crumbs&quot;&gt;
     &lt;nav class=&quot;list-collapsable crumbs&quot;&gt;
-        &lt;h3 class=&quot;list-collapsable_header&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;i i-triangle-down&quot;&gt;Where Am I?&lt;/a&gt;&lt;/h3&gt;
+        &lt;h3 class=&quot;list-collapsable_header&quot;&gt;
+          &lt;a href=&quot;#&quot;&gt;
+            &lt;svg class=&quot;i&quot;&gt;
+              &lt;use xlink:href=&quot;/../images/icons/svg-defs.svg#triangle-down&quot; /&gt;
+            &lt;/svg&gt;Where Am I?
+          &lt;/a&gt;
+        &lt;/h3&gt;
         &lt;ul class=&quot;list-collapsable_list&quot;&gt;
             &lt;li class=&quot;crumbs_item crumbs_item--first&quot;&gt;
                 &lt;a href=&quot;/&quot; class=&quot;i i-home&quot; title=&quot;Home&quot;&gt;
@@ -444,18 +599,18 @@
     </ul>-->
     <nav class="navbar_nav--mini" role="navigation">
         <ul class="nav">
-            <li>
+            <!--<li>
                 <a href="#">Director</a>
             </li>
             <li>
                 <a href="#">About Us</a>
-            </li>
+            </li>-->
             <li>
                 <a href="#">Events</a>
             </li>
-            <li>
+            <!--<li>
                 <a href="#">Contact Us</a>
-            </li>
+            </li>-->
             <li>
                 <a href="#">Login <i class="fa fa-caret-right"></i></a>
             </li>
@@ -483,18 +638,18 @@
     &lt;/ul&gt;--&gt;
     &lt;nav class=&quot;navbar_nav--mini&quot; role=&quot;navigation&quot;&gt;
         &lt;ul class=&quot;nav&quot;&gt;
-            &lt;li&gt;
+            &lt;!--&lt;li&gt;
                 &lt;a href=&quot;#&quot;&gt;Director&lt;/a&gt;
             &lt;/li&gt;
             &lt;li&gt;
                 &lt;a href=&quot;#&quot;&gt;About Us&lt;/a&gt;
-            &lt;/li&gt;
+            &lt;/li&gt;--&gt;
             &lt;li&gt;
                 &lt;a href=&quot;#&quot;&gt;Events&lt;/a&gt;
             &lt;/li&gt;
-            &lt;li&gt;
+            &lt;!--&lt;li&gt;
                 &lt;a href=&quot;#&quot;&gt;Contact Us&lt;/a&gt;
-            &lt;/li&gt;
+            &lt;/li&gt;--&gt;
             &lt;li&gt;
                 &lt;a href=&quot;#&quot;&gt;Login &lt;i class=&quot;fa fa-caret-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;
             &lt;/li&gt;
@@ -510,9 +665,12 @@
 						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-05-navigation-30-tabs/01-molecules-05-navigation-30-tabs.html" class="patternLink" data-patternpartial="molecules-tabs">Tabs</a></h2>
 						<div class="sg-pattern-body">
 							<hr/>
-<nav role='navigation' class="tabs">
+<nav role='navigation' class="c-tabs">
   <input type="checkbox" id="js-tog-tabs" class="toggle_chkbx" aria-pressed="false" />
-  <label for="js-tog-tabs" id="leftPush" class="toggle_btn i i-menu" role="button">
+  <label for="js-tog-tabs" id="leftPush" class="toggle_btn" role="button">
+    <svg class="i">
+      <use xlink:href="/../images/icons/svg-defs.svg#menu" />
+    </svg>
   	<span class="toggle_txt">MENU</span>
   	<!--<span class="u-sr">Toggle menu</span>-->
   </label>  
@@ -550,7 +708,7 @@
   </ul>
 </nav>
 
-<ul class="tabs_content">
+<ul class="c-tabs_content box">
   <li id="tab-1" class="is-active">
       <h2>Tab 1</h2>
       <p class="">A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>  </li>
@@ -584,9 +742,12 @@
 								<pre class="sg-code-html">
 									<code>
 										&lt;hr/&gt;
-&lt;nav role=&#39;navigation&#39; class=&quot;tabs&quot;&gt;
+&lt;nav role=&#39;navigation&#39; class=&quot;c-tabs&quot;&gt;
   &lt;input type=&quot;checkbox&quot; id=&quot;js-tog-tabs&quot; class=&quot;toggle_chkbx&quot; aria-pressed=&quot;false&quot; /&gt;
-  &lt;label for=&quot;js-tog-tabs&quot; id=&quot;leftPush&quot; class=&quot;toggle_btn i i-menu&quot; role=&quot;button&quot;&gt;
+  &lt;label for=&quot;js-tog-tabs&quot; id=&quot;leftPush&quot; class=&quot;toggle_btn&quot; role=&quot;button&quot;&gt;
+    &lt;svg class=&quot;i&quot;&gt;
+      &lt;use xlink:href=&quot;/../images/icons/svg-defs.svg#menu&quot; /&gt;
+    &lt;/svg&gt;
   	&lt;span class=&quot;toggle_txt&quot;&gt;MENU&lt;/span&gt;
   	&lt;!--&lt;span class=&quot;u-sr&quot;&gt;Toggle menu&lt;/span&gt;--&gt;
   &lt;/label&gt;  
@@ -624,7 +785,7 @@
   &lt;/ul&gt;
 &lt;/nav&gt;
 
-&lt;ul class=&quot;tabs_content&quot;&gt;
+&lt;ul class=&quot;c-tabs_content box&quot;&gt;
   &lt;li id=&quot;tab-1&quot; class=&quot;is-active&quot;&gt;
       &lt;h2&gt;Tab 1&lt;/h2&gt;
       &lt;p class=&quot;&quot;&gt;A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.&lt;/p&gt;  &lt;/li&gt;
@@ -656,9 +817,12 @@
 					<div id="molecules-tabs-vertical" class="sg-pattern">
 						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-05-navigation-31-tabs-vertical/01-molecules-05-navigation-31-tabs-vertical.html" class="patternLink" data-patternpartial="molecules-tabs-vertical">Tabs Vertical</a></h2>
 						<div class="sg-pattern-body">
-							<nav role='navigation' class="tabs tabs--vertical">
+							<nav role='navigation' class="c-tabs c-tabs--vertical">
     <input type="checkbox" id="js-tog-tabs1" class="toggle_chkbx" aria-pressed="false" />
-    <label for="js-tog-tabs1" id="leftPush" class="toggle_btn i i-menu" role="button">
+    <label for="js-tog-tabs1" id="leftPush" class="toggle_btn" role="button">
+      <svg class="i">
+        <use xlink:href="/../images/icons/svg-defs.svg#menu" />
+      </svg>
     	<span class="toggle_txt">MENU</span>
     	<!--<span class="u-sr">Toggle menu</span>-->
     </label>
@@ -678,7 +842,7 @@
     </ul>
 </nav>
 
-<ul class="tabs_content">
+<ul class="c-tabs_content well">
   <li id="tab-1">
       <h2>Tab 1</h2>
       <p class="">A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>  </li>
@@ -701,9 +865,12 @@
 								<h3 class="sg-code-head">HTML</h3>
 								<pre class="sg-code-html">
 									<code>
-										&lt;nav role=&#39;navigation&#39; class=&quot;tabs tabs--vertical&quot;&gt;
+										&lt;nav role=&#39;navigation&#39; class=&quot;c-tabs c-tabs--vertical&quot;&gt;
     &lt;input type=&quot;checkbox&quot; id=&quot;js-tog-tabs1&quot; class=&quot;toggle_chkbx&quot; aria-pressed=&quot;false&quot; /&gt;
-    &lt;label for=&quot;js-tog-tabs1&quot; id=&quot;leftPush&quot; class=&quot;toggle_btn i i-menu&quot; role=&quot;button&quot;&gt;
+    &lt;label for=&quot;js-tog-tabs1&quot; id=&quot;leftPush&quot; class=&quot;toggle_btn&quot; role=&quot;button&quot;&gt;
+      &lt;svg class=&quot;i&quot;&gt;
+        &lt;use xlink:href=&quot;/../images/icons/svg-defs.svg#menu&quot; /&gt;
+      &lt;/svg&gt;
     	&lt;span class=&quot;toggle_txt&quot;&gt;MENU&lt;/span&gt;
     	&lt;!--&lt;span class=&quot;u-sr&quot;&gt;Toggle menu&lt;/span&gt;--&gt;
     &lt;/label&gt;
@@ -723,7 +890,7 @@
     &lt;/ul&gt;
 &lt;/nav&gt;
 
-&lt;ul class=&quot;tabs_content&quot;&gt;
+&lt;ul class=&quot;c-tabs_content well&quot;&gt;
   &lt;li id=&quot;tab-1&quot;&gt;
       &lt;h2&gt;Tab 1&lt;/h2&gt;
       &lt;p class=&quot;&quot;&gt;A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.&lt;/p&gt;  &lt;/li&gt;
@@ -745,9 +912,12 @@
 					<div id="molecules-tabs-vertical-right" class="sg-pattern">
 						<h2 class="sg-pattern-head" ><a href="../../patterns/01-molecules-05-navigation-32-tabs-vertical-right/01-molecules-05-navigation-32-tabs-vertical-right.html" class="patternLink" data-patternpartial="molecules-tabs-vertical-right">Tabs Vertical Right</a></h2>
 						<div class="sg-pattern-body">
-							<nav role='navigation' class="tabs tabs--vertical tabs--vertical--right">
+							<nav role='navigation' class="c-tabs c-tabs--vertical c-tabs--vertical--right">
     <input type="checkbox" id="js-tog-tabs2" class="toggle_chkbx" aria-pressed="false" />
-    <label for="js-tog-tabs2" id="leftPush" class="toggle_btn i i-menu" role="button">
+    <label for="js-tog-tabs2" id="leftPush" class="toggle_btn" role="button">
+      <svg class="i">
+        <use xlink:href="/../images/icons/svg-defs.svg#menu" />
+      </svg>
     	<span class="toggle_txt">MENU</span>
     	<!--<span class="u-sr">Toggle menu</span>-->
     </label>
@@ -767,7 +937,7 @@
     </ul>
 </nav>
 
-<ul class="tabs_content">
+<ul class="c-tabs_content well">
     <li id="tab-1">
         <h2>Tab 1</h2>
         <p class="">A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>    </li>
@@ -790,9 +960,12 @@
 								<h3 class="sg-code-head">HTML</h3>
 								<pre class="sg-code-html">
 									<code>
-										&lt;nav role=&#39;navigation&#39; class=&quot;tabs tabs--vertical tabs--vertical--right&quot;&gt;
+										&lt;nav role=&#39;navigation&#39; class=&quot;c-tabs c-tabs--vertical c-tabs--vertical--right&quot;&gt;
     &lt;input type=&quot;checkbox&quot; id=&quot;js-tog-tabs2&quot; class=&quot;toggle_chkbx&quot; aria-pressed=&quot;false&quot; /&gt;
-    &lt;label for=&quot;js-tog-tabs2&quot; id=&quot;leftPush&quot; class=&quot;toggle_btn i i-menu&quot; role=&quot;button&quot;&gt;
+    &lt;label for=&quot;js-tog-tabs2&quot; id=&quot;leftPush&quot; class=&quot;toggle_btn&quot; role=&quot;button&quot;&gt;
+      &lt;svg class=&quot;i&quot;&gt;
+        &lt;use xlink:href=&quot;/../images/icons/svg-defs.svg#menu&quot; /&gt;
+      &lt;/svg&gt;
     	&lt;span class=&quot;toggle_txt&quot;&gt;MENU&lt;/span&gt;
     	&lt;!--&lt;span class=&quot;u-sr&quot;&gt;Toggle menu&lt;/span&gt;--&gt;
     &lt;/label&gt;
@@ -812,7 +985,7 @@
     &lt;/ul&gt;
 &lt;/nav&gt;
 
-&lt;ul class=&quot;tabs_content&quot;&gt;
+&lt;ul class=&quot;c-tabs_content well&quot;&gt;
     &lt;li id=&quot;tab-1&quot;&gt;
         &lt;h2&gt;Tab 1&lt;/h2&gt;
         &lt;p class=&quot;&quot;&gt;A paragraph (from the Greek paragraphos, &quot;to write beside&quot; or &quot;written beside&quot;) is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.&lt;/p&gt;    &lt;/li&gt;
@@ -1057,70 +1230,74 @@
 		</script>
 		
 
-  <div class="flyout_overlay"></div>
-</div>
+    <div class="flyout_overlay"></div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/js/min/jquery-1.11.1.min.js"><\/script>')</script>
-    <script src="/js/min/global.min.js"></script>
-    <script src="/js/min/forms.min.js"></script>
-	<script src="/js/tabs.js"></script>
+    <!--[if (gte IE 9)]><!-->
+      <script src="../../js/min/svg4everybody.min.js"></script>
+    <!--<![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../js/min/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="../../js/min/global.min.js"></script>
+    <script src="../../js/min/forms.min.js"></script>
+    <script src="../../js/min/tabs.min.js"></script>
 
-	<!--DO NOT REMOVE-->
-		<script>
-			/*!
-			 * scriptLoader - v0.1
-			 *
-			 * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
-			 * Licensed under the MIT license
-			 *
-			 */
-			
-			var scriptLoader = {
-				
-				run: function(js,cb,target) {
-					var s  = document.getElementById(target+'-'+cb); 
-					for (var i = 0; i < js.length; i++) {
-						var src = (typeof js[i] != "string") ? js[i].src : js[i];
-						var c   = document.createElement('script');
-						c.src   = '../../'+src+'?'+cb;
-						if (typeof js[i] != "string") {
-							if (js[i].dep !== undefined) {
-								c.onload = function(dep,cb,target) {
-									return function() {
-										scriptLoader.run(dep,cb,target);
-									}
-								}(js[i].dep,cb,target);
-							}
-						}
-						s.parentNode.insertBefore(c,s);
-					}
-				}
-				
-			}
-		</script>
-		<script id="pl-js-polyfill-insert-635614148585352547">
-			(function() {
-				if (self != top) {
-					var cb = '635614148585352547';
-					var js = [];
-					if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
-						js.push("styleguide/js/vendor/classlist-polyfill.js");
-					}
-					scriptLoader.run(js,cb,'pl-js-polyfill-insert');
-				}
-			})();
-		</script>
-		<script id="pl-js-insert-635614148585352547">
-			(function() {
-				if (self != top) {
-					var cb = '635614148585352547';
-					var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
-					scriptLoader.run(js,cb,'pl-js-insert');
-				}
-			})();
-		</script>
-		
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 
-	</body>
+    <!--DO NOT REMOVE-->
+    	<script>
+    		/*!
+    		 * scriptLoader - v0.1
+    		 *
+    		 * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+    		 * Licensed under the MIT license
+    		 *
+    		 */
+    		
+    		var scriptLoader = {
+    			
+    			run: function(js,cb,target) {
+    				var s  = document.getElementById(target+'-'+cb); 
+    				for (var i = 0; i < js.length; i++) {
+    					var src = (typeof js[i] != "string") ? js[i].src : js[i];
+    					var c   = document.createElement('script');
+    					c.src   = '../../'+src+'?'+cb;
+    					if (typeof js[i] != "string") {
+    						if (js[i].dep !== undefined) {
+    							c.onload = function(dep,cb,target) {
+    								return function() {
+    									scriptLoader.run(dep,cb,target);
+    								}
+    							}(js[i].dep,cb,target);
+    						}
+    					}
+    					s.parentNode.insertBefore(c,s);
+    				}
+    			}
+    			
+    		}
+    	</script>
+    	<script id="pl-js-polyfill-insert-635648083505232026">
+    		(function() {
+    			if (self != top) {
+    				var cb = '635648083505232026';
+    				var js = [];
+    				if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
+    					js.push("styleguide/js/vendor/classlist-polyfill.js");
+    				}
+    				scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    			}
+    		})();
+    	</script>
+    	<script id="pl-js-insert-635648083505232026">
+    		(function() {
+    			if (self != top) {
+    				var cb = '635648083505232026';
+    				var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
+    				scriptLoader.run(js,cb,'pl-js-insert');
+    			}
+    		})();
+    	</script>
+    	
+
+  </body>
 </html>

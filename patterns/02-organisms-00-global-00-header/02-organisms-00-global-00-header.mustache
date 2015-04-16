@@ -1,37 +1,31 @@
 &lt;!-- Begin .header --&gt;
 &lt;a href=&quot;#main&quot; class=&quot;u-sr&quot;&gt;Skip to main content&lt;/a&gt;
-&lt;div class=&quot;flyout_wrapper&quot;&gt;
-  &lt;header class=&quot;navbar&quot; role=&quot;banner&quot;&gt;
-    &lt;div class=&quot;l-container&quot;&gt;
-      {{&gt; atoms-navbar-brand }}
 
-      {{&gt; atoms-toggle-menu:js-tog-navbar }}
-
-      &lt;div class=&quot;navbar_flyout toggle_target&quot;&gt;
-        &lt;div class=&quot;flyout_close&quot;&gt;
-          &lt;h5 class=&quot;flyout_heading&quot;&gt;MENU&lt;/h5&gt;
-          &lt;label for=&quot;js-tog-navbar&quot; class=&quot;i i-times&quot;&gt;&lt;/label&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;navbar_nav flyout_inner&quot;&gt;
-          {{&gt; molecules-navbar-secondary }}
-          {{&gt; molecules-navbar-primary }}
-        &lt;/div&gt;
-      &lt;/div&gt;
-
-      {{&gt; atoms-toggle-basket:js-tog-flyout }}
-      &lt;div class=&quot;flyout toggle_target&quot;&gt;
-        &lt;div class=&quot;flyout_close&quot;&gt;
-          &lt;h5 class=&quot;flyout_heading&quot;&gt;FLYOUT&lt;/h5&gt;
-          &lt;label for=&quot;js-tog-flyout&quot; class=&quot;i i-times&quot;&gt;&lt;/label&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;flyout_inner&quot;&gt;
-          &lt;p&gt;{{ excerpt.long }}&lt;/p&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-
-    &lt;/div&gt;
-  &lt;/header&gt;
-
+&lt;header class=&quot;navbar&quot; role=&quot;banner&quot;&gt;
   &lt;div class=&quot;l-container&quot;&gt;
-    {{&gt; molecules-tabs }}
+    {{&gt; atoms-navbar-brand }}
+
+    {{&gt; atoms-toggle-menu:js-tog-navbar }}
+
+    &lt;div class=&quot;navbar_flyout toggle_target&quot;&gt;
+      &lt;!--&lt;div class=&quot;flyout_close&quot;&gt;
+        &lt;h5 class=&quot;flyout_heading&quot;&gt;MENU&lt;/h5&gt;
+        &lt;label for=&quot;js-tog-navbar&quot; class=&quot;i i-times i--white&quot;&gt;&lt;/label&gt;
+      &lt;/div&gt;--&gt;
+      &lt;div class=&quot;navbar_nav flyout_inner&quot;&gt;
+        {{&gt; molecules-navbar-secondary }}
+        {{&gt; molecules-navbar-primary }}
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    {{&gt; atoms-toggle-basket:js-tog-flyout }}
+    {{&gt; molecules-flyout(demo: false) }}
+
   &lt;/div&gt;
+&lt;/header&gt;
+
+&lt;div class=&quot;l-container&quot;&gt;
+  {{&gt; molecules-tabs }}
+  {{&gt; molecules-tabs }}
+  {{&gt; molecules-address-form }}
+&lt;/div&gt;

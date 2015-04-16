@@ -1,0 +1,65 @@
+.my-selector {
+
+  // mixins and extends first, unless
+  // they're specifically related to a rule
+  @extend %i;
+  @include cf;
+  @include font-size(16px);
+  
+  /*
+   * styles and modifications directly
+   * on the parent selector
+   */
+   
+  // rules come first and are alphabetical,
+  // including rule-specific mixins
+  background-color: #fff;
+  color: #000;
+  
+  // media queries come next because
+  // they describe modifications to the parent
+  @media screen and ('max-width: 50rem') {
+  }
+
+  // pseudo-classes follow because
+  // they narrow down a selection of the parent
+  &:first-child {
+  }
+  
+  // cascading modifier classes are next
+  // in case they need to be overridden later
+  .js &,
+  .no-animations & {
+  }
+  
+  // style states of the parent
+  &.is-active {
+  }
+  
+  // action-based pseudo-classes are next because
+  // they style states of the parent
+  &:hover,
+  &:focus {
+  }
+  
+  /*
+   * nested elements and pseudo-elements
+   */
+   
+  // pseudo-elements are the first of the nested elements
+  &:after {
+    content: 'hey, I am a pseudo element';
+  }
+  
+  // element selectors are next
+  a {
+  }
+  
+  p {
+  }
+  
+  // class name selectors are last because
+  // they can modify un-classed elements
+  .some-nested-selector {
+  }
+}
