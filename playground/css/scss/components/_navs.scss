@@ -1,48 +1,50 @@
-/*================*\
+/*=======*\
    #NAVS
-\*================*/
+\*=======*/
 
 
-/**
+/*
  * Base class
  */
 .nav {
-  @include cf();
+  @include cf;
   list-style: none;
   margin-bottom: 0;
-  margin-right: -1px;
-  margin-top: 0;
+  //margin-right: -1px;
+  //margin-top: 0;
   padding-left: 0; /* Override default ul/ol */
   position: relative;
 
   > li {
     display: block;
     position: relative;
-
-    > a {
-      border-right: 3px solid transparent;
-      color: color(grey, dark);
-      display: block;
-      padding: $nav-link-padding;
-      position: relative;
-      //text-decoration: none;
-
-      &:hover,
-      &:focus {
-        background-color: $nav-link-hover-bg;
-      }
-
-      /**
-      * Prevent IE8 from misplacing imgs
-      * See https://github.com/h5bp/html5-boilerplate/issues/984#issuecomment-3985989
-      */
-      > img {
-        max-width: none;
-      }
-    }
   }
 
-  .is-active > a {
+  // scss-lint:disable MergeableSelector
+  > li > a {
+    border-right: 3px solid transparent;
+    color: color(grey, dark);
+    display: block;
+    padding: $nav-link-padding;
+    position: relative;
+    //text-decoration: none;
+
+    &:hover,
+    &:focus {
+      background-color: $nav-link-hover-bg;
+    }
+
+    /*
+     * Prevent IE8 from misplacing imgs
+     * See https://github.com/h5bp/html5-boilerplate/issues/984#issuecomment-3985989
+     */
+    > img {
+      max-width: none;
+    }
+  }
+  // scss-lint:enable MergeableSelector
+
+  > .is-active > a {
     background-color: transparent;
     border-right-color: $nav-active-link-border;
     color: $nav-active-link-color;
@@ -53,10 +55,10 @@
     }
   }
     
-  /**
-  * Disabled state sets text to gray and nukes hover/tab effects but DOES NOT
-  * remove functionality
-  */
+  /*
+   * Disabled state sets text to gray and nukes hover/tab effects but DOES NOT
+   * remove functionality
+   */
   .is-disabled > a {
     background-color: transparent;
     color: $nav-disabled-link-color;
@@ -64,7 +66,7 @@
     &:hover,
     &:focus {
       background-color: transparent;
-      border-color: $border-base;
+      border: 0;
       color: $nav-disabled-link-color;
       cursor: not-allowed;
     }
@@ -83,7 +85,7 @@
 
 
 .nav--pills {
-    // Active state
+  // Active state
   > .is-active > a {
     &,
     &:hover,

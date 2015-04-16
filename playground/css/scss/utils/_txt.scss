@@ -6,21 +6,21 @@
 /**
  * Alignment
  */
-.txt-left     { text-align: left; }
-.txt-right    { text-align: right; }
-.txt-center   { text-align: center; }
-.txt-justify  { text-align: justify; }
-.txt-nowrap   { white-space: nowrap; }
+.txt-left     { text-align: left !important; }
+.txt-right    { text-align: right !important; }
+.txt-center   { text-align: center !important; }
+.txt-justify  { text-align: justify !important; }
+.txt-nowrap   { white-space: nowrap !important; }
 
 
 
 /**
  * Transformation
  */
-.txt-lower  { text-transform: lowercase; }
-.txt-upper  { text-transform: uppercase; }
+.txt-lower  { text-transform: lowercase !important; }
+.txt-upper  { text-transform: uppercase !important; }
 .txt-caps,
-.iod   { text-transform: capitalize; }
+.txt-iod { text-transform: capitalize !important; }
 
 
 

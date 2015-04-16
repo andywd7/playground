@@ -3,24 +3,24 @@
 \*======================*/
 
 
-/**
+/*
  * Navbar/Header
  */
 // Header
-$header-bg:                        #357f76 !default;
+$header-bg:                        color(secondary) !default;
 
 // Navbar
 $navbar-border:                    color(grey, lighter);
 $navbar-color:                     #fff;
-$navbar-bg:                        $brand-primary;
-$navbar-hover-bg:                  darken($navbar-bg, 4%);
+$navbar-bg:                        color(primary);
+$navbar-hover-bg:                  color(primary);
 $navbar-inv-color:                 #fff;
-$navbar-inv-bg:                    color(primary);
+$navbar-inv-bg:                    color(secondary);
 
-$navbar-dd-bg:                     #357f76;
-$navbar-dd-hover-bg:               darken($navbar-dd-bg, 4%);
+$navbar-dd-bg:                     color(primary);
+$navbar-dd-hover-bg:               color(primary, light);
 $navbar-dd-color:                  color(grey, dark);
-$navbar-brand-width:               332px !default;
+$navbar-brand-width:               242px !default;
 $navbar-width:                     240px !default;
 
 // Navbar toggle
@@ -29,7 +29,7 @@ $navbar-toggle-hover-bg:           color(grey, lightest) !default;
 
 
 
-/**
+/*
  * Navs
  */
 $nav-link-padding-vertical:        $padding-lg-vertical !default;
@@ -47,21 +47,29 @@ $nav-pills-active-link-hover-color:         #fff !default;
 
 
 
-/**
+/*
+ * Flyout
+ */
+ $flyout-width:                    rem(450px) !default;
+ $flyout-width-sm:                 rem(300px) !default;
+
+
+
+/*
  * Tabs
  */
-$tab-content-padding:              $padding-lg-horizontal !default;
-$tab-content-bg:                   #fff !default;
-$tab-link-bg:                      color(grey, lighter) !default;
+//$tab-content-padding:              $padding-lg-horizontal !default;
+//$tab-content-bg:                   #fff !default;
+$tab-link-bg:                      color(grey, light) !default;
 $tab-link-hover-bg:                $nav-link-hover-bg !default;
-$tab-link-hover-color:             #000 !default;
-$tab-active-link-color:            $nav-active-link-color !default;
+$tab-link-color:                   color(red) !default;
+$tab-active-link-color:            $tab-link-color !default;
 $tab-active-link-bg:               color(grey, lightest) !default;
-$tab-active-link-border:           $nav-active-link-border !default;
+$tab-active-link-border:           color(red) !default;
 
 
 
-/**
+/*
  * Form states and alerts
  * ----------------------------------------------------------------
  * Define colors for form feedback states and, by default, alerts.

@@ -1,0 +1,125 @@
+/*============*\
+   #ICONS-SVG
+\*============*/
+
+
+%i,
+.i {
+  display: inline-block;
+  fill: currentColor;
+  height: rem(16px);
+  vertical-align: middle;
+  width: rem(16px);
+
+  //@include mq($hd: retina) {
+  //  height: 32px;
+  //  width: 32px;
+  //}
+}
+
+.i--sm,
+%i--sm {
+  height: rem(12px);
+  width: rem(12px);
+
+  //@include mq($hd: retina) {
+  //  height: 28px;
+  //  width: 28px;
+  //}
+}
+
+.i--white {
+  color: #fff;
+}
+
+
+.btn > .i,
+.has-icon .btn + .i {
+  margin-right: rem(5px);
+  position: relative;
+  //top: rem(-1px);
+}
+
+
+/*
+ * Icon only button
+ * Tried using :empty but applies itself to input.btn, so no good
+ */
+.btn.btn--i-only {
+  //color: transparent;
+  font-size: 0;
+  overflow: hidden;
+  padding: rem(5px 4px 3px);
+  width: rem(28px);
+}
+
+.btn--i-only > .i {
+  margin-right: 0;
+  //margin-top: 0;
+}
+
+.i > img {
+  @include nope(inlinesvg) {
+    height: rem(16px);
+    vertical-align: top;
+    width: rem(16px);
+  }
+}
+
+
+/*
+ * .btn--xs & .btn--sm icon
+ */
+.btn--xs.btn--i-only {
+  padding: 0;
+  width: rem(18px);
+}
+
+.btn--sm.btn--i-only {
+  padding: rem(1px 2px 0);
+  width: rem(21px);
+}
+
+.btn--xs > .i,
+.btn--sm > .i,
+.has-icon .btn--xs + .i,
+.has-icon .btn--sm + .i,
+.no-inlinesvg .btn--xs > .i > img,
+.no-inlinesvg .btn--sm > .i > img,
+.no-inlinesvg .has-icon .btn--xs + .i > img,
+.no-inlinesvg .has-icon .btn--sm + .i > img {
+  @extend %i--sm;
+}
+
+
+/*
+ * .btn--lg
+ */
+//.btn--lg > .i,
+//.btn--cta > .i {
+//  @include nope(inlinesvg) {
+//    margin-top: -4px;
+//  }
+//}
+
+.btn--lg.btn--i-only,
+.btn--cta.btn--i-only {
+  padding: rem(0 8px);
+  width: rem(35px);
+
+  //> .i {
+  //  margin-top: 0;
+  //}
+}
+
+
+/*
+ * Icon overrides
+ */
+//.i-home:before {
+//  background-position-y: 1px;
+//}
+
+//.i-search:before {
+//  top: rem(-1px);
+//}

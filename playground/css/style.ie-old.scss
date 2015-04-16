@@ -1,62 +1,20 @@
-//@ sourceURL=foo.js
-/*Pattern Lab doesn't have any CSS requirements, which means you can write your styles however you want. Hooray!
-You can use Sass, Less, vanilla CSS, or some other crazy thing I haven't heard of yet.
-
-Atomic design is philosophically complimentary with these CSS approaches:
-
-* SMACSS by Jonathan Snook http://smacss.com/
-* OOCSS by Nicole Sullivan http://oocss.org/
-* BEM CSS Methology : http://bem.info/method/
-* CSS Guidelines by Harry Roberts : https://github.com/csswizardry/CSS-Guidelines
-
-So feel free to use any of these approaches. Or don't. It's totally up to you.
-
-*/
-
-/*------------------------------------*\
-    $TABLE OF CONTENTS 
-    based generally on Harry Roberts excellent CSS Guidelines https://github.com/csswizardry/CSS-Guidelines
-\*------------------------------------*/
-/**
- * VARIABLES..............................Declarations of Sass variables 
- * .....Colors
- * .....Typography
- * .....Layout
- * .....Defaults
- * .....Breakpoints
- * MIXINS.................................Sass mixins 
- * RESET..................................Set reset defaults
- * GLOBAL CLASSES.........................Set reset defaults
- * GLOBAL ELEMENTS........................Establish global styles
- * .....Main
- * .....Headings
- * .....Text-related elements (p, blockquote, lists)
- * .....Defaults
- * .....Breakpoints
- * TYPOGRAPHY------------------------------
- * MEDIA------------------------------
- * LAYOUT------------------------------
- * NAVIGATION------------------------------
- * TOC To Be Continued
- */
-
 // true = include media queries and use rems
 // false = exclude media queries and use px (for ie8 use)
 $not-ie: false;
 
-//@import "scss/vendor/font-awesome/font-awesome.scss";
+//@import "scss/vendor/font-awesome/font-awesome";
 
 
 // ====================
 // TOOLS
 // ====================
 
-@import 'scss/tools/_mixins.scss';
-@import 'scss/tools/_mx.css3.scss';
-@import 'scss/tools/_mx.mq.scss'; // Includes breakpoint vars & other mq options.
-@import 'scss/tools/_mx.grid.scss';
-@import 'scss/tools/_vars.scss';
-@import 'scss/tools/_vars.components.scss';
+@import 'scss/tools/mixins/_mixins';
+@import 'scss/tools/mixins/_mx.css3';
+@import 'scss/tools/mixins/_mx.sass-mq'; // Includes breakpoint vars & other mq options.
+@import 'scss/tools/mixins/_mx.grid';
+@import 'scss/tools/_vars';
+@import 'scss/tools/_vars.components';
 
 
 
@@ -64,18 +22,18 @@ $not-ie: false;
 // BASE
 // ====================
 
-@import 'scss/base/_normalize.custom.scss';
-@import 'scss/base/_type.scss';
-@import 'scss/base/_lists.scss';
+@import 'scss/base/_normalize.custom';
+@import 'scss/base/_type';
+@import 'scss/base/_lists';
 
-@import 'scss/layout/_grid.scss'; // has to come before forms.scss as is used within it.
+@import 'scss/layout/_grid'; // has to come before form-layouts as is used within it.
 
-//@import 'scss/base/forms/_form-grid.scss';
-@import 'scss/base/_form-elements.scss';
-@import 'scss/base/_input-icons.scss';
-@import 'scss/base/_buttons.scss';
-@import 'scss/base/_tables.scss';
-@import 'scss/base/_input-groups.scss'; // HIGH SPECIFICITY
+@import 'scss/base/_form-elements';
+@import "scss/objects/_icons";
+@import 'scss/objects/_input-icons';
+@import 'scss/base/_buttons';
+@import 'scss/base/_tables';       // HIGH SPECIFICITY
+@import 'scss/objects/_input-groups'; // HIGH SPECIFICITY
 
 
 
@@ -83,9 +41,9 @@ $not-ie: false;
 // LAYOUTS
 // ====================
 
-@import 'scss/layout/_form-layouts.scss';
-@import 'scss/layout/_layouts.scss';
-@import 'scss/layout/_ads.scss';
+@import 'scss/layout/_form-layouts';
+@import 'scss/layout/_layouts';
+@import 'scss/layout/_ads';
 
 
 
@@ -93,7 +51,7 @@ $not-ie: false;
 // UTILITIES
 // ====================
 
-//@import 'scss/utils/_component-animations.scss';
+//@import 'scss/utils/_component-animations';
 
 
 
@@ -101,12 +59,12 @@ $not-ie: false;
 // OBJECTS
 // ====================
 
-@import 'scss/objects/_button-groups.scss'; // HIGH SPECIFICITY
-@import 'scss/objects/_flyout.scss';
-@import 'scss/objects/_media.scss';
-@import 'scss/objects/_forms.scss';
-@import 'scss/objects/_toolbar.scss';
-@import 'scss/objects/_toggle.scss';
+@import 'scss/objects/_button-groups'; // HIGH SPECIFICITY
+@import 'scss/objects/_flyout';
+@import 'scss/objects/_media';
+@import 'scss/objects/_forms';
+@import 'scss/objects/_toolbar';
+@import 'scss/objects/_toggle';
 
 
 
@@ -114,22 +72,23 @@ $not-ie: false;
 // COMPONENTS
 // ====================
 
-@import 'scss/components/_navs.scss';
+@import 'scss/components/_headers';
+@import 'scss/components/_navs';
+@import 'scss/components/_boxes';
 
-@import 'scss/components/_navbar.scss';
-@import 'scss/components/_navbar-primary.scss'; // HIGH SPECIFICITY
-@import 'scss/components/_navbar-secondary.scss';
-@import 'scss/components/_navbar-search.scss';
+@import 'scss/components/_navbar';
+@import 'scss/components/_navbar-primary'; // HIGH SPECIFICITY
+@import 'scss/components/_navbar-secondary';
+@import 'scss/components/_navbar-search';
 
-@import 'scss/components/_crumbs.scss';
-@import 'scss/components/_tabs.scss';
-@import 'scss/components/_events.scss';
-@import 'scss/components/_ecommerce.scss';
-@import 'scss/components/_wells.scss';
+@import 'scss/components/_crumbs';
+@import 'scss/components/_tabs';
+@import 'scss/components/_events';
+@import 'scss/components/_ecommerce';
 
-@import 'scss/vendor/jquery-ui/_jquery-ui.structure.scss';
-@import 'scss/vendor/jquery-ui/_jquery-ui.theme.scss';
-@import 'scss/vendor/jquery-ui/_jquery-ui.custom.scss';
+@import 'scss/vendor/jquery-ui/_jquery-ui.structure';
+@import 'scss/vendor/jquery-ui/_jquery-ui.theme';
+@import 'scss/vendor/jquery-ui/_jquery-ui.custom';
 
 
 
@@ -137,9 +96,9 @@ $not-ie: false;
 // UTILITIES (continued)
 // ========================================
 
-@import 'scss/utils/_utilities.scss';
-@import 'scss/utils/_txt.scss';
-@import 'scss/utils/_responsive.scss';
+@import 'scss/utils/_utilities';
+@import 'scss/utils/_txt';
+@import 'scss/utils/_responsive';
 
 
 
@@ -147,6 +106,4 @@ $not-ie: false;
 // MISC
 // ====================
 
-@import "scss/icons/_i-icon-sprite.scss";
-@import "scss/icons/_icons-svg.scss";
-@import 'scss/_shame.scss';
+@import 'scss/_shame';

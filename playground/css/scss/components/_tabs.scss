@@ -3,19 +3,23 @@
 \*=======*/
 
 
-/**
+/*
  * Tabs Content ul/ol
  */
-.tabs_content {
-  @include cf();
-  background-color: $tab-content-bg;
-  border: 1px solid $border-base;
+.c-tabs_content {
+  @include cf;
+  //background-color: $tab-content-bg;
+  //border: 1px solid $border-base;
   list-style: none;
   //margin-bottom: 0;
-  padding: $tab-content-padding;
+  //padding: $tab-content-padding;
 
   > li {
     display: none;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
 
     &.is-active {
       display: block;
@@ -24,64 +28,61 @@
 }
 
 
-/**
+/*
  * Tabs nav wrapper
  */
 .nav--tabs {
-  > li {
-    &.is-active > a {
-      border-bottom-color: $tab-active-link-border;
+  > li > a {
+    border-bottom: 4px solid transparent;
+    border-right: 0;
 
-      &:hover,
-      &:focus {
-        color: $tab-active-link-color;
-      }
-    }
-
-    > a {
-      border-bottom: 3px solid transparent;
-      border-right: 0;
-
-      &:hover,
-      &:focus {
-        border-bottom-color: $border-base;
-        color: $tab-link-hover-color;
-      }
+    &:hover,
+    &:focus {
+      border-bottom-color: $border-base;
+      color: $tab-link-color;
     }
   }
-}
 
+  > .is-active > a {
+    border-bottom-color: $tab-active-link-border;
+    color: $tab-link-color;
 
-/**
- * Toggle (can't go inside media query as @extending)
- */
-.toggle_chkbx:checked + .toggle_btn {
-  &.i-menu:before {
-    @extend .i-times:before;
+    &:hover,
+    &:focus {
+      color: $tab-active-link-color;
+    }
   }
 }
 
 
-.tabs_actions {
-  .btn {
-    border-radius: 0;
-    border-width: 0 1px;
-    //max-height: sz(35px);
-    padding-top: ($nav-link-padding-vertical + sz(1px));
-    padding-bottom: $nav-link-padding-vertical;
-  }
-}
+//.tabs .toggle_chkbx {
+//  &:checked + .toggle_btn + .toggle_target {
+//    box-shadow: 0 0 10px rgba(0,0,0,.3);
+//    transition: max-height 0s linear 0s, box-shadow 0s linear 0s, transform 0.6s cubic-bezier(.4,0,.2,1)0s;
+//  }
+//}
 
 
-.tabs-btn_left,
-.tabs-btn_right {
+//.tabs_actions {
+//  .btn {
+//    border-radius: 0;
+//    border-width: 0 1px;
+//    //max-height: rem(35px);
+//    padding-bottom: $nav-link-padding-vertical;
+//    padding-top: ($nav-link-padding-vertical + rem(1px));
+//  }
+//}
+
+
+.c-tabs-btn_left,
+.c-tabs-btn_right {
   display: none;
 }
 
 
 
 @include mq($to: navbar) {
-  .tabs_content {
+  .c-tabs_content {
     border-top: 0;
   }
 
@@ -92,10 +93,10 @@
     max-height: 34px;
     overflow: hidden;
     position: relative;
-    transition: max-height .5s ease-in-out;
+    transition: max-height .4s linear;
   }
 
-  .tabs {
+  .c-tabs {
     position: relative;
 
     li {
@@ -119,26 +120,25 @@
       }
     }
 
-    .toggle_chkbx:checked + .toggle_btn {
-      + .toggle_target {
-        max-height: 500px;
+    .toggle_chkbx:checked + .toggle_btn + .toggle_target {
+      box-shadow: none;
+      max-height: 500px;
+      transition: max-height .4s linear;
         
-        li > a,
-        .btn-group {
-          display: block;
-          position: relative;
-        }
+      li > a,
+      .btn-group {
+        display: block;
+        position: relative;
       }
     }
 
     .toggle_btn {
-      padding: ($nav-link-padding-vertical + sz(1px)) $nav-link-padding-vertical;
+      padding: ($nav-link-padding-vertical + rem(1px)) $nav-link-padding-vertical;
       position: absolute;
       right: 0;
       z-index: 2;
     }
   }
-
 
   .nav--tabs {
     left: 0 !important;
@@ -147,71 +147,50 @@
 
 
 @include mq($from: navbar) {
-  .tabs {
+  .c-tabs {
     overflow: hidden;
-  }
 
-  .tabs_content {
-    margin-top: -1px;
+    + .c-tabs_content {
+      margin-top: -1px;
+    }
   }
 
   .nav--tabs {
-    min-height: sz(35px);
+    min-height: rem(35px);
 
-    > li > a {
+    > li > a,
+    > .is-active > a {
       &:hover,
       &:focus {
+        background-color: transparent;
         border-bottom-color: $tab-active-link-border;
+        color: $tab-link-color;
       }
     }
   }
 
-  .tabs_wrapper {
-    margin: sz(0 34px);
+  .c-tabs_wrapper {
+    margin: rem(0 34px);
     overflow: hidden;
     position: relative;
     white-space: nowrap;
   }
 
-  .tabs,
-  .tabs_wrapper > .nav--tabs {
+  .c-tabs,
+  .c-tabs_wrapper > .nav--tabs {
     position: relative;
+    //z-index: -1; /* hide it under navbar dd */
   }
   
-  .tabs {
+  .c-tabs {
     li {
       display: inline-block;
     }
-
-    //.tabs_actions {
-    //  float: right;
-
-    //  .btn {
-    //    border-width: 1px;
-    //
-    //    &:first-child {
-    //      border-top-left-radius: $border-radius-base;
-    //    }
-
-    //    &:last-child {
-    //      border-top-right-radius: $border-radius-base;
-    //    }
-    //  }
-    //}
   }
 
-  //.tabs:not(.tabs--vertical) .nav--tabs {
-  //  > li > a {
-  //    &:hover,
-  //    &:focus {
-  //      background-color: transparent;
-  //    }
-  //  }
-  //}
-
   
-  .tabs-btn_left,
-  .tabs-btn_right {
+  .c-tabs-btn_left,
+  .c-tabs-btn_right {
     border: 0;
     border-radius: 0;
     display: block;
@@ -223,23 +202,25 @@
       box-shadow: none;
     }
   }
-  .tabs-btn_left {
-    box-shadow: 2px 0 6px rgba(0,0,0,.15);
+
+  .c-tabs-btn_left {
+    //box-shadow: 0 -1px 2px rgba(0,0,0,.1);
     left: 0;
-    transform: rotate(90deg);
   }
-  .tabs-btn_right {
-    box-shadow: -2px 0 6px rgba(0,0,0,.15);
+
+  .c-tabs-btn_right {
+    //box-shadow: 0 1px 2px rgba(0,0,0,.1);
     right: 0;
-    transform: rotate(-90deg);
   }
 
 
-  /**
+
+  /*
   * Vertical Tabs
   */
-  .tabs--vertical {
+  .c-tabs--vertical {
     @include g-col($columns:3, $collapse:null);
+    margin-right: -1px;
     overflow: visible;
 
     li {
@@ -251,14 +232,16 @@
       }
     }
 
-    + .tabs_content {
+    + .c-tabs_content {
       @include g-col($columns:9, $collapse:null);
       margin-top: 0;
     }
   }
 
-  .tabs--vertical--right {
+  .c-tabs--vertical--right {
     float: right;
+    margin-left: -1px;
+    margin-right: 0;
 
     .nav--tabs {
       margin-left: -1px;

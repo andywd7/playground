@@ -1,32 +1,19 @@
 ﻿<!DOCTYPE html>
   <!--[if lte IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 {{ htmlClass }}"> <![endif]-->
-  <!--[if IE 8]>			<html class="no-js lt-ie10 lt-ie9 ie8 {{ htmlClass }}"> <![endif]-->
+  <!--[if IE 8]>          <html class="no-js lt-ie10 lt-ie9 ie8 {{ htmlClass }}"> <![endif]-->
   <!--[if IE 9]>          <html class="no-js lt-ie10 ie9 {{ htmlClass }}"> <![endif]-->
-  <!--[if gt IE 9]><!-->	<html class="no-js {{ htmlClass }}"> <!--<![endif]-->
+  <!--[if gt IE 9]><!-->  <html class="no-js {{ htmlClass }}"> <!--<![endif]-->
   <head>
-    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{ title }}</title>
-    <meta charset="UTF-8">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width" />
+    <!--<meta name="viewport" content="width=device-width" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script>
-        WebFontConfig = {
-            google: { families: ['Droid+Serif:400,700,400italic,700italic:latin'] }
-        };
-        (function () {
-            var wf = document.createElement('script');
-            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-            wf.type = 'text/javascript';
-            wf.async = 'true';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(wf, s);
-        })();
-    </script>
-    <noscript>
-      <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'>
-    </noscript>
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+      {% pattern-lab-head %}
+    <!-- End Pattern Lab -->
 
     <!--[if (lte IE 8)]>
       <link rel="stylesheet" href="../../css/style.ie-old.css?{{ cacheBuster }}" media="all">
@@ -36,12 +23,36 @@
     <!--<![endif]-->
     <link rel="stylesheet" href="../../css/docs/docs.css?{{ cacheBuster }}" media="all" />
 
+    <!--[if (lte IE 8)]>
+      <script src="../../js/min/svg4everybody.min.js"></script>
+    <![endif]-->
+
+    <script>
+        WebFontConfig = {
+            google: { families: ['Droid+Serif:400,700,400italic,700italic:latin'] }
+        };
+        var cb = function () {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if(raf){
+          raf(cb);
+        }else{
+          window.addEventListener('load', cb);
+        }
+    </script>
+    <noscript>
+      <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'>
+    </noscript>
+
     <script src="../../js/min/picturefill.min.js" async></script>
     <script src="../../js/min/modernizr.min.js"></script>
-
-    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
-      {% pattern-lab-head %}
-    <!-- End Pattern Lab -->
   </head>
   <body class="{{ bodyClass }} u-cf">
     <!--[if lt IE 10]>

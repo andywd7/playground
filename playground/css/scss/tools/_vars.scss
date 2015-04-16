@@ -3,11 +3,11 @@
 \*============*/
 
 
-/**
+/*
  * Global Variables
  */
 $colors: (
-  /**
+  /*
    * Greys
    */
   grey: (
@@ -19,7 +19,7 @@ $colors: (
       lighter:  #e6e6e6,
       lightest: #f4f4f4
   ),
-  /**
+  /*
    * Brand Colours
    */
   primary: (
@@ -71,22 +71,20 @@ $colors: (
     light: lighten(#ffe700, 10%)
   ),
   social: (
-    facebook: #3b5998,
-    linkedin: #0976b4,
-    twitter:  #55acee,
-    youtube:  #cc181e
+    facebook:   #3b5998,
+    linkedin:   #0976b4,
+    twitter:    #55acee,
+    youtube:    #cc181e,
+    googleplus: #dd4b39
   )
 ) !default;
 
 
 $z-layers: (
-  /**
-   * Greys
-   */
   flyout: (
     base: 1000,
     overlay: 999,
-    toggle: 1001
+    toggle: 1002
   )
 ) !default;
 
@@ -99,7 +97,7 @@ $brand-warning:         color(yellow, dark) !default;
 
 
 
-/**
+/*
  * Scaffolding
  */
 $body-bg:               #fff !default;
@@ -108,14 +106,16 @@ $txt-muted:             color(grey) !default;
 $border-base:           color(grey, light) !default;
 
 
-/**
+
+/*
  * Links
  */
 $link-color:            color(secondary) !default;
 $link-hover-color:      darken($link-color, 15%) !default;
 
 
-/**
+
+/*
  * Typography
  */
 $font-family-serif:       'Droid Serif', Georgia, Times, 'Times New Roman', Baskerville, serif !default;
@@ -126,13 +126,13 @@ $font-family-base:        $font-family-sans-serif !default;
 $font-value-base:         14 !default;
 $font-size-html:          percentage($font-value-base / 16) !default;
 
-$font-size-base:          sz($font-value-base) !default; // 1rem or 15px
-$font-size-lg:            sz(18px) !default;
-$font-size-sm:            sz(13px) !default;
-$font-size-xs:            sz(12px) !default;
+$font-size-base:          rem($font-value-base) !default; // 1rem or 14px
+$font-size-lg:            rem(18px) !default;
+$font-size-sm:            rem(13px) !default;
+$font-size-xs:            rem(11px) !default;
 
 $line-height-base:        1.4 !default; // 21/16
-$line-height-computed:    sz($font-value-base * $line-height-base) !default; // 21px
+$line-height-computed:    rem($font-value-base * $line-height-base) !default; // 21px
 
 // By default, this inherits from the `<body>`.
 $headings-font-family:    $font-family-serif !default;
@@ -141,61 +141,62 @@ $headings-line-height:    1.1 !default;
 $headings-color:          $brand-primary !default;
 $headings-sm-color:       color(primary, light) !default;
 
-$fa-font-path:            "../fonts/font-awesome";
+//$fa-font-path:            "../fonts/font-awesome";
 
 
 
-/**
+
+
+/*
  * Components
  * --------------------------------------------------------------------
  * Based on 1.5em(14px) font-size and 1.45 line-height (~21px to start)
  */
-$padding-base-vertical:     sz(3px) !default;
-$padding-base-horizontal:   sz(12px) !default;
+$padding-base-vertical:     rem(3px) !default;
+$padding-base-horizontal:   rem(12px) !default;
 
-$padding-xs-vertical:       sz(1px) !default;
-$padding-xs-horizontal:     sz(5px) !default;
+$padding-xs-vertical:       rem(1px) !default;
+$padding-xs-horizontal:     rem(5px) !default;
 
-$padding-sm-vertical:       sz(2px) !default;
-$padding-sm-horizontal:     sz(7px) !default;
+$padding-sm-vertical:       rem(2px) !default;
+$padding-sm-horizontal:     rem(7px) !default;
 
-$padding-lg-vertical:       sz(6px) !default;
-$padding-lg-horizontal:     sz(16px) !default;
+$padding-lg-vertical:       rem(6px) !default;
+$padding-lg-horizontal:     rem(16px) !default;
 
 $line-height-sm:            1.1 !default;
 $line-height-lg:            1.33333 !default;
 
-$border-radius-base:        sz(2px) !default; // null if no radius code required
-$border-radius-lg:          sz(3px) !default; // null if no radius code required
+$border-radius-base:        rem(2px) !default; // null if no radius code required
+$border-radius-lg:          rem(3px) !default; // null if no radius code required
 $border-radius-sm:          $border-radius-base !default; // null if no radius code required
 
 
 
-/**
+/*
  * Base Variables
  */
 
-
-/**
+/*
  * Grid system
  */
 $total-columns: 12 !default;
-$row-width: sz(1200px) !default;
+$row-width: rem(1200px) !default;
 
 // Padding, is divided by 2 in g-col mixin and applied to the left and right of all columns
-$column-gutter: sz(20px) !default;
+$column-gutter: rem(20px) !default;
 
 
 
-/**
+/*
  * Type
  */
-$font-size-h1:            sz(36px) !default;
-$font-size-h2:            sz(30px) !default;
-$font-size-h3:            sz(24px) !default;
-$font-size-h4:            sz(18px) !default;
-$font-size-h5:            sz(16px) !default;
-$font-size-h6:            sz(13px) !default;
+$font-size-h1:            rem(36px) !default;
+$font-size-h2:            rem(30px) !default;
+$font-size-h3:            rem(24px) !default;
+$font-size-h4:            rem(18px) !default;
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            rem(13px) !default;
 
 
 // Horizontal offset for forms and lists.
@@ -203,13 +204,13 @@ $component-offset-horizontal: 180px !default;
 // Text muted color
 $txt-muted:                   color(grey, light) !default;
 // Abbreviations and acronyms border color
-$abbr-border-color:           color(grey, light) !default;
+$abbr-border-color:           color(grey) !default;
 // Blockquote small color
-$blockquote-sm-color:         color(grey, dark) !default;
+$blockquote-sm-color:         color(grey) !default;
 // Blockquote font family
 $blockquote-font-family:      $font-family-serif !default;
 // Blockquote font size
-$blockquote-font-size:        ($font-size-base * 1.25) !default;
+$blockquote-font-size:        $font-size-base * 1.25 !default;
 // Blockquote font weight
 $blockquote-font-weight:      700 !default;
 // Blockquote border color
@@ -223,14 +224,16 @@ $hr-border:                   $border-base !default;
 
 
 
-/**
+/*
  * Buttons
  * -----------------------------------------------------------
  * For each button, define text, background and border color.
  */
 $btn-font-weight:                normal !default;
+$btn-padding-vertical:           rem(3px) !default;
+$btn-padding-horizontal:         rem(7px) !default;
 
-$btn-color:                      color(grey, darker) !default;
+$btn-color:                      color(grey, darkest) !default;
 $btn-bg:                         color(grey, light) !default;
 $btn-border:                     $btn-bg !default;
 $btn-color-alt:                  #fff !default;
@@ -240,7 +243,7 @@ $btn-primary-border:             $btn-primary-bg !default;
 
 
 
-/**
+/*
  * Forms
  */
 // `<input>` background color
@@ -257,13 +260,13 @@ $input-border:                   color(grey, light) !default;
 // `<input>` border radius
 $input-border-radius:            $border-radius-base !default;
 // Border color for inputs on focus
-$input-border-focus:             color(blue) !default;
+$input-border-focus:             color(blue, dark) !default;
 
 // Placeholder text color
-$input-color-placeholder:        color(grey) !default;
+$input-color-placeholder:        color(grey, dark) !default;
 
 // Default `.f-control` height
-$input-height-base:              ($line-height-computed + ($padding-base-vertical * 2) + sz(2px)) !default;
+$input-height-base:              rem(28px); // ($line-height-computed + ($padding-base-vertical * 2) + rem(2px)) !default;
 // Large `.f-control` height
 //$input-height-lg:                (ceil($font-size-lg * $line-height-lg) + ($padding-lg-vertical * 2) + 2) !default;
 // Small `.f-control` height
@@ -279,13 +282,13 @@ $input-group-addon-border-color: $input-border !default;
 
 
 
-/**
+/*
  * Tables
  * --------------------------------------------------------------------------------------------
  * Customizes the `.table` component with basic values, each used across all table variations.
  */
 // Padding for `<th>`s and `<td>`s.
-$table-cell-padding:            sz(5px) !default;
+$table-cell-padding:            rem(5px) !default;
 // Padding for cells in `.table-condensed`.
 //$table-condensed-cell-padding:  5px !default;
 

@@ -4,17 +4,18 @@
 
 
 .l-container {
-  @include cf();
+  @include cf;
   margin: 0 auto;
   width: 96%;
   
   @include mq($from: desktop) {
     //max-width: (980 / 14) * 1em;
-    max-width: sz(980);
+    max-width: rem(980);
   }
+
   @include mq($from: xlg) {
     //max-width: (1140 / 14) * 1em;
-    max-width: sz(1140);
+    max-width: rem(1140);
   }
 }
 

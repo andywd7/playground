@@ -1,0 +1,521 @@
+// ======
+// Mixins
+// ======
+
+
+// Utilities
+// -------------------------
+
+
+// Add percentage of white to a color
+@function tint($color, $percent){
+  @return mix(white, $color, $percent);
+}
+ 
+// Add percentage of black to a color
+@function shade($color, $percent){
+  @return mix(black, $color, $percent);
+}
+
+
+// Clearfix
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+@mixin cf {
+  //&:before,
+  &:after {
+    content: ''; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// WebKit-style focus
+@mixin tab-focus {
+  // Default
+  outline: thin dotted #333;
+  // WebKit
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+// Center-align a block level element
+@mixin center-block() {
+  //display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Sizing shortcuts
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin square($size) {
+  @include size($size, $size);
+}
+
+// Text overflow
+// Requires inline-block or block & width or max-width for proper styling
+@mixin txt-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// CSS image replacement
+// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+@mixin txt-hide() {
+  background-color: transparent;
+  border: 0;
+  color: transparent;
+  font: #{0/0} a;
+  text-shadow: none;
+}
+
+
+// color-palettes
+//
+@function color($color, $tone: 'base') {
+  @if map-has-key($colors, $color) {
+    @return map-get(map-get($colors, $color), $tone);
+  }
+ 
+  @warn "Unknown `#{$color}` in $colors.";
+  @return null;
+}
+
+
+// z-layers function
+@function z($z-layer, $layer: 'base') {
+  @if map-has-key($z-layers, $z-layer) {
+    @return map-get(map-get($z-layers, $z-layer), $layer);
+  }
+ 
+  @warn "Unknown `#{$z-layer}` in $z-layers.";
+  @return null;
+}
+
+
+// px --> rem
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function size($value, $base-value: $font-value-base) {
+  @if $not-ie == false {
+    $value: strip-unit(round($value)) * 1px;
+    @if $value == 0px { $value: 0; } // Turn 0em into 0
+  } @else if $not-ie == true {
+    $value: strip-unit($value) / strip-unit($base-value) * 1rem;
+    @if $value == 0rem { $value: 0; } // Turn 0rem into 0
+  }
+  @return $value;
+}
+
+@function rem($values, $base-value: $font-value-base) {
+  $max: length($values);
+
+  @if $max == 1 { @return size(nth($values, 1), $base-value); }
+
+  $szValues: ();
+  @for $i from 1 through $max {
+    $szValues: append($szValues, size(nth($values, $i), $base-value));
+  }
+  @return $szValues;
+}
+
+
+// Retina images
+// -------------
+// Short retina mixin for setting background-image and -size
+
+@mixin img-retina($file-1x, $file-2x, $width-1x, $height-1x) {
+  background-image: image-url("#{$file-1x}");
+
+  @media
+  //only screen and (-webkit-min-device-pixel-ratio: 2),
+  //only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: image-url("#{$file-2x}");
+    background-size: $width-1x $height-1x;
+  }
+}
+
+
+// Responsive image
+// ----------------
+// Keep images from scaling beyond the width of their parents.
+
+@mixin img-responsive($display: block) {
+  display: $display;
+  height: auto; // Part 1: Scale the height according to the width, otherwise you get stretching
+  max-width: 100%; // Part 2: Set a maximum relative to the parent
+}
+
+
+
+// Typography
+// ----------------
+
+// [converter] $parent hack
+@mixin txt-emphasis-variant($parent, $color) {
+  #{$parent} {
+    color: $color;
+  }
+  a#{$parent}:hover {
+    color: darken($color, 10%);
+  }
+}
+
+// Contextual backgrounds
+
+// [converter] $parent hack
+@mixin bg-variant($parent, $color) {
+  #{$parent} {
+    background-color: $color !important;
+  }
+  a#{$parent}:hover {
+    background-color: darken($color, 10%) !important;
+  }
+}
+
+
+
+// -----------------------------------------------------------------------------
+// Modernizr mixin
+//
+// Table of contents:
+// 1. Modernizr mixin
+//   1.1 Generate placholder name and selectors
+//   1.2 Define placholder and print @content
+//   1.3 Define feature selector and extend the placeholder
+// 2. Aliases
+//   2.1 Yep alias
+//   2.2 Nope alias
+// 3. Demo
+
+// Usage:
+// .my-selector {
+//   @include yep($features) { ... }
+//   @include nope($features) { ... {
+// }
+// -----------------------------------------------------------------------------
+//
+
+// 1. Modernizr mixin
+// -----------------------------------------------------------------------------
+//
+@mixin modernizr($features, $supports) {
+
+  $everything-okay: true;
+
+  // Use the 'no-' prefix if checking for unsuported features (e.g. `.no-translate3d`)
+  $prefix: if($supports, '', 'no-');
+
+  // Features selector
+  // a) create a string if checking for supported features. We'll concatenate class names later on (e.g. `.translate3d.opacity selector`)
+  // b) create a list if checking for unsuported features. We'll append the class names later on (e.g. `.no-js selector, .no-translate3d selector`)
+  $selector: if($supports, '', ());
+
+  // The placeholder (e.g. `%yep-translate3d` or `%nope-opacity`)
+  $placeholder: if($supports, '%yep', '%nope');
+
+
+  // 1.1 Generate placeholder and selectors
+  @each $feature in $features {
+
+    // Making sure $feature is a string
+    @if type-of($feature) != string {
+
+      $everything-okay: false;
+      @warn '`#{$feature} is not a string for `modernizr`';
+
+    } @else {
+
+      // Add feature name to the placeholder string (e.g. '%yep' + '-' + 'translate3d' or '%nope' + '-' + 'translate3d')
+      $placeholder: $placeholder + '-' + $feature;
+
+      // Define the new selector string (e.g. `.translate3d` or `.no-translate3d`)
+      $new-selector: #{'.' + $prefix + $feature};
+
+      // Append the new selector
+      // a) to the string if yep (e.g. `.translate3d.opacity`)
+      // b) to the list if nope (e.g. `.no-translate3d, .no-opacity`)
+      $selector: if($supports, $selector + $new-selector, append($selector, $new-selector, comma));
+
+    }
+  }
+
+  @if $everything-okay == true {
+ 
+    // 1.2 Define the placholder and print @content
+    #{$placeholder} & {
+      @content;
+    }
+ 
+    // 1.3 Define feature selector(s) and extend the placeholder
+    @at-root #{$selector} {
+      @extend #{$placeholder};
+    }
+
+  }
+}
+
+// 2. Aliases
+// -----------------------------------------------------------------------------
+ 
+  // 2.1 Yep alias
+  @mixin yep($features...) {
+    @include modernizr($features, $supports: true) {
+      @content;
+    }
+  }
+
+
+  // 2.2 Nope alias
+  @mixin nope($features...) {
+    @include modernizr($features, $supports: false) {
+      @content;
+    }
+  }
+
+
+
+// ================
+// COMPONENT MIXINS
+// ================
+
+// Horizontal dividers
+// -------------------
+// Dividers (basically an hr) within dropdowns and nav lists
+@mixin nav-divider($color: #e5e5e5) {
+  background-color: $color;
+  height: 1px;
+  margin: (($line-height-computed / 2) - 1) 0;
+  overflow: hidden;
+}
+
+
+
+// Tables
+// ------
+@mixin table-row-variant($state, $background) {
+  // Exact selectors below required to override `.table-striped` and prevent
+  // inheritance to nested tables.
+  .table > thead > tr,
+  .table > tbody > tr,
+  .table > tfoot > tr {
+    > td.#{$state},
+    > th.#{$state},
+    &.#{$state} > td,
+    &.#{$state} > th {
+      background-color: $background;
+    }
+  }
+
+  // Hover states for `.table-hover`
+  // Note: this is not available for cells or rows within `thead` or `tfoot`.
+  .table--hover > tbody > tr {
+    > td.#{$state}:hover,
+    > th.#{$state}:hover,
+    &.#{$state}:hover > td,
+    &.#{$state}:hover > th {
+      background-color: darken($background, 5%);
+    }
+  }
+}
+
+
+
+// Button variants
+// ---------------
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+@mixin button-variant($background, $border, $color: null) {
+  //background-color: $background;
+  //border-color: $border;
+  color: $color;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken($background, 7%);
+    border-color: darken($border, 7%);
+    color: $color;
+    //text-decoration: none;
+  }
+  //&:active {
+  //  background-color: darken($background, 10%);
+  //  border-color: darken($border, 10%);
+  //}
+  &,
+  &.is-disabled:hover, &.is-disabled:focus, &.is-disabled:active,
+  &[disabled]:hover, &[disabled]:focus, &[disabled]:active {
+    background-color: $background;
+    border-color: $border;
+  }
+  //.open & { 
+  //  &.dropdown-toggle {
+  //    background-color: darken($background, 6%);
+  //    border-color: darken($border, 12%);
+  //    color: $color;
+  //  } 
+  //}
+  //&:active {
+  //  background-image: none;
+  //}
+  //.open & { 
+  //  &.dropdown-toggle {
+  //    background-image: none;
+  //  } 
+  //}
+}
+
+
+// Outline buttons
+// -----------------
+@mixin button-outline($border: null, $color: null) {
+  background-color: transparent;
+  border-color: $border;
+  color: $color;
+}
+
+
+// Button sizes
+// ------------
+@mixin button-size($padding-vertical, $padding-horizontal, $line-height, $border-radius, $font-size: null) {
+  @include border-radius($border-radius);
+  font-size: $font-size;
+  line-height: $line-height;
+  padding: $padding-vertical $padding-horizontal;
+}
+
+
+
+// Responsive utilities
+// --------------------
+// More easily include all the states for responsive-utilities.less.
+// [converter] $parent hack
+@mixin responsive-visibility($parent) {
+  #{$parent} { display: block !important; }
+  tr#{$parent} { display: table-row !important; }
+  th#{$parent},
+  td#{$parent} { display: table-cell !important; }
+}
+
+
+// [converter] $parent hack
+@mixin responsive-invisibility($parent) {
+    #{$parent},
+  tr#{$parent},
+  th#{$parent},
+  td#{$parent} { display: none !important; }
+}
+
+
+
+// Form validation states
+// ----------------------
+// Used in form-icons.scss to generate the form validation CSS for warnings, errors,
+// and successes.
+
+@mixin form-control-validation($text-color: #555, $border-color: #ccc, $background-color: #f5f5f5) {
+  // Color the label and help text
+  .help-block,
+  .control-label,
+  .radio,
+  .ckbx,
+  .radio-inline,
+  .ckbx-inline,
+  &.radio label,
+  &.ckbx label,
+  &.radio-inline label,
+  &.ckbx-inline label {
+    color: $text-color;
+  }
+  // Set the border and box shadow on specific inputs to match
+  .f-control {
+    //box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075); // Redeclare so transitions work
+    border-color: $border-color;
+    &:focus {
+      //$shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px lighten($border-color, 20%);
+      outline-color: $border-color;
+      //box-shadow: $shadow;
+    }
+  }
+  // Set validation states also for addons
+  .input-group-addon {
+    background-color: $background-color;
+    border-color: $border-color;
+    color: $text-color;
+  }
+  // Optional feedback icon
+  .f-control-icon {
+    color: $text-color;
+  }
+}
+
+
+
+// Form control focus state
+//
+// Generate a customized focus state and for any input with the specified color,
+// which defaults to the `$input-focus-border` variable.
+//
+// We highly encourage you to not customize the default value, but instead use
+// this to tweak colors on an as-needed basis. This aesthetic change is based on
+// WebKit's default styles, but applicable to a wider range of browsers. Its
+// usability and accessibility should be taken into account with any change.
+//
+// Example usage: change the default blue border and shadow to white for better
+// contrast against a dark gray background.
+
+@mixin form-control-focus($color: $input-border-focus) {
+  //$color-rgba: rgba(red($color), green($color), blue($color), .6);
+  &:focus {
+    //box-shadow: 0 1px 0 $color, inset 0 -1px 0 $color;
+    //border-color: $color;
+    outline: 2px solid $color;
+  }
+}
+
+
+
+// Form control sizing
+//
+// Relative text size, padding, and border-radii changes for form controls. For
+// horizontal sizing, wrap controls in the predefined grid classes. `<select>`
+// element gets special love because it's special, and that's a fact!
+
+// [converter] $parent hack
+@mixin input-size($parent, $input-height, $padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+  #{$parent} { 
+    @include border-radius($border-radius);
+    font-size: $font-size;
+    height: $input-height;
+    line-height: $line-height;
+    padding: $padding-vertical $padding-horizontal;
+  }
+
+  select#{$parent} {
+    height: $input-height;
+    line-height: $input-height;
+  }
+
+  textarea#{$parent} {
+    height: auto;
+  }
+}

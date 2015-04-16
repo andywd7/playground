@@ -1,37 +1,31 @@
 <!-- Begin .header -->
 <a href="#main" class="u-sr">Skip to main content</a>
-<div class="flyout_wrapper">
-  <header class="navbar" role="banner">
-    <div class="l-container">
-      {{> atoms-navbar-brand }}
 
-      {{> atoms-toggle-menu:js-tog-navbar }}
-
-      <div class="navbar_flyout toggle_target">
-        <div class="flyout_close">
-          <h5 class="flyout_heading">MENU</h5>
-          <label for="js-tog-navbar" class="i i-times"></label>
-        </div>
-        <div class="navbar_nav flyout_inner">
-          {{> molecules-navbar-secondary }}
-          {{> molecules-navbar-primary }}
-        </div>
-      </div>
-
-      {{> atoms-toggle-basket:js-tog-flyout }}
-      <div class="flyout toggle_target">
-        <div class="flyout_close">
-          <h5 class="flyout_heading">FLYOUT</h5>
-          <label for="js-tog-flyout" class="i i-times"></label>
-        </div>
-        <div class="flyout_inner">
-          <p>{{ excerpt.long }}</p>
-        </div>
-      </div>
-
-    </div>
-  </header>
-
+<header class="navbar" role="banner">
   <div class="l-container">
-    {{> molecules-tabs }}
+    {{> atoms-navbar-brand }}
+
+    {{> atoms-toggle-menu:js-tog-navbar }}
+
+    <div class="navbar_flyout toggle_target">
+      <!--<div class="flyout_close">
+        <h5 class="flyout_heading">MENU</h5>
+        <label for="js-tog-navbar" class="i i-times i--white"></label>
+      </div>-->
+      <div class="navbar_nav flyout_inner">
+        {{> molecules-navbar-secondary }}
+        {{> molecules-navbar-primary }}
+      </div>
+    </div>
+
+    {{> atoms-toggle-basket:js-tog-flyout }}
+    {{> molecules-flyout(demo: false) }}
+
   </div>
+</header>
+
+<div class="l-container">
+  {{> molecules-tabs }}
+  {{> molecules-tabs }}
+  {{> molecules-address-form }}
+</div>

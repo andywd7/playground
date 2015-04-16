@@ -5,7 +5,7 @@
 \*==================================================*/
 
 
-/**
+/*
  * Common styles
 --------------------
  * Clear the floats
@@ -20,12 +20,12 @@
 //  padding: $column-gutter 0;
 //}
 
-/**
+/*
  * Proper spacing between instances of .media
  */
 .media,
 .media .media {
-  margin-top: sz(15px);
+  margin-top: rem(15px);
 }
 
 .media:first-child {
@@ -33,31 +33,59 @@
 }
 
 
-/**
+.media_body,
+.media_left,
+.media_right {
+  display: table-cell;
+  vertical-align: top;
+
+  > img {
+    max-width: none;
+  }
+}
+
+/*
  * For images and videos, set to block
  */
 //.media_object {
 //  display: block;
 //}
 
-/**
+/*
  * Reset margins on headings for tighter default spacing
  */
 .media_heading {
-  margin: sz(0 0 10px);
+  margin: rem(0 0 10px);
 }
 
 
-/**
+/*
  * Media image alignment
  */
 //.media {
   //border: 1px solid $border-base;
 
-.media_fl,
-.media_fr {
+.media_left {
+  padding-right: $column-gutter;
+}
+
+.media_right {
+  padding-left: $column-gutter;
+}
+
+.media--content .media_fl,
+.media--content .media_fr {
   display: block;
+  float: none;
   //margin-bottom: ($line-height-computed / 1.5);
+}
+
+.media--content .media_fl {
+  margin-right: 0;
+}
+
+.media--content .media_fr {
+  margin-left: 0;
 }
 //}
 
@@ -69,12 +97,12 @@
     //  margin-bottom: 0;
   //}
 
-  .media_fl {
+  .media--content .media_fl {
     float: left;
     margin-right: $column-gutter;
   }
 
-  .media_fr {
+  .media--content .media_fr {
     float: right;
     margin-left: $column-gutter;
   }
@@ -83,7 +111,7 @@
 
 
 
-/**
+/*
  * Media list variation
 -----------------------------
  * Undo default ul/ol styles
@@ -94,7 +122,7 @@
 }
 
 
-/**
+/*
  * Media link
  */
 //.media--link {

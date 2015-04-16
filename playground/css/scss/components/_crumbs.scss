@@ -5,45 +5,45 @@
 
 .crumbs,
 .crumbs .list-collapsable_list {
-  @include cf();
+  @include cf;
 }
 
 //.crumbs {
-//  padding: sz(3px 0 6px);
+//  padding: rem(3px 0 6px);
 //}
 
 
-/**
+/*
  * General item in list
  */
 .crumbs_item {
   float: left;
-  font-size: sz(12px);
-  line-height: sz(14px);
+  font-size: rem(12px);
+  line-height: rem(14px);
   white-space: nowrap;
 }
 
 
-/**
+/*
  * Link in general item 
  */
 .crumbs_item a {
-  background-color: color(grey, lighter);
-  color: $txt-color;
+  background-color: color(secondary);
+  color: #fff;
   display: inline-block;
-  margin-left: sz(4px);
-  padding: sz(2px 5px);
+  margin-left: rem(4px);
+  padding: rem(2px 5px);
 
   &:hover,
   &:focus {
-    background-color: color(grey, lightest);
-    color: $txt-color;
+    background-color: color(secondary, light);
+    //color: $txt-color;
     //text-decoration: none;
   }
 }
 
 
-/**
+/*
  * Home / first item in list
  */
 .crumbs_item:first-child a {
@@ -65,90 +65,77 @@
   }
 
   span {
-    @extend .u-sr;
+    @extend %u-sr;
   }
 }
 
-
-/**
+// scss-lint:disable MergeableSelector
+/*
  * Section or Category / second item in list
  */
 .crumbs_item:first-child + .crumbs_item a {
   background-color: color(primary);
-  color: #fff;
-  margin-left: sz(4px);
-  padding-left: sz(7px);
+  //color: #fff;
+  margin-left: rem(4px);
+  padding-left: rem(7px);
 
   &:hover,
   &:focus {
     background-color: color(primary, light);
+
+    &:before,
+    &:after {
+      border-left-color: color(primary, light);
+      border-right-color: color(primary, light);
+    }
+  }
+
+  &:before {
+    border: 0;
+  }
+
+  &:after {
+    border-left-color: color(primary);
   }
 }
 
 
-/**
- * Current Location / Last item in list
- */
-.crumbs_item:last-child,
-.crumbs_item--last {
-  margin-left: sz(6px);
-  padding: sz(3px 0 1px);
-}
-
-
-
 //@include mq($from: mobile) {
-/**
-  * General item in list
-  */
+/*
+ * General item in list
+ */
 .crumbs_item {
   position: relative;
-    
+  
   a {
-    margin-left: sz(25px);
+    margin-left: rem(25px);
 
     &:hover,
     &:focus {
       &:before,
       &:after {
-        border-left-color: color(grey, lightest);
-        border-right-color: color(grey, lightest);
+        border-left-color: color(secondary, light);
+        border-right-color: color(secondary, light);
       }
     }
     
     &:before {
-      border-right: sz(18px) solid color(grey, lighter);
-      border-bottom: sz(18px) inset transparent;
-      left: sz(7px);
+      border-bottom: rem(18px) inset transparent;
+      border-right: rem(18px) solid color(secondary);
+      left: rem(7px);
     }
 
     &:after {
-      border-left: sz(18px) solid color(grey, lighter);
-      border-top: sz(18px) inset transparent;
-      right: sz(-18px);
+      border-left: rem(18px) solid color(secondary);
+      border-top: rem(18px) inset transparent;
+      right: rem(-18px);
     }
   }
-}
 
-.crumbs_item:not(:first-child) a {
-  &:before,
-  &:after {
-    content: '';
-    display: inline-block;
-    height: 0;
-    outline: 0 none;
-    position: absolute;
-    top: 0;
-    width: sz(18px);
-  }
-}
-
-
-/**
-  * Home / first item in list
-  */
-.crumbs_item:first-child {
-  a {
+  /*
+   * Home / first item in list
+   */
+  &:first-child a {
     &:before,
     &:after {
       border: 0;
@@ -161,39 +148,36 @@
       }
     }
   }
-}
 
-
-/**
-  * Section or Category / second item in list
-  */
-.crumbs_item:first-child + .crumbs_item a {
-  &:hover,
-  &:focus {
+  &:not(:first-child) a {
     &:before,
     &:after {
-      border-left-color: color(primary, light);
-      border-right-color: color(primary, light);
+      content: '';
+      display: inline-block;
+      height: 0;
+      outline: 0 none;
+      position: absolute;
+      top: 0;
+      width: rem(18px);
     }
   }
-    
-  &:before {
-    border: 0;
-  }
-
-  &:after {
-    border-left-color: color(primary);
-  }
 }
 
-
-/**
-  * Current Location / Last item in list
-  */
+/*
+ * Current Location / Last item in list
+ */
 .crumbs_item:last-child,
 .crumbs_item--last {
-  margin-left: sz(23px);
+  clear: left;
+  margin-left: rem(30px);
+  padding: rem(3px 0 1px);
+
+  @include mq($from: mobile) {
+    clear: none;
+    margin-left: rem(22px);
+  }
 }
+
 
 //&:after {
 //  content: $fa-var-angle-right; // ">";

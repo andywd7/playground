@@ -3,7 +3,7 @@
 \*===============*/
 
 
-/** 
+/*
  * Form grid
  */
 form {
@@ -14,29 +14,35 @@ form {
   }
 
   [class*="w-"] {
-    margin-bottom: sz(5px);
+    margin-bottom: rem(5px);
 
     @include mq($from: mobile) {
       margin-bottom: 0;
     }
   }
+
+  //[class*="wf-"] .control-label {
+  //  @include mq($from: mobile) {
+  //    float: left;
+  //  }
+  //}
 }
 
 
 
-/** 
+/*
  * Form groups
 --------------------------------------------------------------------------------
  * Designed to help with the organization and spacing of vertical forms. For
  * horizontal forms, use the predefined grid classes.
  */
 .f-group {
-  margin-bottom: sz(10px);
+  margin-bottom: rem(10px);
 }
 
 
 
-/**
+/*
  * Stacked forms
 --------------------------------------------------------------------------------
  * Horizontal forms are built on grid classes and allow you to create forms with
@@ -56,18 +62,30 @@ form {
 
 
 
-/** 
+/*
  * Horizontal forms
 --------------------------------------------------------------------------------
  * Horizontal forms are built on grid classes and allow you to create forms with
  * labels on the left and inputs on the right.
  */
 .f-horizontal {
+  /*
+   * Reset spacing and right align labels, but scope to media queries so that
+   * labels on narrow viewports stack the same as a default form example.
+   */
+  @include mq($from: mobile) {
+    .control-label {
+      //text-align: right;
+      margin-bottom: 0;
+      padding-top: $padding-base-vertical + rem(1px); // Default padding plus a border
+    }
+  }
+
   //.f-inline {
   //  @include g-col();
   //}
 
-  /** 
+  /* 
    * Consistent vertical alignment of radios and checkboxes
   --------------------------------------------------------------------------------
    * Labels also get some reset styles, but that is scoped to a media query below.
@@ -78,42 +96,31 @@ form {
   .checkbox-inline {
     //margin-top: 0;
     //margin-bottom: 0;
-    padding-top: ($padding-base-vertical + sz(1px)); /* Default padding plus a border */
+    padding-top: ($padding-base-vertical + rem(1px)); /* Default padding plus a border */
   }
 
-  /**
+  /*
    * Account for padding we're adding to ensure the alignment and of help text
    * and other content below items
    */
   .radio,
   .checkbox {
-    min-height: ($line-height-computed + ($padding-base-vertical + sz(1px)));
+    min-height: ($line-height-computed + ($padding-base-vertical + rem(1px)));
   }
 
-  /**
+  /*
    * Make form groups behave like rows
    */
   .f-group {
     @include g-row(4);
   }
 
+  // scss-lint:disable QualifyingElement
   [class*="w-"] select.f-control {
     width: 100%;
   }
 
-  /**
-   * Reset spacing and right align labels, but scope to media queries so that
-   * labels on narrow viewports stack the same as a default form example.
-   */
-  @include mq($from: mobile) {
-    .control-label {
-      //text-align: right;
-      margin-bottom: 0;
-      padding-top: $padding-base-vertical + sz(1px); // Default padding plus a border
-    }
-  }
-
-  /**
+  /*
    * Validation states
   ------------------------------------------------------------------------------
    * Reposition the icon because it's now within a grid column and columns have
@@ -123,15 +130,17 @@ form {
   .has-icon--right .f-control + .f-control_icon {
     top: 0;
   }
+
   .has-icon .f-control + .f-control_icon {
     left: ($column-gutter / 3);
   }
+
   .has-icon--right .f-control + .f-control_icon {
     right: ($column-gutter / 3);
   }
 
 
-  /**
+  /*
    * Form group sizes
   ------------------------------------------------------------------------------
    * Quick utility class for applying `.input-lg` and `.input-sm` styles to the
@@ -139,32 +148,32 @@ form {
    */
   //.f-group-lg {
   //  @include mq($from: mobile) {
-	 //   .control-label {
-		//    padding-top: (($padding-lg-vertical * $line-height-lg) + sz(1px));
-		//  }
+   //   .control-label {
+    //    padding-top: (($padding-lg-vertical * $line-height-lg) + rem(1px));
+    //  }
   //  }
 
-	 // .f-control {
-		//  @extend .input-lg;
+   // .f-control {
+    //  @extend .input-lg;
   //  }
   //}
 
   //.f-group-sm {
-	 // @include mq($from: desktop) {
+   // @include mq($from: desktop) {
   //    .control-label {
-		//	  padding-top: ($padding-sm-vertical + sz(1px));
-		//  }
-	 // }
+    //	  padding-top: ($padding-sm-vertical + rem(1px));
+    //  }
+   // }
 
-	 // .f-control {
-	 //   @extend .input-sm;
-	 // }
+   // .f-control {
+   //   @extend .input-sm;
+   // }
   //}
 }
 
 
 
-/**
+/*
  * Inline forms
 --------------------------------------------------------------------------------
  * Make forms appear inline(-block) by adding the `.form-inline` class. Inline
@@ -180,7 +189,7 @@ form {
 
 //  // Kick in the inline
 //  @include mq($from: mobile) {
-//    /**
+//    /*
 //     * Inline-block all the things for "inline"
 //     */
 //    .form-group {
@@ -189,7 +198,7 @@ form {
 //      vertical-align: middle;
 //    }
 
-//    /**
+//    /*
 //     * In navbar-form, allow folks to *not* use `.form-group`
 //     */
 //    .f-control {
@@ -209,7 +218,7 @@ form {
 //      }
 //    }
 
-//    /**
+//    /*
 //     * Input groups need that 100% width though
 //     */
 //    .input-group > .f-control {
@@ -221,7 +230,7 @@ form {
 //      vertical-align: middle;
 //    }
 
-//    /**
+//    /*
 //     * Remove default margin on radios/checkboxes that were used for stacking, and
 //     * then undo the floating of radios and checkboxes to match (which also avoids
 //     * a bug in WebKit: https://github.com/twbs/bootstrap/issues/1969).
@@ -244,7 +253,7 @@ form {
 //      margin-left: 0;
 //    }
 
-//    /**
+//    /*
 //     * Validation states
 //    ------------------------------------------------------------------------------
 //     * Reposition the icon because it's now within a grid column and columns have

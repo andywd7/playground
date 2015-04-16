@@ -11,32 +11,32 @@
     jQuery('input[type=date]').addClass('js-datepicker');
   }
 
-  // 'Disable' any link with class .disabled
-  jQuery('a.is-disabled').on('click', function (e) {
-    e.preventDefault();
+  // Modernizr addTest for pointerevents detection
+  Modernizr.addTest("pointerevents", function () {
+    var a = document.createElement("x");
+    a.style.cssText = "pointer-events:auto";
+    return a.style.pointerEvents === "auto";
   });
-
-  jQuery('.lt-ie9 .i').each(function () {
-    var $this = jQuery(this);
-    if ($this.text() == "") {
-      $this.addClass('i--only');
-    }
-  });
-
-  jQuery('lt-ie10 .has-icon .i, lt-ie10 .has-icon--right .i').on('mouseover mouseleave click', function (e) {
+  // Modernizr no-pointerevents input[type=submit] with icon
+  if (!Modernizr.pointerevents) {
+    jQuery('.has-icon .i').on('mouseover mouseleave click', function (e) {
       var $btn = jQuery(this).siblings('.btn:not(:disabled)');
       if (e.type == 'mouseover') {
-          $btn.addClass('is-hover');
+        $btn.addClass('is-hover');
       } else if (e.type == 'mouseleave') {
-          $btn.removeClass('is-hover');
+        $btn.removeClass('is-hover');
       } else {
-          $btn.click();
-          console.log('clicked');
+        $btn.click();
       }
-      //e.stopPropagation();
-  });
-  jQuery('.lt-ie10 .has-icon input[type=submit],lt-ie10 .has-icon--right input[type=submit]').on('click', function () {
-      console.log('clicked');
+    });
+    //jQuery('.has-icon input[type=submit]').on('click', function () {
+    //  console.log('clicked');
+    //});
+  }
+
+  // 'Disable' any link with class .is-disabled
+  jQuery('a.is-disabled').on('click', function (e) {
+    e.preventDefault();
   });
 
   jQuery(function () {

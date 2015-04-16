@@ -1,9 +1,9 @@
-/*================*\
+/*=========*\
    #TOGGLE
-\*================*/
+\*=========*/
 
 
-/**
+/*
  * Toggle checkbox
  * Hidden, this is used so the item appears out with or without js
  */
@@ -18,7 +18,22 @@
 }
 
 
-/**
+//.toggle_chkbx {
+//  &:checked + .toggle_btn + .toggle_target {
+//    transition: transform 0.6s cubic-bezier(.4,0,.2,1)0s;
+//  }
+//}
+
+
+/*
+ * Toggle (can't go inside media query as @extending)
+ */
+//.toggle_chkbx:checked + .toggle_btn.i-menu:before {
+//  @extend %i-times;
+//}
+
+
+/*
  * Navbar toggle "button"
  */
 .toggle_btn {
@@ -26,7 +41,17 @@
   margin: 0;
   text-align: center;
 
-  /**
+  @include mq($from: navbar) {
+    display: none;
+  }
+
+  @include mq($from: mobile) {
+    .i {
+      margin-right: rem(5px);
+    }
+  }
+
+  /*
    * We remove the `outline` here, but later compensate by attaching `:hover`
    * styles to `:focus`.
    */
@@ -41,15 +66,9 @@
 
   .toggle_txt {
     display: none;
-  }
 
-  @include mq($from: mobile) {
-    .toggle_txt {
+    @include mq($from: mobile) {
       display: inline-block;
     }
-  }
-
-  @include mq($from: navbar) {
-    display: none;
   }
 }

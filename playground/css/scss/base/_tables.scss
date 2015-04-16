@@ -2,6 +2,7 @@
    #TABLES
 \*=========*/
 
+// scss-lint:disable SelectorDepth, NestingDepth
 
 table {
   background-color: $table-bg;
@@ -12,15 +13,16 @@ th {
 }
 
 
-/** 
+/*
  * Baseline styles
  */
-.table {
+.table,
+%table {
   margin-bottom: $line-height-computed;
   max-width: 100%;
   width: 100%;
   
-  /**
+  /*
    * Cells
    */
   > thead,
@@ -29,8 +31,8 @@ th {
     > tr {
       > th,
       > td {
-        border-top: 1px solid $table-border-color;
         border-left: 1px solid $table-border-color;
+        border-top: 1px solid $table-border-color;
         line-height: $line-height-base;
         padding: $table-cell-padding;
         vertical-align: top;
@@ -42,7 +44,7 @@ th {
     }
   }
 
-  /**
+  /*
    * Bottom align for column headings
    */
   > thead > tr > th {
@@ -51,7 +53,7 @@ th {
     vertical-align: bottom;
   }
 
-  /**
+  /*
    * Bottom align for column headings
    */
   > tfoot > tr > th {
@@ -59,7 +61,7 @@ th {
     //vertical-align: bottom;
   }
 
-  /**
+  /*
    * Remove top border from thead by default
    */
   > caption + thead,
@@ -73,14 +75,34 @@ th {
     }
   }
 
-  /** 
+  /*
    * Account for multiple tbody instances
    */
   > tbody + tbody {
     border-top: 2px solid $table-border-color;
   }
 
-  /**
+  /*
+   * Table cell sizing
+  ---------------------------------
+   * Reset default table behavior
+   */
+  col[class*="w-"] {
+    display: table-column;
+    float: none;
+    position: static; // Prevent border hiding in Firefox and IE9/10 (see https://github.com/twbs/bootstrap/issues/11623)
+  }
+
+  td,
+  th {
+    &[class*="w-"] {
+      display: table-cell;
+      float: none;
+      position: static; // Prevent border hiding in Firefox and IE9/10 (see https://github.com/twbs/bootstrap/issues/11623)
+    }
+  }
+
+  /*
    * Nesting
    */
   .table {
@@ -88,7 +110,16 @@ th {
   }
 }
 
-/** 
+
+/*
+ * Fixed layout
+ */
+.table--fixed {
+  table-layout: fixed;
+}
+
+
+/*
  * Large styles
  */
 //.table--lg {  
@@ -110,7 +141,7 @@ th {
 //}
 
 
-/**
+/*
  * Condensed table w/ half padding
  */
 //.table--condensed {
@@ -127,13 +158,13 @@ th {
 //}
 
 
-/**
+/*
  * Bordered version
 -----------------------------------------------------------------
  * Add borders all around the table and between all the columns.
  */
 .table--bordered {
-  @extend .table;
+  @extend %table;
   border: 1px solid $table-border-color;
 
   > thead,
@@ -163,7 +194,7 @@ th {
 }
 
 
-/**
+/*
  * Zebra-striping
 --------------------------------------------------------------------------------
  * Default zebra-stripe styles (alternating gray and transparent backgrounds)
@@ -178,7 +209,7 @@ th {
 //}
 
 
-/**
+/*
  * Hover effect
 --------------------------------------------------------------------------------
  * Placed here since it has to come after the potential zebra striping
@@ -193,7 +224,7 @@ th {
 }
 
 
-/**
+/*
  * Comparison table
  */
 .table--compare {
@@ -213,7 +244,7 @@ th {
   }
 }
 
-/**
+/*
  * :not nesting error in sass 3.4.6 (04/11/14), check later to see if fixed
  */
 .table--compare > thead > tr > th,
@@ -223,30 +254,7 @@ th {
 
 
 
-/**
- * Table cell sizing
----------------------------------
- * Reset default table behavior
- */
-table col[class*="w-"] {
-  display: table-column;
-  float: none;
-  position: static; // Prevent border hiding in Firefox and IE9/10 (see https://github.com/twbs/bootstrap/issues/11623)
-}
-table {
-  td,
-  th {
-    &[class*="w-"] {
-      display: table-cell;
-      float: none;
-      position: static; // Prevent border hiding in Firefox and IE9/10 (see https://github.com/twbs/bootstrap/issues/11623)
-    }
-  }
-}
-
-
-
-/**
+/*
  * Table backgrounds
 --------------------------------------------------------------------------------
  * Exact selectors below required to override `.table-striped` and prevent
@@ -263,7 +271,7 @@ table {
 
 
 
-/**
+/*
  * Responsive tables
 --------------------------------------------------------------------------------
  * Wrap your tables in `.table-responsive` and we'll make them mobile friendly
@@ -272,10 +280,10 @@ table {
  */
 .table--responsive {
   @include mq($to: tablet) {
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
     border: 1px solid $table-border-color;
     margin-bottom: ($line-height-computed * .75);
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
     overflow-x: auto;
     overflow-y: hidden;
     width: 100%;
@@ -318,6 +326,7 @@ table {
           > td:first-child {
             border-left: 0;
           }
+
           > th:last-child,
           > td:last-child {
             border-right: 0;

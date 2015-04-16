@@ -3,7 +3,7 @@
 \*========*/
 
 
-/**
+/*
  * Grid row
  */
 .grid-row {
@@ -14,8 +14,10 @@
 @include make-grid-columns($total-columns);
 //@include make-fixed-grid-columns($total-columns);
 
-@include mq($from: mobile) {
-  @include loop-grid-columns($total-columns, width);
-  @include loop-grid-columns($total-columns, offset);
-  //@include loop-grid-columns($total-columns, width, false);
-}
+//@include mq($from: mobile) {
+@include loop-grid-columns($total-columns, width);
+@include loop-grid-columns($total-columns, offset);
+
+//@include loop-grid-columns($total-columns, width, false);
+//@include loop-grid-columns($total-columns, offset, false);
+//}

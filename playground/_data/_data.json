@@ -4,7 +4,7 @@
 	"bodyClass": "body",
 	"img": {
 		"landscape": {
-			"src": "http://placeimg.com/500/300/architecture",
+			"src": "http://placeimg.com/500/300/arch",
 			"alt": "Landscape Image"
 		},
 		"square": {

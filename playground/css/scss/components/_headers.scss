@@ -1,0 +1,134 @@
+/*==========*\
+   #HEADERS
+\*==========*/
+
+
+.page-header_container {
+  position: relative;
+
+  .page-header {
+    background-color: rgba(#000, .9); //
+    z-index: 1; //
+  
+    &:before {
+      //background-color: rgba(#000, 0.5);
+      border-left: 9999px solid rgba(#000, .5);
+      bottom: 0;
+      box-shadow: 9999px 0 0 rgba(#000, .5);
+      content: '';
+      left: -9999px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: -1;
+    }
+  
+
+    //&:before {
+    //  background-color: $brand-primary;
+    //  bottom: 0;
+    //  content: '';
+    //  left: -$line-height-computed;
+    //  position: absolute;
+    //  right: 0;
+    //  top: 0;
+    //  width: ($line-height-computed - rem(1px));
+    //}
+  }
+
+  //&:before {
+  //  background-color: rgba(#000, 0.5);
+  //  bottom: 0;
+  //  content: '';
+  //  left: 0;
+  //  position: absolute;
+  //  right: 0;
+  //  top: 0;
+  //}
+
+  &.grid-row:before {
+    display: block;
+  }
+}
+
+.page-header {
+  background-color: rgba(#fff, .6);
+  bottom: 0;
+  margin: $line-height-computed;
+  padding: $line-height-computed;
+  position: absolute;
+  width: 60%;
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  .grid-row & {
+    min-width: rem(250px);
+    width: 100%;
+  }
+}
+
+.page-header_meta {
+  color: $txt-color;
+  margin-bottom: $line-height-computed / 2;
+}
+
+.page-header_meta {
+  font-size: $font-size-sm;
+}
+
+.page-header--dark {
+  background-color: rgba(#000, .5);
+  color: #fff;
+
+  .page-header_title,
+  .lead,
+  .page-header_meta,
+  a {
+    color: #fff;
+  }
+}
+
+.page-header--inline {
+  background-color: transparent;
+  padding: 0 rem(7px);
+
+  .page-header_title,
+  .lead,
+  .page-header_meta {
+    background-color: rgba(#fff, .6);
+    box-decoration-break: clone;
+    box-shadow: rem(7px) 0 0 rgba(#fff, .6), rem(-7px) 0 0 rgba(#fff, .6);
+    display: inline;
+    line-height: 1.5;
+    padding: rem(0 0 5px);
+  }
+
+  .page-header_title,
+  .page-header_meta {
+    &:after {
+      content: '';
+      display: block;
+      height: $line-height-computed / 2;
+    }
+  }
+
+  .lead,
+  .page-header_meta {
+    line-height: 1.26;
+    padding: 0;
+    vertical-align: bottom;
+  }
+
+  &.page-header--dark {
+    background-color: transparent;
+
+    .page-header_title,
+    .lead,
+    .page-header_meta {
+      background-color: rgba(#000, .5);
+      box-shadow: rem(7px) 0 0 rgba(#000, .5), rem(-7px) 0 0 rgba(#000, .5);
+    }
+  }
+}

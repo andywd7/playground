@@ -3,14 +3,17 @@
 \*=========*/
 
 
-/**
+/*
  * Navbar
  */
 .navbar {
   background-color: $header-bg;
-  border-bottom: 1px solid $navbar-border;
-  margin-bottom: $line-height-computed;
-  position: relative;
+  //border-bottom: 1px solid $navbar-border;
+  //margin-bottom: $line-height-computed;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: z(flyout) + 1;
 
   //&:before {
   //  left: $navbar-brand-width;
@@ -25,10 +28,10 @@
     &:before {
       background-color: $navbar-bg;
       border-bottom: 1px solid $navbar-border;
-      border-top: 1px solid $navbar-border;
+      //border-top: 1px solid $navbar-border;
       content: '';
       display: block;
-      height: 24px;
+      height: 23px;
       left: 50%;
       position: absolute;
       top: 0;
@@ -39,31 +42,51 @@
   > .l-container {
     position: relative;
   }
-}
 
+  /*
+   * Navbar toggle "button"
+   */
+  .toggle_btn {
+    color: $navbar-color;
+    line-height: $line-height-base;
+    padding: rem(10px) $padding-base-horizontal;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: z(flyout, toggle);
 
-/**
- * Brand name
- * ie needs height for SVG
- */
-.navbar_brand {
-  border-right: 1px solid $navbar-border;
-  display: block;
-  float: left;
-  height: 69px;
-  padding: sz(0 10px 10px 0);
-  position: relative;
-  width: $navbar-brand-width;
+    @include mq($from: mobile) {
+      width: rem(110px);
+    }
 
-  @include mq($from: navbar) {
-    height: 99px;
-    padding: sz(0 20px 15px 0);
-    width: $navbar-brand-width + 30px;
+    @include mq($from: navbar) {
+      display: none;
+    }
   }
 }
 
 
-/**
+/*
+ * Brand name
+ * ie needs height for SVG
+ */
+.navbar_brand {
+  //border-right: 1px solid $navbar-border;
+  display: block;
+  float: left;
+  //padding: rem(0 10px 0 0);
+  position: relative;
+  width: $navbar-brand-width;
+
+  //@include mq($from: navbar) {
+  //  //height: 99px;
+  //  //padding: rem(0 20px 0 0);
+  //  width: $navbar-brand-width + 30px;
+  //}
+}
+
+
+/*
  * Navbar checkbox
  * Hidden, this is used so the navigation slides out with or without js
  */
@@ -76,45 +99,26 @@
 //}
 
 
-/**
- * Navbar toggle "button"
- */
-.navbar .toggle_btn {
-  line-height: $line-height-base;
-  padding: sz(10px) $padding-base-horizontal;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: z(toggle);
-
-  @include mq($from: mobile) {
-    width: sz(110px);
-  }
-
-  @include mq($from: navbar) {
-    display: none;
-  }
-}
-
-
-/**
+/*
  * Navbar inner scroll wrapper
  */
 .navbar_nav {
-  padding: sz(0 0 80px);
+  background-color: $navbar-bg;
+  margin-top: rem(70px);
+  padding: rem(0 0 80px);
   position: relative;
-    
-  .nav {
-    > li {
-      > a {
-        color: $navbar-color;
-        //text-decoration: none;
+  
+  @include mq($from: navbar) {
+    margin-top: 0;
+  }
 
-        &:hover,
-        &:focus {
-          background-color: $navbar-hover-bg;
-        }
-      }
+  .nav > li > a {
+    color: $navbar-color;
+    //text-decoration: none;
+
+    &:hover,
+    &:focus {
+      background-color: $navbar-hover-bg;
     }
   }
 }
@@ -149,29 +153,31 @@
 //}
 
 
-/**
+/*
  * Navbar Flyout
  */
 .navbar_flyout {
-  @extend .flyout;
+  @extend %flyout;
   //backface-visibility: hidden;
-  background-color: $navbar-bg;
-  right: sz(-$navbar-width);
-  width: sz($navbar-width);
+  //background-color: transparent;
+  //right: rem(-$navbar-width);
+  width: rem($navbar-width);
+  z-index: z(flyout) + 1; /* puts menu above content*/
   
   @include mq($from: navbar) {
     background-color: transparent;
-    margin-left: $navbar-brand-width + 30px;
+    margin-left: $navbar-brand-width;
     overflow: visible;
-    position: static;
+    position: relative;
     right: auto;
+    transform: translateX(0);
     transition: none;
     visibility: visible;
     width: auto;
 
     ~ .toggle_btn {
       display: block;
-      padding: sz(2px 10px);
+      padding: rem(2px 10px);
     }
     
     .flyout_close {
@@ -186,11 +192,29 @@
 }
 
 
+/*
+ * Navbar Basket "button"
+ */
 .navbar .basket {
   //background-color: $btn-primary-bg;
   //color: $btn-color-alt;
   float: right;
-  margin-right: sz(40px);
+  margin-right: rem(40px);
+
+  @include mq($from: mobile) {
+    margin-right: rem(110px);
+
+    .basket_txt {
+      display: inline-block;
+    }
+  }
+
+  @include mq($from: navbar) {
+    margin-right: 0;
+    position: absolute;
+    top: 0;
+    z-index: 100000;
+  }
 
   &:hover,
   &:focus {
@@ -202,19 +226,7 @@
   }
 
   //&.i-basket:before {
-  //  height: sz(18px);
-  //  width: sz(18px);
+  //  height: rem(18px);
+  //  width: rem(18px);
   //}
-
-  @include mq($from: mobile) {
-    margin-right: sz(110px);
-
-    .basket_txt {
-      display: inline-block;
-    }
-  }
-
-  @include mq($from: navbar) {
-    margin-right: 0;
-  }
 }

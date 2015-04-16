@@ -1,0 +1,62 @@
+{{# demo }}
+  {{> atoms-toggle-menu:js-tog-flyout }}
+{{/ demo }}
+
+<div class="flyout toggle_target">
+    <!--<div class="flyout_close">
+            <h5 class="flyout_heading">FLYOUT</h5>
+            <label for="js-tog-flyout" class="i i-times"></label>
+        </div>-->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.6707635949024!2d-0.17736600000000619!3d51.50090900000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876055b21867ad1%3A0x5efe9cee35da2fd9!2sRoyal+Albert+Hall!5e0!3m2!1sen!2s!4v1428671388374"
+        width="450" height="250"></iframe>
+    <div class="flyout_inner">
+        <form action="#" method="" class="">
+            <fieldset class="f-group">
+                <legend class="h5">Your local IoD venue <a href="#" class="small u-fr">Hide map</a></legend>
+                <div class="input-group">
+                    <input id="find" type="text" class="f-control" placeholder="Enter a UK town, county or postcode" />
+                    <span class="input-group_btn">
+                        <button type="submit" class="btn btn--primary btn--i-only">
+                            <svg class="i">
+                                <use xlink:href="/../images/icons/svg-defs.svg#search" />
+                            </svg>
+                        </button>
+                    </span>
+                </div>
+            </fieldset>
+
+            <button type="button" class="btn f-group">
+                <svg class="i">
+                    <use xlink:href="/../images/icons/svg-defs.svg#location" />
+                </svg>Detect your location
+            </button>
+            
+            <div class="">
+                <p class="u-mb0">We have detected your local IoD venue(s) as:</p>
+                <ol class="list-unstyled">
+                    <li>
+                        <label for="geo1" class="radio">
+                            <input id="geo1" name="geoLocation" type="radio" />
+                            London
+                        </label>
+                    </li>
+                    <li>
+                        <label for="geo2" class="radio">
+                            <input id="geo2" name="geoLocation" type="radio" />
+                            Essex
+                        </label>
+                    </li>
+                    <li>
+                        <label for="geo3" class="radio">
+                            <input id="geo3" name="geoLocation" type="radio" />
+                            Kent
+                        </label>
+                    </li>
+                    <li>Please select one and set your local venue</li>
+                </ol>
+            
+                <button type="button" class="btn btn--primary">Set as local venue</button>
+            </div>
+        </form>
+    </div>
+</div>

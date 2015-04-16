@@ -2,48 +2,49 @@
    #FLYOUT
 \*=========*/
 
-
+// scss-lint:disable PropertyCount
+%flyout,
 .flyout {
-  @include cf();
-  background-color: #fff;
-  border-left: 1px solid $border-base;
+  @include cf;
+  box-shadow: none;
   height: 100%;
   overflow: hidden;
   position: fixed;
-  right: sz(-300px);
-  top: 0;
-  transition: .5s ease-in-out;
-  visibility: hidden;
-  width: sz(300px);
+  right: 0;
+  top: 0; //rem(70px);
+  transform: translateX(100%);
+  transition: box-shadow 0s linear .4s, transform .4s cubic-bezier(.4,0,.2,1) 0s;
+  width: $flyout-width-sm;
   z-index: z(flyout);
 
   @include mq($from: mobile) {
-    right: sz(-500px);
-    width: sz(500px);
+    //transform: translateX($flyout-width);
+    width: $flyout-width;
   }
 }
 
 
-.flyout_wrapper .toggle_chkbx {
+.toggle_chkbx {
   &:checked + .toggle_btn + .toggle_target {
-    right: 0;
-    visibility: visible;
+    box-shadow: 0 70px 10px rgba(0,0,0,.3);
+    transform: translateX(0);
+    transition: box-shadow 0s linear 0s, transform .6s cubic-bezier(.4,0,.2,1) 0s;
   }
 }
 
 
-/**
+/*
  * Flyout Close "button"
  */
 .flyout_close {
-  @include cf();
+  @include cf;
   border-bottom: 1px solid $border-base;
 
   .i {
     border-left: 1px solid $border-base;
     float: right;
     margin: 0;
-    padding: sz(12px 22px 11px);
+    padding: rem(12px 22px 11px);
     text-align: center;
 
     &:hover,
@@ -62,24 +63,34 @@
 .flyout_heading {
   float: left;
   margin: 0;
-  padding: sz(14px) $padding-base-horizontal sz(11px);
+  padding: rem(14px) $padding-base-horizontal rem(11px);
 }
 
 
 .flyout_inner {
+  background-color: #fff;
   height: 100%;
-  padding: sz(12px 29px 12px 12px);
-  width: sz(300px + 17px);
+  padding: $padding-base-horizontal;
+  width: $flyout-width-sm + rem(17px);
 
   @include mq($from: mobile) {
-    width: sz(500px + 17px);
+    width: $flyout-width + rem(17px);
   }
 
   @include mq($to: navbar) {
     overflow-x: hidden;
     overflow-y: scroll;
-    padding-right: 12px;
+    //padding-right: 12px;
   }
+
+  .box {
+    border-left: 0;
+    border-right: 0;
+  }
+}
+
+.flyout > .flyout_inner:first-child {
+  margin-top: rem(70px);
 }
 
 

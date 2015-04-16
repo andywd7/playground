@@ -3,16 +3,16 @@
 // ====================
 $not-ie: true;
 
-@import '../scss/tools/_mixins.scss';
-@import '../scss/tools/_mx.mq.scss'; // Includes breakpoint vars & other mq options.
-@import '../scss/tools/_vars.scss';
+@import '../scss/tools/mixins/_mixins';
+@import '../scss/tools/mixins/_mx.sass-mq'; // Includes breakpoint vars & other mq options.
+@import '../scss/tools/_vars';
 
 
 // body
 .body {
-  border: 15px solid color(grey, lighter);
-  margin: $padding-base-vertical $padding-base-horizontal;
-  padding: $padding-base-vertical $padding-base-horizontal;
+  //border: 15px solid color(grey, lighter);
+  //margin: $padding-base-vertical $padding-base-horizontal;
+  //padding: $padding-base-vertical $padding-base-horizontal;
 }
 
 
@@ -20,8 +20,8 @@ $not-ie: true;
 // Font Map for displaying correct font in docs
 //
 $fonts: (
-    heading: $headings-font-family,
-    body:    $font-family-base
+  heading: $headings-font-family,
+  body:    $font-family-base
 ) !default;
 
 // Display font stack names
@@ -41,16 +41,34 @@ $fonts: (
 //
 @each $key, $color in $colors {
   @each $tone in map-keys(map-get($colors, $key)) {
-    .sg-#{$key}-#{$tone} {
-      background-color: color($key, $tone);
-      &:before {
-        content: "#{color($key, $tone)}";
+    @if $key == yellow {
+      .sg-yellow-#{$tone} {
+        background-color: color($key, $tone);
+        
+        &:before {
+          content: "#{color(yellow, $tone)}";
+        }
+        &:after {
+          @if $tone == base {
+            content: "color(yellow)";
+          } @else {
+            content: "color(yellow, #{$tone})";
+          }
+        }
       }
-      &:after {
-        @if $tone == base {
-          content: "color(#{$key})";
-        } @else {
-          content: "color(#{$key}, #{$tone})";
+    } @else {
+      .sg-#{$key}-#{$tone} {
+        background-color: color($key, $tone);
+        
+        &:before {
+          content: "#{color($key, $tone)}";
+        }
+        &:after {
+          @if $tone == base {
+            content: "color(#{$key})";
+          } @else {
+            content: "color(#{$key}, #{$tone})";
+          }
         }
       }
     }
@@ -139,14 +157,14 @@ $fonts: (
 }
 
 [class*="chart-"] {
-  @include cf();
+  @include cf;
   float: none;
 
   .sg-color {
     height: auto;
     line-height: 1.5;
     margin-bottom: 0;
-    padding: sz(5px);
+    padding: rem(5px);
     text-align: left;
 
     &:before,
@@ -165,8 +183,8 @@ $fonts: (
   background: #ccc;
   border-right: 1px solid #aaa;
   border-left: 1px solid #aaa;
-  padding-top: sz(10px);
-  padding-bottom: sz(10px);
+  padding-top: rem(10px);
+  padding-bottom: rem(10px);
 }
 
 

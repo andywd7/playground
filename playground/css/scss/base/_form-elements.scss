@@ -6,21 +6,20 @@
 \*==========*/
 
 
-/**
+/*
  * Normalize non-controls
 ------------------------------------------------------
  * Restyle and baseline non-control form elements.
  */
 fieldset {
   border: 0;
-  margin: 0;
-  /**
+
+  /*
    * Chrome and Firefox set a `min-width: -webkit-min-content;` on fieldsets,
    * so we reset that to ensure it behaves more like a standard block element.
    * See https://github.com/twbs/bootstrap/issues/12359.
    */
   min-width: 0;
-  padding: 0;
 
   + fieldset {
     margin-top: $line-height-computed;
@@ -43,15 +42,16 @@ legend {
 }
 
 
-label {
+label,
+.label {
   display: inline-block;
   //font-weight: bold;
-  margin-bottom: sz(2px);
+  margin-bottom: rem(2px);
   max-width: 100%; /* Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141) */
 }
 
 
-/**
+/*
  * Normalize form controls
 --------------------------------------------------------------------------------
  * While most of our form styles require extra classes, some basic normalization
@@ -59,7 +59,7 @@ label {
  * address browser inconsistencies.
  */
 
-/**
+/*
  * reset search focus outline
  */
 input[type="search"]:focus {
@@ -67,35 +67,55 @@ input[type="search"]:focus {
 }
 
 
-/**
+/*
  * Position radios and checkboxes better
  */
 input[type="radio"],
 input[type="checkbox"] {
   line-height: normal;
-  margin: sz(5px 0 0);
+  margin: rem(5px 0 0);
   //margin-top: 1px \9; /* IE8-9 */
+
+  /*
+   * Focus for file, radio, and checkbox
+   */
+  &:focus {
+    @include tab-focus;
+  }
+
+  /*
+   * Disabled Radios & Checkboxes
+  ---------------------------------------------------------------------------------------
+   * Apply same disabled cursor tweak as for inputs
+   * Some special care is needed because <label>s don't inherit their parent's `cursor`.
+   * NOTE: Neither radios nor checkboxes can be readonly.
+   */
+  &[disabled],
+  &.is-disabled,
+  fieldset[disabled] & {
+    cursor: not-allowed;
+  }
 }
 
 
-/**
- * Set the height of file controls to match text inputs
- */
+// /*
+//  * Set the height of file controls to match text inputs
+//  */
 // input[type="file"] {
 //   display: block;
 // }
 
 
-/** 
- * Make range inputs behave like textual form controls
- */
+// /*
+//  * Make range inputs behave like textual form controls
+//  */
 // input[type="range"] {
 //   display: block;
 //   width: 100%;
 // }
 
 
-/**
+/*
  * Make multiple select elements height not fixed
  */
 select[multiple],
@@ -104,19 +124,9 @@ select[size] {
 }
 
 
-/**
- * Focus for file, radio, and checkbox
- */
-// input[type="file"]:focus,
-input[type="radio"]:focus,
-input[type="checkbox"]:focus {
-  @include tab-focus();
-}
-
-
-/** 
- * Adjust output element
- */
+// /*
+//  * Adjust output element
+//  */
 // output {
 //   display: block;
 //   padding-top: ($padding-base-vertical + 1);
@@ -127,7 +137,7 @@ input[type="checkbox"]:focus {
 
 
 
-/**
+/*
  * Common form controls
 ----------------------------------------------------------------------------
  * Shared size and type resets for form controls. Apply `.f-control` to any
@@ -151,7 +161,18 @@ input[type="checkbox"]:focus {
  * input[type="color"]
  -----------------------------------
  */
+ // scss-lint:disable PropertyCount
 .f-control {
+  /*
+   * Customize the `:focus` state
+   */
+  @include form-control-focus();
+
+  /*
+   * Placeholder
+   */
+  @include placeholder($input-color-placeholder);
+
   @include border-radius($input-border-radius);
   background-color: $input-bg;
   background-image: none; /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214 */
@@ -166,17 +187,7 @@ input[type="checkbox"]:focus {
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   width: 100%;
 
-  /**
-   * Customize the `:focus` state to imitate native WebKit styles.
-   */
-  @include form-control-focus();
-
-  /**
-   * Placeholder
-   */
-  @include placeholder($input-color-placeholder);
-
-  /**
+  /*
    * Disabled and read-only inputs
   ------------------------------------------------------------------------------
    * HTML5 says that controls under a fieldset > legend:first-child won't be
@@ -191,34 +202,37 @@ input[type="checkbox"]:focus {
     opacity: 1; /* iOS fix for unreadable disabled content */
   }
 }
+// scss-lint:enable PropertyCount
 
-/**
+/*
  * Reset height for `textarea`s
  */
+// scss-lint:disable QualifyingElement
 textarea.f-control {
   height: auto;
 }
 
-/**
+/*
  * Adjust padding for select so inner text/placeholders align vertically
  */
 select.f-control {
   max-width: 100%;
-  padding-left: ($padding-base-horizontal / 2) - sz(2px);
+  padding-left: ($padding-base-horizontal / 2) - rem(2px);
   width: auto;
 }
+// scss-lint:enable QualifyingElement
 
 
 
-/**
- * Special styles for iOS temporal inputs
---------------------------------------------------------------------------------
- * In Mobile Safari, setting `display: block` on temporal inputs causes the
- * text within the input to become vertically misaligned.
- * As a workaround, we set a pixel line-height that matches the
- * given height of the input. Since this screws up everything else, we have to
- * appropriately reset it for Internet Explorer and the size variations.
- */
+// /*
+//  * Special styles for iOS temporal inputs
+// --------------------------------------------------------------------------------
+//  * In Mobile Safari, setting `display: block` on temporal inputs causes the
+//  * text within the input to become vertically misaligned.
+//  * As a workaround, we set a pixel line-height that matches the
+//  * given height of the input. Since this screws up everything else, we have to
+//  * appropriately reset it for Internet Explorer and the size variations.
+//  */
 //input[type="date"],
 //input[type="time"],
 //input[type="datetime-local"],
@@ -238,7 +252,7 @@ select.f-control {
 
 
 
-/**
+/*
  * Checkboxes and radios
 ------------------------------------------------------------------------
  * Indent the labels to position radios/checkboxes as hanging controls.
@@ -250,7 +264,7 @@ select.f-control {
   cursor: pointer;
   font-weight: normal;
   margin-bottom: 0;
-  padding-left: sz(20px);
+  padding-left: rem(20px);
 
   &.is-disabled,
   fieldset[disabled] & {
@@ -263,8 +277,8 @@ select.f-control {
 .ckbx input[type="checkbox"],
 .radio-inline input[type="radio"],
 .ckbx-inline input[type="checkbox"] {
-  margin-left: sz(-20px);
-  margin-top: sz(4px) \9;
+  margin-left: rem(-20px);
+  margin-top: rem(4px) \9;
   position: absolute;
 }
 
@@ -278,11 +292,11 @@ select.f-control {
 
 .radio + .radio,
 .ckbx + .ckbx {
-  margin-top: sz(-5px); /* Move up sibling radios or checkboxes for tighter spacing */
+  margin-top: rem(-5px); /* Move up sibling radios or checkboxes for tighter spacing */
 }
 
 
-/**
+/*
  * Radios and checkboxes on right of text
  */
 .radio--right,
@@ -292,11 +306,11 @@ select.f-control {
 
 .radio--right input[type="radio"],
 .ckbx--right input[type="checkbox"] {
-  margin-left: sz(10px);
+  margin-left: rem(10px);
 }
 
 
-/**
+/*
  * Radios and checkboxes on same line
  */
 .radio-inline,
@@ -307,41 +321,24 @@ select.f-control {
 
 .radio-inline + .radio-inline,
 .ckbx-inline + .ckbx-inline {
-  margin-left: sz(10px); /* space out consecutive inline controls */
+  margin-left: rem(10px); /* space out consecutive inline controls */
   //margin-top: 0;
 }
 
 
-/**
- * Disabled Radios & Checkboxes
----------------------------------------------------------------------------------------
- * Apply same disabled cursor tweak as for inputs
- * Some special care is needed because <label>s don't inherit their parent's `cursor`.
- * NOTE: Neither radios nor checkboxes can be readonly.
- */
-input[type="radio"],
-input[type="checkbox"] {
-  &[disabled],
-  &.is-disabled,
-  fieldset[disabled] & {
-    cursor: not-allowed;
-  }
-}
 
-
-
-/**
+/*
  * Static form control text
 --------------------------------------------------------------------------------
  * Apply class to a `p` element to make any string of text align with labels in
  * a horizontal form layout.
  */
 .f-control_static {
-  /* Size it appropriately next to real form controls */
-  padding-top: ($padding-base-vertical + sz(1px));
-  padding-bottom: ($padding-base-vertical + sz(1px));
   /* Remove default margin from `p` */
   margin-bottom: 0;
+  /* Size it appropriately next to real form controls */
+  padding-bottom: ($padding-base-vertical + rem(1px));
+  padding-top: ($padding-base-vertical + rem(1px));
 
 //  &.input-lg,
 //  &.input-sm {
@@ -351,17 +348,17 @@ input[type="checkbox"] {
 }
 
 
-/** 
- * Form control sizing
----------------------------------------------------------------------------
- * Build on `.f-control` with modifier classes to decrease or increase the
- * height and font-size of form controls.
- */
+// /*
+//  * Form control sizing
+// ---------------------------------------------------------------------------
+//  * Build on `.f-control` with modifier classes to decrease or increase the
+//  * height and font-size of form controls.
+//  */
 // @include input-size('.input-sm', $input-height-sm, $padding-sm-vertical, $padding-sm-horizontal, $font-size-sm, $line-height-sm, $border-radius-sm);
 // @include input-size('.input-lg', $input-height-lg, $padding-lg-vertical, $padding-lg-horizontal, $font-size-lg, $line-height-lg, $border-radius-lg);
 
 
-/**
+/*
  * Help text
 --------------------------------------------------------------------------------
  * Apply to any element you wish to create light text for placement immediately
@@ -370,9 +367,9 @@ input[type="checkbox"] {
 .help-block {
   color: $txt-muted; /* lighten the text some for contrast */
   display: block; /* account for any element using help-block */
-  font-size: sz(12px);
-  margin-top: sz(2px);
-  margin-bottom: sz(10px);
+  font-size: rem(12px);
+  margin-bottom: rem(10px);
+  margin-top: rem(2px);
 
   .f-group & {
     margin-bottom: 0;

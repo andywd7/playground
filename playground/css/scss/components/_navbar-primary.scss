@@ -3,7 +3,7 @@
 \*=================*/
 
 
-/**
+/*
  * Primary Navbar with dropdowns
  */
 .navbar_primary {
@@ -13,124 +13,102 @@
     display: block;
   }
 
-  .nav {
-    .join {
-      border-top: 1px solid $navbar-border;
-      padding: sz(10px) $padding-base-horizontal;
+  .join {
+    border-top: 1px solid $navbar-border;
+    padding: rem(10px) $padding-base-horizontal;
 
-      a {
-        background-color: color(olive);
-        border: 0;
-        color: $navbar-inv-color;
-
-        &:hover,
-        &:focus {
-          background-color: color(olive, dark);
-        }
-      }
-
-      @include mq($from: navbar) {
-        border-top-color: color(olive);
-        float: right;
-        margin-bottom: -1px;
-        padding: 0;
-      }
+    @include mq($from: navbar) {
+      border-top-color: color(secondary);
+      float: right;
+      margin-bottom: -1px;
+      padding: 0;
     }
 
+    a {
+      background-color: color(secondary);
+      border: 0;
+      color: $navbar-inv-color;
 
-    > .navbar_dd {
-      @include cf();
-
-      > a {
-        border-right: 0;
-        float: left;
-        font-weight: 700;
-        //letter-spacing: sz(1px);
-        padding: sz(10px) $padding-base-horizontal;
-        text-transform: uppercase;
-        width: 75%;
-      }
-
-      &.is-active {
-        .btn--link {
-          background-color: $navbar-dd-bg;
-        }
-
-        .i:before {
-          background-position: -198px 0;
-        }
-
-        > .navbar_dd-mega {
-          max-height: 1000px;
-          @include opacity(1);
-          //transition: max-height .9s ease;
-    
-          //> .l-container {
-          //  @include opacity(1);
-          //  transition: opacity .4s ease;
-          //}
-        }
-      }
-
-
-      @include mq($from: navbar) {
-        float: left;
-        //margin-left: sz(2px);
-        position: static;
-        transition: background-color .3s .1s ease;
-
-        //&:first-child {
-        //    margin-left: 0;
-        //} 
-
-        > a {
-          float: none;
-          font-weight: 400;
-          letter-spacing: normal;
-          padding: $nav-link-padding;
-          text-transform: capitalize;
-          //transition: color .3s .1s ease-in;
-          width: auto;
-
-          &:hover,
-          &:focus {
-            background-color: transparent;
-            //transition: color 0s;
-          }
-        }
-
-        &:hover {
-          background-color: $navbar-dd-hover-bg;
-          transition: background-color 0s;
-
-          a {
-            ~ .navbar_dd-mega {
-              max-height: 1000px;
-              //@include opacity(1);
-
-              //> .l-container {
-              //  @include opacity(1);
-              //  //transition: opacity .3s ease;
-              //}
-            }
-          }
-        }
+      &:hover,
+      &:focus {
+        background-color: color(secondary, dark);
       }
     }
   }
 
+}
+
+.navbar_primary .nav {
+  > .navbar_dd {
+    @include cf;
+
+    @include mq($from: navbar) {
+      float: left;
+      position: static;
+      transition: background-color .3s .1s ease;
+
+      &:hover {
+        background-color: $navbar-dd-hover-bg;
+        transition: background-color 0s;
+
+        a ~ .navbar_dd-mega {
+          max-height: 1000px;
+        }
+      }
+    }
+
+    > a {
+      border-right: 0;
+      float: left;
+      font-family: $headings-font-family;
+      font-size: rem(15px);
+      padding: rem(10px) $padding-base-horizontal;
+      width: 75%;
+
+      @include mq($from: navbar) {
+        float: none;
+        font-weight: 400;
+        letter-spacing: normal;
+        padding: $nav-link-padding;
+        text-transform: capitalize;
+        width: auto;
+
+        &:hover,
+        &:focus {
+          background-color: transparent;
+        }
+      }
+    }
+
+    &.is-active {
+      .btn--link {
+        background-color: $navbar-dd-bg;
+      }
+
+      .i:before {
+        background-position: -198px 0;
+      }
+
+      > .navbar_dd-mega {
+        max-height: 1000px;
+        transition: max-height .5s ease-in-out;
+      }
+    }
+
+  }
+
   .btn--link {
     border: 0;
-    padding: sz(9px);
+    padding: rem(9px);
     width: 25%;
-
-    &:hover,
-    &:focus {
-      background-color: $navbar-dd-hover-bg;
-    }
 
     @include mq($from: navbar) {
       display: none;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $navbar-hover-bg;
     }
   }
 
@@ -144,20 +122,27 @@
 
 
 .navbar_dd-mega {
-  //@include opacity(0);
   clear: left;
   max-height: 0;
   overflow: hidden;
-  transition: all .5s ease-out;
+  transition: max-height .3s ease-in-out;
 
-  /**
-   * 1. used only to prevent blurry text on transition in Chrome
-   */
+  @include mq($from: navbar) {
+    background-color: $navbar-dd-bg;
+    box-shadow: 0 2px 3px rgba(0,0,0,.15);
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+  }
+
   > .l-container {
-    //@include opacity(0);
-    //transform: translateZ(0); /* 1 */
-    //transition: opacity .5s ease;
     width: $navbar-width;
+
+    @include mq($from: navbar) {
+      //padding: $padding-lg-vertical 0;
+      width: auto;
+    }
   }
 
   .nav {
@@ -167,17 +152,21 @@
     padding-bottom: $padding-lg-vertical;
     padding-top: $padding-lg-vertical;
 
-    > li {
-      > a {
-        font-size: sz(13px);
-        padding-bottom: sz(5px);
-        padding-top: sz(5px);
-        text-transform: capitalize;
+    @include mq($from: navbar) {
+      @include g-col($columns:4, $collapse:null);
+      background-color: $navbar-dd-bg;
+      border-bottom: 0;
+    }
 
-        &:hover,
-        &:focus {
-          background-color: $navbar-dd-hover-bg;
-        }
+    > li > a {
+      font-size: rem(13px);
+      padding-bottom: rem(5px);
+      padding-top: rem(5px);
+      text-transform: capitalize;
+
+      &:hover,
+      &:focus {
+        background-color: $navbar-dd-hover-bg;
       }
     }
   }
@@ -187,45 +176,16 @@
 
     a {
       border-bottom: 1px solid darken($navbar-dd-bg, 7%);
-      color: $brand-primary;
+      color: $navbar-color;
       display: block;
-      margin: sz(10px 14px 11px);
-      padding-bottom: sz(10px);
-      //text-decoration: none;
+      margin: rem(10px 14px 11px);
+      padding-bottom: rem(10px);
 
       &:hover,
       &:focus {
-        color: $brand-primary;
+        color: $navbar-color;
       }
     }
   }
 
-  @include mq($from: navbar) {
-    background-color: $navbar-dd-bg;
-    //box-shadow: -1px 0 0 $navbar-bg;
-    box-shadow: 0 2px 3px rgba(0,0,0,.15);
-    left: -1px;
-    position: absolute;
-    transition: all .5s ease;
-    width: 100%;
-    z-index: 100;
-
-    > .l-container {
-      padding: $line-height-computed 0;
-      width: auto;
-    }
-
-    .nav {
-      @include g-col($columns:4, $collapse:null);
-      background-color: $navbar-dd-bg;
-      border-bottom: 0;
-
-      > li > a {
-        &:hover,
-        &:focus {
-          background-color: $navbar-dd-hover-bg;
-        }
-      }
-    }
-  }
 }

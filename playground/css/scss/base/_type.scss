@@ -3,9 +3,11 @@
 \*=============*/
 
 
-/**
+/*
  * Headings
  */
+
+// scss-lint:disable SingleLinePerSelector
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   color: $headings-color;
@@ -26,7 +28,9 @@ h1, h2, h3, h4, h5, h6,
     color: $brand-primary;
   }
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1, h2, h3, h4, h5, h6,
+.h-font {
   font-family: $headings-font-family;
 }
 
@@ -62,10 +66,11 @@ h6, .h6 {
   }
 
 }
+// scss-lint:enable SingleLinePerSelector
 
 
 
-/**
+/*
  * Body text
  */
 p {
@@ -87,45 +92,38 @@ p {
 }
 
 .lead {
-  //font-size: (18px);
-  //font-weight: 400;
-  line-height: 1.2;
-  margin-bottom: $line-height-computed;
+  //font-size: (15px);
+  font-weight: 700;
+  //margin-bottom: $line-height-computed / 2;
+
+  @include mq($from: mobile) {
+    font-size: rem(16px);
+    font-weight: 400;
+    line-height: 1.3;
+
+    + p:before {
+      margin: rem(20px 0);
+      width: rem(150px);
+    }
+  }
 
   + p:before {
     background-color: color(grey);
-    content: "";
+    content: '';
     display: block;
     height: 1px;
     margin: $line-height-computed auto;
     width: 25%;
   }
-
-  @include mq($from: mobile) {
-    font-size: sz(18px);
-    //font-weight: 700;
-
-    + p:before {
-      margin: sz(20px 0);
-      width: sz(150px);
-    }
-  }
 }
 
 
 
-/**
+/*
  * Emphasis & misc
--------------------------------------------------------------
- * Ex: (12px small font / 14px base font) * 100% = about 85%
  */
-small,
-.small {
-  font-size: (100% * $font-size-sm / $font-size-base);
-}
 
-
-/**
+/*
  * Undo browser default styling
  */
 cite {
@@ -133,15 +131,7 @@ cite {
 }
 
 
-mark,
-.mark {
-  background-color: $state-warning-bg;
-  color: $txt-color; /* Address styling not present in IE 8/9. */
-  padding: .2em;
-}
-
-
-/**
+/*
  * Addresses
  */
 address {
@@ -151,27 +141,8 @@ address {
 }
 
 
-/**
- * Abbreviations and acronyms
--------------------------------------------------------
- * Add data-* attribute to help out our tooltip plugin,
- * per https://github.com/twbs/bootstrap/issues/5257
- */
-//abbr[data-original-title],
-abbr[title] {
-  border-bottom: 1px dotted $abbr-border-color;
-  cursor: help;
-}
 
-
-//.initialism {
-//  font-size: 85%;
-//  text-transform: uppercase;
-//}
-
-
-
-/**
+/*
  * Contextual backgrounds
 ------------------------------------------------------------------------------
  * For now we'll leave these alongside the text classes until v4 when we can
@@ -192,151 +163,14 @@ abbr[title] {
 
 
 
-/**
- * Page header
- */
-
-.page-header_container {
-  position: relative;
-
-  .page-header {
-    background-color: rgba(#000, 0.9); //
-    z-index: 1; //
-  
-    &:before {
-      //background-color: rgba(#000, 0.5);
-      border-left: 9999px solid rgba(#000, 0.5);
-      box-shadow: 9999px 0 0 rgba(#000, 0.5);
-      bottom: 0;
-      content: '';
-      left: -9999px;
-      position: absolute;
-      right: 0;
-      top: 0;
-      z-index: -1;
-    }
-  
-
-    //&:before {
-    //  background-color: $brand-primary;
-    //  bottom: 0;
-    //  content: '';
-    //  left: -$line-height-computed;
-    //  position: absolute;
-    //  right: 0;
-    //  top: 0;
-    //  width: ($line-height-computed - sz(1px));
-    //}
-  }
-
-  //&:before {
-  //  background-color: rgba(#000, 0.5);
-  //  bottom: 0;
-  //  content: '';
-  //  left: 0;
-  //  position: absolute;
-  //  right: 0;
-  //  top: 0;
-  //}
-
-  &.grid-row:before {
-    display: block;
-  }
-}
-
-.page-header {
-  background-color: rgba(#fff, 0.6);
-  bottom: 0;
-  margin: $line-height-computed;
-  padding: $line-height-computed;
-  position: absolute;
-  width: 60%;
-
-  > *:last-child {
-    margin-bottom: 0;
-  }
-
-  .grid-row & {
-    min-width: sz(250px);
-    width: 100%;
-  }
-}
-
-.lead,
-.page-header_meta {
-  color: $txt-color;
-  margin-bottom: $line-height-computed / 2;
-}
-
-.page-header_meta {
-  font-size: $font-size-sm;
-}
-
-.page-header--dark {
-  background-color: rgba(#000, 0.5);
-  color: #fff;
-
-  .page-header_title,
-  .lead,
-  .page-header_meta,
-  a {
-    color: #fff;
-  }
-}
-
-.page-header--inline {
-  background-color: transparent;
-  padding: 0 sz(7px);
-
-  .page-header_title,
-  .lead,
-  .page-header_meta {
-    background-color: rgba(#fff, 0.6);
-    box-decoration-break: clone;
-    box-shadow: sz(7px) 0 0 rgba(#fff, 0.6), sz(-7px) 0 0 rgba(#fff, 0.6);
-    display: inline;
-    line-height: 1.5;
-    padding: sz(0 0 5px);
-  }
-
-  .page-header_title,
-  .page-header_meta {
-    &:after {
-      content: '';
-      display: block;
-      height: $line-height-computed / 2;
-    }
-  }
-
-  .lead,
-  .page-header_meta {
-    line-height: 1.26;
-    padding: 0;
-    vertical-align: bottom;
-  }
-
-  &.page-header--dark {
-    background-color: transparent;
-
-    .page-header_title,
-    .lead,
-    .page-header_meta {
-      background-color: rgba(#000, 0.5);
-      box-shadow: sz(7px) 0 0 rgba(#000, 0.5), sz(-7px) 0 0 rgba(#000, 0.5);
-    }
-  }
-}
-
-
-
-/**
+/*
  * Blockquotes
  */
 blockquote {
   border-left: 5px solid $blockquote-highlight;
   font-family: $blockquote-font-family;
-  //font-style: italic;
   font-size: $blockquote-font-size;
+  font-style: italic;
   font-weight: $blockquote-font-weight;
   margin: 0 5% $line-height-computed;
   padding: ($line-height-computed / 2) $line-height-computed;
@@ -344,8 +178,6 @@ blockquote {
   p,
   ul,
   ol {
-    //margin-bottom: 0;
-    
     &:only-child {
       margin-bottom: 0;
     }
@@ -354,10 +186,13 @@ blockquote {
   footer {
     color: $blockquote-sm-color;
     display: block;
+    font-family: $font-family-base;
     font-size: 80%; /* back to default font-size */
+    font-style: normal;
+    font-weight: 400;
     //letter-spacing: 1px;
     line-height: $line-height-base;
-    margin-top: sz(-10px);
+    margin-top: rem(-10px);
     //text-transform: uppercase;
 
     &:before {
@@ -367,7 +202,7 @@ blockquote {
 }
 
 
-///**
+///*
 // * Blockquote in container
 // */
 //.blockquote-box,
@@ -375,11 +210,11 @@ blockquote {
 //  border: 1px solid color(grey, light);
 //  border-bottom: 0;
 //  box-shadow: 0 5px $blockquote-border-color;
-//  margin: 0 0 $line-height-computed + sz(5px);
+//  margin: 0 0 $line-height-computed + rem(5px);
 //  padding: $line-height-computed;
 //}
 
-///**
+///*
 // * Blockquote in container (alternative colour)
 // */
 //.blockquote-box--alt {
@@ -387,7 +222,7 @@ blockquote {
 //  border: 0;
 //}
 
-/**
+/*
  * Quotes
  */
 blockquote:before,
@@ -397,39 +232,41 @@ blockquote:after {
 
 
 
-/**
+/*
  * Links
 ---------------------------------------------------
  */
 
-/**
+/*
  * Icon/Social Links
  */
-p [href*="facebook.com"],
-p [href*="linkedin.com"],
-p [href*="twitter.com"],
-p [href*="youtube.com"] {
-  background-color: #f6f6f6;
-  padding: sz(1px 5px);
-  text-decoration: none;
+//p [href*="facebook.com"],
+//p [href*="linkedin.com"],
+//p [href*="twitter.com"],
+//p [href*="youtube.com"] {
+//  background-color: #f6f6f6;
+//  padding: rem(1px 5px);
+//  text-decoration: none;
 
   //&:hover,
   //&:focus {
   //  //background-color: #fafafa;
   //}
 
-  &:before {
-    @extend %i;
-    @include nope(svg) {
-      background-image: url('../images/sprites/sprite-sm.png');
-    }
-    @include yep(svg) {
-      background-image: url('../images/sprites/sprite.svg');
-      background-size: cover;
-    }
+  //&:before {
+  //  @extend %i-default;
+  //  @extend %i;
+  //  //@include nope(svg) {
+  //  //  background-image: url('../../../images/style/sprites/sprite-sm.png');
+  //  //}
 
-    margin-right: sz(5px);
-  }
+  //  //@include yep(svg) {
+  //  //  background-image: url('../../../images/style/sprites/sprite.svg');
+  //  //  background-size: cover;
+  //  //}
+
+  //  margin-right: rem(5px);
+  //}
 
   //&:hover,
   //&:focus {
@@ -437,7 +274,7 @@ p [href*="youtube.com"] {
   //    @include opacity(1);
   //  }
   //}
-}
+//}
 //p [href*="facebook.com"],
 //p [href*="linkedin.com"],
 //p [href*="twitter.com"],
@@ -447,27 +284,21 @@ p [href*="youtube.com"] {
 //  }
 //}
 
-p [href*="facebook.com"] {
-  &:before { 
-    @extend .i-facebook:before;
-  }
-}
-
-p [href*="linkedin.com"] {
-  &:before { 
-    @extend .i-linkedin:before;
-  }
-}
-
-p [href*="twitter.com"] {
-  &:before { 
-    @extend .i-twitter:before;
-  }
-}
-
-//p [href*="youtube.com"] {
-//  &:before { 
-//    @extend .i-facebook:before;
-//    top: -1px;
-//  }
+// scss-lint:disable MergeableSelector
+//p [href*="facebook.com"]:before { 
+//  @extend %i-facebook;
 //}
+
+//p [href*="linkedin.com"]:before { 
+//  @extend %i-linkedin;
+//}
+
+//p [href*="twitter.com"]:before { 
+//  @extend %i-twitter;
+//}
+
+//p [href*="youtube.com"]:before { 
+//  @extend %i-facebook;
+//  top: -1px;
+//}
+// scss-lint:enable MergeableSelector
