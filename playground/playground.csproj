@@ -131,6 +131,12 @@
     <Content Include="fonts\icons.svg" />
     <Content Include="Global.asax" />
     <Content Include="Gruntfile.js" />
+    <Content Include="images\apple-touch-icon-120x120-precomposed.png" />
+    <Content Include="images\apple-touch-icon-144x144-precomposed.png" />
+    <Content Include="images\apple-touch-icon-152x152-precomposed.png" />
+    <Content Include="images\apple-touch-icon-180x180-precomposed.png" />
+    <Content Include="images\apple-touch-icon-57x57-precomposed.png" />
+    <Content Include="images\apple-touch-icon-76x76-precomposed.png" />
     <Content Include="images\content\ad.gif" />
     <Content Include="images\content\ajax-loader.gif" />
     <Content Include="images\content\favicon.ico" />
@@ -181,6 +187,7 @@
     <Content Include="images\content\logo.svg">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="images\touch-icon-192x192.png" />
     <Content Include="js\bootstrap\affix.js" />
     <Content Include="js\bootstrap\alert.js" />
     <Content Include="js\bootstrap\button.js" />
