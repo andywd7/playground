@@ -1,0 +1,66 @@
+  &lt;input type=&quot;checkbox&quot; id=&quot;js-tog-flyout&quot; class=&quot;toggle_chkbx&quot; aria-pressed=&quot;false&quot; /&gt;
+  &lt;label for=&quot;js-tog-flyout&quot; id=&quot;leftPush&quot; class=&quot;toggle_btn&quot; role=&quot;button&quot;&gt;
+    &lt;svg class=&quot;i&quot;&gt;
+      &lt;use xlink:href=&quot;/../images/icons/svg-defs.svg#menu&quot; /&gt;
+    &lt;/svg&gt;
+  	&lt;span class=&quot;toggle_txt&quot;&gt;MENU&lt;/span&gt;
+  	&lt;!--&lt;span class=&quot;u-sr&quot;&gt;Toggle menu&lt;/span&gt;--&gt;
+  &lt;/label&gt;
+&lt;div class=&quot;flyout toggle_target&quot;&gt;
+    &lt;!--&lt;div class=&quot;flyout_close&quot;&gt;
+            &lt;h5 class=&quot;flyout_heading&quot;&gt;FLYOUT&lt;/h5&gt;
+            &lt;label for=&quot;js-tog-flyout&quot; class=&quot;i i-times&quot;&gt;&lt;/label&gt;
+        &lt;/div&gt;--&gt;
+    &lt;iframe src=&quot;https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.6707635949024!2d-0.17736600000000619!3d51.50090900000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876055b21867ad1%3A0x5efe9cee35da2fd9!2sRoyal+Albert+Hall!5e0!3m2!1sen!2s!4v1428671388374&quot;
+        width=&quot;450&quot; height=&quot;250&quot;&gt;&lt;/iframe&gt;
+    &lt;div class=&quot;flyout_inner&quot;&gt;
+        &lt;form action=&quot;#&quot; method=&quot;&quot; class=&quot;&quot;&gt;
+            &lt;fieldset class=&quot;f-group&quot;&gt;
+                &lt;legend class=&quot;h5&quot;&gt;Your local IoD venue &lt;a href=&quot;#&quot; class=&quot;small u-fr&quot;&gt;Hide map&lt;/a&gt;&lt;/legend&gt;
+                &lt;div class=&quot;input-group&quot;&gt;
+                    &lt;input id=&quot;find&quot; type=&quot;text&quot; class=&quot;f-control&quot; placeholder=&quot;Enter a UK town, county or postcode&quot; /&gt;
+                    &lt;span class=&quot;input-group_btn&quot;&gt;
+                        &lt;button type=&quot;submit&quot; class=&quot;btn btn--primary btn--i-only&quot;&gt;
+                            &lt;svg class=&quot;i&quot;&gt;
+                                &lt;use xlink:href=&quot;/../images/icons/svg-defs.svg#search&quot; /&gt;
+                            &lt;/svg&gt;
+                        &lt;/button&gt;
+                    &lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/fieldset&gt;
+
+            &lt;button type=&quot;button&quot; class=&quot;btn f-group&quot;&gt;
+                &lt;svg class=&quot;i&quot;&gt;
+                    &lt;use xlink:href=&quot;/../images/icons/svg-defs.svg#location&quot; /&gt;
+                &lt;/svg&gt;Detect your location
+            &lt;/button&gt;
+            
+            &lt;div class=&quot;&quot;&gt;
+                &lt;p class=&quot;u-mb0&quot;&gt;We have detected your local IoD venue(s) as:&lt;/p&gt;
+                &lt;ol class=&quot;list-unstyled&quot;&gt;
+                    &lt;li&gt;
+                        &lt;label for=&quot;geo1&quot; class=&quot;radio&quot;&gt;
+                            &lt;input id=&quot;geo1&quot; name=&quot;geoLocation&quot; type=&quot;radio&quot; /&gt;
+                            London
+                        &lt;/label&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;label for=&quot;geo2&quot; class=&quot;radio&quot;&gt;
+                            &lt;input id=&quot;geo2&quot; name=&quot;geoLocation&quot; type=&quot;radio&quot; /&gt;
+                            Essex
+                        &lt;/label&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;label for=&quot;geo3&quot; class=&quot;radio&quot;&gt;
+                            &lt;input id=&quot;geo3&quot; name=&quot;geoLocation&quot; type=&quot;radio&quot; /&gt;
+                            Kent
+                        &lt;/label&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;Please select one and set your local venue&lt;/li&gt;
+                &lt;/ol&gt;
+            
+                &lt;button type=&quot;button&quot; class=&quot;btn btn--primary&quot;&gt;Set as local venue&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/div&gt;

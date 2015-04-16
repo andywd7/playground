@@ -131,8 +131,10 @@
     <Content Include="fonts\icons.svg" />
     <Content Include="Global.asax" />
     <Content Include="Gruntfile.js" />
+    <Content Include="images\content\ad.gif" />
     <Content Include="images\content\ajax-loader.gif" />
     <Content Include="images\content\favicon.ico" />
+    <Content Include="images\content\logo.png" />
     <Content Include="images\content\sample\landscape-16x9-mountains.jpg" />
     <Content Include="images\content\sample\thumb-square-fire.jpg" />
     <Content Include="images\content\sample\thumb-square-gear.jpg" />
@@ -353,6 +355,8 @@
     <Content Include="css\style.css.map" />
     <Content Include="css\scss\components\_headers.scss" />
     <Content Include="css\scss\tools\mixins\_mx.sass-mq.scss" />
+    <Content Include="css\scss\components\_wells.scss" />
+    <Content Include="prepros.cfg" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -549,6 +553,9 @@
     <Content Include="_patterns\01-molecules\06-components\31-flyout-local.mustache">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="_patterns\00-atoms\08-media\_00-video.mustache" />
+    <Content Include="_patterns\00-atoms\08-media\_01-audio.mustache" />
+    <Content Include="_patterns\00-atoms\04-images\01-landscape-ad%40inreview.mustache" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

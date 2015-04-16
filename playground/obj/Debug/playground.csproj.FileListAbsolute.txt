@@ -73,3 +73,4 @@ D:\sites\playground-master\playground\bin\System.Web.WebPages.Razor.xml
 D:\sites\playground-master\playground\obj\Debug\playground.csprojResolveAssemblyReference.cache
 D:\sites\playground-master\playground\obj\Debug\playground.dll
 D:\sites\playground-master\playground\obj\Debug\playground.pdb
+D:\Andy\Documents\GitHub\playground\playground\obj\Debug\playground.csprojResolveAssemblyReference.cache

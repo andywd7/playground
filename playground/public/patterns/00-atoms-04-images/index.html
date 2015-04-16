@@ -1,43 +1,15 @@
 <!DOCTYPE html>
   <!--[if lte IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 pl"> <![endif]-->
-  <!--[if IE 8]>			<html class="no-js lt-ie10 lt-ie9 ie8 pl"> <![endif]-->
+  <!--[if IE 8]>          <html class="no-js lt-ie10 lt-ie9 ie8 pl"> <![endif]-->
   <!--[if IE 9]>          <html class="no-js lt-ie10 ie9 pl"> <![endif]-->
-  <!--[if gt IE 9]><!-->	<html class="no-js pl"> <!--<![endif]-->
+  <!--[if gt IE 9]><!-->  <html class="no-js pl"> <!--<![endif]-->
   <head>
-    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Pattern Lab</title>
-    <meta charset="UTF-8">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width" />
-
-    <script>
-        WebFontConfig = {
-            google: { families: ['Droid+Serif:400,700,400italic,700italic:latin'] }
-        };
-        (function () {
-            var wf = document.createElement('script');
-            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-            wf.type = 'text/javascript';
-            wf.async = 'true';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(wf, s);
-        })();
-    </script>
-    <noscript>
-      <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'>
-    </noscript>
-
-    <!--[if (lte IE 8)]>
-      <link rel="stylesheet" href="/css/style.ie-old.css?635614148585352547" media="all">
-    <![endif]-->
-    <!--[if (gte IE 9)]><!-->
-      <link rel="stylesheet" href="/css/style.css?635614148585352547" media="all" />
-    <!--<![endif]-->
-    <link rel="stylesheet" href="/css/docs/docs.css?635614148585352547" media="all" />
-
-    <script src="/js/min/picturefill.min.js" async></script>
-    <script src="/js/min/modernizr.min.js"></script>
+    <!--<meta name="viewport" content="width=device-width" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
       		<!-- never cache patterns -->
@@ -47,10 +19,49 @@
 		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 		<meta http-equiv="pragma" content="no-cache" />
 		
-		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?635614148585352547" media="all">
-		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?635614148585352547" media="all" />
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?635648083505232026" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?635648083505232026" media="all" />
 		
     <!-- End Pattern Lab -->
+
+    <!--[if (lte IE 8)]>
+      <link rel="stylesheet" href="../../css/style.ie-old.css?635648083505232026" media="all">
+    <![endif]-->
+    <!--[if (gte IE 9)]><!-->
+      <link rel="stylesheet" href="../../css/style.css?635648083505232026" media="all" />
+    <!--<![endif]-->
+    <link rel="stylesheet" href="../../css/docs/docs.css?635648083505232026" media="all" />
+
+    <!--[if (lte IE 8)]>
+      <script src="../../js/min/svg4everybody.min.js"></script>
+    <![endif]-->
+
+    <script>
+        WebFontConfig = {
+            google: { families: ['Droid+Serif:400,700,400italic,700italic:latin'] }
+        };
+        var cb = function () {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if(raf){
+          raf(cb);
+        }else{
+          window.addEventListener('load', cb);
+        }
+    </script>
+    <noscript>
+      <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'>
+    </noscript>
+
+    <script src="../../js/min/picturefill.min.js" async></script>
+    <script src="../../js/min/modernizr.min.js"></script>
   </head>
   <body class="body u-cf">
     <!--[if lt IE 10]>
@@ -65,12 +76,26 @@
 					<div id="atoms-landscape" class="sg-pattern">
 						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-04-images-00-landscape/00-atoms-04-images-00-landscape.html" class="patternLink" data-patternpartial="atoms-landscape">Landscape</a></h2>
 						<div class="sg-pattern-body">
-							<img alt="http://placeimg.com/500/300/architecture" sizes="100vw" srcset="http://placeimg.com/500/300/nature 480w, http://placeimg.com/1140/700/tech 1140w" class="img-responsive " />
+							<img alt="http://placeimg.com/500/300/arch" sizes="100vw" srcset="http://placeimg.com/500/300/nature 480w, http://placeimg.com/1140/700/tech 1140w" class="img-responsive " />
 							<div class="sg-code" style="display: none">
 								<h3 class="sg-code-head">HTML</h3>
 								<pre class="sg-code-html">
 									<code>
-										&lt;img alt=&quot;http://placeimg.com/500/300/architecture&quot; sizes=&quot;100vw&quot; srcset=&quot;http://placeimg.com/500/300/nature 480w, http://placeimg.com/1140/700/tech 1140w&quot; class=&quot;img-responsive &quot; /&gt;
+										&lt;img alt=&quot;http://placeimg.com/500/300/arch&quot; sizes=&quot;100vw&quot; srcset=&quot;http://placeimg.com/500/300/nature 480w, http://placeimg.com/1140/700/tech 1140w&quot; class=&quot;img-responsive &quot; /&gt;
+									</code>
+								</pre>
+							</div>
+						</div>
+					</div>
+					<div id="atoms-landscape-ad" class="sg-pattern">
+						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-04-images-01-landscape-ad/00-atoms-04-images-01-landscape-ad.html" class="patternLink" data-patternpartial="atoms-landscape-ad">Landscape Ad</a></h2>
+						<div class="sg-pattern-body">
+							<img alt="http://placeimg.com/500/300/arch" src="../../images/content/ad.gif" class="img-responsive " />
+							<div class="sg-code" style="display: none">
+								<h3 class="sg-code-head">HTML</h3>
+								<pre class="sg-code-html">
+									<code>
+										&lt;img alt=&quot;http://placeimg.com/500/300/arch&quot; src=&quot;../../images/content/ad.gif&quot; class=&quot;img-responsive &quot; /&gt;
 									</code>
 								</pre>
 							</div>
@@ -129,13 +154,13 @@
 					<div id="atoms-logo" class="sg-pattern">
 						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-04-images-40-logo/00-atoms-04-images-40-logo.html" class="patternLink" data-patternpartial="atoms-logo">Logo</a></h2>
 						<div class="sg-pattern-body">
-							<img id="js-logo" src="/images/IoD-logo.png" alt="Institute of Directors" class="img-responsive" />
+							<img id="js-logo" src="../../images/content/logo.png" alt="Institute of Directors" class="img-responsive" />
 
 							<div class="sg-code" style="display: none">
 								<h3 class="sg-code-head">HTML</h3>
 								<pre class="sg-code-html">
 									<code>
-										&lt;img id=&quot;js-logo&quot; src=&quot;/images/IoD-logo.png&quot; alt=&quot;Institute of Directors&quot; class=&quot;img-responsive&quot; /&gt;
+										&lt;img id=&quot;js-logo&quot; src=&quot;../../images/content/logo.png&quot; alt=&quot;Institute of Directors&quot; class=&quot;img-responsive&quot; /&gt;
 
 									</code>
 								</pre>
@@ -146,7 +171,7 @@
 						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-04-images-45-navbar-brand/00-atoms-04-images-45-navbar-brand.html" class="patternLink" data-patternpartial="atoms-navbar-brand">Navbar Brand</a></h2>
 						<div class="sg-pattern-body">
 							<a href="#" class="navbar_brand logo" title="Return Home">
-  <img id="js-logo" src="/images/IoD-logo.png" alt="Institute of Directors" class="img-responsive" />
+  <img id="js-logo" src="../../images/content/logo.png" alt="Institute of Directors" class="img-responsive" />
 </a>
 							<div class="sg-code" style="display: none">
 									<div class="sg-code-contains">
@@ -157,7 +182,7 @@
 								<pre class="sg-code-html">
 									<code>
 										&lt;a href=&quot;#&quot; class=&quot;navbar_brand logo&quot; title=&quot;Return Home&quot;&gt;
-  &lt;img id=&quot;js-logo&quot; src=&quot;/images/IoD-logo.png&quot; alt=&quot;Institute of Directors&quot; class=&quot;img-responsive&quot; /&gt;
+  &lt;img id=&quot;js-logo&quot; src=&quot;../../images/content/logo.png&quot; alt=&quot;Institute of Directors&quot; class=&quot;img-responsive&quot; /&gt;
 &lt;/a&gt;
 									</code>
 								</pre>
@@ -168,20 +193,20 @@
 						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-04-images-50-favicon/00-atoms-04-images-50-favicon.html" class="patternLink" data-patternpartial="atoms-favicon">Favicon</a></h2>
 						<div class="sg-pattern-body">
 							<div class="docs-favicon">
-  <img src="../../images/favicon.ico" height="16" width="16" />
-  <img src="../../images/favicon.ico" height="24" width="24" />
-  <img src="../../images/favicon.ico" height="32" width="32" />
-  <img src="../../images/favicon.ico" height="64" width="64" />
+  <img src="../../images/content/favicon.ico" height="16" width="16" />
+  <img src="../../images/content/favicon.ico" height="24" width="24" />
+  <img src="../../images/content/favicon.ico" height="32" width="32" />
+  <img src="../../images/content/favicon.ico" height="64" width="64" />
 </div>
 							<div class="sg-code" style="display: none">
 								<h3 class="sg-code-head">HTML</h3>
 								<pre class="sg-code-html">
 									<code>
 										&lt;div class=&quot;docs-favicon&quot;&gt;
-  &lt;img src=&quot;../../images/favicon.ico&quot; height=&quot;16&quot; width=&quot;16&quot; /&gt;
-  &lt;img src=&quot;../../images/favicon.ico&quot; height=&quot;24&quot; width=&quot;24&quot; /&gt;
-  &lt;img src=&quot;../../images/favicon.ico&quot; height=&quot;32&quot; width=&quot;32&quot; /&gt;
-  &lt;img src=&quot;../../images/favicon.ico&quot; height=&quot;64&quot; width=&quot;64&quot; /&gt;
+  &lt;img src=&quot;../../images/content/favicon.ico&quot; height=&quot;16&quot; width=&quot;16&quot; /&gt;
+  &lt;img src=&quot;../../images/content/favicon.ico&quot; height=&quot;24&quot; width=&quot;24&quot; /&gt;
+  &lt;img src=&quot;../../images/content/favicon.ico&quot; height=&quot;32&quot; width=&quot;32&quot; /&gt;
+  &lt;img src=&quot;../../images/content/favicon.ico&quot; height=&quot;64&quot; width=&quot;64&quot; /&gt;
 &lt;/div&gt;
 									</code>
 								</pre>
@@ -191,14 +216,12 @@
 					<div id="atoms-loading-icon" class="sg-pattern">
 						<h2 class="sg-pattern-head" ><a href="../../patterns/00-atoms-04-images-70-loading-icon/00-atoms-04-images-70-loading-icon.html" class="patternLink" data-patternpartial="atoms-loading-icon">Loading Icon</a></h2>
 						<div class="sg-pattern-body">
-							<!--<img src="../../images/ajax-loader.gif" alt="Loading" />-->
-<i class="fa loader"></i>
+							<img src="../../images/content/ajax-loader.gif" alt="Loading" />
 							<div class="sg-code" style="display: none">
 								<h3 class="sg-code-head">HTML</h3>
 								<pre class="sg-code-html">
 									<code>
-										&lt;!--&lt;img src=&quot;../../images/ajax-loader.gif&quot; alt=&quot;Loading&quot; /&gt;--&gt;
-&lt;i class=&quot;fa loader&quot;&gt;&lt;/i&gt;
+										&lt;img src=&quot;../../images/content/ajax-loader.gif&quot; alt=&quot;Loading&quot; /&gt;
 									</code>
 								</pre>
 							</div>
@@ -216,70 +239,74 @@
 		</script>
 		
 
-  <div class="flyout_overlay"></div>
-</div>
+    <div class="flyout_overlay"></div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/js/min/jquery-1.11.1.min.js"><\/script>')</script>
-    <script src="/js/min/global.min.js"></script>
-    <script src="/js/min/forms.min.js"></script>
-	<script src="/js/tabs.js"></script>
+    <!--[if (gte IE 9)]><!-->
+      <script src="../../js/min/svg4everybody.min.js"></script>
+    <!--<![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../js/min/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="../../js/min/global.min.js"></script>
+    <script src="../../js/min/forms.min.js"></script>
+    <script src="../../js/min/tabs.min.js"></script>
 
-	<!--DO NOT REMOVE-->
-		<script>
-			/*!
-			 * scriptLoader - v0.1
-			 *
-			 * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
-			 * Licensed under the MIT license
-			 *
-			 */
-			
-			var scriptLoader = {
-				
-				run: function(js,cb,target) {
-					var s  = document.getElementById(target+'-'+cb); 
-					for (var i = 0; i < js.length; i++) {
-						var src = (typeof js[i] != "string") ? js[i].src : js[i];
-						var c   = document.createElement('script');
-						c.src   = '../../'+src+'?'+cb;
-						if (typeof js[i] != "string") {
-							if (js[i].dep !== undefined) {
-								c.onload = function(dep,cb,target) {
-									return function() {
-										scriptLoader.run(dep,cb,target);
-									}
-								}(js[i].dep,cb,target);
-							}
-						}
-						s.parentNode.insertBefore(c,s);
-					}
-				}
-				
-			}
-		</script>
-		<script id="pl-js-polyfill-insert-635614148585352547">
-			(function() {
-				if (self != top) {
-					var cb = '635614148585352547';
-					var js = [];
-					if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
-						js.push("styleguide/js/vendor/classlist-polyfill.js");
-					}
-					scriptLoader.run(js,cb,'pl-js-polyfill-insert');
-				}
-			})();
-		</script>
-		<script id="pl-js-insert-635614148585352547">
-			(function() {
-				if (self != top) {
-					var cb = '635614148585352547';
-					var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
-					scriptLoader.run(js,cb,'pl-js-insert');
-				}
-			})();
-		</script>
-		
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 
-	</body>
+    <!--DO NOT REMOVE-->
+    	<script>
+    		/*!
+    		 * scriptLoader - v0.1
+    		 *
+    		 * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+    		 * Licensed under the MIT license
+    		 *
+    		 */
+    		
+    		var scriptLoader = {
+    			
+    			run: function(js,cb,target) {
+    				var s  = document.getElementById(target+'-'+cb); 
+    				for (var i = 0; i < js.length; i++) {
+    					var src = (typeof js[i] != "string") ? js[i].src : js[i];
+    					var c   = document.createElement('script');
+    					c.src   = '../../'+src+'?'+cb;
+    					if (typeof js[i] != "string") {
+    						if (js[i].dep !== undefined) {
+    							c.onload = function(dep,cb,target) {
+    								return function() {
+    									scriptLoader.run(dep,cb,target);
+    								}
+    							}(js[i].dep,cb,target);
+    						}
+    					}
+    					s.parentNode.insertBefore(c,s);
+    				}
+    			}
+    			
+    		}
+    	</script>
+    	<script id="pl-js-polyfill-insert-635648083505232026">
+    		(function() {
+    			if (self != top) {
+    				var cb = '635648083505232026';
+    				var js = [];
+    				if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
+    					js.push("styleguide/js/vendor/classlist-polyfill.js");
+    				}
+    				scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    			}
+    		})();
+    	</script>
+    	<script id="pl-js-insert-635648083505232026">
+    		(function() {
+    			if (self != top) {
+    				var cb = '635648083505232026';
+    				var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
+    				scriptLoader.run(js,cb,'pl-js-insert');
+    			}
+    		})();
+    	</script>
+    	
+
+  </body>
 </html>

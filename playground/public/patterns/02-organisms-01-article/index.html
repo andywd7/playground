@@ -1,43 +1,15 @@
 <!DOCTYPE html>
   <!--[if lte IE 7]>      <html class="no-js lt-ie10 lt-ie9 lt-ie8 pl"> <![endif]-->
-  <!--[if IE 8]>			<html class="no-js lt-ie10 lt-ie9 ie8 pl"> <![endif]-->
+  <!--[if IE 8]>          <html class="no-js lt-ie10 lt-ie9 ie8 pl"> <![endif]-->
   <!--[if IE 9]>          <html class="no-js lt-ie10 ie9 pl"> <![endif]-->
-  <!--[if gt IE 9]><!-->	<html class="no-js pl"> <!--<![endif]-->
+  <!--[if gt IE 9]><!-->  <html class="no-js pl"> <!--<![endif]-->
   <head>
-    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Pattern Lab</title>
-    <meta charset="UTF-8">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width" />
-
-    <script>
-        WebFontConfig = {
-            google: { families: ['Droid+Serif:400,700,400italic,700italic:latin'] }
-        };
-        (function () {
-            var wf = document.createElement('script');
-            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-            wf.type = 'text/javascript';
-            wf.async = 'true';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(wf, s);
-        })();
-    </script>
-    <noscript>
-      <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'>
-    </noscript>
-
-    <!--[if (lte IE 8)]>
-      <link rel="stylesheet" href="/css/style.ie-old.css?635614148585352547" media="all">
-    <![endif]-->
-    <!--[if (gte IE 9)]><!-->
-      <link rel="stylesheet" href="/css/style.css?635614148585352547" media="all" />
-    <!--<![endif]-->
-    <link rel="stylesheet" href="/css/docs/docs.css?635614148585352547" media="all" />
-
-    <script src="/js/min/picturefill.min.js" async></script>
-    <script src="/js/min/modernizr.min.js"></script>
+    <!--<meta name="viewport" content="width=device-width" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
       		<!-- never cache patterns -->
@@ -47,10 +19,49 @@
 		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 		<meta http-equiv="pragma" content="no-cache" />
 		
-		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?635614148585352547" media="all">
-		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?635614148585352547" media="all" />
+		<link rel="stylesheet" href="../../styleguide/css/styleguide.css?635648083505232026" media="all">
+		<link rel="stylesheet" href="../../styleguide/css/styleguide-specific.css?635648083505232026" media="all" />
 		
     <!-- End Pattern Lab -->
+
+    <!--[if (lte IE 8)]>
+      <link rel="stylesheet" href="../../css/style.ie-old.css?635648083505232026" media="all">
+    <![endif]-->
+    <!--[if (gte IE 9)]><!-->
+      <link rel="stylesheet" href="../../css/style.css?635648083505232026" media="all" />
+    <!--<![endif]-->
+    <link rel="stylesheet" href="../../css/docs/docs.css?635648083505232026" media="all" />
+
+    <!--[if (lte IE 8)]>
+      <script src="../../js/min/svg4everybody.min.js"></script>
+    <![endif]-->
+
+    <script>
+        WebFontConfig = {
+            google: { families: ['Droid+Serif:400,700,400italic,700italic:latin'] }
+        };
+        var cb = function () {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if(raf){
+          raf(cb);
+        }else{
+          window.addEventListener('load', cb);
+        }
+    </script>
+    <noscript>
+      <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'>
+    </noscript>
+
+    <script src="../../js/min/picturefill.min.js" async></script>
+    <script src="../../js/min/modernizr.min.js"></script>
   </head>
   <body class="body u-cf">
     <!--[if lt IE 10]>
@@ -130,70 +141,74 @@
 		</script>
 		
 
-  <div class="flyout_overlay"></div>
-</div>
+    <div class="flyout_overlay"></div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/js/min/jquery-1.11.1.min.js"><\/script>')</script>
-    <script src="/js/min/global.min.js"></script>
-    <script src="/js/min/forms.min.js"></script>
-	<script src="/js/tabs.js"></script>
+    <!--[if (gte IE 9)]><!-->
+      <script src="../../js/min/svg4everybody.min.js"></script>
+    <!--<![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../js/min/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="../../js/min/global.min.js"></script>
+    <script src="../../js/min/forms.min.js"></script>
+    <script src="../../js/min/tabs.min.js"></script>
 
-	<!--DO NOT REMOVE-->
-		<script>
-			/*!
-			 * scriptLoader - v0.1
-			 *
-			 * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
-			 * Licensed under the MIT license
-			 *
-			 */
-			
-			var scriptLoader = {
-				
-				run: function(js,cb,target) {
-					var s  = document.getElementById(target+'-'+cb); 
-					for (var i = 0; i < js.length; i++) {
-						var src = (typeof js[i] != "string") ? js[i].src : js[i];
-						var c   = document.createElement('script');
-						c.src   = '../../'+src+'?'+cb;
-						if (typeof js[i] != "string") {
-							if (js[i].dep !== undefined) {
-								c.onload = function(dep,cb,target) {
-									return function() {
-										scriptLoader.run(dep,cb,target);
-									}
-								}(js[i].dep,cb,target);
-							}
-						}
-						s.parentNode.insertBefore(c,s);
-					}
-				}
-				
-			}
-		</script>
-		<script id="pl-js-polyfill-insert-635614148585352547">
-			(function() {
-				if (self != top) {
-					var cb = '635614148585352547';
-					var js = [];
-					if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
-						js.push("styleguide/js/vendor/classlist-polyfill.js");
-					}
-					scriptLoader.run(js,cb,'pl-js-polyfill-insert');
-				}
-			})();
-		</script>
-		<script id="pl-js-insert-635614148585352547">
-			(function() {
-				if (self != top) {
-					var cb = '635614148585352547';
-					var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
-					scriptLoader.run(js,cb,'pl-js-insert');
-				}
-			})();
-		</script>
-		
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 
-	</body>
+    <!--DO NOT REMOVE-->
+    	<script>
+    		/*!
+    		 * scriptLoader - v0.1
+    		 *
+    		 * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+    		 * Licensed under the MIT license
+    		 *
+    		 */
+    		
+    		var scriptLoader = {
+    			
+    			run: function(js,cb,target) {
+    				var s  = document.getElementById(target+'-'+cb); 
+    				for (var i = 0; i < js.length; i++) {
+    					var src = (typeof js[i] != "string") ? js[i].src : js[i];
+    					var c   = document.createElement('script');
+    					c.src   = '../../'+src+'?'+cb;
+    					if (typeof js[i] != "string") {
+    						if (js[i].dep !== undefined) {
+    							c.onload = function(dep,cb,target) {
+    								return function() {
+    									scriptLoader.run(dep,cb,target);
+    								}
+    							}(js[i].dep,cb,target);
+    						}
+    					}
+    					s.parentNode.insertBefore(c,s);
+    				}
+    			}
+    			
+    		}
+    	</script>
+    	<script id="pl-js-polyfill-insert-635648083505232026">
+    		(function() {
+    			if (self != top) {
+    				var cb = '635648083505232026';
+    				var js = [];
+    				if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
+    					js.push("styleguide/js/vendor/classlist-polyfill.js");
+    				}
+    				scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    			}
+    		})();
+    	</script>
+    	<script id="pl-js-insert-635648083505232026">
+    		(function() {
+    			if (self != top) {
+    				var cb = '635648083505232026';
+    				var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
+    				scriptLoader.run(js,cb,'pl-js-insert');
+    			}
+    		})();
+    	</script>
+    	
+
+  </body>
 </html>

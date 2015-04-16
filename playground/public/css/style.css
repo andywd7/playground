@@ -1,8 +1,4 @@
-/*Pattern Lab doesn't have any CSS requirements, which means you can write your styles however you want. Hooray!
-You can use Sass, Less, vanilla CSS, or some other crazy thing I haven't heard of yet.
-
-Atomic design is philosophically complimentary with these CSS approaches:
-
+/*
 * SMACSS by Jonathan Snook http://smacss.com/
 * OOCSS by Nicole Sullivan http://oocss.org/
 * BEM CSS Methology : http://bem.info/method/
@@ -40,41 +36,41 @@ So feel free to use any of these approaches. Or don't. It's totally up to you.
 /*============*\
    #VARIABLES
 \*============*/
-/**
+/*
  * Global Variables
  */
-/**
+/*
  * Scaffolding
  */
-/**
+/*
  * Links
  */
-/**
+/*
  * Typography
  */
-/**
+/*
  * Components
  * --------------------------------------------------------------------
  * Based on 1.5em(14px) font-size and 1.45 line-height (~21px to start)
  */
-/**
+/*
  * Base Variables
  */
-/**
+/*
  * Grid system
  */
-/**
+/*
  * Type
  */
-/**
+/*
  * Buttons
  * -----------------------------------------------------------
  * For each button, define text, background and border color.
  */
-/**
+/*
  * Forms
  */
-/**
+/*
  * Tables
  * --------------------------------------------------------------------------------------------
  * Customizes the `.table` component with basic values, each used across all table variations.
@@ -82,16 +78,19 @@ So feel free to use any of these approaches. Or don't. It's totally up to you.
 /*======================*\
    #COMPONENT VARIABLES
 \*======================*/
-/**
+/*
  * Navbar/Header
  */
-/**
+/*
  * Navs
  */
-/**
+/*
+ * Flyout
+ */
+/*
  * Tabs
  */
-/**
+/*
  * Form states and alerts
  * ----------------------------------------------------------------
  * Define colors for form feedback states and, by default, alerts.
@@ -99,7 +98,7 @@ So feel free to use any of these approaches. Or don't. It's totally up to you.
 /*========================================================*\
    #normalize.css v2.1.3 | MIT License | git.io/normalize
 \*========================================================*/
-/**
+/*
  * HTML5 display definitions
 --------------------------------------------------
  * Correct `block` display not defined in IE 8/9.
@@ -119,7 +118,19 @@ section,
 summary {
   display: block; }
 
-/**
+/*
+ * As well as using normalize.css, it is often advantageous to remove all
+ * margins from certain elements.
+ */
+body,
+form,
+fieldset,
+figure,
+caption {
+  margin: 0;
+  padding: 0; }
+
+/*
  * Reset the box-sizing
  */
 *,
@@ -127,23 +138,13 @@ summary {
 *:after {
   box-sizing: inherit; }
 
-/**
- * 1. Correct `inline-block` display not defined in IE 8/9.
- * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
- */
-/** 
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
-/**
- * Address `[hidden]` styling not present in IE 8/9.
- * Hide the `template` element in IE, Safari, and Firefox < 22.
- */
-/**
+/*
  * Base
 --------------------------------------------------------------------------------
  * 1. Set default font family to sans-serif.
- * 2. Prevent iOS text size adjust after orientation change, without disabling
+ * 2. Fonts on OSX will look more consistent with other systems that do not
+ *    render text using sub-pixel anti-aliasing.
+ * 3. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
 html {
@@ -151,13 +152,18 @@ html {
   font-family: sans-serif;
   /* 1 */
   font-size: 87.5%;
+  -moz-osx-font-smoothing: grayscale;
+  /* 2 */
+  -webkit-font-smoothing: antialiased;
+  /* 2 */
+  overflow-y: scroll;
   -webkit-tap-highlight-color: transparent;
   -ms-text-size-adjust: 100%;
-  /* 2 */
+  /* 3 */
   -webkit-text-size-adjust: 100%
-  /* 2 */ }
+  /* 3 */ }
 
-/**
+/*
  * Remove default margin.
  */
 body {
@@ -166,9 +172,9 @@ body {
   font-family: Tahoma, Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.4;
-  margin: 0; }
+  padding-top: 70px; }
 
-/**
+/*
  * Links
 --------------------------------------------------------------------------------
  * Remove the gray background color from active links in IE 10.
@@ -177,12 +183,11 @@ a {
   background: transparent;
   color: #357d7f;
   text-decoration: none
-  /**
+  /*
    * Improve readability when focused and also mouse hovered in all browsers.
    */ }
   a:hover, a:focus {
-    color: #1e4849;
-    text-decoration: underline; }
+    color: #1e4849; }
   a:active, a:hover {
     outline: 0; }
   a:focus {
@@ -190,55 +195,30 @@ a {
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
 
-/**
- * Address `outline` inconsistency between Chrome and other browsers.
+/*
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
  */
-/**
- * Improve readability when focused and also mouse hovered in all browsers.
- */
-/**
- * Typography
---------------------------------------------------------------------------------
- * Address variable `h1` font-size and margin within `section` and `article`
- * contexts in Firefox 4+, Safari 5, and Chrome.
- */
-/**
+abbr[title] {
+  border-bottom: 1px dotted #c3c6c8;
+  cursor: help; }
+
+/*
  * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
  */
 b,
-strong {
+strong,
+.strong {
   font-weight: bold; }
 
-/**
- * Address styling not present in Safari 5 and Chrome.
- */
-dfn {
-  font-style: italic; }
-
-hr {
-  box-sizing: content-box;
-  border: 0;
-  border-top: 1px solid #ddd;
-  height: 0;
-  margin-bottom: 1.4rem;
-  margin-top: 1.4rem; }
-
-/**
- * Correct font family set oddly in Safari 5 and Chrome.
- */
-/**
- * Improve readability of pre-formatted text in all browsers.
- */
-/**
- * Set consistent quote types.
- */
-q {
-  quotes: '\201C' '\201D' '\2018' '\2019'; }
-
-/**
+/*
  * Address inconsistent and variable font size in all browsers.
+ * Ex: (12px small font / 14px base font) * 100% = about 85%
  */
-/**
+small,
+.small {
+  font-size: 92.85714%; }
+
+/*
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
 sub,
@@ -249,41 +229,74 @@ sup {
   vertical-align: baseline; }
 
 sup {
-  top: -0.5em; }
+  top: -.5em; }
 
 sub {
-  bottom: -0.25em; }
+  bottom: -.25em; }
 
-/**
+mark,
+.mark {
+  background-color: #ffec33;
+  color: #333;
+  /* Address styling not present in IE 8/9. */
+  padding: .2em; }
+
+/*
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/*
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  border: 0;
+  border-top: 1px solid #ddd;
+  box-sizing: content-box;
+  height: 0;
+  margin-bottom: 1.4rem;
+  margin-top: 1.4rem; }
+
+/*
+ * Set consistent quote types.
+ */
+q {
+  quotes: '\201C' '\201D' '\2018' '\2019'; }
+
+/*
  * Embedded content
 ----------------------------------------------------
  * Remove border when inside `a` element in IE 8/9/10.
  */
 img {
   border: 0;
+  max-width: 100%;
   vertical-align: middle; }
 
-/**
+iframe {
+  border: 0;
+  display: block; }
+
+/*
+ * 1. Google Maps breaks if `max-width: 100%` acts upon it; use their selector
+ *    to remove the effects.
+ * 2. If a `width` and/or `height` attribute have been explicitly defined, let's
+ *    not make the image fluid.
+ */
+.gm-style img,
+img[width],
+img[height] {
+  /* 2 */
+  max-width: none; }
+
+/*
  * Correct overflow displayed oddly in IE 9/10/11.
  */
 svg:not(:root) {
   overflow: hidden; }
 
-/**
- * Figures
-------------------------------------------------------
- * Address margin not present in IE 8/9 and Safari 5.
- */
-/**
- * Forms
---------------------------------------------------
- * Define consistent border, margin, and padding.
- */
-/**
- * 1. Correct `color` not being inherited in IE 8/9.
- * 2. Remove padding so people aren't caught out if they zero out fieldsets.
- */
-/**
+/*
  * 1. Correct font family not being inherited in all browsers.
  * 2. Correct font size not being inherited in all browsers.
  * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
@@ -301,13 +314,13 @@ textarea {
   margin: 0
   /* 3 */ }
 
-/**
+/*
  * Address `overflow` set to `hidden` in IE 8/9/10/11.
  */
 button {
   overflow: visible; }
 
-/**
+/*
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
@@ -315,7 +328,7 @@ button,
 input {
   line-height: normal; }
 
-/**
+/*
  * Address inconsistent `text-transform` inheritance for `button` and `select`.
  * All other form control elements do not inherit `text-transform` values.
  * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
@@ -325,7 +338,7 @@ button,
 select {
   text-transform: none; }
 
-/**
+/*
  * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
  *    and `video` controls.
  * 2. Correct inability to style clickable `input` types in iOS.
@@ -341,20 +354,20 @@ input[type="submit"] {
   cursor: pointer
   /* 3 */ }
 
-/**
+/*
  * Re-set default cursor for disabled elements.
  */
 button[disabled],
 html input[disabled] {
   cursor: default; }
 
-/**
+/*
  * Role button
  */
-[role="button"] {
+[role="button"]:not(.btn) {
   cursor: pointer; }
 
-/**
+/*
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
@@ -365,21 +378,13 @@ input[type="radio"] {
   padding: 0
   /* 2 */ }
 
-/** 
- * 1. Address `box-sizing` set to `border-box` in Safari 5 and Chrome.
- * 2. Search inputs in iOS
---------------------------------------------------------------------------------
- * This overrides the extra rounded corners on search inputs in iOS so that our
- * `.f-control` class can properly style them. For details, see
- * https://github.com/twbs/bootstrap/issues/11586.
- */
 input[type="search"] {
-  box-sizing: border-box;
-  /* 1 */
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+  box-sizing: border-box
+  /* 2 */ }
 
-/**
- * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+/*
+ * Remove inner padding and search cancel button in Safari 5 and Chrome on OS X.
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
@@ -387,15 +392,7 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
-/**
- * Remove inner padding and search cancel button in Safari 5 and Chrome
- * on OS X.
- */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none; }
-
-/**
+/*
  * Remove inner padding and border in Firefox 4+.
  */
 button::-moz-focus-inner,
@@ -403,7 +400,7 @@ input::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
-/**
+/*
  * 1. Remove default vertical scrollbar in IE 8/9/10/11.
  * 2. Improve readability and alignment in all browsers.
  */
@@ -414,14 +411,14 @@ textarea {
   vertical-align: top
   /* 2 */ }
 
-/**
+/*
  * Don't inherit the `font-weight` (applied by a rule above).
  * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
  */
 optgroup {
   font-weight: bold; }
 
-/**
+/*
  * Tables
 --------------------------------------------
  * Remove most spacing between table cells.
@@ -437,7 +434,7 @@ th {
 /*=============*\
    #TYPOGRAPHY
 \*=============*/
-/**
+/*
  * Headings
  */
 h1, h2, h3, h4, h5, h6,
@@ -468,7 +465,8 @@ h1, h2, h3, h4, h5, h6,
   .h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
     color: #0e3a4d; }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.h-font {
   font-family: "Droid Serif", Georgia, Times, "Times New Roman", Baskerville, serif; }
 
 h1, .h1 {
@@ -484,7 +482,7 @@ h4, .h4 {
   font-size: 1.28571rem; }
 
 h5, .h5 {
-  font-size: 1.14286rem; }
+  font-size: 1rem; }
 
 h6, .h6 {
   font-size: 0.92857rem; }
@@ -511,7 +509,7 @@ h6 .small, .h6 small,
 .h6 .small {
   font-size: 75%; }
 
-/**
+/*
  * Body text
  */
 p {
@@ -524,45 +522,33 @@ p {
     margin: 0; }
 
 .lead {
-  line-height: 1.2;
-  margin-bottom: 1.4rem; }
+  font-weight: 700; }
+  @media (min-width: 31.25em) {
+    .lead {
+      font-size: 1.14286rem;
+      font-weight: 400;
+      line-height: 1.3; }
+      .lead + p:before {
+        margin: 1.42857rem 0;
+        width: 10.71429rem; } }
   .lead + p:before {
     background-color: #c3c6c8;
-    content: "";
+    content: '';
     display: block;
     height: 1px;
     margin: 1.4rem auto;
     width: 25%; }
-  @media all and (min-width: 31.25em) {
-    .lead {
-      font-size: 1.28571rem; }
-      .lead + p:before {
-        margin: 1.42857rem 0;
-        width: 10.71429rem; } }
 
-/**
+/*
  * Emphasis & misc
--------------------------------------------------------------
- * Ex: (12px small font / 14px base font) * 100% = about 85%
  */
-small,
-.small {
-  font-size: 92.85714%; }
-
-/**
+/*
  * Undo browser default styling
  */
 cite {
   font-style: normal; }
 
-mark,
-.mark {
-  background-color: #ffec33;
-  color: #333;
-  /* Address styling not present in IE 8/9. */
-  padding: .2em; }
-
-/**
+/*
  * Addresses
  */
 address {
@@ -570,17 +556,7 @@ address {
   line-height: 1.4;
   margin-bottom: 1.4rem; }
 
-/**
- * Abbreviations and acronyms
--------------------------------------------------------
- * Add data-* attribute to help out our tooltip plugin,
- * per https://github.com/twbs/bootstrap/issues/5257
- */
-abbr[title] {
-  border-bottom: 1px dotted #ddd;
-  cursor: help; }
-
-/**
+/*
  * Contextual backgrounds
 ------------------------------------------------------------------------------
  * For now we'll leave these alongside the text classes until v4 when we can
@@ -598,9 +574,2061 @@ a.bg-dark:hover {
 a.bg-muted:hover {
   background-color: #c4c4c4 !important; }
 
-/**
- * Page header
+/*
+ * Blockquotes
  */
+blockquote {
+  border-left: 5px solid #0e3a4d;
+  font-family: "Droid Serif", Georgia, Times, "Times New Roman", Baskerville, serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 700;
+  margin: 0 5% 1.4rem;
+  padding: 0.7rem 1.4rem; }
+  blockquote p:only-child,
+  blockquote ul:only-child,
+  blockquote ol:only-child {
+    margin-bottom: 0; }
+  blockquote footer {
+    color: #c3c6c8;
+    display: block;
+    font-family: Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 80%;
+    /* back to default font-size */
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-top: -0.71429rem; }
+    blockquote footer:before {
+      content: '\2014 \00A0'
+      /* em dash, nbsp */ }
+
+/*
+ * Quotes
+ */
+blockquote:before,
+blockquote:after {
+  content: ''; }
+
+/*
+ * Links
+---------------------------------------------------
+ */
+/*
+ * Icon/Social Links
+ */
+/*==========*\
+   #LISTS
+ -----------
+ * Elements
+ * Classes
+\*==========*/
+/* Remove browser default */
+ul,
+ol,
+dl {
+  margin: 0 0 1.4rem; }
+
+/*
+ * Unordered and Ordered lists
+ */
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin-bottom: 0; }
+ul + *,
+ol + * {
+  margin-bottom: 0.7rem; }
+
+/*
+ * Description Lists
+ */
+dt,
+dd {
+  line-height: 1.4; }
+
+dt {
+  font-weight: bold; }
+
+dd {
+  margin-left: 0
+  /* Undo browser default */ }
+
+/*
+ * List options
+----------------------------------------------------------------------
+ * Unstyled keeps list items block level, just removes default browser
+ * padding and list-style
+ */
+.list-unstyled,
+.list-inline,
+.pagination,
+.list-steps {
+  list-style: none;
+  padding-left: 0; }
+
+/* 
+ * Inline turns list items into inline-block
+ */
+.list-inline,
+.pagination {
+  margin-left: -5px; }
+  .list-inline:after,
+  .pagination:after {
+    content: '';
+    display: table; }
+  .list-inline:after,
+  .pagination:after {
+    clear: both; }
+  .list-inline > li,
+  .pagination > li {
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px; }
+
+.list--rows > li {
+  border-bottom: 1px solid #ddd; }
+  .list--rows > li .nav--rows > li {
+    border-bottom: 0;
+    border-top: 1px solid #ddd; }
+
+.list--cols > li {
+  border-left: 1px solid #ddd; }
+  .list--cols > li:first-child {
+    border-left: 0; }
+
+/*
+ * Horizontal description lists
+--------------------------------------------------------------------------------
+ * Defaults to being stacked without any of the below styles applied, until the
+ * grid breakpoint is reached (default of ~768px).
+ */
+@media (min-width: 52.5em) {
+  .dl-horizontal dt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    clear: left;
+    float: left;
+    text-align: right;
+    width: 160px; } }
+.dl-horizontal dd {
+  /* Clear the floated `dt` if an empty `dd` is present */ }
+  .dl-horizontal dd:after {
+    content: '';
+    display: table; }
+  .dl-horizontal dd:after {
+    clear: both; }
+  @media (min-width: 52.5em) {
+    .dl-horizontal dd {
+      margin-left: 180px; } }
+
+/*
+ * Ordered counter list-steps
+ */
+.list-steps > li {
+  color: #ddd;
+  counter-increment: list-steps;
+  display: inline-block;
+  font-weight: 700;
+  margin-left: 0.7rem;
+  padding-left: 0;
+  text-transform: uppercase; }
+  @media (min-width: 31.25em) {
+    .list-steps > li {
+      margin-left: 1.4rem; } }
+  .list-steps > li:before {
+    color: #ddd;
+    content: counter(list-steps);
+    display: inline-block;
+    margin-right: 0.35714rem;
+    text-align: center; }
+    @media (min-width: 31.25em) {
+      .list-steps > li:before {
+        border: 2px solid #ddd;
+        border-radius: 100px;
+        width: 1.71429rem; } }
+  .list-steps > li:first-child {
+    margin-left: 0; }
+  .list-steps > li.is-current {
+    color: #0e3a4d; }
+    .list-steps > li.is-current:before {
+      color: #0e3a4d; }
+      @media (min-width: 31.25em) {
+        .list-steps > li.is-current:before {
+          background-color: #0e3a4d;
+          border-color: #0e3a4d;
+          box-shadow: inset 0 0 0 1px #fff;
+          color: #fff; } }
+
+/*
+ * Pagination
+ */
+/*
+ * Collapsable List
+ */
+.list-collapsable {
+  padding: 0.21429rem 0;
+  position: relative; }
+  .list-collapsable:after {
+    content: '';
+    display: table; }
+  .list-collapsable:after {
+    clear: both; }
+
+.list-collapsable_header {
+  font-size: 0.85714rem;
+  font-weight: normal;
+  margin: 0;
+  position: relative; }
+  @media (min-width: 31.25em) {
+    .list-collapsable_header {
+      left: -9999px;
+      position: absolute; } }
+  .list-collapsable_header a {
+    display: block; }
+    .list-collapsable_header a:before {
+      margin-right: 0.14286rem; }
+  .list-collapsable_header.is-active a {
+    color: #1e4849; }
+  .list-collapsable_header.is-active + .list-collapsable_list {
+    background-color: #fff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+    left: 0;
+    line-height: 1.42857rem;
+    padding: 0.28571rem 0.35714rem 0.28571rem 0.71429rem;
+    top: 1.28571rem;
+    width: 100%;
+    z-index: 10; }
+
+.list-collapsable_list {
+  left: -999em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute; }
+  @media (min-width: 31.25em) {
+    .list-collapsable_list {
+      position: static; }
+      .is-active .list-collapsable_list {
+        box-shadow: none; } }
+
+/*========*\
+   #GRIDS
+\*========*/
+/*
+ * Grid row
+ */
+.grid-row {
+  margin-left: -0.71429rem;
+  margin-right: -0.71429rem; }
+  .grid-row:after {
+    content: '';
+    display: table; }
+  .grid-row:after {
+    clear: both; }
+
+.w-12, .wf-12 .control-label, .w-1, .wf-1 .control-label, .w-2, .wf-2 .control-label, .w-3, .wf-3 .control-label, .w-4, .wf-4 .control-label, .w-5, .wf-5 .control-label, .w-6, .wf-6 .control-label, .w-7, .wf-7 .control-label, .w-8, .wf-8 .control-label, .w-9, .wf-9 .control-label, .w-10, .wf-10 .control-label, .w-11, .wf-11 .control-label {
+  padding-left: 0.71429rem;
+  padding-right: 0.71429rem; }
+  @media (min-width: 31.25em) {
+    .w-12, .wf-12 .control-label, .w-1, .wf-1 .control-label, .w-2, .wf-2 .control-label, .w-3, .wf-3 .control-label, .w-4, .wf-4 .control-label, .w-5, .wf-5 .control-label, .w-6, .wf-6 .control-label, .w-7, .wf-7 .control-label, .w-8, .wf-8 .control-label, .w-9, .wf-9 .control-label, .w-10, .wf-10 .control-label, .w-11, .wf-11 .control-label {
+      float: left; } }
+
+.w-fixed-offset-0 {
+  margin-left: 0% !important; }
+
+.w-1,
+.wf-1 .control-label {
+  width: 8.33333%; }
+
+.w-fixed-offset-1 {
+  margin-left: 8.33333% !important; }
+
+.w-2,
+.wf-2 .control-label {
+  width: 16.66667%; }
+
+.w-fixed-offset-2 {
+  margin-left: 16.66667% !important; }
+
+.w-3,
+.wf-3 .control-label {
+  width: 25%; }
+
+.w-fixed-offset-3 {
+  margin-left: 25% !important; }
+
+.w-4,
+.wf-4 .control-label {
+  width: 33.33333%; }
+
+.w-fixed-offset-4 {
+  margin-left: 33.33333% !important; }
+
+.w-5,
+.wf-5 .control-label {
+  width: 41.66667%; }
+
+.w-fixed-offset-5 {
+  margin-left: 41.66667% !important; }
+
+.w-6,
+.wf-6 .control-label {
+  width: 50%; }
+
+.w-fixed-offset-6 {
+  margin-left: 50% !important; }
+
+.w-7,
+.wf-7 .control-label {
+  width: 58.33333%; }
+
+.w-fixed-offset-7 {
+  margin-left: 58.33333% !important; }
+
+.w-8,
+.wf-8 .control-label {
+  width: 66.66667%; }
+
+.w-fixed-offset-8 {
+  margin-left: 66.66667% !important; }
+
+.w-9,
+.wf-9 .control-label {
+  width: 75%; }
+
+.w-fixed-offset-9 {
+  margin-left: 75% !important; }
+
+.w-10,
+.wf-10 .control-label {
+  width: 83.33333%; }
+
+.w-fixed-offset-10 {
+  margin-left: 83.33333% !important; }
+
+.w-11,
+.wf-11 .control-label {
+  width: 91.66667%; }
+
+.w-fixed-offset-11 {
+  margin-left: 91.66667% !important; }
+
+.w-12,
+.wf-12 .control-label {
+  width: 100%; }
+
+.w-fixed-offset-12 {
+  margin-left: 100% !important; }
+
+.w-offset-0 {
+  margin-left: 0% !important; }
+
+.w-offset-1 {
+  margin-left: 8.33333% !important; }
+
+.w-offset-2 {
+  margin-left: 16.66667% !important; }
+
+.w-offset-3 {
+  margin-left: 25% !important; }
+
+.w-offset-4 {
+  margin-left: 33.33333% !important; }
+
+.w-offset-5 {
+  margin-left: 41.66667% !important; }
+
+.w-offset-6 {
+  margin-left: 50% !important; }
+
+.w-offset-7 {
+  margin-left: 58.33333% !important; }
+
+.w-offset-8 {
+  margin-left: 66.66667% !important; }
+
+.w-offset-9 {
+  margin-left: 75% !important; }
+
+.w-offset-10 {
+  margin-left: 83.33333% !important; }
+
+.w-offset-11 {
+  margin-left: 91.66667% !important; }
+
+.w-offset-12 {
+  margin-left: 100% !important; }
+
+/*==========*\
+   #FORMS
+ -----------
+ * Elements
+ * Classes 
+\*==========*/
+/*
+ * Normalize non-controls
+------------------------------------------------------
+ * Restyle and baseline non-control form elements.
+ */
+fieldset {
+  border: 0;
+  /*
+   * Chrome and Firefox set a `min-width: -webkit-min-content;` on fieldsets,
+   * so we reset that to ensure it behaves more like a standard block element.
+   * See https://github.com/twbs/bootstrap/issues/12359.
+   */
+  min-width: 0; }
+  fieldset + fieldset {
+    margin-top: 1.4rem; }
+
+legend {
+  border: 0;
+  /* Correct `color` not being inherited in IE 8/9. */
+  border-bottom: 1px solid #e6e6e6;
+  color: #999;
+  display: block;
+  margin-bottom: 0.7rem;
+  padding: 0 0 0.46667rem;
+  width: 100%; }
+
+label,
+.label {
+  display: inline-block;
+  margin-bottom: 0.14286rem;
+  max-width: 100%
+  /* Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141) */ }
+
+/*
+ * Normalize form controls
+--------------------------------------------------------------------------------
+ * While most of our form styles require extra classes, some basic normalization
+ * is required to ensure optimum display with or without those classes to better
+ * address browser inconsistencies.
+ */
+/*
+ * reset search focus outline
+ */
+input[type="search"]:focus {
+  outline-offset: -2px; }
+
+/*
+ * Position radios and checkboxes better
+ */
+input[type="radio"],
+input[type="checkbox"] {
+  line-height: normal;
+  margin: 0.35714rem 0 0
+  /*
+   * Focus for file, radio, and checkbox
+   */
+  /*
+   * Disabled Radios & Checkboxes
+  ---------------------------------------------------------------------------------------
+   * Apply same disabled cursor tweak as for inputs
+   * Some special care is needed because <label>s don't inherit their parent's `cursor`.
+   * NOTE: Neither radios nor checkboxes can be readonly.
+   */ }
+  input[type="radio"]:focus,
+  input[type="checkbox"]:focus {
+    outline: thin dotted #333;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px; }
+  input[type="radio"][disabled], input[type="radio"].is-disabled, fieldset[disabled] input[type="radio"],
+  input[type="checkbox"][disabled],
+  input[type="checkbox"].is-disabled, fieldset[disabled]
+  input[type="checkbox"] {
+    cursor: not-allowed; }
+
+/*
+ * Make multiple select elements height not fixed
+ */
+select[multiple],
+select[size] {
+  height: auto; }
+
+/*
+ * Common form controls
+----------------------------------------------------------------------------
+ * Shared size and type resets for form controls. Apply `.f-control` to any
+ * of the following form controls:
+ -----------------------------------
+ * select
+ * textarea
+ * input[type="text"]
+ * input[type="password"]
+ * input[type="datetime"]
+ * input[type="datetime-local"]
+ * input[type="date"]
+ * input[type="month"]
+ * input[type="time"]
+ * input[type="week"]
+ * input[type="number"]
+ * input[type="email"]
+ * input[type="url"]
+ * input[type="search"]
+ * input[type="tel"]
+ * input[type="color"]
+ -----------------------------------
+ */
+.f-control {
+  /*
+   * Customize the `:focus` state
+   */
+  /*
+   * Placeholder
+   */
+  border-radius: 0.14286rem;
+  background-color: #fff;
+  background-image: none;
+  /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214 */
+  border: 1px solid #ddd;
+  color: #333;
+  display: block;
+  font-size: 1rem;
+  height: 2rem;
+  /* Make inputs at least the height of their button counterpart (base line-height + padding + border) */
+  line-height: 1.4;
+  padding: 0.21429rem 0.42857rem;
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  width: 100%
+  /*
+   * Disabled and read-only inputs
+  ------------------------------------------------------------------------------
+   * HTML5 says that controls under a fieldset > legend:first-child won't be
+   * disabled if the fieldset is disabled. Due to implementation difficulty, we
+   * don't honor that edge case; we style them as disabled anyway.
+   */ }
+  .f-control:focus {
+    outline: 2px solid #a0d7e5; }
+  .f-control:-moz-placeholder {
+    color: #999; }
+  .f-control::-moz-placeholder {
+    color: #999;
+    opacity: 1; }
+  .f-control:-ms-input-placeholder {
+    color: #999; }
+  .f-control::-webkit-input-placeholder {
+    color: #999; }
+  .f-control[disabled], .f-control[readonly], fieldset[disabled] .f-control {
+    background-color: #e6e6e6;
+    cursor: not-allowed;
+    opacity: 1
+    /* iOS fix for unreadable disabled content */ }
+
+/*
+ * Reset height for `textarea`s
+ */
+textarea.f-control {
+  height: auto; }
+
+/*
+ * Adjust padding for select so inner text/placeholders align vertically
+ */
+select.f-control {
+  max-width: 100%;
+  padding-left: 0.28571rem;
+  width: auto; }
+
+/*
+ * Checkboxes and radios
+------------------------------------------------------------------------
+ * Indent the labels to position radios/checkboxes as hanging controls.
+ */
+.radio,
+.ckbx,
+.radio-inline,
+.ckbx-inline {
+  cursor: pointer;
+  font-weight: normal;
+  margin-bottom: 0;
+  padding-left: 1.42857rem; }
+  .radio.is-disabled, fieldset[disabled] .radio,
+  .ckbx.is-disabled, fieldset[disabled]
+  .ckbx,
+  .radio-inline.is-disabled, fieldset[disabled]
+  .radio-inline,
+  .ckbx-inline.is-disabled, fieldset[disabled]
+  .ckbx-inline {
+    color: #c3c6c8;
+    cursor: not-allowed; }
+
+.radio input[type="radio"],
+.ckbx input[type="checkbox"],
+.radio-inline input[type="radio"],
+.ckbx-inline input[type="checkbox"] {
+  margin-left: -1.42857rem;
+  margin-top: 0.28571rem \9;
+  position: absolute; }
+
+.radio,
+.ckbx {
+  display: block;
+  min-height: 1.75rem;
+  /* clear the floating input if there is no label text */
+  position: relative; }
+
+.radio + .radio,
+.ckbx + .ckbx {
+  margin-top: -0.35714rem
+  /* Move up sibling radios or checkboxes for tighter spacing */ }
+
+/*
+ * Radios and checkboxes on right of text
+ */
+.radio--right,
+.ckbx--right {
+  padding-left: 0; }
+
+.radio--right input[type="radio"],
+.ckbx--right input[type="checkbox"] {
+  margin-left: 0.71429rem; }
+
+/*
+ * Radios and checkboxes on same line
+ */
+.radio-inline,
+.ckbx-inline {
+  display: inline-block;
+  vertical-align: middle; }
+
+.radio-inline + .radio-inline,
+.ckbx-inline + .ckbx-inline {
+  margin-left: 0.71429rem
+  /* space out consecutive inline controls */ }
+
+/*
+ * Static form control text
+--------------------------------------------------------------------------------
+ * Apply class to a `p` element to make any string of text align with labels in
+ * a horizontal form layout.
+ */
+.f-control_static {
+  /* Remove default margin from `p` */
+  margin-bottom: 0;
+  /* Size it appropriately next to real form controls */
+  padding-bottom: 0.28571rem;
+  padding-top: 0.28571rem; }
+
+/*
+ * Help text
+--------------------------------------------------------------------------------
+ * Apply to any element you wish to create light text for placement immediately
+ * below a form control. Use for general help, formatting, or instructional text.
+ */
+.help-block {
+  color: #c3c6c8;
+  /* lighten the text some for contrast */
+  display: block;
+  /* account for any element using help-block */
+  font-size: 0.85714rem;
+  margin-bottom: 0.71429rem;
+  margin-top: 0.14286rem; }
+  .f-group .help-block {
+    margin-bottom: 0; }
+
+/*============*\
+   #ICONS-SVG
+\*============*/
+.i {
+  display: inline-block;
+  fill: currentColor;
+  height: 1.14286rem;
+  vertical-align: middle;
+  width: 1.14286rem; }
+
+.i--sm,
+.btn--xs > .i,
+.btn--sm > .i,
+.has-icon .btn--xs + .i,
+.has-icon .btn--sm + .i,
+.no-inlinesvg .btn--xs > .i > img,
+.no-inlinesvg .btn--sm > .i > img,
+.no-inlinesvg .has-icon .btn--xs + .i > img,
+.no-inlinesvg .has-icon .btn--sm + .i > img {
+  height: 0.85714rem;
+  width: 0.85714rem; }
+
+.i--white {
+  color: #fff; }
+
+.btn > .i,
+.has-icon .btn + .i {
+  margin-right: 0.35714rem;
+  position: relative; }
+
+/*
+ * Icon only button
+ * Tried using :empty but applies itself to input.btn, so no good
+ */
+.btn.btn--i-only {
+  font-size: 0;
+  overflow: hidden;
+  padding: 0.35714rem 0.28571rem 0.21429rem;
+  width: 2rem; }
+
+.btn--i-only > .i {
+  margin-right: 0; }
+
+.no-inlinesvg .i > img {
+  height: 1.14286rem;
+  vertical-align: top;
+  width: 1.14286rem; }
+
+/*
+ * .btn--xs & .btn--sm icon
+ */
+.btn--xs.btn--i-only {
+  padding: 0;
+  width: 1.28571rem; }
+
+.btn--sm.btn--i-only {
+  padding: 0.07143rem 0.14286rem 0;
+  width: 1.5rem; }
+
+/*
+ * .btn--lg
+ */
+.btn--lg.btn--i-only,
+.btn--cta.btn--i-only {
+  padding: 0 0.57143rem;
+  width: 2.5rem; }
+
+/*
+ * Icon overrides
+ */
+/*=============*\
+   #FORM ICONS
+\*=============*/
+/*
+ * Loading Spinner icon
+ */
+/*
+ * Form control feedback states
+---------------------------------------------------------------------
+ * Apply contextual and semantic states to individual form controls.
+ */
+.has-icon,
+.is-required {
+  /* Enable absolute positioning */
+  position: relative; }
+
+.has-icon--submit {
+  display: inline-block;
+  line-height: 1.2;
+  vertical-align: middle; }
+  .has-icon--submit .i {
+    pointer-events: none; }
+    .has-icon--submit .i:hover {
+      cursor: pointer; }
+
+/*
+ * Ensure icons don't overlap text
+ */
+.is-required--left .f-control {
+  padding-left: 1.28571rem; }
+
+.is-required--right .f-control {
+  padding-right: 1.28571rem; }
+
+/*
+ * Ensure icons don't overlap text
+ */
+.has-icon--left .f-control,
+.has-icon--left .btn {
+  padding-left: 1.64286rem; }
+.has-icon--left .btn--xs,
+.has-icon--left .btn--sm {
+  padding-left: 1.5rem; }
+.has-icon--left .btn--lg,
+.has-icon--left .btn--cta {
+  padding-left: 2.28571rem; }
+
+.has-icon--right .f-control,
+.has-icon--right .btn {
+  padding-right: 1.64286rem; }
+.has-icon--right .btn--xs,
+.has-icon--right .btn--sm {
+  padding-right: 1.5rem; }
+.has-icon--right .btn--lg,
+.has-icon--right .btn--cta {
+  padding-right: 2.28571rem; }
+
+.is-required--left .is-required_tag {
+  left: 0; }
+
+.is-required--right .is-required_tag {
+  right: 0; }
+
+/*
+ * Feedback icon
+ */
+.has-icon .f-control + .f-control_icon,
+.has-icon .btn + .f-control_icon {
+  display: block;
+  left: 0.5rem;
+  margin-right: 0;
+  position: absolute;
+  top: 0.5rem;
+  /* Height of the `label` and its margin */
+  z-index: 3
+  /* Ensure icon is above input groups and .is-required element */ }
+
+.has-icon--right .f-control + .f-control_icon,
+.has-icon--right .btn + .f-control_icon {
+  left: auto;
+  right: 0.5rem; }
+
+.has-icon label ~ .f-control_icon {
+  top: 1.50714rem
+  /* Height of the `label` and its margin */ }
+
+.has-icon .btn--xs + .f-control_icon,
+.has-icon .btn--sm + .f-control_icon {
+  top: 0.28571rem; }
+
+.has-icon .btn--lg + .f-control_icon,
+.has-icon .btn--cta + .f-control_icon {
+  left: 1.14286rem;
+  top: 0.78571rem; }
+
+.has-icon--right .btn--lg + .f-control_icon,
+.has-icon--right .btn--cta + .f-control_icon {
+  left: auto;
+  right: 1.14286rem; }
+
+/*
+ * Feedback states
+ */
+.has-success .help-block,
+.has-success .control-label,
+.has-success .radio,
+.has-success .ckbx,
+.has-success .radio-inline,
+.has-success .ckbx-inline, .has-success.radio label, .has-success.ckbx label, .has-success.radio-inline label, .has-success.ckbx-inline label {
+  color: #8ec075; }
+.has-success .f-control {
+  border-color: #8ec075; }
+  .has-success .f-control:focus {
+    outline-color: #8ec075; }
+.has-success .input-group-addon {
+  background-color: #c8e0bb;
+  border-color: #8ec075;
+  color: #8ec075; }
+.has-success .f-control-icon {
+  color: #8ec075; }
+
+.has-error .help-block,
+.has-error .control-label,
+.has-error .radio,
+.has-error .ckbx,
+.has-error .radio-inline,
+.has-error .ckbx-inline, .has-error.radio label, .has-error.ckbx label, .has-error.radio-inline label, .has-error.ckbx-inline label {
+  color: #72000e; }
+.has-error .f-control {
+  border-color: #72000e; }
+  .has-error .f-control:focus {
+    outline-color: #72000e; }
+.has-error .input-group-addon {
+  background-color: #d8001a;
+  border-color: #72000e;
+  color: #72000e; }
+.has-error .f-control-icon {
+  color: #72000e; }
+
+/*
+ * Reposition feedback icon if input has visible label above
+ */
+.has-icon label.u-sr + .f-control_icon,
+.is-required label.u-sr + .f-control_icon {
+  top: 0; }
+
+/*
+ * Colored input corners to mark required field
+ */
+.is-required_tag {
+  background-color: #a50014;
+  border-radius: 2px;
+  color: #a50014;
+  height: 1.14286rem;
+  position: absolute;
+  top: 1.50714rem;
+  /* Height of the `label` and its margin */
+  width: 1.14286rem;
+  z-index: 2
+  /* Ensure icon is above input groups but below icons */ }
+  .is-required_tag:after {
+    border-bottom: 1.14286rem solid #fff;
+    border-left: 1.14286rem solid transparent;
+    content: '';
+    left: 0;
+    position: absolute; }
+
+.is-required--left > .is-required_tag:after {
+  border-bottom: 1.14286rem solid #fff;
+  border-left: 1.14286rem solid transparent; }
+
+.is-required--right > .is-required_tag:after {
+  border-left: 0;
+  border-right: 1.14286rem solid transparent; }
+
+input:focus ~ .is-required_tag {
+  background-color: #ff2540; }
+
+abbr.is-required_tag {
+  border-bottom: 0;
+  text-indent: -9999px; }
+
+/*==========*\
+   #BUTTONS
+\*==========*/
+/*
+ * Base Styles
+ */
+.btn {
+  color: #333;
+  border-radius: 0.14286rem;
+  font-size: 1rem;
+  padding: 0.21429rem 0.5rem;
+  background-image: none;
+  /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214 */
+  border-style: solid;
+  border-width: 2px;
+  display: inline-block;
+  font-weight: normal;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  vertical-align: middle; }
+  .btn:hover, .btn:focus, .btn:active {
+    background-color: #cbcbcb;
+    border-color: #cbcbcb;
+    color: #333; }
+  .btn, .btn.is-disabled:hover, .btn.is-disabled:focus, .btn.is-disabled:active, .btn[disabled]:hover, .btn[disabled]:focus, .btn[disabled]:active {
+    background-color: #ddd;
+    border-color: #ddd; }
+  .btn:focus, .btn:active:focus {
+    outline: thin dotted #333;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px; }
+  .btn.is-disabled, .btn[disabled] {
+    opacity: 0.65;
+    box-shadow: none;
+    cursor: not-allowed;
+    pointer-events: none
+    /* Future-proof disabling of clicks */ }
+
+/*
+ * Alternative buttons
+ */
+.btn--neutral {
+  background-color: #fff; }
+
+.btn--primary,
+.pagination > .is-current a {
+  color: #fff; }
+  .btn--primary:hover, .btn--primary:focus, .btn--primary:active,
+  .pagination > .is-current a:hover,
+  .pagination > .is-current a:focus,
+  .pagination > .is-current a:active {
+    background-color: #09232f;
+    border-color: #09232f;
+    color: #fff; }
+  .btn--primary, .btn--primary.is-disabled:hover, .btn--primary.is-disabled:focus, .btn--primary.is-disabled:active, .btn--primary[disabled]:hover, .btn--primary[disabled]:focus, .btn--primary[disabled]:active,
+  .pagination > .is-current a,
+  .pagination > .is-current a.is-disabled:hover,
+  .pagination > .is-current a.is-disabled:focus,
+  .pagination > .is-current a.is-disabled:active,
+  .pagination > .is-current a[disabled]:hover,
+  .pagination > .is-current a[disabled]:focus,
+  .pagination > .is-current a[disabled]:active {
+    background-color: #0e3a4d;
+    border-color: #0e3a4d; }
+
+/*
+ * Button sizes
+ */
+.btn--xs {
+  border-radius: 0.14286rem;
+  font-size: 0.78571rem;
+  padding: 0.07143rem 0.35714rem; }
+
+.btn--sm {
+  border-radius: 0.14286rem;
+  font-size: 0.92857rem;
+  padding: 0.14286rem 0.5rem; }
+
+.btn--lg,
+.btn--cta {
+  border-radius: 0.21429rem;
+  padding: 0.42857rem 1.14286rem; }
+
+/*
+ * Ghost/Secondary action buttons
+ */
+.btn--outline {
+  background-color: transparent;
+  border-color: #ddd;
+  color: #333; }
+
+/*
+ * Action button
+ */
+.btn--cta {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.07);
+  font-size: 0.92857rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s; }
+  .btn--cta:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); }
+
+/*
+ * Link buttons
+---------------------------------------------
+ * Make a button look and behave like a link
+ */
+.btn--link {
+  border-color: transparent;
+  border-radius: 0;
+  color: #357d7f;
+  cursor: pointer;
+  font-weight: normal; }
+  .btn--link, .btn--link:active, .btn--link[disabled] {
+    background-color: transparent; }
+  .btn--link:hover, .btn--link:focus {
+    background-color: transparent;
+    border-color: transparent;
+    color: #1e4849; }
+  .btn--link[disabled] {
+    color: #c3c6c8;
+    text-decoration: none; }
+
+/*=========*\
+   #TABLES
+\*=========*/
+table {
+  background-color: transparent; }
+
+th {
+  text-align: left; }
+
+/*
+ * Baseline styles
+ */
+.table,
+.table--bordered {
+  margin-bottom: 1.4rem;
+  max-width: 100%;
+  width: 100%
+  /*
+   * Cells
+   */
+  /*
+   * Bottom align for column headings
+   */
+  /*
+   * Bottom align for column headings
+   */
+  /*
+   * Remove top border from thead by default
+   */
+  /*
+   * Account for multiple tbody instances
+   */
+  /*
+   * Table cell sizing
+  ---------------------------------
+   * Reset default table behavior
+   */
+  /*
+   * Nesting
+   */ }
+  .table > thead > tr > th,
+  .table > thead > tr > td,
+  .table > tbody > tr > th,
+  .table > tbody > tr > td,
+  .table > tfoot > tr > th,
+  .table > tfoot > tr > td,
+  .table--bordered > thead > tr > th,
+  .table--bordered > thead > tr > td,
+  .table--bordered > tbody > tr > th,
+  .table--bordered > tbody > tr > td,
+  .table--bordered > tfoot > tr > th,
+  .table--bordered > tfoot > tr > td {
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    line-height: 1.4;
+    padding: 0.35714rem;
+    vertical-align: top; }
+    .table > thead > tr > th:first-child,
+    .table > thead > tr > td:first-child,
+    .table > tbody > tr > th:first-child,
+    .table > tbody > tr > td:first-child,
+    .table > tfoot > tr > th:first-child,
+    .table > tfoot > tr > td:first-child,
+    .table--bordered > thead > tr > th:first-child,
+    .table--bordered > thead > tr > td:first-child,
+    .table--bordered > tbody > tr > th:first-child,
+    .table--bordered > tbody > tr > td:first-child,
+    .table--bordered > tfoot > tr > th:first-child,
+    .table--bordered > tfoot > tr > td:first-child {
+      border-left: 0; }
+  .table > thead > tr > th,
+  .table--bordered > thead > tr > th {
+    border-bottom: 2px solid #ddd;
+    font-family: "Droid Serif", Georgia, Times, "Times New Roman", Baskerville, serif;
+    vertical-align: bottom; }
+  .table > tfoot > tr > th,
+  .table--bordered > tfoot > tr > th {
+    border-top: 2px solid #ddd; }
+  .table > caption + thead > tr:first-child > th,
+  .table > caption + thead > tr:first-child > td,
+  .table > colgroup + thead > tr:first-child > th,
+  .table > colgroup + thead > tr:first-child > td,
+  .table > thead:first-child > tr:first-child > th,
+  .table > thead:first-child > tr:first-child > td,
+  .table--bordered > caption + thead > tr:first-child > th,
+  .table--bordered > caption + thead > tr:first-child > td,
+  .table--bordered > colgroup + thead > tr:first-child > th,
+  .table--bordered > colgroup + thead > tr:first-child > td,
+  .table--bordered > thead:first-child > tr:first-child > th,
+  .table--bordered > thead:first-child > tr:first-child > td {
+    border-top: 0; }
+  .table > tbody + tbody,
+  .table--bordered > tbody + tbody {
+    border-top: 2px solid #ddd; }
+  .table col[class*="w-"],
+  .table--bordered col[class*="w-"] {
+    display: table-column;
+    float: none;
+    position: static; }
+  .table td[class*="w-"],
+  .table th[class*="w-"],
+  .table--bordered td[class*="w-"],
+  .table--bordered th[class*="w-"] {
+    display: table-cell;
+    float: none;
+    position: static; }
+  .table .table,
+  .table--bordered .table {
+    background-color: #fff; }
+
+/*
+ * Fixed layout
+ */
+.table--fixed {
+  table-layout: fixed; }
+
+/*
+ * Large styles
+ */
+/*
+ * Condensed table w/ half padding
+ */
+/*
+ * Bordered version
+-----------------------------------------------------------------
+ * Add borders all around the table and between all the columns.
+ */
+.table--bordered {
+  border: 1px solid #ddd; }
+  .table--bordered > thead > tr > th,
+  .table--bordered > thead > tr > td,
+  .table--bordered > tbody > tr > th,
+  .table--bordered > tbody > tr > td,
+  .table--bordered > tfoot > tr > th,
+  .table--bordered > tfoot > tr > td {
+    border: 1px solid #ddd; }
+  .table--bordered > thead > tr > th,
+  .table--bordered > thead > tr > td {
+    border-bottom-width: 2px; }
+  .table--bordered > tbody > tr:nth-child(odd) > td,
+  .table--bordered > tbody > tr:nth-child(odd) > th {
+    background-color: rgba(195, 198, 200, 0.2); }
+
+/*
+ * Zebra-striping
+--------------------------------------------------------------------------------
+ * Default zebra-stripe styles (alternating gray and transparent backgrounds)
+ */
+/*
+ * Hover effect
+--------------------------------------------------------------------------------
+ * Placed here since it has to come after the potential zebra striping
+ */
+.table--hover > tbody > tr:hover > td,
+.table--hover > tbody > tr:hover > th {
+  background-color: rgba(195, 198, 200, 0.3); }
+
+/*
+ * Comparison table
+ */
+.table--compare > colgroup + thead > tr:first-child > th,
+.table--compare > thead:first-child > tr:first-child > th {
+  padding: 1.14286rem 0.85714rem;
+  vertical-align: middle; }
+  .table--compare > colgroup + thead > tr:first-child > th:first-child,
+  .table--compare > thead:first-child > tr:first-child > th:first-child {
+    border-left: 1px solid transparent;
+    border-top: 1px solid transparent; }
+.table--compare p {
+  margin: 0; }
+
+/*
+ * :not nesting error in sass 3.4.6 (04/11/14), check later to see if fixed
+ */
+.table--compare > thead > tr > th,
+.table--compare > tbody > tr > td:not(:first-child) {
+  text-align: center; }
+
+/*
+ * Table backgrounds
+--------------------------------------------------------------------------------
+ * Exact selectors below required to override `.table-striped` and prevent
+ * inheritance to nested tables.
+----------------------------------------
+ * Generate the contextual variants
+ */
+.table > thead > tr > td.success,
+.table > thead > tr > th.success, .table > thead > tr.success > td, .table > thead > tr.success > th,
+.table > tbody > tr > td.success,
+.table > tbody > tr > th.success,
+.table > tbody > tr.success > td,
+.table > tbody > tr.success > th,
+.table > tfoot > tr > td.success,
+.table > tfoot > tr > th.success,
+.table > tfoot > tr.success > td,
+.table > tfoot > tr.success > th {
+  background-color: #c8e0bb; }
+
+.table--hover > tbody > tr > td.success:hover,
+.table--hover > tbody > tr > th.success:hover, .table--hover > tbody > tr.success:hover > td, .table--hover > tbody > tr.success:hover > th {
+  background-color: #b9d8aa; }
+
+.table > thead > tr > td.info,
+.table > thead > tr > th.info, .table > thead > tr.info > td, .table > thead > tr.info > th,
+.table > tbody > tr > td.info,
+.table > tbody > tr > th.info,
+.table > tbody > tr.info > td,
+.table > tbody > tr.info > th,
+.table > tfoot > tr > td.info,
+.table > tfoot > tr > th.info,
+.table > tfoot > tr.info > td,
+.table > tfoot > tr.info > th {
+  background-color: #c8e8f0; }
+
+.table--hover > tbody > tr > td.info:hover,
+.table--hover > tbody > tr > th.info:hover, .table--hover > tbody > tr.info:hover > td, .table--hover > tbody > tr.info:hover > th {
+  background-color: #b4e0eb; }
+
+.table > thead > tr > td.warning,
+.table > thead > tr > th.warning, .table > thead > tr.warning > td, .table > thead > tr.warning > th,
+.table > tbody > tr > td.warning,
+.table > tbody > tr > th.warning,
+.table > tbody > tr.warning > td,
+.table > tbody > tr.warning > th,
+.table > tfoot > tr > td.warning,
+.table > tfoot > tr > th.warning,
+.table > tfoot > tr.warning > td,
+.table > tfoot > tr.warning > th {
+  background-color: #ffec33; }
+
+.table--hover > tbody > tr > td.warning:hover,
+.table--hover > tbody > tr > th.warning:hover, .table--hover > tbody > tr.warning:hover > td, .table--hover > tbody > tr.warning:hover > th {
+  background-color: #ffe91a; }
+
+.table > thead > tr > td.danger,
+.table > thead > tr > th.danger, .table > thead > tr.danger > td, .table > thead > tr.danger > th,
+.table > tbody > tr > td.danger,
+.table > tbody > tr > th.danger,
+.table > tbody > tr.danger > td,
+.table > tbody > tr.danger > th,
+.table > tfoot > tr > td.danger,
+.table > tfoot > tr > th.danger,
+.table > tfoot > tr.danger > td,
+.table > tfoot > tr.danger > th {
+  background-color: #d8001a; }
+
+.table--hover > tbody > tr > td.danger:hover,
+.table--hover > tbody > tr > th.danger:hover, .table--hover > tbody > tr.danger:hover > td, .table--hover > tbody > tr.danger:hover > th {
+  background-color: #bf0017; }
+
+.table > thead > tr > td.muted,
+.table > thead > tr > th.muted, .table > thead > tr.muted > td, .table > thead > tr.muted > th,
+.table > tbody > tr > td.muted,
+.table > tbody > tr > th.muted,
+.table > tbody > tr.muted > td,
+.table > tbody > tr.muted > th,
+.table > tfoot > tr > td.muted,
+.table > tfoot > tr > th.muted,
+.table > tfoot > tr.muted > td,
+.table > tfoot > tr.muted > th {
+  background-color: #ddd; }
+
+.table--hover > tbody > tr > td.muted:hover,
+.table--hover > tbody > tr > th.muted:hover, .table--hover > tbody > tr.muted:hover > td, .table--hover > tbody > tr.muted:hover > th {
+  background-color: #d0d0d0; }
+
+/*
+ * Responsive tables
+--------------------------------------------------------------------------------
+ * Wrap your tables in `.table-responsive` and we'll make them mobile friendly
+ * by enabling horizontal scrolling. Only applies <768px. Everything above that
+ * will display normally.
+ */
+@media (max-width: 46.24em) {
+  .table--responsive {
+    border: 1px solid #ddd;
+    margin-bottom: 1.05rem;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%
+    /**
+     * Tighten up spacing
+     */
+    /**
+     * Special overrides for the bordered tables
+     */ }
+    .table--responsive > .table {
+      margin-bottom: 0
+      /**
+       * Ensure the content doesn't wrap
+       */ }
+      .table--responsive > .table > thead > tr > th,
+      .table--responsive > .table > thead > tr > td,
+      .table--responsive > .table > tbody > tr > th,
+      .table--responsive > .table > tbody > tr > td,
+      .table--responsive > .table > tfoot > tr > th,
+      .table--responsive > .table > tfoot > tr > td {
+        white-space: nowrap; }
+    .table--responsive > .table--bordered {
+      border: 0
+      /**
+       * Nuke the appropriate borders so that the parent can handle them
+       */
+      /**
+       * Only nuke the last row's bottom-border in `tbody` and `tfoot` since
+       * chances are there will be only one `tr` in a `thead` and that would
+       * remove the border altogether.
+       */ }
+      .table--responsive > .table--bordered > thead > tr > th:first-child,
+      .table--responsive > .table--bordered > thead > tr > td:first-child,
+      .table--responsive > .table--bordered > tbody > tr > th:first-child,
+      .table--responsive > .table--bordered > tbody > tr > td:first-child,
+      .table--responsive > .table--bordered > tfoot > tr > th:first-child,
+      .table--responsive > .table--bordered > tfoot > tr > td:first-child {
+        border-left: 0; }
+      .table--responsive > .table--bordered > thead > tr > th:last-child,
+      .table--responsive > .table--bordered > thead > tr > td:last-child,
+      .table--responsive > .table--bordered > tbody > tr > th:last-child,
+      .table--responsive > .table--bordered > tbody > tr > td:last-child,
+      .table--responsive > .table--bordered > tfoot > tr > th:last-child,
+      .table--responsive > .table--bordered > tfoot > tr > td:last-child {
+        border-right: 0; }
+      .table--responsive > .table--bordered > tbody > tr:last-child > th,
+      .table--responsive > .table--bordered > tbody > tr:last-child > td,
+      .table--responsive > .table--bordered > tfoot > tr:last-child > th,
+      .table--responsive > .table--bordered > tfoot > tr:last-child > td {
+        border-bottom: 0; } }
+
+/*===============*\
+   #INPUT GROUPS
+\*===============*/
+/*
+ * Base styles
+ */
+.input-group {
+  border-collapse: separate;
+  /* prevent input groups from inheriting border styles from table cells when placed within a table */
+  display: table;
+  position: relative
+  /* For dropdowns */
+  /*
+   * Undo padding and float of grid classes
+   */ }
+  .input-group .f-control {
+    /*
+     * 1. Ensure that the input is always above the *appended* addon button for
+     * proper border colors.
+    ----------------------------------------------------------------------------
+     * IE9 fubars the placeholder attribute in text inputs and the arrows on
+     * select elements in input groups. To fix it, we float the input. Details:
+     * https://github.com/twbs/bootstrap/issues/11561#issuecomment-28936855
+     */
+    float: left;
+    margin-bottom: 0;
+    position: relative;
+    /* 1 */
+    width: 100%;
+    z-index: 2
+    /* 1 */ }
+  .input-group > .f-control {
+    border-right-width: 0; }
+  .input-group > .input-group_btn + .f-control {
+    border-left-width: 0;
+    border-right-width: 0.07143rem; }
+
+/*
+ * Sizing options
+----------------------------------------------------------------------------------------
+ * Remix the default form control sizing classes into new ones for easier manipulation.
+ */
+/*
+ * Display as table-cell
+ */
+.input-group_addon,
+.input-group_btn,
+.input-group .f-control {
+  display: table-cell; }
+
+/*
+ * Addon and addon wrapper for buttons
+ */
+.input-group_addon,
+.input-group_btn {
+  vertical-align: middle;
+  /* Match the inputs */
+  white-space: nowrap;
+  width: 1%; }
+
+/*
+ * Text input groups
+ */
+.input-group_addon {
+  background-color: #e6e6e6;
+  border: 1px solid #ddd;
+  color: #333;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1;
+  padding: 0.21429rem 0.85714rem;
+  text-align: center
+  /*
+   * Sizing
+   */
+  /*
+   * Nuke default margins from checkboxes and radios to vertically center within.
+   */ }
+  .input-group_addon input[type="radio"],
+  .input-group_addon input[type="checkbox"] {
+    margin-top: 0; }
+
+/*
+ * Reset rounded corners
+ */
+.input-group .f-control:first-child,
+.input-group_addon:first-child,
+.input-group_btn:first-child > .btn,
+.input-group_btn:first-child > .btn-group > .btn,
+.input-group_btn:first-child > .dropdown-toggle,
+.input-group_btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group_btn:last-child > .btn-group:not(:last-child) > .btn {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0; }
+
+.input-group_addon:first-child {
+  border-right: 0; }
+
+.input-group .f-control:last-child,
+.input-group_addon:last-child,
+.input-group_btn:last-child > .btn,
+.input-group_btn:last-child > .btn-group > .btn,
+.input-group_btn:last-child > .dropdown-toggle,
+.input-group_btn:first-child > .btn:not(:first-child),
+.input-group_btn:first-child > .btn-group:not(:first-child) > .btn {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0; }
+
+.input-group_addon:last-child {
+  border-left: 0; }
+
+/*
+ * Button input groups
+ */
+.input-group_btn {
+  /*
+   * Jankily prevent input button groups from wrapping with `white-space` and
+   * `font-size` in combination with `inline-block` on buttons.
+   */
+  font-size: 0;
+  position: relative;
+  white-space: nowrap
+  /*
+   * Negative margin for spacing, position for bringing hovered/focused/actived
+   * element above the siblings.
+   */
+  /*
+   * Bring the "active" button to the front
+   */
+  /*
+   * Negative margin to only have a 1px border between the two
+   */ }
+
+/*===============*\
+   #FORM LAYOUTS
+\*===============*/
+/*
+ * Form grid
+ */
+form [class*="w-"],
+form [class*="wf-"] .control-label {
+  padding-left: 0.35714rem;
+  padding-right: 0.35714rem; }
+form [class*="w-"] {
+  margin-bottom: 0.35714rem; }
+  @media (min-width: 31.25em) {
+    form [class*="w-"] {
+      margin-bottom: 0; } }
+
+/*
+ * Form groups
+--------------------------------------------------------------------------------
+ * Designed to help with the organization and spacing of vertical forms. For
+ * horizontal forms, use the predefined grid classes.
+ */
+.f-group {
+  margin-bottom: 0.71429rem; }
+
+/*
+ * Stacked forms
+--------------------------------------------------------------------------------
+ * Horizontal forms are built on grid classes and allow you to create forms with
+ * labels on the left and inputs on the right.
+ */
+.f-stacked {
+  /* Make form groups behave like rows */ }
+  .f-stacked .f-group {
+    margin-left: -0.35714rem;
+    margin-right: -0.35714rem; }
+    .f-stacked .f-group:after {
+      content: '';
+      display: table; }
+    .f-stacked .f-group:after {
+      clear: both; }
+  .f-stacked .control-label + [class*="w-"] {
+    clear: both;
+    float: none; }
+
+/*
+ * Horizontal forms
+--------------------------------------------------------------------------------
+ * Horizontal forms are built on grid classes and allow you to create forms with
+ * labels on the left and inputs on the right.
+ */
+.f-horizontal {
+  /*
+   * Reset spacing and right align labels, but scope to media queries so that
+   * labels on narrow viewports stack the same as a default form example.
+   */
+  /* 
+   * Consistent vertical alignment of radios and checkboxes
+  --------------------------------------------------------------------------------
+   * Labels also get some reset styles, but that is scoped to a media query below.
+   */
+  /*
+   * Account for padding we're adding to ensure the alignment and of help text
+   * and other content below items
+   */
+  /*
+   * Make form groups behave like rows
+   */
+  /*
+   * Validation states
+  ------------------------------------------------------------------------------
+   * Reposition the icon because it's now within a grid column and columns have
+   * `position: relative;` on them. Also accounts for the grid gutter padding.
+   */
+  /*
+   * Form group sizes
+  ------------------------------------------------------------------------------
+   * Quick utility class for applying `.input-lg` and `.input-sm` styles to the
+   * inputs and labels within a `.f-group`.
+   */ }
+  @media (min-width: 31.25em) {
+    .f-horizontal .control-label {
+      margin-bottom: 0;
+      padding-top: 0.28571rem; } }
+  .f-horizontal .radio,
+  .f-horizontal .checkbox,
+  .f-horizontal .radio-inline,
+  .f-horizontal .checkbox-inline {
+    padding-top: 0.28571rem
+    /* Default padding plus a border */ }
+  .f-horizontal .radio,
+  .f-horizontal .checkbox {
+    min-height: 1.68571rem; }
+  .f-horizontal .f-group {
+    margin-left: -0.35714rem;
+    margin-right: -0.35714rem; }
+    .f-horizontal .f-group:after {
+      content: '';
+      display: table; }
+    .f-horizontal .f-group:after {
+      clear: both; }
+  .f-horizontal [class*="w-"] select.f-control {
+    width: 100%; }
+  .f-horizontal .has-icon .f-control + .f-control_icon,
+  .f-horizontal .has-icon--right .f-control + .f-control_icon {
+    top: 0; }
+  .f-horizontal .has-icon .f-control + .f-control_icon {
+    left: 0.47619rem; }
+  .f-horizontal .has-icon--right .f-control + .f-control_icon {
+    right: 0.47619rem; }
+
+/*
+ * Inline forms
+--------------------------------------------------------------------------------
+ * Make forms appear inline(-block) by adding the `.form-inline` class. Inline
+ * forms begin stacked on extra small (mobile) devices and then go inline when
+ * viewports reach <768px.
+ *
+ * Requires wrapping inputs and labels with `.form-group` for proper display of
+ * default HTML form controls and our custom form controls (e.g., input groups).
+ *
+ * Heads up! This is mixin-ed into `.navbar-form` in navbars.less.
+ */
+/*==========*\
+   #LAYOUTS
+\*==========*/
+.l-container {
+  margin: 0 auto;
+  width: 96%; }
+  .l-container:after {
+    content: '';
+    display: table; }
+  .l-container:after {
+    clear: both; }
+  @media (min-width: 61.25em) {
+    .l-container {
+      max-width: 70rem; } }
+  @media (min-width: 81.25em) {
+    .l-container {
+      max-width: 81.42857rem; } }
+
+/*==========*\
+   #ADVERTS
+\*==========*/
+.ad {
+  display: none; }
+  @media (min-width: 52.5em) {
+    .ad {
+      display: block;
+      margin: 0 auto 1.4rem;
+      overflow: hidden; } }
+
+@media (min-width: 52.5em) {
+  .ad__header {
+    text-align: center; }
+    .ad__header img {
+      background-color: #c8e8f0; } }
+
+/*================*\
+   #BUTTON GROUPS
+\*================*/
+.btn-group,
+.btn-group-vertical {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle; }
+  .btn-group:after,
+  .btn-group-vertical:after {
+    content: '';
+    display: table; }
+  .btn-group:after,
+  .btn-group-vertical:after {
+    clear: both; }
+  .btn-group > .btn,
+  .btn-group-vertical > .btn {
+    float: left; }
+    .btn-group > .btn:focus,
+    .btn-group-vertical > .btn:focus {
+      outline: 0; }
+
+.btn-group .btn + .btn,
+.btn-group .btn + .btn-group,
+.btn-group .btn-group + .btn,
+.btn-group .btn-group + .btn-group {
+  margin-left: -1px; }
+.btn-group > .btn:not(:first-child):not(:last-child),
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0; }
+.btn-group > .btn:first-child {
+  margin-left: 0; }
+.btn-group > .btn:last-child:not(:first-child),
+.btn-group > .btn-group:last-child > .btn:first-child {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0; }
+.btn-group > .btn-group {
+  float: left; }
+.btn-group > .btn-group:first-child > .btn:last-child {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0; }
+
+.btn-toolbar {
+  margin-left: -5px; }
+  .btn-toolbar:after {
+    content: '';
+    display: table; }
+  .btn-toolbar:after {
+    clear: both; }
+  .btn-toolbar .btn-group,
+  .btn-toolbar .input-group {
+    float: left; }
+  .btn-toolbar > .btn,
+  .btn-toolbar > .btn-group,
+  .btn-toolbar > .input-group {
+    margin-left: 5px; }
+
+.btn-group-vertical > .btn,
+.btn-group-vertical > .btn-group,
+.btn-group-vertical > .btn-group > .btn {
+  display: block;
+  float: none;
+  max-width: 100%;
+  width: 100%; }
+.btn-group-vertical > .btn-group:after {
+  content: '';
+  display: table; }
+.btn-group-vertical > .btn-group:after {
+  clear: both; }
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
+  border-radius: 0; }
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0; }
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0; }
+.btn-group-vertical > .btn-group > .btn {
+  float: none; }
+.btn-group-vertical > .btn + .btn,
+.btn-group-vertical > .btn + .btn-group,
+.btn-group-vertical > .btn-group + .btn,
+.btn-group-vertical > .btn-group + .btn-group {
+  margin-left: 0;
+  margin-top: -1px; }
+.btn-group-vertical > .btn:not(:first-child):not(:last-child) {
+  border-radius: 0; }
+.btn-group-vertical > .btn:first-child:not(:last-child) {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 0.14286rem; }
+.btn-group-vertical > .btn:last-child:not(:first-child) {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0.14286rem; }
+
+.btn-group-justified {
+  border-collapse: separate;
+  display: table;
+  table-layout: fixed;
+  width: 100%; }
+  .btn-group-justified > .btn,
+  .btn-group-justified > .btn-group {
+    display: table-cell;
+    float: none;
+    width: 1%; }
+  .btn-group-justified > .btn-group .btn {
+    width: 100%; }
+
+[data-toggle="buttons"] > .btn > input[type="radio"],
+[data-toggle="buttons"] > .btn > input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  z-index: -1; }
+
+/*=========*\
+   #FLYOUT
+\*=========*/
+.navbar_flyout,
+.flyout {
+  box-shadow: none;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: box-shadow 0s linear 0.4s, -webkit-transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+          transition: box-shadow 0s linear 0.4s, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  width: 21.42857rem;
+  z-index: 1000; }
+  .navbar_flyout:after,
+  .flyout:after {
+    content: '';
+    display: table; }
+  .navbar_flyout:after,
+  .flyout:after {
+    clear: both; }
+  @media (min-width: 31.25em) {
+    .navbar_flyout,
+    .flyout {
+      width: 32.14286rem; } }
+
+.toggle_chkbx:checked + .toggle_btn + .toggle_target {
+  box-shadow: 0 70px 10px rgba(0, 0, 0, 0.3);
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: box-shadow 0s linear 0s, -webkit-transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+          transition: box-shadow 0s linear 0s, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0s; }
+
+/*
+ * Flyout Close "button"
+ */
+.flyout_close {
+  border-bottom: 1px solid #ddd; }
+  .flyout_close:after {
+    content: '';
+    display: table; }
+  .flyout_close:after {
+    clear: both; }
+  .flyout_close .i {
+    border-left: 1px solid #ddd;
+    float: right;
+    margin: 0;
+    padding: 0.85714rem 1.57143rem 0.78571rem;
+    text-align: center; }
+    .flyout_close .i:hover, .flyout_close .i:focus {
+      background-color: #0e3a4d;
+      cursor: pointer; }
+    .flyout_close .i:before {
+      top: 0; }
+
+.flyout_heading {
+  float: left;
+  margin: 0;
+  padding: 1rem 0.85714rem 0.78571rem; }
+
+.flyout_inner {
+  background-color: #fff;
+  height: 100%;
+  padding: 0.85714rem;
+  width: 22.64286rem; }
+  @media (min-width: 31.25em) {
+    .flyout_inner {
+      width: 33.35714rem; } }
+  @media (max-width: 52.49em) {
+    .flyout_inner {
+      overflow-x: hidden;
+      overflow-y: scroll; } }
+  .flyout_inner .box {
+    border-left: 0;
+    border-right: 0; }
+
+.flyout > .flyout_inner:first-child {
+  margin-top: 5rem; }
+
+.flyout_overlay {
+  opacity: 0;
+  background-color: #000;
+  left: 0;
+  position: fixed;
+  top: 0;
+  -webkit-transition: opacity .3s ease-out;
+          transition: opacity .3s ease-out; }
+  .flyout_overlay.is-active {
+    opacity: 0.2;
+    bottom: 0;
+    cursor: pointer;
+    right: 0;
+    z-index: 999; }
+
+/*==================================================*\
+   #MEDIA OBJECTS
+   *
+   * Source: http://stubbornella.org/content/?p=497
+\*==================================================*/
+/*
+ * Common styles
+--------------------
+ * Clear the floats
+ */
+.media,
+.media_body {
+  overflow: hidden;
+  zoom: 1; }
+
+/*
+ * Proper spacing between instances of .media
+ */
+.media,
+.media .media {
+  margin-top: 1.07143rem; }
+
+.media:first-child {
+  margin-top: 0; }
+
+.media_body,
+.media_left,
+.media_right {
+  display: table-cell;
+  vertical-align: top; }
+  .media_body > img,
+  .media_left > img,
+  .media_right > img {
+    max-width: none; }
+
+/*
+ * For images and videos, set to block
+ */
+/*
+ * Reset margins on headings for tighter default spacing
+ */
+.media_heading {
+  margin: 0 0 0.71429rem; }
+
+/*
+ * Media image alignment
+ */
+.media_left {
+  padding-right: 1.42857rem; }
+
+.media_right {
+  padding-left: 1.42857rem; }
+
+.media--content .media_fl,
+.media--content .media_fr {
+  display: block;
+  float: none; }
+
+.media--content .media_fl {
+  margin-right: 0; }
+
+.media--content .media_fr {
+  margin-left: 0; }
+
+@media (min-width: 31.25em) {
+  .media--content .media_fl {
+    float: left;
+    margin-right: 1.42857rem; }
+
+  .media--content .media_fr {
+    float: right;
+    margin-left: 1.42857rem; } }
+/*
+ * Media list variation
+-----------------------------
+ * Undo default ul/ol styles
+ */
+.media-list {
+  list-style: none;
+  padding-left: 0; }
+
+/*
+ * Media link
+ */
+/*================*\
+   #FORM-CONTROLS
+\*================*/
+/*
+ * Date Range (rename to f-inbetween?)
+ */
+.f-range .f-control_static {
+  overflow: hidden;
+  padding-left: 0.35714rem;
+  padding-right: 0.35714rem;
+  text-align: center; }
+
+/**
+ * Address Control
+ */
+.f-find_postcode,
+.f-find_address,
+.f-address_country {
+  display: none; }
+
+.f-address-control.is-uk .f-find_postcode,
+.f-address-control.is-uk .f-address_country {
+  display: block; }
+.f-address-control.is-row .f-address_country {
+  display: block; }
+.f-address-control.is-row .f-find_postcode,
+.f-address-control.is-row .f-address_postcode {
+  display: none; }
+
+/*==========*\
+   #TOOLBAR
+\*==========*/
+.toolbar {
+  margin-left: -0.71429rem;
+  margin-right: -0.71429rem; }
+  .toolbar:after {
+    content: '';
+    display: table; }
+  .toolbar:after {
+    clear: both; }
+
+.toolbar_item {
+  padding-left: 0.71429rem;
+  padding-right: 0.71429rem;
+  float: left; }
+
+.toolbar_item--right {
+  float: right; }
+
+.toolbar_item--center {
+  float: none;
+  overflow: hidden; }
+
+/*=========*\
+   #TOGGLE
+\*=========*/
+/*
+ * Toggle checkbox
+ * Hidden, this is used so the item appears out with or without js
+ */
+.toggle_chkbx {
+  display: none;
+  /* find better solution */
+  overflow: hidden;
+  width: 0; }
+  .toggle_chkbx:focus {
+    outline: none; }
+
+/*
+ * Toggle (can't go inside media query as @extending)
+ */
+/*
+ * Navbar toggle "button"
+ */
+.toggle_btn {
+  cursor: pointer;
+  margin: 0;
+  text-align: center
+  /*
+   * We remove the `outline` here, but later compensate by attaching `:hover`
+   * styles to `:focus`.
+   */ }
+  @media (min-width: 52.5em) {
+    .toggle_btn {
+      display: none; } }
+  @media (min-width: 31.25em) {
+    .toggle_btn .i {
+      margin-right: 0.35714rem; } }
+  .toggle_btn:focus {
+    outline: none; }
+  .toggle_btn:hover, .toggle_btn:focus {
+    background-color: rgba(0, 0, 0, 0.05); }
+  .toggle_btn .toggle_txt {
+    display: none; }
+    @media (min-width: 31.25em) {
+      .toggle_btn .toggle_txt {
+        display: inline-block; } }
+
+/*==========*\
+   #HEADERS
+\*==========*/
 .page-header_container {
   position: relative; }
   .page-header_container .page-header {
@@ -608,8 +2636,8 @@ a.bg-muted:hover {
     z-index: 1; }
     .page-header_container .page-header:before {
       border-left: 9999px solid rgba(0, 0, 0, 0.5);
-      box-shadow: 9999px 0 0 rgba(0, 0, 0, 0.5);
       bottom: 0;
+      box-shadow: 9999px 0 0 rgba(0, 0, 0, 0.5);
       content: '';
       left: -9999px;
       position: absolute;
@@ -632,7 +2660,6 @@ a.bg-muted:hover {
     min-width: 17.85714rem;
     width: 100%; }
 
-.lead,
 .page-header_meta {
   color: #333;
   margin-bottom: 0.7rem; }
@@ -680,2004 +2707,56 @@ a.bg-muted:hover {
       background-color: rgba(0, 0, 0, 0.5);
       box-shadow: 0.5rem 0 0 rgba(0, 0, 0, 0.5), -0.5rem 0 0 rgba(0, 0, 0, 0.5); }
 
-/**
- * Blockquotes
- */
-blockquote {
-  border-left: 5px solid #0e3a4d;
-  font-family: "Droid Serif", Georgia, Times, "Times New Roman", Baskerville, serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin: 0 5% 1.4rem;
-  padding: 0.7rem 1.4rem; }
-  blockquote p:only-child,
-  blockquote ul:only-child,
-  blockquote ol:only-child {
-    margin-bottom: 0; }
-  blockquote footer {
-    color: #999;
-    display: block;
-    font-size: 80%;
-    /* back to default font-size */
-    line-height: 1.4;
-    margin-top: -0.71429rem; }
-    blockquote footer:before {
-      content: '\2014 \00A0'
-      /* em dash, nbsp */ }
-
-/**
- * Quotes
- */
-blockquote:before,
-blockquote:after {
-  content: ''; }
-
-/**
- * Links
----------------------------------------------------
- */
-/**
- * Icon/Social Links
- */
-p [href*="facebook.com"],
-p [href*="linkedin.com"],
-p [href*="twitter.com"],
-p [href*="youtube.com"] {
-  background-color: #f6f6f6;
-  padding: 0.07143rem 0.35714rem;
-  text-decoration: none; }
-  p [href*="facebook.com"]:before,
-  p [href*="linkedin.com"]:before,
-  p [href*="twitter.com"]:before,
-  p [href*="youtube.com"]:before {
-    margin-right: 0.35714rem; }
-    .no-svg p [href*="facebook.com"]:before, .no-svg
-    p [href*="linkedin.com"]:before, .no-svg
-    p [href*="twitter.com"]:before, .no-svg
-    p [href*="youtube.com"]:before {
-      background-image: url("../../../images/sprites/sprite-sm.png"); }
-    .svg p [href*="facebook.com"]:before, .svg
-    p [href*="linkedin.com"]:before, .svg
-    p [href*="twitter.com"]:before, .svg
-    p [href*="youtube.com"]:before {
-      background-image: url("../../../images/sprites/sprite.svg");
-      background-size: cover; }
-
-/*==========*\
-   #LISTS
- -----------
- * Elements
- * Classes
-\*==========*/
-/**
- * Unordered and Ordered lists
- */
-ul,
-ol {
-  margin: 0 0 1.4rem; }
-  ul ul,
-  ul ol,
-  ol ul,
-  ol ol {
-    margin-bottom: 0; }
-  ul + *,
-  ol + * {
-    margin-bottom: 0.7rem; }
-
-/** 
- * Description Lists
- */
-dl {
-  margin-top: 0;
-  /* Remove browser default */
-  margin-bottom: 1.4rem; }
-
-dt,
-dd {
-  line-height: 1.4; }
-
-dt {
-  font-weight: bold; }
-
-dd {
-  margin-left: 0
-  /* Undo browser default */ }
-
-/** 
- * List options
-----------------------------------------------------------------------
- * Unstyled keeps list items block level, just removes default browser
- * padding and list-style
- */
-.list-unstyled, .list-inline, .pagination, .list-steps {
-  list-style: none;
-  padding-left: 0; }
-
-/** 
- * Inline turns list items into inline-block
- */
-.list-inline, .pagination {
-  margin-left: -5px; }
-  .list-inline:before, .pagination:before, .list-inline:after, .pagination:after {
-    content: ' ';
-    display: table; }
-  .list-inline:after, .pagination:after {
-    clear: both; }
-  .list-inline > li, .pagination > li {
-    float: left;
-    padding-left: 5px;
-    padding-right: 5px; }
-
-.list--rows > li {
-  border-bottom: 1px solid #ddd; }
-  .list--rows > li .nav--rows > li {
-    border-bottom: 0;
-    border-top: 1px solid #ddd; }
-
-.list--cols > li {
-  border-left: 1px solid #ddd; }
-  .list--cols > li:first-child {
-    border-left: 0; }
-
-/** 
- * Horizontal description lists
---------------------------------------------------------------------------------
- * Defaults to being stacked without any of the below styles applied, until the
- * grid breakpoint is reached (default of ~768px).
- */
-.dl-horizontal dd {
-  /* Clear the floated `dt` if an empty `dd` is present */ }
-  .dl-horizontal dd:before, .dl-horizontal dd:after {
-    content: ' ';
-    display: table; }
-  .dl-horizontal dd:after {
-    clear: both; }
-@media all and (min-width: 50.9375em) {
-  .dl-horizontal dt {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    clear: left;
-    float: left;
-    text-align: right;
-    width: 160px; }
-  .dl-horizontal dd {
-    margin-left: 180px; } }
-
-/**
- * Ordered counter list-steps
- */
-.list-steps > li {
-  color: #ddd;
-  counter-increment: list-steps;
-  display: inline-block;
-  font-weight: 700;
-  margin-left: 0.7rem;
-  padding-left: 0;
-  text-transform: uppercase; }
-  .list-steps > li:before {
-    content: counter(list-steps);
-    color: #ddd;
-    display: inline-block;
-    margin-right: 0.35714rem;
-    text-align: center; }
-  .list-steps > li:first-child {
-    margin-left: 0; }
-  .list-steps > li.is-current {
-    color: #0e3a4d; }
-    .list-steps > li.is-current:before {
-      color: #0e3a4d; }
-@media all and (min-width: 31.25em) {
-  .list-steps > li {
-    margin-left: 1.4rem; }
-    .list-steps > li:before {
-      border: 2px solid #ddd;
-      border-radius: 100px;
-      width: 1.71429rem; }
-    .list-steps > li.is-current:before {
-      background-color: #0e3a4d;
-      border-color: #0e3a4d;
-      box-shadow: inset 0 0 0 1px #fff;
-      color: #fff; } }
-
-/**
- * Pagination
- */
-/**
- * Collapsable List
- */
-.list-collapsable {
-  padding: 0.21429rem 0;
-  position: relative; }
-  .list-collapsable:before, .list-collapsable:after {
-    content: ' ';
-    display: table; }
-  .list-collapsable:after {
-    clear: both; }
-
-.list-collapsable_header {
-  font-size: 0.85714rem;
-  font-weight: normal;
-  margin: 0;
-  position: relative; }
-  .list-collapsable_header a {
-    display: block; }
-    .list-collapsable_header a:before {
-      margin-right: 0.14286rem; }
-  .list-collapsable_header.is-active a {
-    color: #1e4849; }
-  .list-collapsable_header.is-active + .list-collapsable_list {
-    background-color: #fff;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
-    left: 0;
-    line-height: 1.42857rem;
-    padding: 0.28571rem 0.35714rem 0.28571rem 0.71429rem;
-    top: 1.28571rem;
-    width: 100%;
-    z-index: 10; }
-  @media all and (min-width: 31.25em) {
-    .list-collapsable_header {
-      left: -9999px;
-      position: absolute; } }
-
-.list-collapsable_list {
-  left: -999em;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: absolute; }
-  @media all and (min-width: 31.25em) {
-    .list-collapsable_list {
-      position: static; }
-      .is-active .list-collapsable_list {
-        box-shadow: none; } }
-
-/*========*\
-   #GRIDS
-\*========*/
-/**
- * Grid row
- */
-.grid-row {
-  margin-left: -0.71429rem;
-  margin-right: -0.71429rem; }
-  .grid-row:before, .grid-row:after {
-    content: ' ';
-    display: table; }
-  .grid-row:after {
-    clear: both; }
-
-.w-12, .wf-12 .control-label, .w-1, .wf-1 .control-label, .w-2, .wf-2 .control-label, .w-3, .wf-3 .control-label, .w-4, .wf-4 .control-label, .w-5, .wf-5 .control-label, .w-6, .wf-6 .control-label, .w-7, .wf-7 .control-label, .w-8, .wf-8 .control-label, .w-9, .wf-9 .control-label, .w-10, .wf-10 .control-label, .w-11, .wf-11 .control-label {
-  padding-left: 0.71429rem;
-  padding-right: 0.71429rem; }
-  @media all and (min-width: 31.25em) {
-    .w-12, .wf-12 .control-label, .w-1, .wf-1 .control-label, .w-2, .wf-2 .control-label, .w-3, .wf-3 .control-label, .w-4, .wf-4 .control-label, .w-5, .wf-5 .control-label, .w-6, .wf-6 .control-label, .w-7, .wf-7 .control-label, .w-8, .wf-8 .control-label, .w-9, .wf-9 .control-label, .w-10, .wf-10 .control-label, .w-11, .wf-11 .control-label {
-      float: left; } }
-
-@media all and (min-width: 31.25em) {
-  .w-1,
-  .wf-1 .control-label {
-    width: 8.33333%; }
-
-  .w-2,
-  .wf-2 .control-label {
-    width: 16.66667%; }
-
-  .w-3,
-  .wf-3 .control-label {
-    width: 25%; }
-
-  .w-4,
-  .wf-4 .control-label {
-    width: 33.33333%; }
-
-  .w-5,
-  .wf-5 .control-label {
-    width: 41.66667%; }
-
-  .w-6,
-  .wf-6 .control-label {
-    width: 50%; }
-
-  .w-7,
-  .wf-7 .control-label {
-    width: 58.33333%; }
-
-  .w-8,
-  .wf-8 .control-label {
-    width: 66.66667%; }
-
-  .w-9,
-  .wf-9 .control-label {
-    width: 75%; }
-
-  .w-10,
-  .wf-10 .control-label {
-    width: 83.33333%; }
-
-  .w-11,
-  .wf-11 .control-label {
-    width: 91.66667%; }
-
-  .w-12,
-  .wf-12 .control-label {
-    width: 100%; }
-
-  .w-offset-0 {
-    margin-left: 0% !important; }
-
-  .w-offset-1 {
-    margin-left: 8.33333% !important; }
-
-  .w-offset-2 {
-    margin-left: 16.66667% !important; }
-
-  .w-offset-3 {
-    margin-left: 25% !important; }
-
-  .w-offset-4 {
-    margin-left: 33.33333% !important; }
-
-  .w-offset-5 {
-    margin-left: 41.66667% !important; }
-
-  .w-offset-6 {
-    margin-left: 50% !important; }
-
-  .w-offset-7 {
-    margin-left: 58.33333% !important; }
-
-  .w-offset-8 {
-    margin-left: 66.66667% !important; }
-
-  .w-offset-9 {
-    margin-left: 75% !important; }
-
-  .w-offset-10 {
-    margin-left: 83.33333% !important; }
-
-  .w-offset-11 {
-    margin-left: 91.66667% !important; }
-
-  .w-offset-12 {
-    margin-left: 100% !important; } }
-/*==========*\
-   #FORMS
- -----------
- * Elements
- * Classes 
-\*==========*/
-/**
- * Normalize non-controls
-------------------------------------------------------
- * Restyle and baseline non-control form elements.
- */
-fieldset {
-  border: 0;
-  margin: 0;
-  /**
-   * Chrome and Firefox set a `min-width: -webkit-min-content;` on fieldsets,
-   * so we reset that to ensure it behaves more like a standard block element.
-   * See https://github.com/twbs/bootstrap/issues/12359.
-   */
-  min-width: 0;
-  padding: 0; }
-  fieldset + fieldset {
-    margin-top: 1.4rem; }
-
-legend {
-  border: 0;
-  /* Correct `color` not being inherited in IE 8/9. */
-  border-bottom: 1px solid #e6e6e6;
-  color: #999;
-  display: block;
-  margin-bottom: 0.7rem;
-  padding: 0 0 0.46667rem;
-  width: 100%; }
-
-label {
-  display: inline-block;
-  margin-bottom: 0.14286rem;
-  max-width: 100%
-  /* Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141) */ }
-
-/**
- * Normalize form controls
---------------------------------------------------------------------------------
- * While most of our form styles require extra classes, some basic normalization
- * is required to ensure optimum display with or without those classes to better
- * address browser inconsistencies.
- */
-/**
- * reset search focus outline
- */
-input[type="search"]:focus {
-  outline-offset: -2px; }
-
-/**
- * Position radios and checkboxes better
- */
-input[type="radio"],
-input[type="checkbox"] {
-  line-height: normal;
-  margin: 0.35714rem 0 0; }
-
-/**
- * Set the height of file controls to match text inputs
- */
-/** 
- * Make range inputs behave like textual form controls
- */
-/**
- * Make multiple select elements height not fixed
- */
-select[multiple],
-select[size] {
-  height: auto; }
-
-/**
- * Focus for file, radio, and checkbox
- */
-input[type="radio"]:focus,
-input[type="checkbox"]:focus {
-  outline: thin dotted #333;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px; }
-
-/** 
- * Adjust output element
- */
-/**
- * Common form controls
-----------------------------------------------------------------------------
- * Shared size and type resets for form controls. Apply `.f-control` to any
- * of the following form controls:
- -----------------------------------
- * select
- * textarea
- * input[type="text"]
- * input[type="password"]
- * input[type="datetime"]
- * input[type="datetime-local"]
- * input[type="date"]
- * input[type="month"]
- * input[type="time"]
- * input[type="week"]
- * input[type="number"]
- * input[type="email"]
- * input[type="url"]
- * input[type="search"]
- * input[type="tel"]
- * input[type="color"]
- -----------------------------------
- */
-.f-control {
-  border-radius: 0.14286rem;
-  background-color: #fff;
-  background-image: none;
-  /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214 */
-  border: 1px solid #ddd;
-  color: #333;
-  display: block;
-  font-size: 1rem;
-  height: 1.97143rem;
-  /* Make inputs at least the height of their button counterpart (base line-height + padding + border) */
-  line-height: 1.4;
-  padding: 0.21429rem 0.42857rem;
-  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  width: 100%
-  /**
-   * Customize the `:focus` state to imitate native WebKit styles.
-   */
-  /**
-   * Placeholder
-   */
-  /**
-   * Disabled and read-only inputs
-  ------------------------------------------------------------------------------
-   * HTML5 says that controls under a fieldset > legend:first-child won't be
-   * disabled if the fieldset is disabled. Due to implementation difficulty, we
-   * don't honor that edge case; we style them as disabled anyway.
-   */ }
-  .f-control:focus {
-    outline: 2px solid #c8e8f0; }
-  .f-control:-moz-placeholder {
-    color: #c3c6c8; }
-  .f-control::-moz-placeholder {
-    color: #c3c6c8;
-    opacity: 1; }
-  .f-control:-ms-input-placeholder {
-    color: #c3c6c8; }
-  .f-control::-webkit-input-placeholder {
-    color: #c3c6c8; }
-  .f-control[disabled], .f-control[readonly], fieldset[disabled] .f-control {
-    background-color: #e6e6e6;
-    cursor: not-allowed;
-    opacity: 1
-    /* iOS fix for unreadable disabled content */ }
-
-/**
- * Reset height for `textarea`s
- */
-textarea.f-control {
-  height: auto; }
-
-/**
- * Adjust padding for select so inner text/placeholders align vertically
- */
-select.f-control {
-  max-width: 100%;
-  padding-left: 0.28571rem;
-  width: auto; }
-
-/**
- * Special styles for iOS temporal inputs
---------------------------------------------------------------------------------
- * In Mobile Safari, setting `display: block` on temporal inputs causes the
- * text within the input to become vertically misaligned.
- * As a workaround, we set a pixel line-height that matches the
- * given height of the input. Since this screws up everything else, we have to
- * appropriately reset it for Internet Explorer and the size variations.
- */
-/**
- * Checkboxes and radios
-------------------------------------------------------------------------
- * Indent the labels to position radios/checkboxes as hanging controls.
- */
-.radio,
-.ckbx,
-.radio-inline,
-.ckbx-inline {
-  cursor: pointer;
-  font-weight: normal;
-  margin-bottom: 0;
-  padding-left: 1.42857rem; }
-  .radio.is-disabled, fieldset[disabled] .radio,
-  .ckbx.is-disabled, fieldset[disabled]
-  .ckbx,
-  .radio-inline.is-disabled, fieldset[disabled]
-  .radio-inline,
-  .ckbx-inline.is-disabled, fieldset[disabled]
-  .ckbx-inline {
-    color: #c3c6c8;
-    cursor: not-allowed; }
-
-.radio input[type="radio"],
-.ckbx input[type="checkbox"],
-.radio-inline input[type="radio"],
-.ckbx-inline input[type="checkbox"] {
-  margin-left: -1.42857rem;
-  margin-top: 0.28571rem \9;
-  position: absolute; }
-
-.radio,
-.ckbx {
-  display: block;
-  min-height: 1.75rem;
-  /* clear the floating input if there is no label text */
-  position: relative; }
-
-.radio + .radio,
-.ckbx + .ckbx {
-  margin-top: -0.35714rem
-  /* Move up sibling radios or checkboxes for tighter spacing */ }
-
-/**
- * Radios and checkboxes on right of text
- */
-.radio--right,
-.ckbx--right {
-  padding-left: 0; }
-
-.radio--right input[type="radio"],
-.ckbx--right input[type="checkbox"] {
-  margin-left: 0.71429rem; }
-
-/**
- * Radios and checkboxes on same line
- */
-.radio-inline,
-.ckbx-inline {
-  display: inline-block;
-  vertical-align: middle; }
-
-.radio-inline + .radio-inline,
-.ckbx-inline + .ckbx-inline {
-  margin-left: 0.71429rem
-  /* space out consecutive inline controls */ }
-
-/**
- * Disabled Radios & Checkboxes
----------------------------------------------------------------------------------------
- * Apply same disabled cursor tweak as for inputs
- * Some special care is needed because <label>s don't inherit their parent's `cursor`.
- * NOTE: Neither radios nor checkboxes can be readonly.
- */
-input[type="radio"][disabled], input[type="radio"].is-disabled, fieldset[disabled] input[type="radio"],
-input[type="checkbox"][disabled],
-input[type="checkbox"].is-disabled, fieldset[disabled]
-input[type="checkbox"] {
-  cursor: not-allowed; }
-
-/**
- * Static form control text
---------------------------------------------------------------------------------
- * Apply class to a `p` element to make any string of text align with labels in
- * a horizontal form layout.
- */
-.f-control_static {
-  /* Size it appropriately next to real form controls */
-  padding-top: 0.28571rem;
-  padding-bottom: 0.28571rem;
-  /* Remove default margin from `p` */
-  margin-bottom: 0; }
-
-/** 
- * Form control sizing
----------------------------------------------------------------------------
- * Build on `.f-control` with modifier classes to decrease or increase the
- * height and font-size of form controls.
- */
-/**
- * Help text
---------------------------------------------------------------------------------
- * Apply to any element you wish to create light text for placement immediately
- * below a form control. Use for general help, formatting, or instructional text.
- */
-.help-block {
-  color: #c3c6c8;
-  /* lighten the text some for contrast */
-  display: block;
-  /* account for any element using help-block */
-  font-size: 0.85714rem;
-  margin-top: 0.14286rem;
-  margin-bottom: 0.71429rem; }
-  .f-group .help-block {
-    margin-bottom: 0; }
-
-/*=============*\
-   #FORM ICONS
-\*=============*/
-/**
- * Loading Spinner icon
- */
-/**
- * Form control feedback states
----------------------------------------------------------------------
- * Apply contextual and semantic states to individual form controls.
- */
-.has-icon,
-.has-icon--right,
-.is-required,
-.is-required--right {
-  /* Enable absolute positioning */
-  position: relative; }
-
-.is-required {
-  /* Ensure required tag don't overlap text */ }
-  .is-required .f-control {
-    padding-left: 1.25714rem; }
-
-.is-required--right .f-control {
-  padding-right: 1.25714rem; }
-
-.has-icon {
-  /* Ensure icons don't overlap text */ }
-  .has-icon .f-control {
-    padding-left: 2.25714rem; }
-
-.has-icon--right .f-control {
-  padding-right: 2.25714rem; }
-
-.has-icon .f-control_icon,
-.is-required .is-required_tag {
-  left: 0; }
-
-.has-icon--right .f-control_icon,
-.is-required--right .is-required_tag {
-  right: 0; }
-
-/**
- * Feedback icon
- */
-.has-icon .f-control_icon,
-.has-icon--right .f-control_icon {
-  display: block;
-  height: 1.97143rem;
-  line-height: 1.97143rem;
-  position: absolute;
-  text-align: center;
-  top: 1.50714rem;
-  /* Height of the `label` and its margin */
-  width: 2.54286rem;
-  z-index: 3
-  /* Ensure icon is above input groups and .is-required element */ }
-  .has-icon .f-control_icon:before,
-  .has-icon--right .f-control_icon:before {
-    top: -1px; }
-
-/**
- * Feedback states
- */
-.has-success .help-block,
-.has-success .control-label,
-.has-success .radio,
-.has-success .ckbx,
-.has-success .radio-inline,
-.has-success .ckbx-inline, .has-success.radio label, .has-success.ckbx label, .has-success.radio-inline label, .has-success.ckbx-inline label {
-  color: #8ec075; }
-.has-success .f-control {
-  border-color: #8ec075; }
-  .has-success .f-control:focus {
-    outline-color: #8ec075; }
-.has-success .input-group-addon {
-  background-color: #c8e0bb;
-  border-color: #8ec075;
-  color: #8ec075; }
-.has-success .f-control-icon {
-  color: #8ec075; }
-
-.has-error .help-block,
-.has-error .control-label,
-.has-error .radio,
-.has-error .ckbx,
-.has-error .radio-inline,
-.has-error .ckbx-inline, .has-error.radio label, .has-error.ckbx label, .has-error.radio-inline label, .has-error.ckbx-inline label {
-  color: #72000e; }
-.has-error .f-control {
-  border-color: #72000e; }
-  .has-error .f-control:focus {
-    outline-color: #72000e; }
-.has-error .input-group-addon {
-  background-color: #d8001a;
-  border-color: #72000e;
-  color: #72000e; }
-.has-error .f-control-icon {
-  color: #72000e; }
-
-/**
- * Reposition feedback icon if input has visible label above
- */
-.has-icon label.u-sr + .f-control_icon,
-.has-icon--right label.u-sr + .f-control_icon,
-.is-required label.u-sr + .f-control_icon,
-.is-required--right label.u-sr + .f-control_icon {
-  top: 0; }
-
-/**
- * Colored input corners to mark required field
- */
-.is-required_tag {
-  background-color: #a50014;
-  border-radius: 2px;
-  color: #a50014;
-  height: 1.14286rem;
-  position: absolute;
-  top: 1.50714rem;
-  /* Height of the `label` and its margin */
-  width: 1.14286rem;
-  z-index: 2
-  /* Ensure icon is above input groups but below icons */ }
-  .is-required_tag:after {
-    border-left: 1.14286rem solid transparent;
-    border-bottom: 1.14286rem solid #fff;
-    content: "";
-    left: 0;
-    position: absolute; }
-
-.is-required--right > .is-required_tag:after {
-  border-right: 1.14286rem solid transparent;
-  border-left: 0; }
-
-input:focus ~ .is-required_tag {
-  background-color: #ff2540; }
-
-abbr.is-required_tag {
-  border-bottom: 0;
-  text-indent: -9999px; }
-
-/*==========*\
-   #BUTTONS
-\*==========*/
-/** 
- * Base Styles
- */
-.btn {
-  color: #666;
-  border-radius: 0.14286rem;
-  font-size: 1rem;
-  line-height: 1.4;
-  padding: 0.14286rem 0.85714rem;
-  background-image: none;
-  border-style: solid;
-  border-width: 2px;
-  cursor: pointer;
-  display: inline-block;
-  font-weight: normal;
-  height: 27px;
-  margin-bottom: 0;
-  text-align: center;
-  text-decoration: none;
-  text-transform: capitalize;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  vertical-align: middle;
-  white-space: nowrap; }
-  .btn:hover, .btn:focus {
-    background-color: #cbcbcb;
-    border-color: #cbcbcb;
-    color: #666; }
-  .btn:active {
-    background-color: #c4c4c4; }
-  .btn, .btn.is-disabled:hover, .btn.is-disabled:focus, .btn.is-disabled:active, .btn[disabled]:hover, .btn[disabled]:focus, .btn[disabled]:active {
-    background-color: #ddd;
-    border-color: #ddd; }
-  .btn:focus, .btn:active:focus {
-    outline: thin dotted #333;
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset: -2px; }
-  .btn.is-disabled, .btn[disabled] {
-    opacity: 0.65;
-    cursor: not-allowed;
-    pointer-events: none; }
-
-/** 
- * Alternative buttons
- */
-.btn--neutral {
-  background-color: #fff; }
-
-.btn--primary, .pagination > .is-current a {
-  color: #fff; }
-  .btn--primary:hover, .pagination > .is-current a:hover, .btn--primary:focus, .pagination > .is-current a:focus {
-    background-color: #09232f;
-    border-color: #09232f;
-    color: #fff; }
-  .btn--primary:active, .pagination > .is-current a:active {
-    background-color: #061922; }
-  .btn--primary, .pagination > .is-current a, .btn--primary.is-disabled:hover, .pagination > .is-current a.is-disabled:hover, .btn--primary.is-disabled:focus, .pagination > .is-current a.is-disabled:focus, .btn--primary.is-disabled:active, .pagination > .is-current a.is-disabled:active, .btn--primary[disabled]:hover, .pagination > .is-current a[disabled]:hover, .btn--primary[disabled]:focus, .pagination > .is-current a[disabled]:focus, .btn--primary[disabled]:active, .pagination > .is-current a[disabled]:active {
-    background-color: #0e3a4d;
-    border-color: #0e3a4d; }
-
-/** 
- * Ghost/Secondary action buttons
- */
-.btn--outline {
-  background-color: transparent;
-  border-color: #ddd;
-  color: #333; }
-
-/**
- * Action button
- */
-.btn--cta {
-  text-transform: uppercase;
-  border-bottom-color: rgba(0, 0, 0, 0.2); }
-
-/** 
- * Button sizes
- */
-.btn--xs {
-  border-radius: 0.14286rem;
-  font-size: 0.85714rem;
-  line-height: 1;
-  padding: 0.07143rem 0.35714rem;
-  height: 18px; }
-
-.btn--sm {
-  border-radius: 0.14286rem;
-  font-size: 0.92857rem;
-  line-height: 1;
-  padding: 0.14286rem 0.5rem;
-  height: 21px; }
-
-.btn--lg, .btn--cta {
-  border-radius: 0.21429rem;
-  line-height: 1.4;
-  padding: 0.42857rem 1.14286rem;
-  height: 35px; }
-
-/**
- * Link buttons
----------------------------------------------
- * Make a button look and behave like a link
- */
-.btn--link {
-  border-color: transparent;
-  border-radius: 0;
-  color: #357d7f;
-  cursor: pointer;
-  font-weight: normal; }
-  .btn--link, .btn--link:active, .btn--link[disabled] {
-    background-color: transparent; }
-  .btn--link:hover, .btn--link:focus {
-    background-color: transparent;
-    border-color: transparent;
-    color: #1e4849; }
-  .btn--link[disabled] {
-    color: #c3c6c8;
-    text-decoration: none; }
-
-/*=========*\
-   #TABLES
-\*=========*/
-table {
-  background-color: transparent; }
-
-th {
-  text-align: left; }
-
-/** 
- * Baseline styles
- */
-.table, .table--bordered {
-  margin-bottom: 1.4rem;
-  max-width: 100%;
-  width: 100%
-  /**
-   * Cells
-   */
-  /**
-   * Bottom align for column headings
-   */
-  /**
-   * Bottom align for column headings
-   */
-  /**
-   * Remove top border from thead by default
-   */
-  /** 
-   * Account for multiple tbody instances
-   */
-  /**
-   * Nesting
-   */ }
-  .table > thead > tr > th, .table--bordered > thead > tr > th,
-  .table > thead > tr > td,
-  .table--bordered > thead > tr > td,
-  .table > tbody > tr > th,
-  .table--bordered > tbody > tr > th,
-  .table > tbody > tr > td,
-  .table--bordered > tbody > tr > td,
-  .table > tfoot > tr > th,
-  .table--bordered > tfoot > tr > th,
-  .table > tfoot > tr > td,
-  .table--bordered > tfoot > tr > td {
-    border-top: 1px solid #ddd;
-    border-left: 1px solid #ddd;
-    line-height: 1.4;
-    padding: 0.35714rem;
-    vertical-align: top; }
-    .table > thead > tr > th:first-child, .table--bordered > thead > tr > th:first-child,
-    .table > thead > tr > td:first-child,
-    .table--bordered > thead > tr > td:first-child,
-    .table > tbody > tr > th:first-child,
-    .table--bordered > tbody > tr > th:first-child,
-    .table > tbody > tr > td:first-child,
-    .table--bordered > tbody > tr > td:first-child,
-    .table > tfoot > tr > th:first-child,
-    .table--bordered > tfoot > tr > th:first-child,
-    .table > tfoot > tr > td:first-child,
-    .table--bordered > tfoot > tr > td:first-child {
-      border-left: 0; }
-  .table > thead > tr > th, .table--bordered > thead > tr > th {
-    border-bottom: 2px solid #ddd;
-    font-family: "Droid Serif", Georgia, Times, "Times New Roman", Baskerville, serif;
-    vertical-align: bottom; }
-  .table > tfoot > tr > th, .table--bordered > tfoot > tr > th {
-    border-top: 2px solid #ddd; }
-  .table > caption + thead > tr:first-child > th, .table--bordered > caption + thead > tr:first-child > th,
-  .table > caption + thead > tr:first-child > td,
-  .table--bordered > caption + thead > tr:first-child > td,
-  .table > colgroup + thead > tr:first-child > th,
-  .table--bordered > colgroup + thead > tr:first-child > th,
-  .table > colgroup + thead > tr:first-child > td,
-  .table--bordered > colgroup + thead > tr:first-child > td,
-  .table > thead:first-child > tr:first-child > th,
-  .table--bordered > thead:first-child > tr:first-child > th,
-  .table > thead:first-child > tr:first-child > td,
-  .table--bordered > thead:first-child > tr:first-child > td {
-    border-top: 0; }
-  .table > tbody + tbody, .table--bordered > tbody + tbody {
-    border-top: 2px solid #ddd; }
-  .table .table, .table--bordered .table, .table .table--bordered, .table--bordered .table--bordered {
-    background-color: #fff; }
-
-/** 
- * Large styles
- */
-/**
- * Condensed table w/ half padding
- */
-/**
- * Bordered version
------------------------------------------------------------------
- * Add borders all around the table and between all the columns.
- */
-.table--bordered {
-  border: 1px solid #ddd; }
-  .table--bordered > thead > tr > th,
-  .table--bordered > thead > tr > td,
-  .table--bordered > tbody > tr > th,
-  .table--bordered > tbody > tr > td,
-  .table--bordered > tfoot > tr > th,
-  .table--bordered > tfoot > tr > td {
-    border: 1px solid #ddd; }
-  .table--bordered > thead > tr > th,
-  .table--bordered > thead > tr > td {
-    border-bottom-width: 2px; }
-  .table--bordered > tbody > tr:nth-child(odd) > td,
-  .table--bordered > tbody > tr:nth-child(odd) > th {
-    background-color: rgba(195, 198, 200, 0.2); }
-
-/**
- * Zebra-striping
---------------------------------------------------------------------------------
- * Default zebra-stripe styles (alternating gray and transparent backgrounds)
- */
-/**
- * Hover effect
---------------------------------------------------------------------------------
- * Placed here since it has to come after the potential zebra striping
- */
-.table--hover > tbody > tr:hover > td,
-.table--hover > tbody > tr:hover > th {
-  background-color: rgba(195, 198, 200, 0.3); }
-
-/**
- * Comparison table
- */
-.table--compare > colgroup + thead > tr:first-child > th,
-.table--compare > thead:first-child > tr:first-child > th {
-  padding: 1.14286rem 0.85714rem;
-  vertical-align: middle; }
-  .table--compare > colgroup + thead > tr:first-child > th:first-child,
-  .table--compare > thead:first-child > tr:first-child > th:first-child {
-    border-left: 1px solid transparent;
-    border-top: 1px solid transparent; }
-.table--compare p {
-  margin: 0; }
-
-/**
- * :not nesting error in sass 3.4.6 (04/11/14), check later to see if fixed
- */
-.table--compare > thead > tr > th,
-.table--compare > tbody > tr > td:not(:first-child) {
-  text-align: center; }
-
-/**
- * Table cell sizing
----------------------------------
- * Reset default table behavior
- */
-table col[class*="w-"] {
-  display: table-column;
-  float: none;
-  position: static; }
-
-table td[class*="w-"],
-table th[class*="w-"] {
-  display: table-cell;
-  float: none;
-  position: static; }
-
-/**
- * Table backgrounds
---------------------------------------------------------------------------------
- * Exact selectors below required to override `.table-striped` and prevent
- * inheritance to nested tables.
-----------------------------------------
- * Generate the contextual variants
- */
-.table > thead > tr > td.success, .table--bordered > thead > tr > td.success,
-.table > thead > tr > th.success,
-.table--bordered > thead > tr > th.success, .table > thead > tr.success > td, .table--bordered > thead > tr.success > td, .table > thead > tr.success > th, .table--bordered > thead > tr.success > th,
-.table > tbody > tr > td.success,
-.table--bordered > tbody > tr > td.success,
-.table > tbody > tr > th.success,
-.table--bordered > tbody > tr > th.success,
-.table > tbody > tr.success > td,
-.table--bordered > tbody > tr.success > td,
-.table > tbody > tr.success > th,
-.table--bordered > tbody > tr.success > th,
-.table > tfoot > tr > td.success,
-.table--bordered > tfoot > tr > td.success,
-.table > tfoot > tr > th.success,
-.table--bordered > tfoot > tr > th.success,
-.table > tfoot > tr.success > td,
-.table--bordered > tfoot > tr.success > td,
-.table > tfoot > tr.success > th,
-.table--bordered > tfoot > tr.success > th {
-  background-color: #c8e0bb; }
-
-.table--hover > tbody > tr > td.success:hover,
-.table--hover > tbody > tr > th.success:hover, .table--hover > tbody > tr.success:hover > td, .table--hover > tbody > tr.success:hover > th {
-  background-color: #b9d8aa; }
-
-.table > thead > tr > td.info, .table--bordered > thead > tr > td.info,
-.table > thead > tr > th.info,
-.table--bordered > thead > tr > th.info, .table > thead > tr.info > td, .table--bordered > thead > tr.info > td, .table > thead > tr.info > th, .table--bordered > thead > tr.info > th,
-.table > tbody > tr > td.info,
-.table--bordered > tbody > tr > td.info,
-.table > tbody > tr > th.info,
-.table--bordered > tbody > tr > th.info,
-.table > tbody > tr.info > td,
-.table--bordered > tbody > tr.info > td,
-.table > tbody > tr.info > th,
-.table--bordered > tbody > tr.info > th,
-.table > tfoot > tr > td.info,
-.table--bordered > tfoot > tr > td.info,
-.table > tfoot > tr > th.info,
-.table--bordered > tfoot > tr > th.info,
-.table > tfoot > tr.info > td,
-.table--bordered > tfoot > tr.info > td,
-.table > tfoot > tr.info > th,
-.table--bordered > tfoot > tr.info > th {
-  background-color: #c8e8f0; }
-
-.table--hover > tbody > tr > td.info:hover,
-.table--hover > tbody > tr > th.info:hover, .table--hover > tbody > tr.info:hover > td, .table--hover > tbody > tr.info:hover > th {
-  background-color: #b4e0eb; }
-
-.table > thead > tr > td.warning, .table--bordered > thead > tr > td.warning,
-.table > thead > tr > th.warning,
-.table--bordered > thead > tr > th.warning, .table > thead > tr.warning > td, .table--bordered > thead > tr.warning > td, .table > thead > tr.warning > th, .table--bordered > thead > tr.warning > th,
-.table > tbody > tr > td.warning,
-.table--bordered > tbody > tr > td.warning,
-.table > tbody > tr > th.warning,
-.table--bordered > tbody > tr > th.warning,
-.table > tbody > tr.warning > td,
-.table--bordered > tbody > tr.warning > td,
-.table > tbody > tr.warning > th,
-.table--bordered > tbody > tr.warning > th,
-.table > tfoot > tr > td.warning,
-.table--bordered > tfoot > tr > td.warning,
-.table > tfoot > tr > th.warning,
-.table--bordered > tfoot > tr > th.warning,
-.table > tfoot > tr.warning > td,
-.table--bordered > tfoot > tr.warning > td,
-.table > tfoot > tr.warning > th,
-.table--bordered > tfoot > tr.warning > th {
-  background-color: #ffec33; }
-
-.table--hover > tbody > tr > td.warning:hover,
-.table--hover > tbody > tr > th.warning:hover, .table--hover > tbody > tr.warning:hover > td, .table--hover > tbody > tr.warning:hover > th {
-  background-color: #ffe91a; }
-
-.table > thead > tr > td.danger, .table--bordered > thead > tr > td.danger,
-.table > thead > tr > th.danger,
-.table--bordered > thead > tr > th.danger, .table > thead > tr.danger > td, .table--bordered > thead > tr.danger > td, .table > thead > tr.danger > th, .table--bordered > thead > tr.danger > th,
-.table > tbody > tr > td.danger,
-.table--bordered > tbody > tr > td.danger,
-.table > tbody > tr > th.danger,
-.table--bordered > tbody > tr > th.danger,
-.table > tbody > tr.danger > td,
-.table--bordered > tbody > tr.danger > td,
-.table > tbody > tr.danger > th,
-.table--bordered > tbody > tr.danger > th,
-.table > tfoot > tr > td.danger,
-.table--bordered > tfoot > tr > td.danger,
-.table > tfoot > tr > th.danger,
-.table--bordered > tfoot > tr > th.danger,
-.table > tfoot > tr.danger > td,
-.table--bordered > tfoot > tr.danger > td,
-.table > tfoot > tr.danger > th,
-.table--bordered > tfoot > tr.danger > th {
-  background-color: #d8001a; }
-
-.table--hover > tbody > tr > td.danger:hover,
-.table--hover > tbody > tr > th.danger:hover, .table--hover > tbody > tr.danger:hover > td, .table--hover > tbody > tr.danger:hover > th {
-  background-color: #bf0017; }
-
-.table > thead > tr > td.muted, .table--bordered > thead > tr > td.muted,
-.table > thead > tr > th.muted,
-.table--bordered > thead > tr > th.muted, .table > thead > tr.muted > td, .table--bordered > thead > tr.muted > td, .table > thead > tr.muted > th, .table--bordered > thead > tr.muted > th,
-.table > tbody > tr > td.muted,
-.table--bordered > tbody > tr > td.muted,
-.table > tbody > tr > th.muted,
-.table--bordered > tbody > tr > th.muted,
-.table > tbody > tr.muted > td,
-.table--bordered > tbody > tr.muted > td,
-.table > tbody > tr.muted > th,
-.table--bordered > tbody > tr.muted > th,
-.table > tfoot > tr > td.muted,
-.table--bordered > tfoot > tr > td.muted,
-.table > tfoot > tr > th.muted,
-.table--bordered > tfoot > tr > th.muted,
-.table > tfoot > tr.muted > td,
-.table--bordered > tfoot > tr.muted > td,
-.table > tfoot > tr.muted > th,
-.table--bordered > tfoot > tr.muted > th {
-  background-color: #ddd; }
-
-.table--hover > tbody > tr > td.muted:hover,
-.table--hover > tbody > tr > th.muted:hover, .table--hover > tbody > tr.muted:hover > td, .table--hover > tbody > tr.muted:hover > th {
-  background-color: #d0d0d0; }
-
-/**
- * Responsive tables
---------------------------------------------------------------------------------
- * Wrap your tables in `.table-responsive` and we'll make them mobile friendly
- * by enabling horizontal scrolling. Only applies <768px. Everything above that
- * will display normally.
- */
-@media all and (max-width: 46.24em) {
-  .table--responsive {
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    border: 1px solid #ddd;
-    margin-bottom: 1.05rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    width: 100%
-    /**
-     * Tighten up spacing
-     */
-    /**
-     * Special overrides for the bordered tables
-     */ }
-    .table--responsive > .table, .table--responsive > .table--bordered {
-      margin-bottom: 0
-      /**
-       * Ensure the content doesn't wrap
-       */ }
-      .table--responsive > .table > thead > tr > th, .table--responsive > .table--bordered > thead > tr > th,
-      .table--responsive > .table > thead > tr > td,
-      .table--responsive > .table--bordered > thead > tr > td,
-      .table--responsive > .table > tbody > tr > th,
-      .table--responsive > .table--bordered > tbody > tr > th,
-      .table--responsive > .table > tbody > tr > td,
-      .table--responsive > .table--bordered > tbody > tr > td,
-      .table--responsive > .table > tfoot > tr > th,
-      .table--responsive > .table--bordered > tfoot > tr > th,
-      .table--responsive > .table > tfoot > tr > td,
-      .table--responsive > .table--bordered > tfoot > tr > td {
-        white-space: nowrap; }
-    .table--responsive > .table--bordered {
-      border: 0
-      /**
-       * Nuke the appropriate borders so that the parent can handle them
-       */
-      /**
-       * Only nuke the last row's bottom-border in `tbody` and `tfoot` since
-       * chances are there will be only one `tr` in a `thead` and that would
-       * remove the border altogether.
-       */ }
-      .table--responsive > .table--bordered > thead > tr > th:first-child,
-      .table--responsive > .table--bordered > thead > tr > td:first-child,
-      .table--responsive > .table--bordered > tbody > tr > th:first-child,
-      .table--responsive > .table--bordered > tbody > tr > td:first-child,
-      .table--responsive > .table--bordered > tfoot > tr > th:first-child,
-      .table--responsive > .table--bordered > tfoot > tr > td:first-child {
-        border-left: 0; }
-      .table--responsive > .table--bordered > thead > tr > th:last-child,
-      .table--responsive > .table--bordered > thead > tr > td:last-child,
-      .table--responsive > .table--bordered > tbody > tr > th:last-child,
-      .table--responsive > .table--bordered > tbody > tr > td:last-child,
-      .table--responsive > .table--bordered > tfoot > tr > th:last-child,
-      .table--responsive > .table--bordered > tfoot > tr > td:last-child {
-        border-right: 0; }
-      .table--responsive > .table--bordered > tbody > tr:last-child > th,
-      .table--responsive > .table--bordered > tbody > tr:last-child > td,
-      .table--responsive > .table--bordered > tfoot > tr:last-child > th,
-      .table--responsive > .table--bordered > tfoot > tr:last-child > td {
-        border-bottom: 0; } }
-
-/*===============*\
-   #INPUT GROUPS
-\*===============*/
-/**
- * Base styles
- */
-.input-group {
-  border-collapse: separate;
-  /* prevent input groups from inheriting border styles from table cells when placed within a table */
-  display: table;
-  position: relative
-  /* For dropdowns */
-  /**
-   * Undo padding and float of grid classes
-   */ }
-  .input-group .f-control {
-    /**
-     * 1. Ensure that the input is always above the *appended* addon button for
-     * proper border colors.
-    ----------------------------------------------------------------------------
-     * IE9 fubars the placeholder attribute in text inputs and the arrows on
-     * select elements in input groups. To fix it, we float the input. Details:
-     * https://github.com/twbs/bootstrap/issues/11561#issuecomment-28936855
-     */
-    float: left;
-    margin-bottom: 0;
-    position: relative;
-    /* 1 */
-    width: 100%;
-    z-index: 2
-    /* 1 */ }
-  .input-group > .f-control {
-    border-right-width: 0; }
-  .input-group > .input-group_btn + .f-control {
-    border-left-width: 0;
-    border-right-width: 0.07143rem; }
-
-/**
- * Sizing options
-----------------------------------------------------------------------------------------
- * Remix the default form control sizing classes into new ones for easier manipulation.
- */
-/**
- * Display as table-cell
- */
-.input-group_addon,
-.input-group_btn,
-.input-group .f-control {
-  display: table-cell; }
-
-/** 
- * Addon and addon wrapper for buttons
- */
-.input-group_addon,
-.input-group_btn {
-  vertical-align: middle;
-  /* Match the inputs */
-  white-space: nowrap;
-  width: 1%; }
-
-/**
- * Text input groups
- */
-.input-group_addon {
-  background-color: #e6e6e6;
-  border: 1px solid #ddd;
-  color: #333;
-  font-size: 1rem;
-  font-weight: normal;
-  line-height: 1;
-  padding: 0.21429rem 0.85714rem;
-  text-align: center
-  /**
-   * Sizing
-   */
-  /**
-   * Nuke default margins from checkboxes and radios to vertically center within.
-   */ }
-  .input-group_addon input[type="radio"],
-  .input-group_addon input[type="checkbox"] {
-    margin-top: 0; }
-
-/**
- * Reset rounded corners
- */
-.input-group .f-control:first-child,
-.input-group_addon:first-child,
-.input-group_btn:first-child > .btn,
-.input-group_btn:first-child > .btn-group > .btn,
-.input-group_btn:first-child > .dropdown-toggle,
-.input-group_btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
-.input-group_btn:last-child > .btn-group:not(:last-child) > .btn {
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0; }
-
-.input-group_addon:first-child {
-  border-right: 0; }
-
-.input-group .f-control:last-child,
-.input-group_addon:last-child,
-.input-group_btn:last-child > .btn,
-.input-group_btn:last-child > .btn-group > .btn,
-.input-group_btn:last-child > .dropdown-toggle,
-.input-group_btn:first-child > .btn:not(:first-child),
-.input-group_btn:first-child > .btn-group:not(:first-child) > .btn {
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0; }
-
-.input-group_addon:last-child {
-  border-left: 0; }
-
-/**
- * Button input groups
- */
-.input-group_btn {
-  position: relative;
-  /**
-   * Jankily prevent input button groups from wrapping with `white-space` and
-   * `font-size` in combination with `inline-block` on buttons.
-   */
-  font-size: 0;
-  white-space: nowrap
-  /**
-   * Negative margin for spacing, position for bringing hovered/focused/actived
-   * element above the siblings.
-   */
-  /**
-   * Bring the "active" button to the front
-   */
-  /** 
-   * Negative margin to only have a 1px border between the two
-   */ }
-
-/*===============*\
-   #FORM LAYOUTS
-\*===============*/
-/** 
- * Form grid
- */
-form [class*="w-"],
-form [class*="wf-"] .control-label {
-  padding-left: 0.35714rem;
-  padding-right: 0.35714rem; }
-form [class*="w-"] {
-  margin-bottom: 0.35714rem; }
-  @media all and (min-width: 31.25em) {
-    form [class*="w-"] {
-      margin-bottom: 0; } }
-
-/** 
- * Form groups
---------------------------------------------------------------------------------
- * Designed to help with the organization and spacing of vertical forms. For
- * horizontal forms, use the predefined grid classes.
- */
-.f-group {
-  margin-bottom: 0.71429rem; }
-
-/**
- * Stacked forms
---------------------------------------------------------------------------------
- * Horizontal forms are built on grid classes and allow you to create forms with
- * labels on the left and inputs on the right.
- */
-.f-stacked {
-  /* Make form groups behave like rows */ }
-  .f-stacked .f-group {
-    margin-left: -0.35714rem;
-    margin-right: -0.35714rem; }
-    .f-stacked .f-group:before, .f-stacked .f-group:after {
-      content: ' ';
-      display: table; }
-    .f-stacked .f-group:after {
-      clear: both; }
-  .f-stacked .control-label + [class*="w-"] {
-    clear: both;
-    float: none; }
-
-/** 
- * Horizontal forms
---------------------------------------------------------------------------------
- * Horizontal forms are built on grid classes and allow you to create forms with
- * labels on the left and inputs on the right.
- */
-.f-horizontal {
-  /** 
-   * Consistent vertical alignment of radios and checkboxes
-  --------------------------------------------------------------------------------
-   * Labels also get some reset styles, but that is scoped to a media query below.
-   */
-  /**
-   * Account for padding we're adding to ensure the alignment and of help text
-   * and other content below items
-   */
-  /**
-   * Make form groups behave like rows
-   */
-  /**
-   * Reset spacing and right align labels, but scope to media queries so that
-   * labels on narrow viewports stack the same as a default form example.
-   */
-  /**
-   * Validation states
-  ------------------------------------------------------------------------------
-   * Reposition the icon because it's now within a grid column and columns have
-   * `position: relative;` on them. Also accounts for the grid gutter padding.
-   */
-  /**
-   * Form group sizes
-  ------------------------------------------------------------------------------
-   * Quick utility class for applying `.input-lg` and `.input-sm` styles to the
-   * inputs and labels within a `.f-group`.
-   */ }
-  .f-horizontal .radio,
-  .f-horizontal .checkbox,
-  .f-horizontal .radio-inline,
-  .f-horizontal .checkbox-inline {
-    padding-top: 0.28571rem
-    /* Default padding plus a border */ }
-  .f-horizontal .radio,
-  .f-horizontal .checkbox {
-    min-height: 1.68571rem; }
-  .f-horizontal .f-group {
-    margin-left: -0.35714rem;
-    margin-right: -0.35714rem; }
-    .f-horizontal .f-group:before, .f-horizontal .f-group:after {
-      content: ' ';
-      display: table; }
-    .f-horizontal .f-group:after {
-      clear: both; }
-  .f-horizontal [class*="w-"] select.f-control {
-    width: 100%; }
-  @media all and (min-width: 31.25em) {
-    .f-horizontal .control-label {
-      margin-bottom: 0;
-      padding-top: 0.28571rem; } }
-  .f-horizontal .has-icon .f-control + .f-control_icon,
-  .f-horizontal .has-icon--right .f-control + .f-control_icon {
-    top: 0; }
-  .f-horizontal .has-icon .f-control + .f-control_icon {
-    left: 0.47619rem; }
-  .f-horizontal .has-icon--right .f-control + .f-control_icon {
-    right: 0.47619rem; }
-
-/**
- * Inline forms
---------------------------------------------------------------------------------
- * Make forms appear inline(-block) by adding the `.form-inline` class. Inline
- * forms begin stacked on extra small (mobile) devices and then go inline when
- * viewports reach <768px.
- *
- * Requires wrapping inputs and labels with `.form-group` for proper display of
- * default HTML form controls and our custom form controls (e.g., input groups).
- *
- * Heads up! This is mixin-ed into `.navbar-form` in navbars.less.
- */
-/*==========*\
-   #LAYOUTS
-\*==========*/
-.l-container {
-  margin: 0 auto;
-  width: 96%; }
-  .l-container:before, .l-container:after {
-    content: ' ';
-    display: table; }
-  .l-container:after {
-    clear: both; }
-  @media all and (min-width: 61.25em) {
-    .l-container {
-      max-width: 70rem; } }
-  @media all and (min-width: 81.25em) {
-    .l-container {
-      max-width: 81.42857rem; } }
-
-/*==========*\
-   #ADVERTS
-\*==========*/
-.ad {
-  display: none; }
-  @media all and (min-width: 50.9375em) {
-    .ad {
-      display: block;
-      margin: 0 auto 1.4rem;
-      overflow: hidden; } }
-
-@media all and (min-width: 50.9375em) {
-  .ad__header {
-    text-align: center; }
-    .ad__header img {
-      background-color: #c8e8f0; } }
-
-.btn-group,
-.btn-group-vertical {
-  display: inline-block;
-  position: relative;
-  vertical-align: middle; }
-  .btn-group:before, .btn-group:after,
-  .btn-group-vertical:before,
-  .btn-group-vertical:after {
-    content: ' ';
-    display: table; }
-  .btn-group:after,
-  .btn-group-vertical:after {
-    clear: both; }
-  .btn-group > .btn,
-  .btn-group-vertical > .btn {
-    float: left; }
-    .btn-group > .btn:focus,
-    .btn-group-vertical > .btn:focus {
-      outline: 0; }
-
-.btn-group .btn + .btn,
-.btn-group .btn + .btn-group,
-.btn-group .btn-group + .btn,
-.btn-group .btn-group + .btn-group {
-  margin-left: -1px; }
-
-.btn-toolbar {
-  margin-left: -5px; }
-  .btn-toolbar:before, .btn-toolbar:after {
-    content: ' ';
-    display: table; }
-  .btn-toolbar:after {
-    clear: both; }
-  .btn-toolbar .btn-group,
-  .btn-toolbar .input-group {
-    float: left; }
-  .btn-toolbar > .btn,
-  .btn-toolbar > .btn-group,
-  .btn-toolbar > .input-group {
-    margin-left: 5px; }
-
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
-  border-radius: 0; }
-
-.btn-group > .btn:first-child {
-  margin-left: 0; }
-  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0; }
-
-.btn-group > .btn:last-child:not(:first-child) {
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0; }
-
-.btn-group > .btn-group {
-  float: left; }
-
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
-  border-radius: 0; }
-
-.btn-group > .btn-group:first-child > .btn:last-child {
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0; }
-
-.btn-group > .btn-group:last-child > .btn:first-child {
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0; }
-
-.btn-group-vertical > .btn,
-.btn-group-vertical > .btn-group,
-.btn-group-vertical > .btn-group > .btn {
-  display: block;
-  float: none;
-  max-width: 100%;
-  width: 100%; }
-.btn-group-vertical > .btn-group:before, .btn-group-vertical > .btn-group:after {
-  content: ' ';
-  display: table; }
-.btn-group-vertical > .btn-group:after {
-  clear: both; }
-.btn-group-vertical > .btn-group > .btn {
-  float: none; }
-.btn-group-vertical > .btn + .btn,
-.btn-group-vertical > .btn + .btn-group,
-.btn-group-vertical > .btn-group + .btn,
-.btn-group-vertical > .btn-group + .btn-group {
-  margin-left: 0;
-  margin-top: -1px; }
-
-.btn-group-vertical > .btn:not(:first-child):not(:last-child) {
-  border-radius: 0; }
-.btn-group-vertical > .btn:first-child:not(:last-child) {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  border-top-right-radius: 0.14286rem; }
-.btn-group-vertical > .btn:last-child:not(:first-child) {
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0.14286rem; }
-
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
-  border-radius: 0; }
-
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0; }
-
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
-  border-top-right-radius: 0;
-  border-top-left-radius: 0; }
-
-.btn-group-justified {
-  border-collapse: separate;
-  display: table;
-  table-layout: fixed;
-  width: 100%; }
-  .btn-group-justified > .btn,
-  .btn-group-justified > .btn-group {
-    display: table-cell;
-    float: none;
-    width: 1%; }
-  .btn-group-justified > .btn-group .btn {
-    width: 100%; }
-
-[data-toggle="buttons"] > .btn > input[type="radio"],
-[data-toggle="buttons"] > .btn > input[type="checkbox"] {
-  opacity: 0;
-  position: absolute;
-  z-index: -1; }
-
-/*=========*\
-   #FLYOUT
-\*=========*/
-.flyout, .navbar_flyout {
-  background-color: #fff;
-  border-left: 1px solid #ddd;
-  height: 100%;
-  overflow: hidden;
-  position: fixed;
-  right: -21.42857rem;
-  top: 0;
-  -webkit-transition: .5s ease-in-out;
-          transition: .5s ease-in-out;
-  visibility: hidden;
-  width: 21.42857rem;
-  z-index: 1000; }
-  .flyout:before, .navbar_flyout:before, .flyout:after, .navbar_flyout:after {
-    content: ' ';
-    display: table; }
-  .flyout:after, .navbar_flyout:after {
-    clear: both; }
-  @media all and (min-width: 31.25em) {
-    .flyout, .navbar_flyout {
-      right: -35.71429rem;
-      width: 35.71429rem; } }
-
-.flyout_wrapper .toggle_chkbx:checked + .toggle_btn + .toggle_target {
-  right: 0;
-  visibility: visible; }
-
-/**
- * Flyout Close "button"
- */
-.flyout_close {
-  border-bottom: 1px solid #ddd; }
-  .flyout_close:before, .flyout_close:after {
-    content: ' ';
-    display: table; }
-  .flyout_close:after {
-    clear: both; }
-  .flyout_close .i {
-    border-left: 1px solid #ddd;
-    float: right;
-    margin: 0;
-    padding: 0.85714rem 1.57143rem 0.78571rem;
-    text-align: center; }
-    .flyout_close .i:hover, .flyout_close .i:focus {
-      background-color: #0b2d3c;
-      cursor: pointer; }
-    .flyout_close .i:before {
-      top: 0; }
-
-.flyout_heading {
-  float: left;
-  margin: 0;
-  padding: 1rem 0.85714rem 0.78571rem; }
-
-.flyout_inner {
-  height: 100%;
-  padding: 0.85714rem 2.07143rem 0.85714rem 0.85714rem;
-  width: 22.64286rem; }
-  @media all and (min-width: 31.25em) {
-    .flyout_inner {
-      width: 36.92857rem; } }
-  @media all and (max-width: 50.9275em) {
-    .flyout_inner {
-      overflow-x: hidden;
-      overflow-y: scroll;
-      padding-right: 12px; } }
-
-.flyout_overlay {
-  opacity: 0;
-  background-color: #000;
-  left: 0;
-  position: fixed;
-  top: 0;
-  -webkit-transition: opacity .3s ease-out;
-          transition: opacity .3s ease-out; }
-  .flyout_overlay.is-active {
-    opacity: 0.2;
-    bottom: 0;
-    cursor: pointer;
-    right: 0;
-    z-index: 999; }
-
-/*==================================================*\
-   #MEDIA OBJECTS
-   *
-   * Source: http://stubbornella.org/content/?p=497
-\*==================================================*/
-/**
- * Common styles
---------------------
- * Clear the floats
- */
-.media,
-.media_body {
-  overflow: hidden;
-  zoom: 1; }
-
-/**
- * Proper spacing between instances of .media
- */
-.media,
-.media .media {
-  margin-top: 1.07143rem; }
-
-.media:first-child {
-  margin-top: 0; }
-
-/**
- * For images and videos, set to block
- */
-/**
- * Reset margins on headings for tighter default spacing
- */
-.media_heading {
-  margin: 0 0 0.71429rem; }
-
-/**
- * Media image alignment
- */
-.media_fl,
-.media_fr {
-  display: block; }
-
-@media all and (min-width: 31.25em) {
-  .media_fl {
-    float: left;
-    margin-right: 1.42857rem; }
-
-  .media_fr {
-    float: right;
-    margin-left: 1.42857rem; } }
-/**
- * Media list variation
------------------------------
- * Undo default ul/ol styles
- */
-.media-list {
-  list-style: none;
-  padding-left: 0; }
-
-/**
- * Media link
- */
-/*================*\
-   #FORM-CONTROLS
-\*================*/
-/**
- * Date Range (rename to f-inbetween?)
- */
-.f-range .f-control_static {
-  overflow: hidden;
-  padding-left: 0.35714rem;
-  padding-right: 0.35714rem;
-  text-align: center; }
-
-/**
- * Address Control
- */
-.f-find_postcode,
-.f-find_address,
-.f-address_country {
-  display: none; }
-
-.f-address-control.is-uk .f-find_postcode,
-.f-address-control.is-uk .f-address_country {
-  display: block; }
-.f-address-control.is-row .f-address_country {
-  display: block; }
-.f-address-control.is-row .f-find_postcode,
-.f-address-control.is-row .f-address_postcode {
-  display: none; }
-
-/*==========*\
-   #TOOLBAR
-\*==========*/
-.toolbar {
-  margin-left: -0.71429rem;
-  margin-right: -0.71429rem; }
-  .toolbar:before, .toolbar:after {
-    content: ' ';
-    display: table; }
-  .toolbar:after {
-    clear: both; }
-
-.toolbar_item {
-  padding-left: 0.71429rem;
-  padding-right: 0.71429rem;
-  float: left; }
-
-.toolbar_item--right {
-  float: right; }
-
-.toolbar_item--center {
-  float: none;
-  overflow: hidden; }
-
-/*================*\
-   #TOGGLE
-\*================*/
-/**
- * Toggle checkbox
- * Hidden, this is used so the item appears out with or without js
- */
-.toggle_chkbx {
-  display: none;
-  /* find better solution */
-  overflow: hidden;
-  width: 0; }
-  .toggle_chkbx:focus {
-    outline: none; }
-
-/**
- * Navbar toggle "button"
- */
-.toggle_btn {
-  cursor: pointer;
-  margin: 0;
-  text-align: center
-  /**
-   * We remove the `outline` here, but later compensate by attaching `:hover`
-   * styles to `:focus`.
-   */ }
-  .toggle_btn:focus {
-    outline: none; }
-  .toggle_btn:hover, .toggle_btn:focus {
-    background-color: rgba(0, 0, 0, 0.05); }
-  .toggle_btn .toggle_txt {
-    display: none; }
-  @media all and (min-width: 31.25em) {
-    .toggle_btn .toggle_txt {
-      display: inline-block; } }
-  @media all and (min-width: 50.9375em) {
-    .toggle_btn {
-      display: none; } }
-
-/*================*\
+/*=======*\
    #NAVS
-\*================*/
-/**
+\*=======*/
+/*
  * Base class
  */
 .nav {
   list-style: none;
   margin-bottom: 0;
-  margin-right: -1px;
-  margin-top: 0;
   padding-left: 0;
   /* Override default ul/ol */
   position: relative
-  /**
-  * Disabled state sets text to gray and nukes hover/tab effects but DOES NOT
-  * remove functionality
-  */ }
-  .nav:before, .nav:after {
-    content: ' ';
+  /*
+   * Disabled state sets text to gray and nukes hover/tab effects but DOES NOT
+   * remove functionality
+   */ }
+  .nav:after {
+    content: '';
     display: table; }
   .nav:after {
     clear: both; }
   .nav > li {
     display: block;
     position: relative; }
-    .nav > li > a {
-      border-right: 3px solid transparent;
-      color: #999;
-      display: block;
-      padding: 0.42857rem 0.85714rem;
-      position: relative
-      /**
-      * Prevent IE8 from misplacing imgs
-      * See https://github.com/h5bp/html5-boilerplate/issues/984#issuecomment-3985989
-      */ }
-      .nav > li > a:hover, .nav > li > a:focus {
-        background-color: #f4f4f4; }
-      .nav > li > a > img {
-        max-width: none; }
-  .nav .is-active > a {
+  .nav > li > a {
+    border-right: 3px solid transparent;
+    color: #999;
+    display: block;
+    padding: 0.42857rem 0.85714rem;
+    position: relative
+    /*
+     * Prevent IE8 from misplacing imgs
+     * See https://github.com/h5bp/html5-boilerplate/issues/984#issuecomment-3985989
+     */ }
+    .nav > li > a:hover, .nav > li > a:focus {
+      background-color: #f4f4f4; }
+    .nav > li > a > img {
+      max-width: none; }
+  .nav > .is-active > a {
     background-color: transparent;
     border-right-color: #0e3a4d;
     color: #0e3a4d; }
-    .nav .is-active > a:hover, .nav .is-active > a:focus {
+    .nav > .is-active > a:hover, .nav > .is-active > a:focus {
       background-color: #f4f4f4; }
   .nav .is-disabled > a {
     background-color: transparent;
     color: #ddd; }
     .nav .is-disabled > a:hover, .nav .is-disabled > a:focus {
       background-color: transparent;
-      border-color: #ddd;
+      border: 0;
       color: #ddd;
       cursor: not-allowed; }
 
@@ -2690,95 +2769,133 @@ form [class*="w-"] {
   background-color: #0e3a4d;
   color: #fff; }
 
+/*========*\
+   #BOXES
+\*========*/
+/*
+ * Base class
+ */
+.box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  min-height: 20px;
+  padding: 0.85714rem; }
+  .box blockquote {
+    border: 0;
+    margin: 0;
+    padding: 0; }
+
+/*
+ * Alternative colour
+ */
+.box--alt {
+  background-color: #f4f4f4;
+  border: 0; }
+
+/*
+ * Sizes
+ */
+.box--lg {
+  padding: 1.14286rem; }
+
+.box--sm {
+  padding: 0.5rem; }
+
+.box--well {
+  border-bottom: 0;
+  box-shadow: 0 5px #0e3a4d;
+  margin-bottom: 1.75714rem; }
+
 /*=========*\
    #NAVBAR
 \*=========*/
-/**
+/*
  * Navbar
  */
 .navbar {
-  background-color: #357f76;
-  border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 1.4rem;
-  position: relative; }
-  @media all and (min-width: 50.9375em) {
+  background-color: #357d7f;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1001
+  /*
+   * Navbar toggle "button"
+   */ }
+  @media (min-width: 52.5em) {
     .navbar:before {
       background-color: #0e3a4d;
       border-bottom: 1px solid #e6e6e6;
-      border-top: 1px solid #e6e6e6;
       content: '';
       display: block;
-      height: 24px;
+      height: 23px;
       left: 50%;
       position: absolute;
       top: 0;
       width: 50%; } }
   .navbar > .l-container {
     position: relative; }
+  .navbar .toggle_btn {
+    color: #fff;
+    line-height: 1.4;
+    padding: 0.71429rem 0.85714rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1002; }
+    @media (min-width: 31.25em) {
+      .navbar .toggle_btn {
+        width: 7.85714rem; } }
+    @media (min-width: 52.5em) {
+      .navbar .toggle_btn {
+        display: none; } }
 
-/**
+/*
  * Brand name
  * ie needs height for SVG
  */
 .navbar_brand {
-  border-right: 1px solid #e6e6e6;
   display: block;
   float: left;
-  height: 69px;
-  padding: 0 0.71429rem 0.71429rem 0;
   position: relative;
-  width: 332px; }
-  @media all and (min-width: 50.9375em) {
-    .navbar_brand {
-      height: 99px;
-      padding: 0 1.42857rem 1.07143rem 0;
-      width: 362px; } }
+  width: 242px; }
 
-/**
+/*
  * Navbar checkbox
  * Hidden, this is used so the navigation slides out with or without js
  */
-/**
- * Navbar toggle "button"
- */
-.navbar .toggle_btn {
-  line-height: 1.4;
-  padding: 0.71429rem 0.85714rem;
-  position: absolute;
-  right: 0;
-  top: 0; }
-  @media all and (min-width: 31.25em) {
-    .navbar .toggle_btn {
-      width: 7.85714rem; } }
-  @media all and (min-width: 50.9375em) {
-    .navbar .toggle_btn {
-      display: none; } }
-
-/**
+/*
  * Navbar inner scroll wrapper
  */
 .navbar_nav {
+  background-color: #0e3a4d;
+  margin-top: 5rem;
   padding: 0 0 5.71429rem;
   position: relative; }
+  @media (min-width: 52.5em) {
+    .navbar_nav {
+      margin-top: 0; } }
   .navbar_nav .nav > li > a {
     color: #fff; }
     .navbar_nav .nav > li > a:hover, .navbar_nav .nav > li > a:focus {
-      background-color: #0b2d3c; }
+      background-color: #0e3a4d; }
 
-/**
+/*
  * Navbar Flyout
  */
 .navbar_flyout {
-  background-color: #0e3a4d;
-  right: -17.14286rem;
-  width: 17.14286rem; }
-  @media all and (min-width: 50.9375em) {
+  width: 17.14286rem;
+  z-index: 1001
+  /* puts menu above content*/ }
+  @media (min-width: 52.5em) {
     .navbar_flyout {
       background-color: transparent;
-      margin-left: 362px;
+      margin-left: 242px;
       overflow: visible;
-      position: static;
+      position: relative;
       right: auto;
+      -webkit-transform: translateX(0);
+          -ms-transform: translateX(0);
+              transform: translateX(0);
       -webkit-transition: none;
               transition: none;
       visibility: visible;
@@ -2792,186 +2909,193 @@ form [class*="w-"] {
         padding-bottom: 0;
         width: auto; } }
 
+/*
+ * Navbar Basket "button"
+ */
 .navbar .basket {
   float: right;
   margin-right: 2.85714rem; }
-  .navbar .basket.is-empty {
-    display: none; }
-  @media all and (min-width: 31.25em) {
+  @media (min-width: 31.25em) {
     .navbar .basket {
       margin-right: 7.85714rem; }
       .navbar .basket .basket_txt {
         display: inline-block; } }
-  @media all and (min-width: 50.9375em) {
+  @media (min-width: 52.5em) {
     .navbar .basket {
-      margin-right: 0; } }
+      margin-right: 0;
+      position: absolute;
+      top: 0;
+      z-index: 100000; } }
+  .navbar .basket.is-empty {
+    display: none; }
 
 /*=================*\
    #NAVBAR-PRIMARY
 \*=================*/
-/**
+/*
  * Primary Navbar with dropdowns
  */
 .navbar_primary {
   display: table-header-group; }
-  @media all and (min-width: 50.9375em) {
+  @media (min-width: 52.5em) {
     .navbar_primary {
       display: block; } }
-  .navbar_primary .nav .join {
+  .navbar_primary .join {
     border-top: 1px solid #e6e6e6;
     padding: 0.71429rem 0.85714rem; }
-    .navbar_primary .nav .join a {
-      background-color: #6f8b67;
-      border: 0;
-      color: #fff; }
-      .navbar_primary .nav .join a:hover, .navbar_primary .nav .join a:focus {
-        background-color: #586e51; }
-    @media all and (min-width: 50.9375em) {
-      .navbar_primary .nav .join {
-        border-top-color: #6f8b67;
+    @media (min-width: 52.5em) {
+      .navbar_primary .join {
+        border-top-color: #357d7f;
         float: right;
         margin-bottom: -1px;
         padding: 0; } }
-  .navbar_primary .nav > .navbar_dd:before, .navbar_primary .nav > .navbar_dd:after {
-    content: ' ';
-    display: table; }
-  .navbar_primary .nav > .navbar_dd:after {
-    clear: both; }
-  .navbar_primary .nav > .navbar_dd > a {
-    border-right: 0;
+    .navbar_primary .join a {
+      background-color: #357d7f;
+      border: 0;
+      color: #fff; }
+      .navbar_primary .join a:hover, .navbar_primary .join a:focus {
+        background-color: #265a5b; }
+
+.navbar_primary .nav > .navbar_dd:after {
+  content: '';
+  display: table; }
+.navbar_primary .nav > .navbar_dd:after {
+  clear: both; }
+@media (min-width: 52.5em) {
+  .navbar_primary .nav > .navbar_dd {
     float: left;
-    font-weight: 700;
-    padding: 0.71429rem 0.85714rem;
-    text-transform: uppercase;
-    width: 75%; }
-  .navbar_primary .nav > .navbar_dd.is-active .btn--link {
-    background-color: #357f76; }
-  .navbar_primary .nav > .navbar_dd.is-active .i:before {
-    background-position: -198px 0; }
-  .navbar_primary .nav > .navbar_dd.is-active > .navbar_dd-mega {
-    max-height: 1000px;
-    opacity: 1; }
-  @media all and (min-width: 50.9375em) {
-    .navbar_primary .nav > .navbar_dd {
-      float: left;
-      position: static;
-      -webkit-transition: background-color .3s .1s ease;
-              transition: background-color .3s .1s ease; }
-      .navbar_primary .nav > .navbar_dd > a {
-        float: none;
-        font-weight: 400;
-        letter-spacing: normal;
-        padding: 0.42857rem 0.85714rem;
-        text-transform: capitalize;
-        width: auto; }
-        .navbar_primary .nav > .navbar_dd > a:hover, .navbar_primary .nav > .navbar_dd > a:focus {
-          background-color: transparent; }
-      .navbar_primary .nav > .navbar_dd:hover {
-        background-color: #2f7169;
-        -webkit-transition: background-color 0s;
-                transition: background-color 0s; }
-        .navbar_primary .nav > .navbar_dd:hover a ~ .navbar_dd-mega {
-          max-height: 1000px; } }
-  .navbar_primary .btn--link {
-    border: 0;
-    padding: 0.64286rem;
-    width: 25%; }
-    .navbar_primary .btn--link:hover, .navbar_primary .btn--link:focus {
-      background-color: #2f7169; }
-    @media all and (min-width: 50.9375em) {
-      .navbar_primary .btn--link {
-        display: none; } }
-  .navbar_primary .i:before {
-    background-position: -176px 0;
-    height: 22px;
-    top: 0;
-    width: 22px; }
+    position: static;
+    -webkit-transition: background-color .3s .1s ease;
+            transition: background-color .3s .1s ease; }
+    .navbar_primary .nav > .navbar_dd:hover {
+      background-color: #165b78;
+      -webkit-transition: background-color 0s;
+              transition: background-color 0s; }
+      .navbar_primary .nav > .navbar_dd:hover a ~ .navbar_dd-mega {
+        max-height: 1000px; } }
+.navbar_primary .nav > .navbar_dd > a {
+  border-right: 0;
+  float: left;
+  font-family: "Droid Serif", Georgia, Times, "Times New Roman", Baskerville, serif;
+  font-size: 1.07143rem;
+  padding: 0.71429rem 0.85714rem;
+  width: 75%; }
+  @media (min-width: 52.5em) {
+    .navbar_primary .nav > .navbar_dd > a {
+      float: none;
+      font-weight: 400;
+      letter-spacing: normal;
+      padding: 0.42857rem 0.85714rem;
+      text-transform: capitalize;
+      width: auto; }
+      .navbar_primary .nav > .navbar_dd > a:hover, .navbar_primary .nav > .navbar_dd > a:focus {
+        background-color: transparent; } }
+.navbar_primary .nav > .navbar_dd.is-active .btn--link {
+  background-color: #0e3a4d; }
+.navbar_primary .nav > .navbar_dd.is-active .i:before {
+  background-position: -198px 0; }
+.navbar_primary .nav > .navbar_dd.is-active > .navbar_dd-mega {
+  max-height: 1000px;
+  -webkit-transition: max-height .5s ease-in-out;
+          transition: max-height .5s ease-in-out; }
+.navbar_primary .nav .btn--link {
+  border: 0;
+  padding: 0.64286rem;
+  width: 25%; }
+  @media (min-width: 52.5em) {
+    .navbar_primary .nav .btn--link {
+      display: none; } }
+  .navbar_primary .nav .btn--link:hover, .navbar_primary .nav .btn--link:focus {
+    background-color: #0e3a4d; }
+.navbar_primary .nav .i:before {
+  background-position: -176px 0;
+  height: 22px;
+  top: 0;
+  width: 22px; }
 
 .navbar_dd-mega {
   clear: left;
   max-height: 0;
   overflow: hidden;
-  -webkit-transition: all .5s ease-out;
-          transition: all .5s ease-out
-  /**
-   * 1. used only to prevent blurry text on transition in Chrome
-   */ }
+  -webkit-transition: max-height .3s ease-in-out;
+          transition: max-height .3s ease-in-out; }
+  @media (min-width: 52.5em) {
+    .navbar_dd-mega {
+      background-color: #0e3a4d;
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+      left: 0;
+      position: absolute;
+      width: 100%;
+      z-index: 100; } }
   .navbar_dd-mega > .l-container {
     width: 240px; }
+    @media (min-width: 52.5em) {
+      .navbar_dd-mega > .l-container {
+        width: auto; } }
   .navbar_dd-mega .nav {
-    background-color: #357f76;
+    background-color: #0e3a4d;
     border-bottom: 3px solid #0e3a4d;
     line-height: 1.5;
     padding-bottom: 0.42857rem;
     padding-top: 0.42857rem; }
+    @media (min-width: 52.5em) {
+      .navbar_dd-mega .nav {
+        width: 33.33333%;
+        float: left;
+        background-color: #0e3a4d;
+        border-bottom: 0; } }
     .navbar_dd-mega .nav > li > a {
       font-size: 0.92857rem;
       padding-bottom: 0.35714rem;
       padding-top: 0.35714rem;
       text-transform: capitalize; }
       .navbar_dd-mega .nav > li > a:hover, .navbar_dd-mega .nav > li > a:focus {
-        background-color: #2f7169; }
+        background-color: #165b78; }
   .navbar_dd-mega .navbar_title {
     margin: 0; }
     .navbar_dd-mega .navbar_title a {
-      border-bottom: 1px solid #2a665f;
-      color: #0e3a4d;
+      border-bottom: 1px solid #09232f;
+      color: #fff;
       display: block;
       margin: 0.71429rem 1rem 0.78571rem;
       padding-bottom: 0.71429rem; }
       .navbar_dd-mega .navbar_title a:hover, .navbar_dd-mega .navbar_title a:focus {
-        color: #0e3a4d; }
-  @media all and (min-width: 50.9375em) {
-    .navbar_dd-mega {
-      background-color: #357f76;
-      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
-      left: -1px;
-      position: absolute;
-      -webkit-transition: all .5s ease;
-              transition: all .5s ease;
-      width: 100%;
-      z-index: 100; }
-      .navbar_dd-mega > .l-container {
-        padding: 1.4rem 0;
-        width: auto; }
-      .navbar_dd-mega .nav {
-        width: 33.33333%;
-        float: left;
-        background-color: #357f76;
-        border-bottom: 0; }
-        .navbar_dd-mega .nav > li > a:hover, .navbar_dd-mega .nav > li > a:focus {
-          background-color: #2f7169; } }
+        color: #fff; }
 
+/*===================*\
+   #NAVBAR-SECONDARY
+\*===================*/
 .navbar_secondary {
   display: table-footer-group;
   font-size: 0.85714rem; }
-  .navbar_secondary .nav {
-    margin-right: 0; }
-  .navbar_secondary li {
-    line-height: 1.5; }
-    .navbar_secondary li:first-child {
-      border-top: 1px solid #e6e6e6;
-      padding-top: 1.07143rem; }
-    .navbar_secondary li a {
-      text-transform: uppercase; }
-  @media all and (min-width: 50.9375em) {
+  @media (min-width: 52.5em) {
     .navbar_secondary {
       border-bottom: 1px solid #e6e6e6;
-      border-top: 1px solid #e6e6e6;
       display: block;
-      overflow: auto;
-      margin-bottom: 3.07143rem; }
-      .navbar_secondary li:first-child {
-        border-top: 0;
-        margin-top: 0;
-        padding-top: 0; }
-      .navbar_secondary li {
-        float: left; }
+      margin-bottom: 0.64286rem;
+      overflow: auto; }
       .navbar_secondary .navbar_nav--mini {
         background-color: #0e3a4d; }
         .navbar_secondary .navbar_nav--mini a {
           border-right: 1px solid #e6e6e6;
           padding: 0.14286rem 0.85714rem; } }
+  .navbar_secondary li {
+    line-height: 1.5; }
+    @media (min-width: 52.5em) {
+      .navbar_secondary li {
+        float: left; } }
+    .navbar_secondary li:first-child {
+      border-top: 1px solid #e6e6e6;
+      padding-top: 1.07143rem; }
+      @media (min-width: 52.5em) {
+        .navbar_secondary li:first-child {
+          border-top: 0;
+          margin-top: 0;
+          padding-top: 0; } }
+    .navbar_secondary li a {
+      text-transform: uppercase; }
+  .navbar_secondary .nav {
+    margin-right: 0; }
 
 /*================*\
    #NAVBAR SEARCH
@@ -2987,13 +3111,15 @@ form [class*="w-"] {
   -webkit-transition: width .3s;
           transition: width .3s;
   width: 0; }
-  .navbar_search.is-open .navbar_search-icon {
-    background: #8ec075; }
-  @media all and (min-width: 50.9375em) {
+  @media (min-width: 52.5em) {
     .navbar_search {
       float: right;
       margin-top: -1px;
       position: relative; } }
+  .navbar_search.is-open .navbar_search-icon {
+    background: #8ec075; }
+  .navbar_search.is-open .navbar_search-input {
+    padding: 0.42857rem 2.85714rem 0.42857rem 0.57143rem; }
 
 .navbar_search-input {
   height: 29px;
@@ -3005,9 +3131,6 @@ form [class*="w-"] {
   z-index: 10; }
   .navbar_search-input:focus {
     outline: none; }
-
-input[type="search"].navbar_search-input {
-  -webkit-border-radius: 0; }
 
 .navbar_search-icon,
 .navbar_search-submit {
@@ -3042,7 +3165,7 @@ input[type="search"].navbar_search-input {
 .navbar_search.is-open,
 .no-js .navbar_search {
   width: 96%; }
-  @media all and (min-width: 31.25em) {
+  @media (min-width: 31.25em) {
     .navbar_search.is-open,
     .no-js .navbar_search {
       width: 250px; } }
@@ -3054,22 +3177,18 @@ input[type="search"].navbar_search-input {
 .no-js .navbar_search .navbar_search-input {
   position: static; }
 
-.navbar_search.is-open .navbar_search-input {
-  padding: 0.42857rem 2.85714rem 0.42857rem 0.57143rem; }
-
 /*==============*\
    #BREADCRUMBS
 \*==============*/
-.crumbs:before, .crumbs:after,
-.crumbs .list-collapsable_list:before,
+.crumbs:after,
 .crumbs .list-collapsable_list:after {
-  content: ' ';
+  content: '';
   display: table; }
 .crumbs:after,
 .crumbs .list-collapsable_list:after {
   clear: both; }
 
-/**
+/*
  * General item in list
  */
 .crumbs_item {
@@ -3078,20 +3197,19 @@ input[type="search"].navbar_search-input {
   line-height: 1rem;
   white-space: nowrap; }
 
-/**
+/*
  * Link in general item 
  */
 .crumbs_item a {
-  background-color: #e6e6e6;
-  color: #333;
+  background-color: #357d7f;
+  color: #fff;
   display: inline-block;
   margin-left: 0.28571rem;
   padding: 0.14286rem 0.35714rem; }
   .crumbs_item a:hover, .crumbs_item a:focus {
-    background-color: #f4f4f4;
-    color: #333; }
+    background-color: #44a0a3; }
 
-/**
+/*
  * Home / first item in list
  */
 .crumbs_item:first-child a {
@@ -3103,163 +3221,149 @@ input[type="search"].navbar_search-input {
     left: 0;
     top: 1px; }
 
-/**
+/*
  * Section or Category / second item in list
  */
 .crumbs_item:first-child + .crumbs_item a {
   background-color: #0e3a4d;
-  color: #fff;
   margin-left: 0.28571rem;
   padding-left: 0.5rem; }
   .crumbs_item:first-child + .crumbs_item a:hover, .crumbs_item:first-child + .crumbs_item a:focus {
     background-color: #165b78; }
+    .crumbs_item:first-child + .crumbs_item a:hover:before, .crumbs_item:first-child + .crumbs_item a:hover:after, .crumbs_item:first-child + .crumbs_item a:focus:before, .crumbs_item:first-child + .crumbs_item a:focus:after {
+      border-left-color: #165b78;
+      border-right-color: #165b78; }
+  .crumbs_item:first-child + .crumbs_item a:before {
+    border: 0; }
+  .crumbs_item:first-child + .crumbs_item a:after {
+    border-left-color: #0e3a4d; }
 
-/**
+/*
+ * General item in list
+ */
+.crumbs_item {
+  position: relative
+  /*
+   * Home / first item in list
+   */ }
+  .crumbs_item a {
+    margin-left: 1.78571rem; }
+    .crumbs_item a:hover:before, .crumbs_item a:hover:after, .crumbs_item a:focus:before, .crumbs_item a:focus:after {
+      border-left-color: #44a0a3;
+      border-right-color: #44a0a3; }
+    .crumbs_item a:before {
+      border-bottom: 1.28571rem inset transparent;
+      border-right: 1.28571rem solid #357d7f;
+      left: 0.5rem; }
+    .crumbs_item a:after {
+      border-left: 1.28571rem solid #357d7f;
+      border-top: 1.28571rem inset transparent;
+      right: -1.28571rem; }
+  .crumbs_item:first-child a:before, .crumbs_item:first-child a:after {
+    border: 0; }
+  .crumbs_item:first-child a:hover:before, .crumbs_item:first-child a:focus:before {
+    opacity: 1; }
+  .crumbs_item:not(:first-child) a:before, .crumbs_item:not(:first-child) a:after {
+    content: '';
+    display: inline-block;
+    height: 0;
+    outline: 0 none;
+    position: absolute;
+    top: 0;
+    width: 1.28571rem; }
+
+/*
  * Current Location / Last item in list
  */
 .crumbs_item:last-child,
 .crumbs_item--last {
-  margin-left: 0.42857rem;
+  clear: left;
+  margin-left: 2.14286rem;
   padding: 0.21429rem 0 0.07143rem; }
-
-/**
-  * General item in list
-  */
-.crumbs_item {
-  position: relative; }
-  .crumbs_item a {
-    margin-left: 1.78571rem; }
-    .crumbs_item a:hover:before, .crumbs_item a:hover:after, .crumbs_item a:focus:before, .crumbs_item a:focus:after {
-      border-left-color: #f4f4f4;
-      border-right-color: #f4f4f4; }
-    .crumbs_item a:before {
-      border-right: 1.28571rem solid #e6e6e6;
-      border-bottom: 1.28571rem inset transparent;
-      left: 0.5rem; }
-    .crumbs_item a:after {
-      border-left: 1.28571rem solid #e6e6e6;
-      border-top: 1.28571rem inset transparent;
-      right: -1.28571rem; }
-
-.crumbs_item:not(:first-child) a:before, .crumbs_item:not(:first-child) a:after {
-  content: '';
-  display: inline-block;
-  height: 0;
-  outline: 0 none;
-  position: absolute;
-  top: 0;
-  width: 1.28571rem; }
-
-/**
-  * Home / first item in list
-  */
-.crumbs_item:first-child a:before, .crumbs_item:first-child a:after {
-  border: 0; }
-.crumbs_item:first-child a:hover:before, .crumbs_item:first-child a:focus:before {
-  opacity: 1; }
-
-/**
-  * Section or Category / second item in list
-  */
-.crumbs_item:first-child + .crumbs_item a:hover:before, .crumbs_item:first-child + .crumbs_item a:hover:after, .crumbs_item:first-child + .crumbs_item a:focus:before, .crumbs_item:first-child + .crumbs_item a:focus:after {
-  border-left-color: #165b78;
-  border-right-color: #165b78; }
-.crumbs_item:first-child + .crumbs_item a:before {
-  border: 0; }
-.crumbs_item:first-child + .crumbs_item a:after {
-  border-left-color: #0e3a4d; }
-
-/**
-  * Current Location / Last item in list
-  */
-.crumbs_item:last-child,
-.crumbs_item--last {
-  margin-left: 1.64286rem; }
+  @media (min-width: 31.25em) {
+    .crumbs_item:last-child,
+    .crumbs_item--last {
+      clear: none;
+      margin-left: 1.57143rem; } }
 
 /*=======*\
    #TABS
 \*=======*/
-/**
+/*
  * Tabs Content ul/ol
  */
-.tabs_content {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  list-style: none;
-  padding: 1.14286rem; }
-  .tabs_content:before, .tabs_content:after {
-    content: ' ';
+.c-tabs_content {
+  list-style: none; }
+  .c-tabs_content:after {
+    content: '';
     display: table; }
-  .tabs_content:after {
+  .c-tabs_content:after {
     clear: both; }
-  .tabs_content > li {
+  .c-tabs_content > li {
     display: none; }
-    .tabs_content > li.is-active {
+    .c-tabs_content > li p:last-child {
+      margin-bottom: 0; }
+    .c-tabs_content > li.is-active {
       display: block; }
 
-/**
+/*
  * Tabs nav wrapper
  */
-.nav--tabs > li.is-active > a {
-  border-bottom-color: #0e3a4d; }
-  .nav--tabs > li.is-active > a:hover, .nav--tabs > li.is-active > a:focus {
-    color: #0e3a4d; }
 .nav--tabs > li > a {
-  border-bottom: 3px solid transparent;
+  border-bottom: 4px solid transparent;
   border-right: 0; }
   .nav--tabs > li > a:hover, .nav--tabs > li > a:focus {
     border-bottom-color: #ddd;
-    color: #000; }
+    color: #a50014; }
+.nav--tabs > .is-active > a {
+  border-bottom-color: #a50014;
+  color: #a50014; }
+  .nav--tabs > .is-active > a:hover, .nav--tabs > .is-active > a:focus {
+    color: #a50014; }
 
-/**
- * Toggle (can't go inside media query as @extending)
- */
-.tabs_actions .btn {
-  border-radius: 0;
-  border-width: 0 1px;
-  padding-top: 0.5rem;
-  padding-bottom: 0.42857rem; }
-
-.tabs-btn_left,
-.tabs-btn_right {
+.c-tabs-btn_left,
+.c-tabs-btn_right {
   display: none; }
 
-@media all and (max-width: 50.9275em) {
-  .tabs_content {
+@media (max-width: 52.49em) {
+  .c-tabs_content {
     border-top: 0; }
 
   .nav--tabs {
-    background-color: #e6e6e6;
+    background-color: #ddd;
     margin-right: 0;
     max-height: 34px;
     overflow: hidden;
     position: relative;
-    -webkit-transition: max-height .5s ease-in-out;
-            transition: max-height .5s ease-in-out; }
+    -webkit-transition: max-height .4s linear;
+            transition: max-height .4s linear; }
 
-  .tabs {
+  .c-tabs {
     position: relative; }
-    .tabs li {
+    .c-tabs li {
       position: static; }
-      .tabs li.is-active a {
+      .c-tabs li.is-active a {
         background-color: #f4f4f4;
         position: relative;
         z-index: 1; }
-      .tabs li > a,
-      .tabs li .btn-group {
+      .c-tabs li > a,
+      .c-tabs li .btn-group {
         border-right: 0;
         height: 100%;
         left: 0;
         position: absolute;
         top: 0;
         width: 100%; }
-    .tabs .toggle_chkbx:checked + .toggle_btn + .toggle_target {
-      max-height: 500px; }
-      .tabs .toggle_chkbx:checked + .toggle_btn + .toggle_target li > a,
-      .tabs .toggle_chkbx:checked + .toggle_btn + .toggle_target .btn-group {
+    .c-tabs .toggle_chkbx:checked + .toggle_btn + .toggle_target {
+      box-shadow: none;
+      max-height: 500px;
+      -webkit-transition: max-height .4s linear;
+              transition: max-height .4s linear; }
+      .c-tabs .toggle_chkbx:checked + .toggle_btn + .toggle_target li > a,
+      .c-tabs .toggle_chkbx:checked + .toggle_btn + .toggle_target .btn-group {
         display: block;
         position: relative; }
-    .tabs .toggle_btn {
+    .c-tabs .toggle_btn {
       padding: 0.5rem 0.42857rem;
       position: absolute;
       right: 0;
@@ -3267,351 +3371,217 @@ input[type="search"].navbar_search-input {
 
   .nav--tabs {
     left: 0 !important; } }
-@media all and (min-width: 50.9375em) {
-  .tabs {
+@media (min-width: 52.5em) {
+  .c-tabs {
     overflow: hidden; }
-
-  .tabs_content {
-    margin-top: -1px; }
+    .c-tabs + .c-tabs_content {
+      margin-top: -1px; }
 
   .nav--tabs {
     min-height: 2.5rem; }
-    .nav--tabs > li > a:hover, .nav--tabs > li > a:focus {
-      border-bottom-color: #0e3a4d; }
+    .nav--tabs > li > a:hover, .nav--tabs > li > a:focus,
+    .nav--tabs > .is-active > a:hover,
+    .nav--tabs > .is-active > a:focus {
+      background-color: transparent;
+      border-bottom-color: #a50014;
+      color: #a50014; }
 
-  .tabs_wrapper {
+  .c-tabs_wrapper {
     margin: 0 2.42857rem;
     overflow: hidden;
     position: relative;
     white-space: nowrap; }
 
-  .tabs,
-  .tabs_wrapper > .nav--tabs {
+  .c-tabs,
+  .c-tabs_wrapper > .nav--tabs {
     position: relative; }
 
-  .tabs li {
+  .c-tabs li {
     display: inline-block; }
 
-  .tabs-btn_left,
-  .tabs-btn_right {
+  .c-tabs-btn_left,
+  .c-tabs-btn_right {
     border: 0;
     border-radius: 0;
     display: block;
     padding: 7px 9px;
     position: absolute;
     z-index: 2; }
-    .tabs-btn_left[disabled],
-    .tabs-btn_right[disabled] {
+    .c-tabs-btn_left[disabled],
+    .c-tabs-btn_right[disabled] {
       box-shadow: none; }
 
-  .tabs-btn_left {
-    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.15);
-    left: 0;
-    -webkit-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-            transform: rotate(90deg); }
+  .c-tabs-btn_left {
+    left: 0; }
 
-  .tabs-btn_right {
-    box-shadow: -2px 0 6px rgba(0, 0, 0, 0.15);
-    right: 0;
-    -webkit-transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
-            transform: rotate(-90deg); }
+  .c-tabs-btn_right {
+    right: 0; }
 
-  /**
+  /*
   * Vertical Tabs
   */
-  .tabs--vertical {
+  .c-tabs--vertical {
     width: 25%;
     float: left;
+    margin-right: -1px;
     overflow: visible; }
-    .tabs--vertical li {
+    .c-tabs--vertical li {
       display: block; }
-      .tabs--vertical li a {
+      .c-tabs--vertical li a {
         border-bottom: 0;
         border-right: 3px solid transparent; }
-    .tabs--vertical + .tabs_content {
+    .c-tabs--vertical + .c-tabs_content {
       width: 75%;
       float: left;
       margin-top: 0; }
 
-  .tabs--vertical--right {
-    float: right; }
-    .tabs--vertical--right .nav--tabs {
+  .c-tabs--vertical--right {
+    float: right;
+    margin-left: -1px;
+    margin-right: 0; }
+    .c-tabs--vertical--right .nav--tabs {
       margin-left: -1px;
       margin-right: 0; }
-    .tabs--vertical--right li a {
+    .c-tabs--vertical--right li a {
       border-left: 3px solid transparent;
       border-right: 0; }
-    .tabs--vertical--right li.is-active a {
-      border-left-color: #0e3a4d;
+    .c-tabs--vertical--right li.is-active a {
+      border-left-color: #a50014;
       border-right: 0; } }
 /*=========*\
    #EVENTS
 \*=========*/
-/**
+/*
  * Event Calendar Sheet
  */
-.event-date {
-  border: 1px solid #ddd;
-  border-bottom: 0;
-  border-radius: 2px;
-  box-shadow: 0 3px 0 #0e3a4d;
+.event-card {
   display: inline-block;
-  font-weight: 700;
-  margin-bottom: 3px;
-  padding: 0.85714rem;
+  padding-top: 0;
   position: relative;
-  text-align: center; }
+  text-align: center;
+  vertical-align: middle; }
 
-.event-date_cal {
-  display: block;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 6px; }
-
-.event-date_days {
+.event-card_days {
   font-size: 2.57143rem; }
 
-.event-date_month {
+.event-card_month {
   font-size: 1.28571rem;
-  letter-spacing: .1em;
   text-transform: uppercase; }
 
-.event-date_time {
+.event-card_time {
   border-top: 1px solid #ddd;
   margin-top: 5px;
   padding-top: 6px; }
 
-.event-date--sm, .event-date--single {
+.event-card--sm,
+.event-card--single {
   padding: 0.5rem; }
-  .event-date--sm .event-date_days, .event-date--single .event-date_days {
-    font-size: 1.71429rem; }
-  .event-date--sm .event-date_month, .event-date--single .event-date_month {
-    font-size: 1rem;
-    margin-top: 0; }
-  .event-date--sm .event-date_time, .event-date--single .event-date_time {
+  .event-card--sm .event-card_days,
+  .event-card--sm .event-card_month,
+  .event-card--sm .event-card_time,
+  .event-card--single .event-card_days,
+  .event-card--single .event-card_month,
+  .event-card--single .event-card_time {
+    font-size: 0.92857rem; }
+  .event-card--sm .event-card_month,
+  .event-card--single .event-card_month {
+    text-transform: capitalize; }
+  .event-card--sm .event-card_time,
+  .event-card--single .event-card_time {
     margin-top: 2px;
     padding-top: 4px; }
 
-.event-date--single {
-  background-color: #0e3a4d;
-  border: 0;
-  box-shadow: none;
-  color: #fff;
-  margin-bottom: 0;
-  padding: 2px 0.5rem; }
-  .event-date--single .event-date_days {
-    font-weight: 700;
-    line-height: normal; }
-
-.event-date--inline {
-  border-left: 0;
-  padding: 0 0.5rem 0 0; }
-  .event-date--inline .event-date_days,
-  .event-date--inline .event-date_month,
-  .event-date--inline .event-date_time {
-    border-left: 1px solid #ddd;
+.event-card--inline {
+  padding: 0; }
+  .event-card--inline .event-card_days,
+  .event-card--inline .event-card_month,
+  .event-card--inline .event-card_time {
     display: inline-block;
-    padding-left: 0.5rem;
     vertical-align: middle; }
-  .event-date--inline .event-date_time {
+  .event-card--inline .event-card_time {
     border-top: 0;
     margin-top: 0;
     padding-top: 0; }
 
-.event-date--sm .event-date_month, .event-date--single .event-date_month,
-.event-date--inline .event-date_month {
-  letter-spacing: normal; }
-  .event-date--sm .event-date_month span, .event-date--single .event-date_month span,
-  .event-date--inline .event-date_month span {
-    display: none; }
+.event-card--inline.box {
+  border-left: 0;
+  padding-right: 0.5rem; }
+  .event-card--inline.box .event-card_days,
+  .event-card--inline.box .event-card_month,
+  .event-card--inline.box .event-card_time {
+    border-left: 1px solid #ddd;
+    line-height: 1.6;
+    padding-left: 0.5rem; }
+
+.event-card--single {
+  background-color: #fff;
+  max-width: 3.57143rem;
+  padding: 0; }
+  .event-card--single .event-card_days {
+    background-color: #0e3a4d;
+    color: #fff;
+    line-height: .95;
+    padding: 2px 6px; }
+  .event-card--single .event-card_month {
+    border: 1px solid #0e3a4d;
+    padding: 0 6px; }
+
+.event-card--single.event-card--inline {
+  max-width: none; }
+  .event-card--single.event-card--inline .event-card_days {
+    float: left;
+    font-size: 2.28571rem;
+    padding-left: 0.35714rem;
+    padding-right: 0.35714rem; }
+    .event-card--single.event-card--inline .event-card_days:first-child {
+      border: 0; }
+  .event-card--single.event-card--inline .event-card_month {
+    border: 1px solid #0e3a4d;
+    float: left;
+    line-height: 1;
+    max-width: 3.21429rem;
+    padding: 0.14286rem 0.42857rem;
+    text-align: left; }
+
+.event-card--sm .event-card_month span,
+.event-card--single .event-card_month span,
+.event-card--inline .event-card_month span {
+  display: none; }
+  @media (min-width: 46.25em) {
+    .event-card--sm .event-card_month span,
+    .event-card--single .event-card_month span,
+    .event-card--inline .event-card_month span {
+      display: inline-block;
+      text-transform: lowercase; } }
 
 /*============*\
    #ECOMMERCE
 \*============*/
-.basket {
+.ecomBasket {
   padding: 0; }
-  .basket .table, .basket .table--bordered {
+  .ecomBasket .table {
     border-bottom: 1px solid #ddd;
     margin-bottom: 0.7rem; }
-    .basket .table thead th, .basket .table--bordered thead th,
-    .basket .table tbody td,
-    .basket .table--bordered tbody td,
-    .basket .table tfoot td,
-    .basket .table--bordered tfoot td {
+    .ecomBasket .table thead th,
+    .ecomBasket .table tbody td,
+    .ecomBasket .table tfoot td {
       padding: 0.85714rem; }
-    .basket .table > thead, .basket .table--bordered > thead {
+    .ecomBasket .table > thead {
       background-color: #357d7f;
       color: #fff; }
-      .basket .table > thead th, .basket .table--bordered > thead th {
+      .ecomBasket .table > thead th {
         border-color: #265a5b; }
-    .basket .table > thead th:last-child, .basket .table--bordered > thead th:last-child,
-    .basket .table > tbody td:last-child,
-    .basket .table--bordered > tbody td:last-child,
-    .basket .table > tfoot td,
-    .basket .table--bordered > tfoot td {
+    .ecomBasket .table > thead th:last-child,
+    .ecomBasket .table > tbody td:last-child,
+    .ecomBasket .table > tfoot td {
       text-align: right; }
-    .basket .table > tfoot, .basket .table--bordered > tfoot {
+    .ecomBasket .table > tfoot {
       background-color: #f4f4f4; }
-    .basket .table > thead th:nth-child(2), .basket .table--bordered > thead th:nth-child(2) {
-      text-align: center; }
-  .basket .qty input {
-    border-color: transparent;
-    margin-right: -12px;
-    text-align: center;
-    width: 58px; }
+  .ecomBasket .qty {
+    min-width: 50px;
+    text-align: center; }
 
-.crumbs:before, .crumbs:after,
-.crumbs .list-collapsable_list:before,
-.crumbs .list-collapsable_list:after {
-  content: ' ';
-  display: table; }
-.crumbs:after,
-.crumbs .list-collapsable_list:after {
-  clear: both; }
-
-/**
- * General item in list
- */
-.crumbs_item {
-  float: left;
-  font-size: 0.85714rem;
-  line-height: 1rem;
-  white-space: nowrap; }
-
-/**
- * Link in general item 
- */
-.crumbs_item a {
-  background-color: #e6e6e6;
-  color: #333;
-  display: inline-block;
-  margin-left: 0.28571rem;
-  padding: 0.14286rem 0.35714rem; }
-  .crumbs_item a:hover, .crumbs_item a:focus {
-    background-color: #f4f4f4;
-    color: #333; }
-
-/**
- * Home / first item in list
- */
-.crumbs_item:first-child a {
-  background-color: transparent;
-  margin-left: 0;
-  padding-bottom: 0;
-  padding-top: 0; }
-  .crumbs_item:first-child a:before {
-    left: 0;
-    top: 1px; }
-
-/**
- * Section or Category / second item in list
- */
-.crumbs_item:first-child + .crumbs_item a {
-  background-color: #0e3a4d;
-  color: #fff;
-  margin-left: 0.28571rem;
-  padding-left: 0.5rem; }
-  .crumbs_item:first-child + .crumbs_item a:hover, .crumbs_item:first-child + .crumbs_item a:focus {
-    background-color: #165b78; }
-
-/**
- * Current Location / Last item in list
- */
-.crumbs_item:last-child,
-.crumbs_item--last {
-  margin-left: 0.42857rem;
-  padding: 0.21429rem 0 0.07143rem; }
-
-/**
-  * General item in list
-  */
-.crumbs_item {
-  position: relative; }
-  .crumbs_item a {
-    margin-left: 1.78571rem; }
-    .crumbs_item a:hover:before, .crumbs_item a:hover:after, .crumbs_item a:focus:before, .crumbs_item a:focus:after {
-      border-left-color: #f4f4f4;
-      border-right-color: #f4f4f4; }
-    .crumbs_item a:before {
-      border-right: 1.28571rem solid #e6e6e6;
-      border-bottom: 1.28571rem inset transparent;
-      left: 0.5rem; }
-    .crumbs_item a:after {
-      border-left: 1.28571rem solid #e6e6e6;
-      border-top: 1.28571rem inset transparent;
-      right: -1.28571rem; }
-
-.crumbs_item:not(:first-child) a:before, .crumbs_item:not(:first-child) a:after {
-  content: '';
-  display: inline-block;
-  height: 0;
-  outline: 0 none;
-  position: absolute;
-  top: 0;
-  width: 1.28571rem; }
-
-/**
-  * Home / first item in list
-  */
-.crumbs_item:first-child a:before, .crumbs_item:first-child a:after {
-  border: 0; }
-.crumbs_item:first-child a:hover:before, .crumbs_item:first-child a:focus:before {
-  opacity: 1; }
-
-/**
-  * Section or Category / second item in list
-  */
-.crumbs_item:first-child + .crumbs_item a:hover:before, .crumbs_item:first-child + .crumbs_item a:hover:after, .crumbs_item:first-child + .crumbs_item a:focus:before, .crumbs_item:first-child + .crumbs_item a:focus:after {
-  border-left-color: #165b78;
-  border-right-color: #165b78; }
-.crumbs_item:first-child + .crumbs_item a:before {
-  border: 0; }
-.crumbs_item:first-child + .crumbs_item a:after {
-  border-left-color: #0e3a4d; }
-
-/**
-  * Current Location / Last item in list
-  */
-.crumbs_item:last-child,
-.crumbs_item--last {
-  margin-left: 1.64286rem; }
-
-/*========*\
-   #WELLS
-\*========*/
-.well {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-bottom: 0;
-  box-shadow: 0 5px #0e3a4d;
-  margin: 0 0 1.75714rem;
-  min-height: 20px;
-  padding: 0.85714rem; }
-  .well blockquote {
-    border: 0;
-    margin: 0;
-    padding: 0; }
-
-/**
- * Alternative colour
- */
-.well--alt {
-  background-color: #f4f4f4;
-  border: 0; }
-
-/**
- * Sizes
- */
-.well--lg {
-  padding: 1.14286rem; }
-
-.well--sm {
-  padding: 0.5rem; }
-
-/*!
+/*
  * jQuery UI CSS Framework 1.11.2
  * http://jqueryui.com
  *
@@ -4071,7 +4041,7 @@ button.ui-button::-moz-focus-inner {
   text-overflow: ellipsis;
   white-space: nowrap; }
 
-/*!
+/*
  * jQuery UI CSS Framework 1.11.2
  * http://jqueryui.com
  *
@@ -4884,8 +4854,14 @@ button.ui-button::-moz-focus-inner {
 /**
  * Clears
  */
-.u-cf:before, .u-cf:after {
-  content: ' ';
+.u-mb0 {
+  margin-bottom: 0; }
+
+/**
+ * Clears
+ */
+.u-cf:after {
+  content: '';
   display: table; }
 .u-cf:after {
   clear: both; }
@@ -4938,7 +4914,8 @@ button.ui-button::-moz-focus-inner {
 -----------------------------------------------------------
  * See: http://a11yproject.com/posts/how-to-hide-content/
  */
-.u-sr, .crumbs_item:first-child a span, .no-svg .logo img {
+.crumbs_item:first-child a span, .no-svg .logo img,
+.u-sr {
   border: 0;
   clip: rect(0, 0, 0, 0);
   height: 1px;
@@ -4979,32 +4956,32 @@ button.ui-button::-moz-focus-inner {
  * Alignment
  */
 .txt-left {
-  text-align: left; }
+  text-align: left !important; }
 
 .txt-right {
-  text-align: right; }
+  text-align: right !important; }
 
 .txt-center {
-  text-align: center; }
+  text-align: center !important; }
 
 .txt-justify {
-  text-align: justify; }
+  text-align: justify !important; }
 
 .txt-nowrap {
-  white-space: nowrap; }
+  white-space: nowrap !important; }
 
 /**
  * Transformation
  */
 .txt-lower {
-  text-transform: lowercase; }
+  text-transform: lowercase !important; }
 
 .txt-upper {
-  text-transform: uppercase; }
+  text-transform: uppercase !important; }
 
 .txt-caps,
-.iod {
-  text-transform: capitalize; }
+.txt-iod {
+  text-transform: capitalize !important; }
 
 /**
  * Contextual colors
@@ -5067,7 +5044,7 @@ a.txt-primary:hover {
 .visible-lg-inline-block {
   display: none !important; }
 
-@media all and (max-width: 31.24em) {
+@media (max-width: 31.24em) {
   .visible-xs {
     display: block !important; }
 
@@ -5077,19 +5054,19 @@ a.txt-primary:hover {
   th.visible-xs,
   td.visible-xs {
     display: table-cell !important; } }
-@media all and (max-width: 31.24em) {
+@media (max-width: 31.24em) {
   .visible-xs-block {
     display: block !important; } }
 
-@media all and (max-width: 31.24em) {
+@media (max-width: 31.24em) {
   .visible-xs-inline {
     display: inline !important; } }
 
-@media all and (max-width: 31.24em) {
+@media (max-width: 31.24em) {
   .visible-xs-inline-block {
     display: inline-block !important; } }
 
-@media all and (min-width: 31.25em) and (max-width: 46.24em) {
+@media (min-width: 31.25em) and (max-width: 46.24em) {
   .visible-sm {
     display: block !important; }
 
@@ -5099,19 +5076,19 @@ a.txt-primary:hover {
   th.visible-sm,
   td.visible-sm {
     display: table-cell !important; } }
-@media all and (min-width: 31.25em) and (max-width: 46.24em) {
+@media (min-width: 31.25em) and (max-width: 46.24em) {
   .visible-sm-block {
     display: block !important; } }
 
-@media all and (min-width: 31.25em) and (max-width: 46.24em) {
+@media (min-width: 31.25em) and (max-width: 46.24em) {
   .visible-sm-inline {
     display: inline !important; } }
 
-@media all and (min-width: 31.25em) and (max-width: 46.24em) {
+@media (min-width: 31.25em) and (max-width: 46.24em) {
   .visible-sm-inline-block {
     display: inline-block !important; } }
 
-@media all and (min-width: 46.25em) and (max-width: 61.24em) {
+@media (min-width: 46.25em) and (max-width: 61.24em) {
   .visible-md {
     display: block !important; }
 
@@ -5121,19 +5098,19 @@ a.txt-primary:hover {
   th.visible-md,
   td.visible-md {
     display: table-cell !important; } }
-@media all and (min-width: 46.25em) and (max-width: 61.24em) {
+@media (min-width: 46.25em) and (max-width: 61.24em) {
   .visible-md-block {
     display: block !important; } }
 
-@media all and (min-width: 46.25em) and (max-width: 61.24em) {
+@media (min-width: 46.25em) and (max-width: 61.24em) {
   .visible-md-inline {
     display: inline !important; } }
 
-@media all and (min-width: 46.25em) and (max-width: 61.24em) {
+@media (min-width: 46.25em) and (max-width: 61.24em) {
   .visible-md-inline-block {
     display: inline-block !important; } }
 
-@media all and (min-width: 61.25em) {
+@media (min-width: 61.25em) {
   .visible-lg {
     display: block !important; }
 
@@ -5143,37 +5120,37 @@ a.txt-primary:hover {
   th.visible-lg,
   td.visible-lg {
     display: table-cell !important; } }
-@media all and (min-width: 61.25em) {
+@media (min-width: 61.25em) {
   .visible-lg-block {
     display: block !important; } }
 
-@media all and (min-width: 61.25em) {
+@media (min-width: 61.25em) {
   .visible-lg-inline {
     display: inline !important; } }
 
-@media all and (min-width: 61.25em) {
+@media (min-width: 61.25em) {
   .visible-lg-inline-block {
     display: inline-block !important; } }
 
-@media all and (max-width: 31.24em) {
+@media (max-width: 31.24em) {
   .hidden-xs,
   tr.hidden-xs,
   th.hidden-xs,
   td.hidden-xs {
     display: none !important; } }
-@media all and (min-width: 31.25em) and (max-width: 46.24em) {
+@media (min-width: 31.25em) and (max-width: 46.24em) {
   .hidden-sm,
   tr.hidden-sm,
   th.hidden-sm,
   td.hidden-sm {
     display: none !important; } }
-@media all and (min-width: 46.25em) and (max-width: 61.24em) {
+@media (min-width: 46.25em) and (max-width: 61.24em) {
   .hidden-md,
   tr.hidden-md,
   th.hidden-md,
   td.hidden-md {
     display: none !important; } }
-@media all and (min-width: 61.25em) {
+@media (min-width: 61.25em) {
   .hidden-lg,
   tr.hidden-lg,
   th.hidden-lg,
@@ -5219,125 +5196,6 @@ a.txt-primary:hover {
   th.hidden-print,
   td.hidden-print {
     display: none !important; } }
-.no-svg .i:before {
-  background-image: url("../../../images/sprites/sprite-sm.png"); }
-.svg .i:before {
-  background-image: url("../../../images/sprites/sprite.svg");
-  background-size: cover; }
-
-.i:before,
-p [href*="facebook.com"]:before,
-p [href*="linkedin.com"]:before,
-p [href*="twitter.com"]:before,
-p [href*="youtube.com"]:before {
-  opacity: 0.7;
-  background-repeat: no-repeat;
-  content: '';
-  display: inline-block;
-  height: 16px;
-  line-height: 1;
-  position: relative;
-  top: -2px;
-  vertical-align: middle;
-  width: 16px; }
-
-.i-basket:before {
-  background-position: 0% 0; }
-
-.i-calendar:before, .event-date_cal:before {
-  background-position: 10% 0; }
-
-.i-facebook:before, p [href*="facebook.com"]:before {
-  background-position: 20% 0; }
-
-.i-home:before {
-  background-position: 30% 0; }
-
-.i-linkedin:before, p [href*="linkedin.com"]:before {
-  background-position: 40% 0; }
-
-.i-menu:before {
-  background-position: 50% 0; }
-
-.i-search:before {
-  background-position: 60% 0; }
-
-.i-times:before, .toggle_chkbx:checked + .toggle_btn.i-menu:before {
-  background-position: 70% 0; }
-
-.i-triangle-down:before {
-  background-position: 80% 0; }
-
-.i-triangle-up:before, .list-collapsable_header.is-active a:before {
-  background-position: 90% 0; }
-
-.i-twitter:before, p [href*="twitter.com"]:before {
-  background-position: 100% 0; }
-
-.i--white:before {
-  opacity: 1; }
-  .no-svg .i--white:before {
-    background-image: url("../../../images/sprites/sprite-white-sm.png"); }
-  .svg .i--white:before {
-    background-image: url("../../../images/sprites/sprite-white.svg"); }
-
-.btn.i:before,
-.btn > .i {
-  margin-right: 0.35714rem; }
-
-/**
- * Icon only button
- */
-.btn:empty.i,
-.btn.i--only {
-  font-size: 0;
-  overflow: hidden;
-  padding: 4px;
-  width: 27px; }
-
-.btn:empty.i:before,
-.btn.i--only:before,
-.btn.i--only > .i:before {
-  margin-right: 0;
-  top: 0; }
-
-/**
- * .btn--xs & .btn--sm icon
- */
-.svg .btn--xs:empty.i,
-.svg .btn--xs.i--only {
-  padding: 0;
-  width: 18px; }
-
-.svg .btn--sm:empty.i,
-.svg .btn--sm.i--only {
-  padding: 0 2px;
-  width: 21px; }
-
-.svg .btn--xs.i:before,
-.svg .btn--sm.i:before,
-.svg .btn--xs > .i:before,
-.svg .btn--sm > .i:before {
-  height: 13px;
-  width: 13px; }
-
-/**
- * .btn--lg icon only
- */
-.svg .btn--lg:empty.i, .svg .btn--cta:empty.i,
-.svg .btn--cta:empty.i,
-.svg .btn--lg.i--only,
-.svg .i--only.btn--cta,
-.svg .btn--cta.i--only {
-  padding: 0 8px;
-  width: 35px; }
-
-/**
- * Icon overrides
- */
-.i-search:before {
-  top: -0.07143rem; }
-
 .browsehappy {
   background: #ccc;
   color: #000;
@@ -5345,6 +5203,6 @@ p [href*="youtube.com"]:before {
   padding: .2em 0; }
 
 .no-svg .logo {
-  background: url("/images/logo.gif") no-repeat; }
+  background: url("../../images/logo.gif") no-repeat; }
 
 /*# sourceMappingURL=style.css.map */
