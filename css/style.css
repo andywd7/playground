@@ -735,12 +735,12 @@ p [href*="youtube.com"] {
     p [href*="linkedin.com"]:before, .no-svg
     p [href*="twitter.com"]:before, .no-svg
     p [href*="youtube.com"]:before {
-      background-image: url("../images/sprites/sprite-sm.png"); }
+      background-image: url("../../../images/sprites/sprite-sm.png"); }
     .svg p [href*="facebook.com"]:before, .svg
     p [href*="linkedin.com"]:before, .svg
     p [href*="twitter.com"]:before, .svg
     p [href*="youtube.com"]:before {
-      background-image: url("../images/sprites/sprite.svg");
+      background-image: url("../../../images/sprites/sprite.svg");
       background-size: cover; }
 
 /*==========*\
@@ -5220,9 +5220,9 @@ a.txt-primary:hover {
   td.hidden-print {
     display: none !important; } }
 .no-svg .i:before {
-  background-image: url("../images/sprites/sprite-sm.png"); }
+  background-image: url("../../../images/sprites/sprite-sm.png"); }
 .svg .i:before {
-  background-image: url("../images/sprites/sprite.svg");
+  background-image: url("../../../images/sprites/sprite.svg");
   background-size: cover; }
 
 .i:before,
@@ -5277,9 +5277,9 @@ p [href*="youtube.com"]:before {
 .i--white:before {
   opacity: 1; }
   .no-svg .i--white:before {
-    background-image: url("../images/sprites/sprite-white-sm.png"); }
+    background-image: url("../../../images/sprites/sprite-white-sm.png"); }
   .svg .i--white:before {
-    background-image: url("../images/sprites/sprite-white.svg"); }
+    background-image: url("../../../images/sprites/sprite-white.svg"); }
 
 .btn.i:before,
 .btn > .i {
