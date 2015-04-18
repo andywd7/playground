@@ -681,14 +681,7 @@
     </div>
   </form>
 </div>	
-	<script>
-		// handle injection of items
-		var patternPartial = "organisms-header";
-		var lineage        = [{"lineagePath":"../../patterns/00-atoms-04-images-45-navbar-brand/00-atoms-04-images-45-navbar-brand.html","lineagePattern":"atoms-navbar-brand","lineageState":"inprogress"},{"lineagePath":"../../patterns/00-atoms-06-buttons-20-toggle-menu/00-atoms-06-buttons-20-toggle-menu.html","lineagePattern":"atoms-toggle-menu","lineageState":"inreview"},{"lineagePath":"../../patterns/01-molecules-05-navigation-05-navbar-secondary/01-molecules-05-navigation-05-navbar-secondary.html","lineagePattern":"molecules-navbar-secondary","lineageState":null},{"lineagePath":"../../patterns/01-molecules-05-navigation-00-navbar-primary/01-molecules-05-navigation-00-navbar-primary.html","lineagePattern":"molecules-navbar-primary","lineageState":null},{"lineagePath":"../../patterns/00-atoms-06-buttons-30-toggle-basket/00-atoms-06-buttons-30-toggle-basket.html","lineagePattern":"atoms-toggle-basket","lineageState":"inreview"},{"lineagePath":"../../patterns/01-molecules-05-navigation-30-tabs/01-molecules-05-navigation-30-tabs.html","lineagePattern":"molecules-tabs","lineageState":"inreview"},{"lineagePath":"../../patterns/01-molecules-04-forms-50-address-form/01-molecules-04-forms-50-address-form.html","lineagePattern":"molecules-address-form","lineageState":"inprogress"}];
-		var lineageR       = [{"lineagePath":"../../patterns/03-templates-00-homepage/03-templates-00-homepage.html","lineagePattern":"templates-homepage","lineageState":"inprogress"},{"lineagePath":"../../patterns/03-templates-01-blog/03-templates-01-blog.html","lineagePattern":"templates-blog","lineageState":"inprogress"},{"lineagePath":"../../patterns/03-templates-02-article/03-templates-02-article.html","lineagePattern":"templates-article","lineageState":"inprogress"},{"lineagePath":"../../patterns/03-templates-03-typography/03-templates-03-typography.html","lineagePattern":"templates-typography","lineageState":"inprogress"},{"lineagePath":"../../patterns/04-pages-01-blog/04-pages-01-blog.html","lineagePattern":"pages-blog","lineageState":"inprogress"}];
-		var patternState   = "inprogress";
-		var cssEnabled     = false;
-	</script>
+	
 	
     <div class="flyout_overlay"></div>
 
@@ -702,61 +695,6 @@
     <script src="../../js/min/tabs.min.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-
-    <!--DO NOT REMOVE-->
-    	<script>
-    		/*!
-    		 * scriptLoader - v0.1
-    		 *
-    		 * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
-    		 * Licensed under the MIT license
-    		 *
-    		 */
-    		
-    		var scriptLoader = {
-    			
-    			run: function(js,cb,target) {
-    				var s  = document.getElementById(target+'-'+cb); 
-    				for (var i = 0; i < js.length; i++) {
-    					var src = (typeof js[i] != "string") ? js[i].src : js[i];
-    					var c   = document.createElement('script');
-    					c.src   = '../../'+src+'?'+cb;
-    					if (typeof js[i] != "string") {
-    						if (js[i].dep !== undefined) {
-    							c.onload = function(dep,cb,target) {
-    								return function() {
-    									scriptLoader.run(dep,cb,target);
-    								}
-    							}(js[i].dep,cb,target);
-    						}
-    					}
-    					s.parentNode.insertBefore(c,s);
-    				}
-    			}
-    			
-    		}
-    	</script>
-    	<script id="pl-js-polyfill-insert-635648113886132596">
-    		(function() {
-    			if (self != top) {
-    				var cb = '635648113886132596';
-    				var js = [];
-    				if (typeof document !== "undefined" && !("classList" in document.documentElement)) {
-    					js.push("styleguide/js/vendor/classlist-polyfill.js");
-    				}
-    				scriptLoader.run(js,cb,'pl-js-polyfill-insert');
-    			}
-    		})();
-    	</script>
-    	<script id="pl-js-insert-635648113886132596">
-    		(function() {
-    			if (self != top) {
-    				var cb = '635648113886132596';
-    				var js = [ { "src": "styleguide/js/vendor/jwerty.js", "dep": [ "styleguide/js/postmessage.js", { "src": "data/annotations.js", "dep": [ "styleguide/js/annotations-pattern.js" ] }, "styleguide/js/code-pattern.js" ] } ];
-    				scriptLoader.run(js,cb,'pl-js-insert');
-    			}
-    		})();
-    	</script>
     	
 
   </body>
